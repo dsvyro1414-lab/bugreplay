@@ -1,0 +1,24 @@
+# Dependencies and build output
+node_modules/
+dist/
+build/
+coverage/
+.vite/
+.cache/
+
+# Local credentials; templates may be committed
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Generated runs and browser recordings
+artifacts/
+test-results/
+playwright-report/
+blob-report/
+
+# Machine-local files
+.DS_Store
+*.log
+.entire/settings.local.json
