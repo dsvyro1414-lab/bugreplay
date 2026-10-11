@@ -42,13 +42,24 @@ Approved LLM recovery: local ignored `.env` now selects `LLM_PROVIDER=openai`, `
 
 The subsequent Neatlogs recheck on the current connection failed again with `FLUSH_TIMEOUT` and `BACKEND_CONNECTION_FAILED` (`artifacts/tooling/neatlogs-preflight-1791741998629-32d1f44c.json`). Credential-free transport diagnostics reproduced `ERR_SSL_WRONG_VERSION_NUMBER` for both official ingest endpoints while documentation TLS passed (`artifacts/tooling/neatlogs-network-diagnostic-2026-10-11T18-06-47-864Z.json`). The earlier hotspot success remains valid historical evidence; the current connection must pass before real investigation.
 
+After the owner reconnected the hotspot, the October 11 18:15 UTC recheck passed again: Node 24.21.0 verified TLS 1.3/certificates on both official ingest endpoints, and the authenticated SDK Doctor completed finalized hosted readback with trace `ba253cc0dd641863e5b7f564d1289f8d`. Safe local artifacts: `artifacts/tooling/neatlogs-network-diagnostic-2026-10-11T18-15-38-016Z.json` and `artifacts/tooling/neatlogs-preflight-1791742545805-a418c729.json`. Typecheck and all 32 tests passed in the same integration check. Access is currently verified on this connection; this is still an access check, not an autonomous shop investigation.
+
 Entire provenance correction: the automatic checkpoint attached to commit `ec2a755` selected an unrelated Codex session sharing the workspace. Its exact local and remote checkpoint ref `refs/entire/checkpoints/RK/01M4NSHFZ6W6X733W3SR5BCHRK` was removed and remote absence verified. The commit trailer remains historical and must not be counted as BugReplay checkpoint evidence. All four remaining checkpoint metadata records identify the correct BugReplay session. Future A commits use per-command hook bypass until automatic session selection is fixed; the repository-wide hook configuration and other sessions were not changed. Do not publish a new full transcript without reviewing/redacting unrelated app/thread metadata. Automatic commit-linked provenance remains unverified.
 
-The refreshed remote B branch still contains planning only and neither shop port is listening. Remaining P0 gates: current Neatlogs delivery/readback, B's shop/UI integration, three live investigations with genuine neatlogs traces, a real observed trace-driven improvement, automatic Entire checkpoint evidence, and B's independent acceptance. cfo.ai/demo/submission/Discord belong to B/team and remain unverified by A.
+The refreshed remote B branch still contains planning only. Remaining P0 gates: B's shop/UI integration, three live investigations with genuine neatlogs traces, a real observed trace-driven improvement, automatic Entire checkpoint evidence, and B's independent acceptance. Neatlogs must continue passing on the connection used for each investigation. cfo.ai/demo/submission/Discord belong to B/team and remain unverified by A.
 
 ## Integration for B
 
-Integrate commits from `agent-a-engine` without replacing B-owned files. Use shared `@bugreplay/contracts`; do not duplicate schemas. Root pins React, ReactDOM, Vite, React plugin and React/Node types. Send additional dependency requests to A.
+The verified engine baseline through `0280d78` is published on `origin/main`, including the runner, shared contracts, root dependencies, startup commands, and approved LiteLLM configuration. A publishes subsequent verified increments to `main` as well as `agent-a-engine`. B can incorporate the shared baseline while keeping the product branch and its work:
+
+```sh
+git fetch origin
+git switch agent-b-product
+git merge origin/main
+npm ci
+```
+
+Use a normal merge and preserve B-owned changes; do not reset or force-push the product branch. Use shared `@bugreplay/contracts`; do not duplicate schemas. Root pins React, ReactDOM, Vite, React plugin and React/Node types. Send additional dependency requests to A. Local `.env` credentials are excluded from Git and must be configured separately in B's environment.
 
 Expected workspace package names:
 
