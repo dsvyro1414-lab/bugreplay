@@ -6,7 +6,7 @@ The runner investigates one defect class in a controlled Chromium shop: cart ite
 
 ## Current status
 
-Agent A's engine is implemented and tested on explicit synthetic fixtures with real Chromium and standalone replay processes. A real LLM client and neatlogs integration are implemented. Live discovery, sponsor ingestion, and acceptance of Agent B's shop have **not** passed: current AWS inference calls return 403, neatlogs hosted preflight fails TLS/connection checks, and B's application branch is not integrated in this checkout.
+Agent A's engine is implemented and tested on explicit synthetic fixtures with real Chromium and standalone replay processes. A real LLM client and neatlogs integration are implemented. Neatlogs hosted Doctor now verifies finalized trace readback through an alternate trusted network; the original network failed TLS. Live discovery and acceptance of Agent B's shop have **not** passed: AWS inference permission is denied, and B's application branch is not integrated in this checkout. A successful Doctor is access evidence, not an investigation result.
 
 See [engine handoff](scripts/ENGINE-STATUS.md), [access recovery and administrator requests](scripts/ACCESS-RECOVERY.md), [shared DOM contract](packages/contracts/DOM.md), [plan](plan.md), and B's [development log](hackathon.md). Synthetic tests are engineering checks, not live discovery evidence.
 
