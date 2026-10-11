@@ -20,7 +20,8 @@
     "eval": "tsx scripts/acceptance.ts --repeat 3",
     "repro": "tsx scripts/repro.ts",
     "smoke:llm": "tsx --env-file-if-exists=.env scripts/smoke-llm.ts",
-    "doctor:neatlogs": "tsx --env-file-if-exists=.env scripts/doctor-neatlogs.ts"
+    "doctor:neatlogs": "tsx --env-file-if-exists=.env scripts/doctor-neatlogs.ts",
+    "doctor:network": "tsx scripts/doctor-network.ts"
   },
   "dependencies": {
     "@aws-sdk/client-bedrock-runtime": "3.1149.0",

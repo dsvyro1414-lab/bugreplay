@@ -8,7 +8,7 @@ The runner investigates one defect class in a controlled Chromium shop: cart ite
 
 Agent A's engine is implemented and tested on explicit synthetic fixtures with real Chromium and standalone replay processes. A real LLM client and neatlogs integration are implemented. Live discovery, sponsor ingestion, and acceptance of Agent B's shop have **not** passed: current AWS inference calls return 403, neatlogs hosted preflight fails TLS/connection checks, and B's application branch is not integrated in this checkout.
 
-See [engine handoff](scripts/ENGINE-STATUS.md), [shared DOM contract](packages/contracts/DOM.md), [plan](plan.md), and B's [development log](hackathon.md). Synthetic tests are engineering checks, not live discovery evidence.
+See [engine handoff](scripts/ENGINE-STATUS.md), [access recovery and administrator requests](scripts/ACCESS-RECOVERY.md), [shared DOM contract](packages/contracts/DOM.md), [plan](plan.md), and B's [development log](hackathon.md). Synthetic tests are engineering checks, not live discovery evidence.
 
 ## Install and check
 
@@ -33,6 +33,8 @@ For AWS IAM, set `LLM_PROVIDER=bedrock`, `LLM_MODEL` to an accessible Bedrock mo
 npm run doctor:neatlogs
 npm run smoke:llm
 ```
+
+For transport troubleshooting, `npm run doctor:network` checks certificate-verified TLS to the documented Neatlogs endpoints without reading or sending credentials. It saves a safe local diagnostic; it does not prove authenticated ingestion. The [access recovery guide](scripts/ACCESS-RECOVERY.md) records the confirmed AWS IAM/SCP denial and the observed hostname-dependent TLS failure.
 
 Doctor must verify a finalized hosted readback. If it fails, real investigations stop with an honest blocker before opening the browser. Smoke checks API/JSON access only, not investigation quality. SDK spans capture workflow, browser tools, model requests, compilation and verification; shutdown drains telemetry.
 
