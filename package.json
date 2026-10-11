@@ -19,7 +19,8 @@
     "test:acceptance": "tsx scripts/acceptance.ts",
     "eval": "tsx scripts/acceptance.ts --repeat 3",
     "repro": "tsx scripts/repro.ts",
-    "smoke:llm": "tsx --env-file-if-exists=.env scripts/smoke-llm.ts"
+    "smoke:llm": "tsx --env-file-if-exists=.env scripts/smoke-llm.ts",
+    "doctor:neatlogs": "tsx --env-file-if-exists=.env scripts/doctor-neatlogs.ts"
   },
   "dependencies": {
     "@aws-sdk/client-bedrock-runtime": "3.1149.0",
@@ -29,12 +30,18 @@
     "neatlogs": "1.1.28",
     "openai": "7.32.0",
     "playwright": "1.64.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
     "zod": "4.6.5"
   },
   "devDependencies": {
     "@types/node": "26.6.5",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.2",
     "concurrently": "10.0.6",
     "tsx": "4.23.15",
-    "typescript": "7.0.2"
+    "typescript": "7.0.2",
+    "vite": "8.3.4"
   }
 }

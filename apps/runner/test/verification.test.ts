@@ -93,12 +93,17 @@ test('compiler preserves the entire trusted setup and rejects unqualified candid
   assert.throws(() => compileCandidate(input, escape, checkpoint(), candidate), /escapes the target origin/);
 });
 
-test('saved standalone test confirms only 2 independent intended failures and passes unchanged on fixed control', { timeout: 120000 }, async () => {
+test('only the exact saved test runs with nested archived specs, confirms twice and passes unchanged on fixed control', { timeout: 120000 }, async () => {
   const dir = await directory();
   const buggy = await fixture('buggy');
   const fixed = await fixture('fixed');
   try {
-    await writeReproduction(dir, compileCandidate(input, log(), checkpoint(), candidate));
+    const reproduction = compileCandidate(input, log(), checkpoint(), candidate);
+    await writeReproduction(dir, reproduction);
+    // Investigation archives candidates before replay; these copies must never
+    // be discovered as additional tests by the standard Playwright process.
+    await writeReproduction(path.join(dir, 'candidate-1'), reproduction);
+    await writeReproduction(path.join(dir, 'archive', 'nested-candidate'), reproduction);
     const originalSpec = await readFile(path.join(dir, 'repro.spec.ts'), 'utf8');
     assert.equal((originalSpec.match(/^import /gm) ?? []).length, 1);
     assert.ok(originalSpec.startsWith("import { test, expect, type Page, type Locator } from '@playwright/test';"));
@@ -123,6 +128,44 @@ test('saved standalone test confirms only 2 independent intended failures and pa
     assert.equal(JSON.parse(await readFile(path.join(dir, 'control', 'verification.json'), 'utf8')).verdict, 'not_matched');
   } finally {
     await Promise.all([new Promise<void>((resolve) => buggy.server.close(() => resolve())), new Promise<void>((resolve) => fixed.server.close(() => resolve()))]);
+    await rm(dir, { recursive: true, force: true });
+  }
+});
+
+test('two intended assertion failures with different lost-cart outcomes remain inconclusive', { timeout: 45000 }, async () => {
+  const dir = await directory();
+  let episodes = 0;
+  const secondRow = '<p data-product-id="second" data-quantity="1">Second sample, quantity 1</p>';
+  const app = createServer((request, response) => {
+    if (request.url === '/') episodes++;
+    const actual = episodes % 2 === 1 ? '' : secondRow;
+    const html = fixtureHtml('buggy')
+      .replace('<p data-product-id="sample" data-quantity="1">Sample product, quantity 1</p>', '<p data-product-id="sample" data-quantity="1">Sample product, quantity 1</p>' + secondRow)
+      .replace("cart.innerHTML = '';", `cart.innerHTML = ${JSON.stringify(actual)};`);
+    response.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' }); response.end(html);
+  });
+  await new Promise<void>((resolve) => app.listen(0, '127.0.0.1', resolve));
+  const address = app.address();
+  assert.ok(address && typeof address !== 'string');
+  try {
+    const twoItemState: ShopState = { ...withCart, cart: [...withCart.cart, { productId: 'second', quantity: 1 }] };
+    const records = log();
+    records[1].after = twoItemState;
+    records[2].before = twoItemState; records[2].after = twoItemState;
+    records[3].before = twoItemState;
+    await writeReproduction(dir, compileCandidate(input, records, [{ ...checkpoint()[0], state: twoItemState }], candidate));
+    const result = await verifyReproduction({ dir, baseUrl: `http://127.0.0.1:${address.port}`, timeoutMs: 40000 });
+    assert.equal(episodes, 2);
+    assert.equal(result.matchedFailures, 2, JSON.stringify(result, null, 2));
+    assert.equal(result.verdict, 'inconclusive');
+    assert.ok(result.attempts.every((attempt) => attempt.classification === 'matched_failure' && attempt.initialCart?.length === 2));
+    assert.deepEqual(result.attempts.map((attempt) => attempt.actualCart?.length), [0, 1]);
+    assert.deepEqual(result.attempts[0].evidence?.repeatConsistency, {
+      consistent: false, reason: 'Independent replays produced different normalized cart or completed changed-address outcomes',
+    });
+    assert.equal(JSON.parse(await readFile(path.join(dir, 'verification.json'), 'utf8')).verdict, 'inconclusive');
+  } finally {
+    await new Promise<void>((resolve) => app.close(() => resolve()));
     await rm(dir, { recursive: true, force: true });
   }
 });

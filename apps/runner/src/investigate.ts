@@ -1,8 +1,8 @@
-import { writeFileSync, existsSync, copyFileSync, mkdirSync } from 'node:fs';
+import { writeFileSync, readFileSync, existsSync, copyFileSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { z } from 'zod';
-import type { BrowserObservation } from '@bugreplay/contracts';
+import { terminalStatuses, type BrowserObservation } from '@bugreplay/contracts';
 import { BrowserSession } from './browser.js';
 import { compileCandidate, writeReproduction } from './compiler.js';
 import { verifyReproduction } from './verifier.js';
@@ -41,14 +41,20 @@ export async function investigate(store: RunStore, id: string, config: RunnerCon
   const emit = (type: 'observation'|'tool_error'|'verification'|'hypothesis', message: string, data?: Record<string, unknown>) => store.event(id, { type, message, data });
   const complete = (status: 'bug_confirmed'|'not_reproduced'|'inconclusive'|'cancelled'|'error', message: string) => {
     calls = client?.calls || calls;
+    run.metrics.actions = browser?.actionCount || 0;
     run.metrics.elapsedMs = Date.now() - started;
-    const report = [ '# BugReplay investigation', '', `Status: ${status}`, '', message, '', `Complaint: ${run.input.complaint}`, `Expected: ${run.input.expected}`, '', '## Tested hypotheses', ...hypotheses.map(h => `- ${h}`), '', '## Limits and evidence', `Browser actions: ${run.metrics.actions}; model calls: ${calls}; elapsed: ${run.metrics.elapsedMs} ms.`, 'This investigation is limited to the configured controlled shop and cart-preservation oracle. Unknown cost is unavailable.', '', ...(run.verification ? [`Verification: ${JSON.stringify(run.verification)}`, 'Detailed replay stages, initial/actual carts and errors: verification.json.'] : []), '', '## Observed tool results', ...history.map(h => JSON.stringify(h)) ].join('\n');
+    let reproductionDetails: string[] = [];
+    if (existsSync(join(dir, 'reproduction.json'))) {
+      const repro = JSON.parse(readFileSync(join(dir, 'reproduction.json'), 'utf8'));
+      reproductionDetails = ['', '## Recorded candidate', `Observed: ${repro.observed}`, ...repro.steps.map((step: { kind: string; path?: string; locator?: { name: string }; value?: string }, index: number) => `${index + 1}. ${step.kind} ${step.path || step.locator?.name || ''}${step.value !== undefined ? `: ${step.value}` : ''}`), '', 'The candidate is confirmed only when the final status and independent evidence say so.'];
+    }
+    const report = [ '# BugReplay investigation', '', `Status: ${status}`, '', message, '', `Complaint: ${run.input.complaint}`, `Expected: ${run.input.expected}`, '', '## Tested hypotheses', ...hypotheses.map(h => `- ${h}`), ...reproductionDetails, '', '## Limits and evidence', `Browser actions: ${run.metrics.actions}; model calls: ${calls}; elapsed: ${run.metrics.elapsedMs} ms.`, 'This investigation is limited to the configured controlled shop and cart-preservation oracle. Unknown cost is unavailable.', '', ...(run.verification ? [`Verification: ${JSON.stringify(run.verification)}`, 'Detailed replay stages, initial/actual carts and errors: verification.json. Corrected control: control-verification.json.', '[Regression test](repro.spec.ts) | [Reproduction JSON](reproduction.json) | [Replay 1 video](verification-1.webm) | [Replay 2 video](verification-2.webm)', '[Before](verification-1-before.png) | [After](verification-1-after.png)'] : []), '', '## Observed tool results', ...history.map(h => JSON.stringify(h)) ].join('\n');
     writeFileSync(join(dir, 'report.md'), report);
     store.artifact(id, 'report', 'report.md', 'text/markdown');
     store.status(id, status, message);
   };
   try {
-    await services.initTelemetry();
+    await services.initTelemetry(signal);
     await withTrace('bugreplay.investigation', { 'bugreplay.run_id': id, 'bugreplay.git_sha': gitSha, 'bugreplay.agent_version': '0.1.0' }, async () => {
       client = services.makeModel();
       browser = new BrowserSession({ targetUrl: run.input.targetUrl, allowedOrigins: config.allowedOrigins, artifactDir: dir, deadlineAt: Math.min(totalDeadline, started + config.investigationMs), maxActions: config.maxActions,
@@ -146,7 +152,10 @@ export async function investigate(store: RunStore, id: string, config: RunnerCon
               }
             }
           });
-          history.push({ tool: decision.tool, result });
+          const compactResult = result && typeof result === 'object' && 'snapshotId' in result
+            ? { snapshotId: result.snapshotId, episodeId: result.episodeId, state: result.state }
+            : result;
+          history.push({ tool: decision.tool, summary: decision.summary, result: compactResult });
           observation = browser.observation || await browser.observe();
           run.metrics.actions = browser.actionCount; store.save(id);
         } catch (error) {
@@ -163,7 +172,7 @@ export async function investigate(store: RunStore, id: string, config: RunnerCon
       signal.removeEventListener('abort', closeOnAbort);
       if (signal.aborted) complete(signal.reason?.message === 'User requested cancellation' ? 'cancelled' : 'inconclusive', signal.reason?.message || 'Run interrupted; partial evidence has been preserved.');
       else complete(verifiedCandidate || browser.requiresRestart ? 'inconclusive' : 'not_reproduced', 'Investigation budget exhausted. No independently confirmed reproduction within budget.');
-    }, () => ({ 'bugreplay.verdict': run.status, 'bugreplay.actions': browser?.actionCount || 0, 'bugreplay.model_calls': client?.calls || 0, 'bugreplay.elapsed_ms': Date.now() - started,
+    }, () => ({ 'bugreplay.verdict': terminalStatuses.includes(run.status) ? run.status : signal.aborted && signal.reason?.message === 'User requested cancellation' ? 'cancelled' : 'inconclusive', 'bugreplay.actions': browser?.actionCount || 0, 'bugreplay.model_calls': client?.calls || 0, 'bugreplay.elapsed_ms': Date.now() - started,
       ...(run.metrics.inputTokens !== undefined ? { 'bugreplay.input_tokens': run.metrics.inputTokens } : {}), ...(run.metrics.outputTokens !== undefined ? { 'bugreplay.output_tokens': run.metrics.outputTokens } : {}) }));
   } catch (error) {
     if (signal.aborted) complete(signal.reason?.message === 'User requested cancellation' ? 'cancelled' : 'inconclusive', signal.reason?.message || 'Run interrupted; partial evidence has been preserved.');

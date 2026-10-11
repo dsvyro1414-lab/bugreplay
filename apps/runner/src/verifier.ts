@@ -124,6 +124,20 @@ async function publishFile(source: unknown, attemptDir: string, destination: str
   try { await copyFile(resolved, destination); return true; } catch { return false; }
 }
 
+function repeatSignature(attempt: VerificationAttempt): string | undefined {
+  if (!validCart(attempt.initialCart) || !validCart(attempt.actualCart)) return undefined;
+  const evidence = attempt.evidence as Record<string, any> | undefined;
+  if (!evidence?.initialState || !evidence.beforeSaveState || !evidence.actualState) return undefined;
+  const normalize = (cart: CartItem[]) => cart.map(({ productId, quantity }) => ({ productId, quantity }))
+    .sort((a, b) => a.productId.localeCompare(b.productId));
+  return JSON.stringify({
+    initialCart: normalize(attempt.initialCart), actualCart: normalize(attempt.actualCart),
+    initialAddress: evidence.initialState.address, beforeSaveAddress: evidence.beforeSaveState.address,
+    actualAddress: evidence.actualState.address, initialSaveSeq: evidence.initialState.saveSeq,
+    beforeSaveSeq: evidence.beforeSaveState.saveSeq, actualSaveSeq: evidence.actualState.saveSeq,
+  });
+}
+
 /** Replays the saved file using standard Playwright, with no model client or credentials. */
 export async function verifyReproduction(options: VerifyOptions): Promise<VerificationResult> {
   const attempts = options.attempts ?? 2;
@@ -152,12 +166,13 @@ export async function verifyReproduction(options: VerifyOptions): Promise<Verifi
     const configPath = path.join(attemptDir, 'playwright.config.mjs');
     const processBudget = Math.floor(remaining / (attempts - attempt + 1));
     const testTimeout = Math.max(1, processBudget - 1500);
-    await writeFile(configPath, `export default ${JSON.stringify({
-      testDir: sourceDir, testMatch: 'repro.spec.ts', outputDir: path.join(attemptDir, 'test-results'),
+    const exactSpecPattern = '^' + path.join(sourceDir, 'repro.spec.ts').replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$';
+    await writeFile(configPath, `export default { ...${JSON.stringify({
+      testDir: sourceDir, outputDir: path.join(attemptDir, 'test-results'),
       workers: 1, retries: 0, fullyParallel: false, forbidOnly: true, timeout: testTimeout,
       globalTimeout: Math.max(1, processBudget - 500), reporter: [['json', { outputFile: reportPath }]],
       use: { browserName: 'chromium', headless: true },
-    }, null, 2)};\n`);
+    }, null, 2)}, testMatch: new RegExp(${JSON.stringify(exactSpecPattern)}) };\n`);
     const execution = await execute(configPath, isolatedEnvironment({
       BASE_URL: url.href, BUGREPLAY_EVIDENCE_PATH: evidencePath, BUGREPLAY_ATTEMPT_NONCE: nonce,
       BUGREPLAY_TEST_TIMEOUT_MS: String(testTimeout),
@@ -183,7 +198,18 @@ export async function verifyReproduction(options: VerifyOptions): Promise<Verifi
   }
   const matchedFailures = outcomes.filter((outcome) => outcome.classification === 'matched_failure').length;
   const allCompleted = outcomes.length === attempts;
-  const verdict = allCompleted && attempts >= 2 && matchedFailures === attempts ? 'confirmed' :
+  const signature = outcomes.length ? repeatSignature(outcomes[0]) : undefined;
+  const consistent = signature !== undefined && outcomes.every((outcome) => repeatSignature(outcome) === signature);
+  if (allCompleted && attempts >= 2 && matchedFailures === attempts) {
+    for (const outcome of outcomes) {
+      outcome.evidence = { ...outcome.evidence, repeatConsistency: {
+        consistent,
+        ...(consistent ? {} : { reason: 'Independent replays produced different normalized cart or completed changed-address outcomes' }),
+      } };
+      await writeFile(path.join(dir, `verification-${outcome.attempt}.json`), JSON.stringify(outcome, null, 2) + '\n');
+    }
+  }
+  const verdict = allCompleted && attempts >= 2 && matchedFailures === attempts && consistent ? 'confirmed' :
     allCompleted && outcomes.every((outcome) => outcome.classification === 'passed') ? 'not_matched' : 'inconclusive';
   const result: VerificationResult = { attempts: outcomes, matchedFailures, verdict };
   await writeFile(path.join(dir, 'verification.json'), JSON.stringify(result, null, 2) + '\n');
