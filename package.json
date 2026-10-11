@@ -1,0 +1,40 @@
+{
+  "name": "bugreplay",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "tsx scripts/dev.ts",
+    "dev:runner": "tsx --env-file-if-exists=.env apps/runner/src/server.ts",
+    "dev:control": "npm run dev:control --workspace @bugreplay/demo-shop",
+    "typecheck": "tsc --noEmit && npm run typecheck --workspaces --if-present",
+    "test": "tsx --test apps/runner/test/*.test.ts",
+    "test:acceptance": "tsx scripts/acceptance.ts",
+    "eval": "tsx scripts/acceptance.ts --repeat 3",
+    "repro": "tsx scripts/repro.ts",
+    "smoke:llm": "tsx --env-file-if-exists=.env scripts/smoke-llm.ts"
+  },
+  "dependencies": {
+    "@aws-sdk/client-bedrock-runtime": "3.1149.0",
+    "@playwright/test": "1.64.0",
+    "dotenv": "18.0.7",
+    "fastify": "5.12.5",
+    "neatlogs": "1.1.28",
+    "openai": "7.32.0",
+    "playwright": "1.64.0",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.5",
+    "concurrently": "10.0.6",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2"
+  }
+}
