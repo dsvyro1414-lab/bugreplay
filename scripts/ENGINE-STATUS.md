@@ -16,6 +16,8 @@ Scope: `agent-a-engine`; no Agent B application, shop, evaluation, development-l
 
 Verified: `npm run typecheck` passed. The complete suite passed **28/28** on Node 24.21.0 (`npm exec --yes --package=node@24 -- node node_modules/tsx/dist/cli.mjs --test apps/runner/test/*.test.ts`). The automated suite uses explicitly synthetic DOM/model/telemetry transport fixtures. Chromium and saved-test verification processes are real. This does **not** establish autonomous live-model discovery or acceptance of B's shop.
 
+Clean remote clone of `d22aa4a121c0d3895b2a79c8a9ac8db5aac073c0`: `npm ci`, `npm run typecheck`, and the same Node 24 suite all passed (28/28). `npm run dev` reached a healthy runner, explicitly reported the absent B workspaces, and shut down without leaving the runner alive. The temporary clone was used only for verification.
+
 Verified cases include exact/scoped accessible names, full setup preservation, stale-ref recovery, action/call caps, clean context isolation, cancelled startup, prohibited cart mutations, origin/redirect/WebSocket restrictions, invalid setup, stale save signals, missing selectors, unavailable navigation, two intended failures, an unchanged passing control, inconsistent repeat rejection, durable API results, unknown cost, and credential-free verifier environments.
 
 Actual access checks, October 10, 2026 (Denver):
