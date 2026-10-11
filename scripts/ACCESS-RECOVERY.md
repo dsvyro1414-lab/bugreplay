@@ -6,6 +6,8 @@ Observed on October 11, 2026. These are access checks, not a real investigation 
 
 STS accepted the supplied IAM credentials. `GetUser` returned HTTP 200 with no permissions boundary. Real AWS SDK Converse requests in `us-east-1` to `openai.gpt-oss-120b-1:0` and `openai.gpt-oss-20b-1:0` both returned HTTP 403 because no identity-based policy allows `bedrock:InvokeModel`.
 
+After the hotspot restored Neatlogs, one fresh official SDK Converse access check to the selected 120B model still returned the same HTTP 403/missing identity permission. Evidence: `artifacts/tooling/aws-hotspot-access-smoke-1791732879989.json`. This was an API access check, not an investigation or a successful inference.
+
 For those exact model resources, `SimulatePrincipalPolicy` returned `explicitDeny`, `OrganizationsDecisionDetail.AllowedByOrganizations=false`, and no missing context keys. The simulation and live denial are complementary evidence; a successful simulation alone would still require a real invocation. IAM policy enumeration was itself denied by an SCP, so the exact organizational policy statement could not be inspected.
 
 An organization administrator must review the effective SCP hierarchy and permit the selected invocation. If an explicit Deny matches it, narrow/remove that restriction; adding another Allow cannot override it. The IAM identity also needs the following minimal policy. This file proposes a change for review; nothing has been applied.
