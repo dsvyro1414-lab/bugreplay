@@ -36,18 +36,18 @@ export function readModelConfig(env: NodeJS.ProcessEnv = process.env): ModelConf
   if (provider !== 'openai' && provider !== 'bedrock') {
     throw new ModelConfigurationError('LLM_PROVIDER must be openai or bedrock.');
   }
-  const model = env.LLM_MODEL?.trim();
-  if (!model) throw new ModelConfigurationError('LLM_MODEL is required.');
+  const model = env.LLM_MODEL?.trim() || env.MODEL?.trim();
+  if (!model) throw new ModelConfigurationError('LLM_MODEL or MODEL is required.');
   if (provider === 'openai') {
-    const apiKey = env.LLM_API_KEY?.trim();
-    if (!apiKey) throw new ModelConfigurationError('LLM_API_KEY is required for the OpenAI-compatible provider.');
-    const baseUrl = env.LLM_BASE_URL?.trim() || 'https://api.openai.com/v1';
+    const apiKey = env.LLM_API_KEY?.trim() || env.OPENAI_API_KEY?.trim();
+    if (!apiKey) throw new ModelConfigurationError('LLM_API_KEY or OPENAI_API_KEY is required for the OpenAI-compatible provider.');
+    const baseUrl = env.LLM_BASE_URL?.trim() || env.OPENAI_BASE_URL?.trim() || 'https://api.openai.com/v1';
     let url: URL;
     try { url = new URL(baseUrl); } catch {
-      throw new ModelConfigurationError('LLM_BASE_URL must be an absolute HTTP(S) URL.');
+      throw new ModelConfigurationError('LLM_BASE_URL or OPENAI_BASE_URL must be an absolute HTTP(S) URL.');
     }
     if (!['http:', 'https:'].includes(url.protocol) || url.username || url.password) {
-      throw new ModelConfigurationError('LLM_BASE_URL must be an HTTP(S) URL without embedded credentials.');
+      throw new ModelConfigurationError('LLM_BASE_URL or OPENAI_BASE_URL must be an HTTP(S) URL without embedded credentials.');
     }
     return { provider, model, baseUrl, apiKey };
   }
@@ -107,9 +107,9 @@ export class ModelClient {
 
   constructor(config: ModelConfig = readModelConfig()) {
     this.config = config;
-    if (!config.model.trim()) throw new ModelConfigurationError('LLM_MODEL is required.');
+    if (!config.model.trim()) throw new ModelConfigurationError('LLM_MODEL or MODEL is required.');
     if (config.provider === 'openai') {
-      if (!config.apiKey) throw new ModelConfigurationError('LLM_API_KEY is required for the OpenAI-compatible provider.');
+      if (!config.apiKey) throw new ModelConfigurationError('LLM_API_KEY or OPENAI_API_KEY is required for the OpenAI-compatible provider.');
       this.openai = wrapOpenAI(new OpenAI({
         apiKey: config.apiKey,
         baseURL: config.baseUrl,

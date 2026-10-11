@@ -103,3 +103,46 @@ test('missing and unsafe model configuration fails before transport', () => {
   assert.throws(() => readModelConfig({ LLM_MODEL: 'example', LLM_API_KEY: 'synthetic', LLM_BASE_URL: 'https://user:password@example.com/v1' }), /embedded credentials/);
   assert.throws(() => readModelConfig({ LLM_PROVIDER: 'bedrock', LLM_MODEL: 'example', AWS_ACCESS_KEY_ID: 'synthetic' }), /Set both/);
 });
+
+test('organizer OpenAI-compatible aliases are trimmed and reach the configured transport', async () => {
+  const config = readModelConfig({
+    OPENAI_BASE_URL: ` ${baseUrl} \n`, OPENAI_API_KEY: ' synthetic-alias-key \t', MODEL: ' aliases \n',
+  });
+  assert.deepEqual(config, { provider: 'openai', baseUrl, apiKey: 'synthetic-alias-key', model: 'aliases' });
+  const model = new ModelClient(config);
+  const result = await model.next(messages, AbortSignal.timeout(5_000), 1);
+  assert.equal(counts.get('aliases'), 1);
+  assert.deepEqual(result.decision, { tool: 'observe', args: {}, summary: 'Inspect the page.' });
+});
+
+test('explicit nonblank LLM values take precedence over the organizer aliases', () => {
+  assert.deepEqual(readModelConfig({
+    LLM_PROVIDER: ' openai ',
+    LLM_BASE_URL: ' https://explicit.example/v1 ', OPENAI_BASE_URL: 'https://alias.example/v1',
+    LLM_API_KEY: ' synthetic-explicit-key ', OPENAI_API_KEY: 'synthetic-alias-key',
+    LLM_MODEL: ' explicit-model ', MODEL: 'alias-model',
+  }), {
+    provider: 'openai', baseUrl: 'https://explicit.example/v1', apiKey: 'synthetic-explicit-key', model: 'explicit-model',
+  });
+});
+
+test('blank LLM values fall back to aliases and blank base URLs retain the default', () => {
+  assert.deepEqual(readModelConfig({
+    LLM_PROVIDER: ' \t', LLM_BASE_URL: ' \n', LLM_API_KEY: ' \t', LLM_MODEL: ' ',
+    OPENAI_BASE_URL: ' https://alias.example/v1 ', OPENAI_API_KEY: ' synthetic-alias-key ', MODEL: ' alias-model ',
+  }), {
+    provider: 'openai', baseUrl: 'https://alias.example/v1', apiKey: 'synthetic-alias-key', model: 'alias-model',
+  });
+  assert.equal(readModelConfig({ LLM_BASE_URL: ' ', OPENAI_BASE_URL: ' \t', OPENAI_API_KEY: 'synthetic', MODEL: 'alias-model' }).baseUrl, 'https://api.openai.com/v1');
+  assert.throws(() => readModelConfig({ LLM_MODEL: ' ', MODEL: ' \n' }), /LLM_MODEL or MODEL/);
+  assert.throws(() => readModelConfig({ MODEL: 'alias-model', LLM_API_KEY: ' ', OPENAI_API_KEY: ' \n' }), /LLM_API_KEY or OPENAI_API_KEY/);
+});
+
+test('unsafe alias URLs fail validation and an unsafe explicit URL is not replaced by an alias', () => {
+  for (const OPENAI_BASE_URL of ['file:///tmp/synthetic', 'https://user:password@example.com/v1', 'not-an-absolute-url']) {
+    assert.throws(() => readModelConfig({ MODEL: 'alias-model', OPENAI_API_KEY: 'synthetic', OPENAI_BASE_URL }), ModelConfigurationError);
+  }
+  assert.throws(() => readModelConfig({
+    MODEL: 'alias-model', OPENAI_API_KEY: 'synthetic', OPENAI_BASE_URL: 'https://alias.example/v1', LLM_BASE_URL: 'ftp://explicit.example',
+  }), /HTTP\(S\) URL without embedded credentials/);
+});

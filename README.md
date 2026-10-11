@@ -6,7 +6,7 @@ The runner investigates one defect class in a controlled Chromium shop: cart ite
 
 ## Current status
 
-Agent A's engine is implemented and tested on explicit synthetic fixtures with real Chromium and standalone replay processes. A real LLM client and neatlogs integration are implemented. Neatlogs hosted Doctor now verifies finalized trace readback through an alternate trusted network; the original network failed TLS. Live discovery and acceptance of Agent B's shop have **not** passed: AWS inference permission is denied, and B's application branch is not integrated in this checkout. A successful Doctor is access evidence, not an investigation result.
+Agent A's engine is implemented and tested on explicit synthetic fixtures with real Chromium and standalone replay processes. The approved LiteLLM gateway has answered a real request to `claude-sonnet-4.6`; Bedrock is prohibited by the event rules and is no longer the access-recovery route. Neatlogs hosted Doctor previously verified finalized trace readback through a trusted hotspot; the current connection must pass again before real investigations. Live discovery and acceptance of Agent B's shop have **not** passed, and B's application branch is not integrated in this checkout. Access checks are not investigation results.
 
 See [engine handoff](scripts/ENGINE-STATUS.md), [access recovery and administrator requests](scripts/ACCESS-RECOVERY.md), [shared DOM contract](packages/contracts/DOM.md), [plan](plan.md), and B's [development log](hackathon.md). Synthetic tests are engineering checks, not live discovery evidence.
 
@@ -25,18 +25,18 @@ The suite checks API, budgets, browser isolation/refs, compiler, exact failure c
 
 ## Configure server access
 
-Copy `.env.example` to `.env`, then set `LLM_API_KEY`, `LLM_BASE_URL`, `LLM_MODEL` and `NEATLOGS_API_KEY` server-side. Alternatively set `BUGREPLAY_ENV_FILE=/absolute/path/to/private.env`; process environment overrides file values. This file is read explicitly and is never copied into the repository. Never use `VITE_` variables for keys.
+Copy `.env.example` to `.env`, then privately set `OPENAI_API_KEY` and `NEATLOGS_API_KEY` server-side. The template uses the supplied LiteLLM `OPENAI_BASE_URL=https://litellm.vision.aivar.app/v1` and `MODEL=claude-sonnet-4.6`. Keep `.env` ignored and owner-readable only. Alternatively set `BUGREPLAY_ENV_FILE=/absolute/path/to/private.env`; process environment overrides file values. Never use `VITE_` variables for keys.
 
-For AWS IAM, set `LLM_PROVIDER=bedrock`, `LLM_MODEL` to an accessible Bedrock model ID, `AWS_REGION`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY` (and temporary `AWS_SESSION_TOKEN` where applicable). The AWS SDK signs Converse requests. Console credentials or AWS credits alone do not prove inference permission. Do not put IAM secrets in `LLM_API_KEY`.
+Existing `LLM_BASE_URL`, `LLM_API_KEY`, and `LLM_MODEL` variables remain supported; each nonblank `LLM_*` value takes precedence over its organizer alias. Avoid retaining settings from a previous provider. Use `LLM_PROVIDER=openai` for the hackathon gateway. Do not call Bedrock or request IAM/SCP changes for this event.
 
 ```sh
 npm run doctor:neatlogs
 npm run smoke:llm
 ```
 
-For transport troubleshooting, `npm run doctor:network` checks certificate-verified TLS to the documented Neatlogs endpoints without reading or sending credentials. It saves a safe local diagnostic; it does not prove authenticated ingestion. The [access recovery guide](scripts/ACCESS-RECOVERY.md) records the confirmed AWS IAM/SCP denial and the observed hostname-dependent TLS failure.
+For transport troubleshooting, `npm run doctor:network` checks certificate-verified TLS to the documented Neatlogs endpoints without reading or sending credentials. It saves a safe local diagnostic; it does not prove authenticated ingestion. The [access recovery guide](scripts/ACCESS-RECOVERY.md) records the approved gateway configuration and the observed hostname-dependent TLS failure.
 
-Doctor must verify a finalized hosted readback. If it fails, real investigations stop with an honest blocker before opening the browser. Smoke checks API/JSON access only, not investigation quality. SDK spans capture workflow, browser tools, model requests, compilation and verification; shutdown drains telemetry.
+Doctor must verify a finalized hosted readback. If it fails, real investigations stop with an honest blocker before opening the browser. Smoke makes one real request, checks an exact valid tool decision, and saves `artifacts/tooling/llm-smoke-*.json`; it does not evaluate investigation quality. SDK spans capture workflow, browser tools, model requests, compilation and verification; shutdown drains telemetry.
 
 ## Start
 

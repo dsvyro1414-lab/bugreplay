@@ -1,51 +1,27 @@
 # Live access recovery
 
-Observed on October 11, 2026. These are access checks, not a real investigation or P0 acceptance. Credentials were read only into process memory. No IAM or organization policies were changed.
+Observed on October 11, 2026. These are access checks, not a real investigation or P0 acceptance. No IAM or organization policies were changed. The approved gateway key is stored only in ignored server-side `.env` with mode 0600.
 
-## AWS: administrator action required
+## LLM: use the approved LiteLLM gateway
 
-STS accepted the supplied IAM credentials. `GetUser` returned HTTP 200 with no permissions boundary. Real AWS SDK Converse requests in `us-east-1` to `openai.gpt-oss-120b-1:0` and `openai.gpt-oss-20b-1:0` both returned HTTP 403 because no identity-based policy allows `bedrock:InvokeModel`.
+The owner confirmed that Bedrock is prohibited by the hackathon rules. Do not request IAM/SCP changes or make further Bedrock calls for this event. The prior administrator-policy request is superseded by the supplied OpenAI-compatible LiteLLM route:
 
-After the hotspot restored Neatlogs, one fresh official SDK Converse access check to the selected 120B model still returned the same HTTP 403/missing identity permission. Evidence: `artifacts/tooling/aws-hotspot-access-smoke-1791732879989.json`. This was an API access check, not an investigation or a successful inference.
-
-For those exact model resources, `SimulatePrincipalPolicy` returned `explicitDeny`, `OrganizationsDecisionDetail.AllowedByOrganizations=false`, and no missing context keys. The simulation and live denial are complementary evidence; a successful simulation alone would still require a real invocation. IAM policy enumeration was itself denied by an SCP, so the exact organizational policy statement could not be inspected.
-
-An organization administrator must review the effective SCP hierarchy and permit the selected invocation. If an explicit Deny matches it, narrow/remove that restriction; adding another Allow cannot override it. The IAM identity also needs the following minimal policy. This file proposes a change for review; nothing has been applied.
-
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "BugReplayInvokeOneModel",
-      "Effect": "Allow",
-      "Action": "bedrock:InvokeModel",
-      "Resource": "arn:aws:bedrock:us-east-1::foundation-model/openai.gpt-oss-120b-1:0",
-      "Condition": {
-        "StringEquals": { "aws:RequestedRegion": "us-east-1" }
-      }
-    }
-  ]
-}
+```dotenv
+LLM_PROVIDER=openai
+OPENAI_BASE_URL=https://litellm.vision.aivar.app/v1
+OPENAI_API_KEY=<set privately in .env>
+MODEL=claude-sonnet-4.6
 ```
 
-Non-streaming Converse requires `bedrock:InvokeModel`; our runner does not need a streaming permission, administrator access, or model-listing access. AWS documents the model's in-region support in `us-east-1`. Account availability remains unverified: a correctly signed `GetFoundationModelAvailability` request was also denied for missing permission.
+The existing nonblank `LLM_BASE_URL`, `LLM_API_KEY`, and `LLM_MODEL` variables take precedence over their corresponding aliases. Avoid mixing old provider values with the new gateway settings. The OpenAI SDK appends `/chat/completions`; keep `/v1` as the base URL. `npm run smoke:llm` passed through the production client with the exact expected tool decision, one request, 133 input tokens, and 20 output tokens. Safe evidence: `artifacts/tooling/llm-smoke-1791742067478.json`. This access check does not run a browser investigation.
 
-Copy-paste request for the event's AWS administrator:
+The client continues to require valid JSON, and the investigation validates its tool-decision schema before acting. Bare `json_object` is not a verified strict JSON-schema guarantee for an Anthropic-backed proxy route. No provider change should relax these checks. Sources: [LiteLLM Anthropic parameters](https://docs.litellm.ai/docs/providers/anthropic), [official adapter](https://github.com/BerriAI/litellm/blob/main/litellm/llms/anthropic/chat/transformation.py), [proxy Chat Completions examples](https://docs.litellm.ai/docs/proxy/user_keys).
 
-> BugReplay cannot use the supplied AWS participant credentials for Bedrock inference. STS succeeds, but non-streaming Converse for openai.gpt-oss-120b-1:0 in us-east-1 returns AccessDeniedException: no identity-based policy allows bedrock:InvokeModel. IAM SimulatePrincipalPolicy for that exact model also returns explicitDeny and AllowedByOrganizations=false, with no missing context keys. Please adjust the effective organization SCP restriction and grant the participant identity the single-model policy above. Alternatively, provide an approved model/region/role that permits non-streaming Converse. We can retest immediately; please do not send secret keys in a public channel.
-
-Safe local evidence, deliberately ignored by Git:
-
-- `artifacts/tooling/aws-direct-converse-diagnosis-1791731995631.json`
-- `artifacts/tooling/aws-policy-simulation-20261011T152105Z.json`
-- `artifacts/tooling/aws-availability-diagnosis-1791732128797.json`
-
-The preliminary availability entries in `aws-readonly-diagnosis-20261011T151958Z.json` had a diagnostic URI-signing error. They do not establish availability or permission; the separate corrected availability artifact supersedes them. Do not publish the preliminary file, which also contains account authorization-detail references.
-
-Sources: [Converse permission](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html), [Organizations simulation detail](https://docs.aws.amazon.com/IAM/latest/APIReference/API_OrganizationsDecisionDetail.html), [SCP evaluation](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps_evaluation.html), [model card](https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-oss-120b.html).
+Historical AWS diagnostics are retained locally under ignored `artifacts/tooling/aws-*.json`. They establish the earlier denied calls, not a route to use for the event. The preliminary availability entries in `aws-readonly-diagnosis-20261011T151958Z.json` had a diagnostic URI-signing error and were superseded by `aws-availability-diagnosis-1791732128797.json`. Do not publish the preliminary file or its account authorization-detail references.
 
 ## Neatlogs: recovered through an alternate trusted network
+
+Latest recheck during the LiteLLM switch: the current connection again fails hosted Doctor (`FLUSH_TIMEOUT`, `BACKEND_CONNECTION_FAILED`) and verified TLS to both official ingest endpoints (`ERR_SSL_WRONG_VERSION_NUMBER`). Documentation TLS still passes. Evidence: `artifacts/tooling/neatlogs-preflight-1791741998629-32d1f44c.json`, `artifacts/tooling/neatlogs-network-diagnostic-2026-10-11T18-06-47-864Z.json`. Reconnect the verified working network and repeat Doctor before real investigation. The successful earlier comparison follows.
 
 After the owner switched to a personal hotspot, Node 24 verified TLS 1.3 and the certificates for both official ingest endpoints. The real hosted Doctor also passed, with finalized write/readback verified for trace `d8fc1cf3a0726f795610b560d6516746` using the existing key and default US endpoint. No key, endpoint, SDK, or TLS verification setting was changed. This proves the supplied key works for that hosted Doctor path; it does not establish a real investigation or validate the key against the EU endpoint.
 
@@ -77,6 +53,6 @@ Sources: [official endpoints](https://docs.neatlogs.com/sdk/typescript), [Doctor
 
 ## Resume the actual workflow
 
-With working AWS access, configure `LLM_PROVIDER=bedrock`, `LLM_MODEL=openai.gpt-oss-120b-1:0`, `AWS_REGION=us-east-1`, and server-only AWS credentials through the normal credential chain. Keep keys out of terminal command text, Git, and public support requests. Then run `npm run smoke:llm`. This checks model/JSON access only.
+Use the LiteLLM configuration above and run `npm run smoke:llm`. Keep credentials in server-only `.env`; never use `VITE_` variables or publish an unreviewed transcript containing keys. The local `.env` also contains the previously supplied Neatlogs project key so normal startup needs no credential-file override.
 
 Agent B must push the real `apps/demo-shop` and `apps/web` implementation to `agent-b-product`. On October 11, that remote branch still contained only planning; no shop listened on 4173/4174. A integrates the branch and starts the buggy shop, corrected control, runner, and UI. Only after hosted Doctor and model smoke both pass can `npm run test:acceptance` and `npm run eval` establish real discovery and unchanged control replay. No substitute shop or mock result is accepted as that evidence.
