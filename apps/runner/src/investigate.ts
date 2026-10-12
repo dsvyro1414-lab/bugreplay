@@ -56,7 +56,8 @@ export async function investigate(store: RunStore, id: string, config: RunnerCon
     }, null, 2));
     if (!run.artifacts.some(artifact => artifact.name === 'model-usage.json')) store.artifact(id, 'report', 'model-usage.json', 'application/json');
   };
-  const complete = (status: 'bug_confirmed'|'not_reproduced'|'inconclusive'|'cancelled'|'error', message: string) => {
+  const complete = async (status: 'bug_confirmed'|'not_reproduced'|'inconclusive'|'cancelled'|'error', message: string) => {
+    await browser?.close().catch(() => {});
     saveModelUsage();
     calls = client?.calls || calls;
     run.metrics.actions = browser?.actionCount || 0;
@@ -125,7 +126,7 @@ export async function investigate(store: RunStore, id: string, config: RunnerCon
           if (decision.tool === 'finishWithoutRepro') {
             const reason = z.object({ reason: z.string().min(1), testedConditions: z.array(z.string()) }).parse(args);
             history.push({ tool: decision.tool, ...reason });
-            complete(verifiedCandidate || browser.requiresRestart ? 'inconclusive' : 'not_reproduced', `Not reproduced within budget. ${reason.reason}`); return;
+            await complete(verifiedCandidate || browser.requiresRestart ? 'inconclusive' : 'not_reproduced', `Not reproduced within budget. ${reason.reason}`); return;
           }
           if (decision.tool === 'submitCandidate') {
             if (verificationUsedMs >= config.verificationMs) { history.push({ error: 'Verification budget exhausted.' }); break; }
@@ -157,15 +158,15 @@ export async function investigate(store: RunStore, id: string, config: RunnerCon
             history.push({ tool: 'submitCandidate', result });
             if (result.verdict === 'confirmed') {
               const remaining = Math.min(config.verificationMs - verificationUsedMs, totalDeadline - Date.now());
-              if (remaining <= 0) { complete('inconclusive', 'Two intended failures observed, but no time remains for the mandatory corrected control.'); return; }
+              if (remaining <= 0) { await complete('inconclusive', 'Two intended failures observed, but no time remains for the mandatory corrected control.'); return; }
               const controlStart = Date.now();
               const control = await withSpan('verifier.control', () => verifyReproduction({ dir, outputDir: join(candidateDir, 'control'), baseUrl: config.controlBaseUrl, attempts: 1, timeoutMs: remaining, signal }));
               verificationUsedMs += Date.now() - controlStart;
               writeFileSync(join(dir, 'control-verification.json'), JSON.stringify(control, null, 2));
               store.artifact(id, 'verification', 'control-verification.json', 'application/json');
               emit('verification', 'Executed the unchanged saved test on the corrected control.', { control });
-              if (control.attempts.length === 1 && control.attempts[0].classification === 'passed') complete('bug_confirmed', 'Regression assertion failed in 2/2 clean runs and the unchanged test passed on the corrected control.');
-              else complete('inconclusive', 'Intended failures reproduced, but the mandatory corrected control did not pass.');
+              if (control.attempts.length === 1 && control.attempts[0].classification === 'passed') await complete('bug_confirmed', 'Regression assertion failed in 2/2 clean runs and the unchanged test passed on the corrected control.');
+              else await complete('inconclusive', 'Intended failures reproduced, but the mandatory corrected control did not pass.');
               return;
             }
             store.status(id, 'investigating', 'Independent replay did not confirm the candidate; continuing from browser evidence.');
@@ -202,13 +203,13 @@ export async function investigate(store: RunStore, id: string, config: RunnerCon
         }
       }
       signal.removeEventListener('abort', closeOnAbort);
-      if (signal.aborted) complete(signal.reason?.message === 'User requested cancellation' ? 'cancelled' : 'inconclusive', signal.reason?.message || 'Run interrupted; partial evidence has been preserved.');
-      else complete(verifiedCandidate || browser.requiresRestart ? 'inconclusive' : 'not_reproduced', 'Investigation budget exhausted. No independently confirmed reproduction within budget.');
-    }, () => ({ 'bugreplay.verdict': terminalStatuses.includes(run.status) ? run.status : signal.aborted && signal.reason?.message === 'User requested cancellation' ? 'cancelled' : 'inconclusive', 'bugreplay.actions': browser?.actionCount || 0, 'bugreplay.model_calls': client?.calls || 0, 'bugreplay.elapsed_ms': Date.now() - started,
-      ...(run.metrics.inputTokens !== undefined ? { 'bugreplay.input_tokens': run.metrics.inputTokens } : {}), ...(run.metrics.outputTokens !== undefined ? { 'bugreplay.output_tokens': run.metrics.outputTokens } : {}) }));
+      if (signal.aborted) await complete(signal.reason?.message === 'User requested cancellation' ? 'cancelled' : 'inconclusive', signal.reason?.message || 'Run interrupted; partial evidence has been preserved.');
+      else await complete(verifiedCandidate || browser.requiresRestart ? 'inconclusive' : 'not_reproduced', 'Investigation budget exhausted. No independently confirmed reproduction within budget.');
+    }, () => { saveModelUsage(); return { 'bugreplay.verdict': terminalStatuses.includes(run.status) ? run.status : signal.aborted && signal.reason?.message === 'User requested cancellation' ? 'cancelled' : 'inconclusive', 'bugreplay.actions': browser?.actionCount || 0, 'bugreplay.model_calls': client?.calls || 0, 'bugreplay.elapsed_ms': Date.now() - started,
+      ...(run.metrics.inputTokens !== undefined ? { 'bugreplay.input_tokens': run.metrics.inputTokens } : {}), ...(run.metrics.outputTokens !== undefined ? { 'bugreplay.output_tokens': run.metrics.outputTokens } : {}) }; });
   } catch (error) {
-    if (signal.aborted) complete(signal.reason?.message === 'User requested cancellation' ? 'cancelled' : 'inconclusive', signal.reason?.message || 'Run interrupted; partial evidence has been preserved.');
-    else complete('inconclusive', error instanceof Error ? error.message : 'Investigation blocked');
+    if (signal.aborted) await complete(signal.reason?.message === 'User requested cancellation' ? 'cancelled' : 'inconclusive', signal.reason?.message || 'Run interrupted; partial evidence has been preserved.');
+    else await complete('inconclusive', error instanceof Error ? error.message : 'Investigation blocked');
   } finally {
     removeAbortListener();
     saveModelUsage();

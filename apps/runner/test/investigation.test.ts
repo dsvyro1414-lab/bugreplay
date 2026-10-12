@@ -142,6 +142,11 @@ test('synthetic model drives the real loop to 2 intended failures and an unchang
     });
   });
   const injected = injectedServices(model);
+  const publishStatus = store.status.bind(store);
+  store.status = (id, status, message) => {
+    if (status === 'bug_confirmed') assert.ok(run.artifacts.some(artifact => artifact.name === 'investigation-episode-1.webm'), 'Terminal result must already expose the finalized original investigation');
+    return publishStatus(id, status, message);
+  };
   try {
     await investigate(store, run.id, config, new AbortController().signal, injected.services);
     assert.equal(run.status, 'bug_confirmed', JSON.stringify(run.events.filter(event => ['verification', 'tool_error', 'completed'].includes(event.type)).map(event => ({

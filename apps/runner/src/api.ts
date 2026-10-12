@@ -13,7 +13,7 @@ export async function createApp(options: {
   const config = options.config || loadConfig(), store = new RunStore(config.artifactRoot);
   const app = Fastify({ logger: false, bodyLimit: 16000 });
   let active: { id: string; controller: AbortController; task: Promise<void> } | undefined;
-  app.get('/api/health', async () => ({ status: 'ok', activeRunId: active?.id, configured: { model: Boolean(process.env.LLM_MODEL), neatlogs: Boolean(process.env.NEATLOGS_API_KEY) } }));
+  app.get('/api/health', async () => ({ status: 'ok', activeRunId: active?.id, configured: { model: Boolean(process.env.LLM_MODEL?.trim() || process.env.MODEL?.trim()), neatlogs: Boolean(process.env.NEATLOGS_API_KEY) } }));
   app.post('/api/runs', async (request, reply) => {
     const parsed = createRunSchema.safeParse(request.body);
     if (!parsed.success) return reply.code(400).send({ error: 'Invalid run input', issues: parsed.error.issues });
