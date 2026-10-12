@@ -1,0 +1,50 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4RCTKDH90PJYT605T6R68JH",
+  "session_id": "01a13092-b55e-7cd2-88cc-6665d59d79dc",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-12T15:48:50.936596Z",
+  "branch": "agent-a-engine",
+  "checkpoints_count": 3,
+  "save_step_count": 1,
+  "files_touched": [
+    "README.md",
+    "docs/evidence/finance/README.md",
+    "docs/evidence/finance/build-cost-ledger.mjs",
+    "docs/evidence/finance/cfo-workspace-review.md",
+    "docs/evidence/finance/neatlogs-usage-recoveries.json",
+    "docs/evidence/index.md",
+    "docs/evidence/live-baseline-2026-10-12/README.md",
+    "docs/evidence/live-improvement-2026-10-12/README.md",
+    "docs/evidence/live-second-series-2026-10-12/README.md",
+    "docs/evidence/live-third-series-2026-10-12/README.md",
+    "docs/evidence/live-third-series-2026-10-12/submission-checklist.md"
+  ],
+  "agent": "Codex",
+  "model": "gpt-6.1-sol",
+  "turn_id": "cee6c788f211",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 807865,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 46400512,
+    "output_tokens": 79893,
+    "api_call_count": 429,
+    "subagent_tokens_complete": false
+  },
+  "session_metrics": {
+    "turn_count": 3
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-12T15:48:50.606829Z",
+    "agent_lines": 396,
+    "agent_removed": 1,
+    "human_added": 18443,
+    "human_modified": 26,
+    "human_removed": 0,
+    "total_committed": 18865,
+    "total_lines_changed": 18891,
+    "agent_percentage": 2.1015298290191096,
+    "metric_version": 2
+  }
+}
