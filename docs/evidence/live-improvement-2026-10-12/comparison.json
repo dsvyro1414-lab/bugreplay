@@ -1,0 +1,684 @@
+{
+  "kind": "reviewed_response_format_improvement_stage_record",
+  "recordedAtUtc": "2026-10-12T15:36:41.085749+00:00",
+  "scope": "Recorded stage history through fourth cohort; only one selected fourth-stage controlled-shop discovery is confirmed. No cost or latency improvement is claimed.",
+  "stages": {
+    "baseline_60d2294": {
+      "runs": [
+        {
+          "runId": "e07bdfa3-c839-4e68-b784-640244403b2c",
+          "status": "inconclusive",
+          "targetUrl": "http://localhost:4173",
+          "input": {
+            "targetUrl": "http://localhost:4173",
+            "complaint": "Sometimes the cart becomes empty after I change the delivery address. Find the conditions that cause this.",
+            "expected": "Cart items and quantities must be preserved after saving a changed delivery address.",
+            "oracleKind": "cart_preserved_after_checkout_change"
+          },
+          "inputSha256": "9a66ceeb7cd0c77612d88ad52faa4aa0e789ab2144ff58d1593f845b09005bfc",
+          "gitSha": "60d22946616664235546ed81817f60ded57957db",
+          "model": "claude-sonnet-4.6",
+          "traceId": "17af3d753892ebeeff61afa08ee24492",
+          "traceUrl": "https://app.neatlogs.com/traces/17af3d753892ebeeff61afa08ee24492",
+          "metrics": {
+            "actions": 5,
+            "elapsedMs": 15818,
+            "inputTokens": 8887,
+            "outputTokens": 288
+          },
+          "modelAttempts": 6,
+          "modelAttemptsSource": "report.md only; no per-call ledger",
+          "normalizedResponses": 0,
+          "normalizedSource": "strict parser did not support normalization at this SHA",
+          "formatFailureTermination": true,
+          "runJsonSha256": "05265eaa4f96aae5b2f6e10c26f72d6729db3ca6179a400f371211185521b77d",
+          "traceJsonSha256": "2abad6b5b4a377202519760670faa935b7c04b7d74ba2240905026b8ca245981",
+          "ledgerSha256": null
+        },
+        {
+          "runId": "6992fe74-3395-430a-95ab-d73c207d70b6",
+          "status": "inconclusive",
+          "targetUrl": "http://localhost:4173",
+          "input": {
+            "targetUrl": "http://localhost:4173",
+            "complaint": "Sometimes the cart becomes empty after I change the delivery address. Find the conditions that cause this.",
+            "expected": "Cart items and quantities must be preserved after saving a changed delivery address.",
+            "oracleKind": "cart_preserved_after_checkout_change"
+          },
+          "inputSha256": "9a66ceeb7cd0c77612d88ad52faa4aa0e789ab2144ff58d1593f845b09005bfc",
+          "gitSha": "60d22946616664235546ed81817f60ded57957db",
+          "model": "claude-sonnet-4.6",
+          "traceId": "9def2222c525da5cd96e9f033c7a8c40",
+          "traceUrl": "https://app.neatlogs.com/traces/9def2222c525da5cd96e9f033c7a8c40",
+          "metrics": {
+            "actions": 4,
+            "elapsedMs": 10446,
+            "inputTokens": 6571,
+            "outputTokens": 207
+          },
+          "modelAttempts": 5,
+          "modelAttemptsSource": "report.md only; no per-call ledger",
+          "normalizedResponses": 0,
+          "normalizedSource": "strict parser did not support normalization at this SHA",
+          "formatFailureTermination": true,
+          "runJsonSha256": "8bda636ae0a9d42c6f09ec70878ff983343136b58f90b5b2250cc5ed4e93d6a3",
+          "traceJsonSha256": "c537ab98489c7b0b5eb5ad4a8ddb858c6f6bf572ace55c5637bf862b6e01fc9d",
+          "ledgerSha256": null
+        },
+        {
+          "runId": "7e60e53a-1a02-4f81-918d-24649030fae0",
+          "status": "inconclusive",
+          "targetUrl": "http://localhost:4173",
+          "input": {
+            "targetUrl": "http://localhost:4173",
+            "complaint": "Sometimes the cart becomes empty after I change the delivery address. Find the conditions that cause this.",
+            "expected": "Cart items and quantities must be preserved after saving a changed delivery address.",
+            "oracleKind": "cart_preserved_after_checkout_change"
+          },
+          "inputSha256": "9a66ceeb7cd0c77612d88ad52faa4aa0e789ab2144ff58d1593f845b09005bfc",
+          "gitSha": "60d22946616664235546ed81817f60ded57957db",
+          "model": "claude-sonnet-4.6",
+          "traceId": "b2aeb7ba5a5169b5cfcc6c4e85222c21",
+          "traceUrl": "https://app.neatlogs.com/traces/b2aeb7ba5a5169b5cfcc6c4e85222c21",
+          "metrics": {
+            "actions": 4,
+            "elapsedMs": 10590,
+            "inputTokens": 6502,
+            "outputTokens": 204
+          },
+          "modelAttempts": 5,
+          "modelAttemptsSource": "report.md only; no per-call ledger",
+          "normalizedResponses": 0,
+          "normalizedSource": "strict parser did not support normalization at this SHA",
+          "formatFailureTermination": true,
+          "runJsonSha256": "37bf11efe2607f4520d939eaf848cb3a0c4a91ded4ce4c299210cc0d9c532d48",
+          "traceJsonSha256": "0bd0ddf4411099243f7a9508830e978e260f36edea4a2ffb788209afcdb51800",
+          "ledgerSha256": null
+        },
+        {
+          "runId": "39b9bed4-fca9-4884-a7b9-3035fc860685",
+          "status": "inconclusive",
+          "targetUrl": "http://localhost:4174",
+          "input": {
+            "targetUrl": "http://localhost:4174",
+            "complaint": "Sometimes the cart becomes empty after I change the delivery address. Find the conditions that cause this.",
+            "expected": "Cart items and quantities must be preserved after saving a changed delivery address.",
+            "oracleKind": "cart_preserved_after_checkout_change"
+          },
+          "inputSha256": "ada907865b553ffcb72a084dd862bfbb93ad0d5644af2ebbaf6f28310cd0f59a",
+          "gitSha": "60d22946616664235546ed81817f60ded57957db",
+          "model": "claude-sonnet-4.6",
+          "traceId": "3efb728f257f7b218895df26999aae68",
+          "traceUrl": "https://app.neatlogs.com/traces/3efb728f257f7b218895df26999aae68",
+          "metrics": {
+            "actions": 4,
+            "elapsedMs": 10073,
+            "inputTokens": 6546,
+            "outputTokens": 194
+          },
+          "modelAttempts": 5,
+          "modelAttemptsSource": "report.md only; no per-call ledger",
+          "normalizedResponses": 0,
+          "normalizedSource": "strict parser did not support normalization at this SHA",
+          "formatFailureTermination": true,
+          "runJsonSha256": "c040e5d7d92ee7fee04348d7c3aeec48718ddaf477d591f89bc49680a629a020",
+          "traceJsonSha256": "3b7e4dc0777ba9a0d32ba0e5bd38c7deff2a2412b6a845307104d2a5da9be9d7",
+          "ledgerSha256": null
+        }
+      ],
+      "cohortSize": 4,
+      "buggyRuns": 3,
+      "fixedRuns": 1,
+      "formatFailureTerminations": 4,
+      "notReproduced": 0,
+      "bugConfirmed": 0,
+      "actionsTotal": 17,
+      "elapsedMsTotal": 46927,
+      "inputTokensRecorded": 28506,
+      "outputTokensRecorded": 893,
+      "modelAttempts": 21,
+      "normalizedResponses": 0,
+      "usageCompleteForReceivedResponses": false
+    },
+    "after_f7bee47": {
+      "runs": [
+        {
+          "runId": "5a3547da-c82d-4847-b67e-3985407c7fe3",
+          "status": "inconclusive",
+          "targetUrl": "http://localhost:4173",
+          "input": {
+            "targetUrl": "http://localhost:4173",
+            "complaint": "Sometimes the cart becomes empty after I change the delivery address. Find the conditions that cause this.",
+            "expected": "Cart items and quantities must be preserved after saving a changed delivery address.",
+            "oracleKind": "cart_preserved_after_checkout_change"
+          },
+          "inputSha256": "9a66ceeb7cd0c77612d88ad52faa4aa0e789ab2144ff58d1593f845b09005bfc",
+          "gitSha": "f7bee47c254afc38683b87ad6d30899f16180a47",
+          "model": "claude-sonnet-4.6",
+          "traceId": "e9d1f57913a26fc16ab91d21acf313ab",
+          "traceUrl": "https://app.neatlogs.com/traces/e9d1f57913a26fc16ab91d21acf313ab",
+          "metrics": {
+            "actions": 6,
+            "elapsedMs": 25978,
+            "inputTokens": 26994,
+            "outputTokens": 767
+          },
+          "modelAttempts": 12,
+          "modelAttemptsSource": "model-usage.json and report.md",
+          "normalizedResponses": 1,
+          "normalizedSource": "model-usage.json",
+          "formatFailureTermination": true,
+          "runJsonSha256": "06c999d932053ef21537aea646d103115c538cbedad54bc7285bfa7a3363fed3",
+          "traceJsonSha256": "cc201b4129a95255c1dc75e52387690190af5124cad3ec2c6528931575906492",
+          "ledgerSha256": "8994fd33abd77c263aebb915f8991b38dc1c5470d9994f6bfa82e82d93410ed8"
+        },
+        {
+          "runId": "5e7c759d-aedf-4102-b17c-a5f3ecff5104",
+          "status": "not_reproduced",
+          "targetUrl": "http://localhost:4173",
+          "input": {
+            "targetUrl": "http://localhost:4173",
+            "complaint": "Sometimes the cart becomes empty after I change the delivery address. Find the conditions that cause this.",
+            "expected": "Cart items and quantities must be preserved after saving a changed delivery address.",
+            "oracleKind": "cart_preserved_after_checkout_change"
+          },
+          "inputSha256": "9a66ceeb7cd0c77612d88ad52faa4aa0e789ab2144ff58d1593f845b09005bfc",
+          "gitSha": "f7bee47c254afc38683b87ad6d30899f16180a47",
+          "model": "claude-sonnet-4.6",
+          "traceId": "9a9a30c5ba6ca76fb6c5272c88303509",
+          "traceUrl": "https://app.neatlogs.com/traces/9a9a30c5ba6ca76fb6c5272c88303509",
+          "metrics": {
+            "actions": 16,
+            "elapsedMs": 60974,
+            "inputTokens": 65169,
+            "outputTokens": 2195
+          },
+          "modelAttempts": 24,
+          "modelAttemptsSource": "model-usage.json and report.md",
+          "normalizedResponses": 13,
+          "normalizedSource": "model-usage.json",
+          "formatFailureTermination": false,
+          "runJsonSha256": "92b3b7086b9d542d11467037602ddffae4121b666b9ecaa46105c047be1c3f00",
+          "traceJsonSha256": "588df7fa56d12d316134d3ccf9143aa5418b731c8d487f03220dc31cc3a1a9be",
+          "ledgerSha256": "c03bd2ef720da648a973f869473073c86d892e22de7223305688e92bb8a8301d"
+        },
+        {
+          "runId": "19ecc208-aa4c-47ce-bc92-5e3523dfae59",
+          "status": "not_reproduced",
+          "targetUrl": "http://localhost:4173",
+          "input": {
+            "targetUrl": "http://localhost:4173",
+            "complaint": "Sometimes the cart becomes empty after I change the delivery address. Find the conditions that cause this.",
+            "expected": "Cart items and quantities must be preserved after saving a changed delivery address.",
+            "oracleKind": "cart_preserved_after_checkout_change"
+          },
+          "inputSha256": "9a66ceeb7cd0c77612d88ad52faa4aa0e789ab2144ff58d1593f845b09005bfc",
+          "gitSha": "f7bee47c254afc38683b87ad6d30899f16180a47",
+          "model": "claude-sonnet-4.6",
+          "traceId": "1575755f80c23e9c8e4c2a378599dd16",
+          "traceUrl": "https://app.neatlogs.com/traces/1575755f80c23e9c8e4c2a378599dd16",
+          "metrics": {
+            "actions": 19,
+            "elapsedMs": 86806,
+            "inputTokens": 115544,
+            "outputTokens": 2605
+          },
+          "modelAttempts": 40,
+          "modelAttemptsSource": "model-usage.json and report.md",
+          "normalizedResponses": 17,
+          "normalizedSource": "model-usage.json",
+          "formatFailureTermination": false,
+          "runJsonSha256": "abe3b0828f553a63c7e95d5584bc4ad6881c4b89f41e2ce5451ad0ac5a9489f4",
+          "traceJsonSha256": "a165fa5ae7e3744faa75bb40a41f61fc965b120787b366f1f45e5794809c121c",
+          "ledgerSha256": "33cd6360f5dd46318c70bc9f7a53801c778b13c47de7ff592347f9630c8b3963"
+        },
+        {
+          "runId": "c4010a11-3341-416c-a863-52aff89893a5",
+          "status": "inconclusive",
+          "targetUrl": "http://localhost:4174",
+          "input": {
+            "targetUrl": "http://localhost:4174",
+            "complaint": "Sometimes the cart becomes empty after I change the delivery address. Find the conditions that cause this.",
+            "expected": "Cart items and quantities must be preserved after saving a changed delivery address.",
+            "oracleKind": "cart_preserved_after_checkout_change"
+          },
+          "inputSha256": "ada907865b553ffcb72a084dd862bfbb93ad0d5644af2ebbaf6f28310cd0f59a",
+          "gitSha": "f7bee47c254afc38683b87ad6d30899f16180a47",
+          "model": "claude-sonnet-4.6",
+          "traceId": "4b3000d934ad2ce868c24e2e7ad9964d",
+          "traceUrl": "https://app.neatlogs.com/traces/4b3000d934ad2ce868c24e2e7ad9964d",
+          "metrics": {
+            "actions": 6,
+            "elapsedMs": 19171,
+            "inputTokens": 18847,
+            "outputTokens": 599
+          },
+          "modelAttempts": 9,
+          "modelAttemptsSource": "model-usage.json and report.md",
+          "normalizedResponses": 2,
+          "normalizedSource": "model-usage.json",
+          "formatFailureTermination": true,
+          "runJsonSha256": "bf3b3f12df01a9d2d326992afcce773a76da828d75aea3b50087fbf7643ac675",
+          "traceJsonSha256": "8200e54e54c78bc350a3c8c010464620bfd1101350459a2fac6e5bbb97a36782",
+          "ledgerSha256": "64873a34228d5f23002c652ee11f2e86b8bbbcc9411f1bbe0c20a63c77db3a8f"
+        }
+      ],
+      "cohortSize": 4,
+      "buggyRuns": 3,
+      "fixedRuns": 1,
+      "formatFailureTerminations": 2,
+      "notReproduced": 2,
+      "bugConfirmed": 0,
+      "actionsTotal": 47,
+      "elapsedMsTotal": 192929,
+      "inputTokensRecorded": 226554,
+      "outputTokensRecorded": 6166,
+      "modelAttempts": 85,
+      "normalizedResponses": 33,
+      "usageCompleteForReceivedResponses": true
+    },
+    "after_2b541b2": {
+      "runs": [
+        {
+          "runId": "247e9123-b7aa-46d6-9f36-936a6531960e",
+          "status": "not_reproduced",
+          "targetUrl": "http://localhost:4173",
+          "input": {
+            "targetUrl": "http://localhost:4173",
+            "complaint": "Sometimes the cart becomes empty after I change the delivery address. Find the conditions that cause this.",
+            "expected": "Cart items and quantities must be preserved after saving a changed delivery address.",
+            "oracleKind": "cart_preserved_after_checkout_change"
+          },
+          "inputSha256": "9a66ceeb7cd0c77612d88ad52faa4aa0e789ab2144ff58d1593f845b09005bfc",
+          "gitSha": "2b541b20a97ef3df4261529bd48089792e01f2af",
+          "model": "claude-sonnet-4.6",
+          "traceId": "027267f231876a46d5451fcd8e7ef6d5",
+          "traceUrl": "https://app.neatlogs.com/traces/027267f231876a46d5451fcd8e7ef6d5",
+          "metrics": {
+            "actions": 14,
+            "elapsedMs": 63924,
+            "inputTokens": 60315,
+            "outputTokens": 2220,
+            "costUsd": 0.23566949999999998
+          },
+          "modelAttempts": 22,
+          "modelAttemptsSource": "complete per-call model-usage.json",
+          "normalizedResponses": 13,
+          "invalidResponses": 1,
+          "formatFailureTermination": false,
+          "terminalEvent": {
+            "type": "completed",
+            "status": "not_reproduced",
+            "message": "Not reproduced within budget. Tested all four declared hypotheses: (1) changing delivery address to a new value and saving, (2) changing delivery method and saving, (3) changing both address and delivery method simultaneously and saving, (4) applying a promo code then changing delivery address and saving. In all cases the cart remained intact with the same 2 items (canvas-pouch qty 1, desk-notebook qty 1). Could not reproduce the cart-clearing behavior described in the complaint within the available budget.",
+            "id": 95,
+            "runId": "247e9123-b7aa-46d6-9f36-936a6531960e",
+            "at": "2026-10-12T15:27:21.455Z"
+          },
+          "boundedFormatToolErrors": 0,
+          "runJsonSha256": "650c4773b8ca1e93bfe1cca8d73ff6d4bf19a55dc8f3b3eba7911a0e63c73e0f",
+          "traceJsonSha256": "baa43b5716581136cfe06ab759733c3dcb742110c99cd79ad91e9b76f3e8294d",
+          "ledgerSha256": "f871133f0b306acc7836f616f4e78136306071ff7c65055d378f902e0a24e261"
+        },
+        {
+          "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+          "status": "bug_confirmed",
+          "targetUrl": "http://localhost:4173",
+          "input": {
+            "targetUrl": "http://localhost:4173",
+            "complaint": "Sometimes the cart becomes empty after I change the delivery address. Find the conditions that cause this.",
+            "expected": "Cart items and quantities must be preserved after saving a changed delivery address.",
+            "oracleKind": "cart_preserved_after_checkout_change"
+          },
+          "inputSha256": "9a66ceeb7cd0c77612d88ad52faa4aa0e789ab2144ff58d1593f845b09005bfc",
+          "gitSha": "2b541b20a97ef3df4261529bd48089792e01f2af",
+          "model": "claude-sonnet-4.6",
+          "traceId": "9096d7e75454f94d4c9cd11011604e13",
+          "traceUrl": "https://app.neatlogs.com/traces/9096d7e75454f94d4c9cd11011604e13",
+          "metrics": {
+            "actions": 13,
+            "elapsedMs": 51651,
+            "inputTokens": 41069,
+            "outputTokens": 1261,
+            "costUsd": 0.1563342
+          },
+          "modelAttempts": 16,
+          "modelAttemptsSource": "complete per-call model-usage.json",
+          "normalizedResponses": 4,
+          "invalidResponses": 1,
+          "formatFailureTermination": false,
+          "terminalEvent": {
+            "type": "completed",
+            "status": "bug_confirmed",
+            "message": "Regression assertion failed in 2/2 clean runs and the unchanged test passed on the corrected control.",
+            "id": 82,
+            "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+            "at": "2026-10-12T15:28:13.470Z"
+          },
+          "boundedFormatToolErrors": 0,
+          "runJsonSha256": "fac19aa68b195405d52bab5637181d02a726ff8c8fbf04ecf5a6f758f57c6307",
+          "traceJsonSha256": "005ee5b97ddafcd89b969828946873476d13fe290f15c823e5da7df26db617e2",
+          "ledgerSha256": "9161a886c472a2ff25a4a2629ccbc9e6c21ae25c54c7869b595a42b805abe73f"
+        },
+        {
+          "runId": "7c259071-2c8c-45ee-8c65-5fafa1395ae7",
+          "status": "not_reproduced",
+          "targetUrl": "http://localhost:4173",
+          "input": {
+            "targetUrl": "http://localhost:4173",
+            "complaint": "Sometimes the cart becomes empty after I change the delivery address. Find the conditions that cause this.",
+            "expected": "Cart items and quantities must be preserved after saving a changed delivery address.",
+            "oracleKind": "cart_preserved_after_checkout_change"
+          },
+          "inputSha256": "9a66ceeb7cd0c77612d88ad52faa4aa0e789ab2144ff58d1593f845b09005bfc",
+          "gitSha": "2b541b20a97ef3df4261529bd48089792e01f2af",
+          "model": "claude-sonnet-4.6",
+          "traceId": "4f4742b8ed44fb9a03f3c343721c4f39",
+          "traceUrl": "https://app.neatlogs.com/traces/4f4742b8ed44fb9a03f3c343721c4f39",
+          "metrics": {
+            "actions": 20,
+            "elapsedMs": 64727,
+            "inputTokens": 64690,
+            "outputTokens": 2245,
+            "costUsd": 0.2505195
+          },
+          "modelAttempts": 24,
+          "modelAttemptsSource": "complete per-call model-usage.json",
+          "normalizedResponses": 11,
+          "invalidResponses": 0,
+          "formatFailureTermination": false,
+          "terminalEvent": {
+            "type": "completed",
+            "status": "not_reproduced",
+            "message": "Not reproduced within budget. All four hypotheses were tested across multiple save sequences and delivery method changes with promo code applied. In every case the cart was preserved after saving a changed delivery address. No conditions were found that caused cart emptying.",
+            "id": 113,
+            "runId": "7c259071-2c8c-45ee-8c65-5fafa1395ae7",
+            "at": "2026-10-12T15:29:18.721Z"
+          },
+          "boundedFormatToolErrors": 0,
+          "runJsonSha256": "158959b80e39b5504e5a766f38e2c706246a802717caa1927d848899a5e9e9fd",
+          "traceJsonSha256": "ab38e045b664db4eb44bddffe0af34ff6c0689c4aa192ca3aaa846ca9a802e49",
+          "ledgerSha256": "d2e6840addd82f09a5fe2e55b7898bb57ad478c9e444c893d22599c4f131e75a"
+        },
+        {
+          "runId": "6d85b46a-df25-42a9-abe9-54978f07d964",
+          "status": "not_reproduced",
+          "targetUrl": "http://localhost:4174",
+          "input": {
+            "targetUrl": "http://localhost:4174",
+            "complaint": "Sometimes the cart becomes empty after I change the delivery address. Find the conditions that cause this.",
+            "expected": "Cart items and quantities must be preserved after saving a changed delivery address.",
+            "oracleKind": "cart_preserved_after_checkout_change"
+          },
+          "inputSha256": "ada907865b553ffcb72a084dd862bfbb93ad0d5644af2ebbaf6f28310cd0f59a",
+          "gitSha": "2b541b20a97ef3df4261529bd48089792e01f2af",
+          "model": "claude-sonnet-4.6",
+          "traceId": "4dcbbafed6c704e582955a33003bd4a8",
+          "traceUrl": "https://app.neatlogs.com/traces/4dcbbafed6c704e582955a33003bd4a8",
+          "metrics": {
+            "actions": 21,
+            "elapsedMs": 73639,
+            "inputTokens": 82219,
+            "outputTokens": 2476,
+            "costUsd": 0.31217670000000003
+          },
+          "modelAttempts": 30,
+          "modelAttemptsSource": "complete per-call model-usage.json",
+          "normalizedResponses": 16,
+          "invalidResponses": 2,
+          "formatFailureTermination": false,
+          "terminalEvent": {
+            "type": "completed",
+            "status": "not_reproduced",
+            "message": "Not reproduced within budget. All plausible conditions were tested: (1) changing address to new value and saving, (2) switching to Express method and saving, (3) combining new address + Express method with 2 items, (4) making a second sequential save in the same session. In every case the cart was fully preserved after saving the delivery address. No cart-preservation violation was observed.",
+            "id": 130,
+            "runId": "6d85b46a-df25-42a9-abe9-54978f07d964",
+            "at": "2026-10-12T15:30:32.878Z"
+          },
+          "boundedFormatToolErrors": 1,
+          "runJsonSha256": "46d4680d451a92abe485b377fa8b536cac33fedf12c5354f207e44bf8ad1d4ad",
+          "traceJsonSha256": "e902927150556ea795367c5c875ffb8f68193379144e881ba4840948456181ef",
+          "ledgerSha256": "1f3de13f4427fdfa238c8319885f46a83c39c4dff9f217a7ef0c173ff41abba5"
+        }
+      ],
+      "cohortSize": 4,
+      "buggyRuns": 3,
+      "fixedRuns": 1,
+      "formatFailureTerminations": 0,
+      "notReproduced": 3,
+      "bugConfirmed": 1,
+      "buggyDiscoveryNumerator": 1,
+      "buggyDiscoveryDenominator": 3,
+      "actionsTotal": 68,
+      "elapsedMsTotal": 253941,
+      "inputTokensRecorded": 248293,
+      "outputTokensRecorded": 8202,
+      "modelAttempts": 92,
+      "invalidResponses": 4,
+      "normalizedResponses": 44,
+      "usageCompleteForReceivedResponses": true,
+      "gatewayCostUsd": 0.9546999,
+      "gatewayCostSource": "x-litellm-response-cost",
+      "billingCostUsd": null,
+      "allOutcomesArchived": {
+        "archive": "artifacts/archives/fourth-series-originals-20261012T153512Z.tar.gz",
+        "sha256": "8e0582f58648da72f38c34a7f227631cc79e934a72e394341f0270058c336f5d",
+        "bytes": 43430562,
+        "originalFileCount": 159,
+        "originalManifest": "artifacts/archives/fourth-series-originals-20261012T153512Z/original-manifest.json"
+      }
+    }
+  },
+  "selectedCase": {
+    "before": {
+      "runId": "70582bba-ec4a-4d46-9846-ecc305ec36fb",
+      "gitSha": "b8e9f7c995f021deb88e8e2acb8be38bb985ca1e",
+      "model": "claude-sonnet-4.6",
+      "traceId": "f997c43d7542b0c7baefb66cd610fe33",
+      "traceUrl": "https://app.neatlogs.com/traces/f997c43d7542b0c7baefb66cd610fe33",
+      "input": {
+        "targetUrl": "http://localhost:4173",
+        "complaint": "Sometimes the cart becomes empty after I change the delivery address. Find the conditions that cause this.",
+        "expected": "Cart items and quantities must be preserved after saving a changed delivery address.",
+        "oracleKind": "cart_preserved_after_checkout_change"
+      },
+      "status": "inconclusive",
+      "metrics": {
+        "actions": 5,
+        "elapsedMs": 17465,
+        "inputTokens": 11250,
+        "outputTokens": 323
+      },
+      "modelAttempts": 6,
+      "normalizedResponses": 0,
+      "invalidResponses": 1,
+      "usageCompleteForReceivedResponses": true,
+      "sourceRunJsonSha256": "0c073b7a6f414bae8e81a3ca23e68b77f5f7996f5c14003f5edb589d03010bc3"
+    },
+    "after": {
+      "runId": "5e7c759d-aedf-4102-b17c-a5f3ecff5104",
+      "gitSha": "f7bee47c254afc38683b87ad6d30899f16180a47",
+      "model": "claude-sonnet-4.6",
+      "traceId": "9a9a30c5ba6ca76fb6c5272c88303509",
+      "traceUrl": "https://app.neatlogs.com/traces/9a9a30c5ba6ca76fb6c5272c88303509",
+      "input": {
+        "targetUrl": "http://localhost:4173",
+        "complaint": "Sometimes the cart becomes empty after I change the delivery address. Find the conditions that cause this.",
+        "expected": "Cart items and quantities must be preserved after saving a changed delivery address.",
+        "oracleKind": "cart_preserved_after_checkout_change"
+      },
+      "status": "not_reproduced",
+      "metrics": {
+        "actions": 16,
+        "elapsedMs": 60974,
+        "inputTokens": 65169,
+        "outputTokens": 2195
+      },
+      "modelAttempts": 24,
+      "normalizedResponses": 13,
+      "invalidResponses": 1,
+      "usageCompleteForReceivedResponses": true,
+      "sourceRunJsonSha256": "92b3b7086b9d542d11467037602ddffae4121b666b9ecaa46105c047be1c3f00"
+    },
+    "interpretation": "Independent runs of the same ordinary input on the same controlled buggy URL and model; not deterministic replay of the same model output. Before stopped on format parsing. After accepted 13 normalized responses and ended not_reproduced without a confirmed bug."
+  },
+  "fix": {
+    "sha": "f7bee47c254afc38683b87ad6d30899f16180a47",
+    "checkpointId": "01M4RAVKR1DWCDKTJ3ZH5AZAY3",
+    "parentSha": "b8e9f7c995f021deb88e8e2acb8be38bb985ca1e",
+    "diffFile": "format-recovery-f7bee47.patch",
+    "diffSha256": "cda9b25c3e28f7a2faf6d63a44c6d3de4f0e31a443466be1f246aff042672fe9"
+  },
+  "comparability": {
+    "exactInputByTargetMatched": true,
+    "sameModel": true,
+    "sameCohortComposition": true,
+    "configSourceByteIdentical": true,
+    "configSourceSha256": "54d81d845e3c1ca5066919d65188c5792b53763acfb347eecf0651576921b988",
+    "codeDefaultBudgets": {
+      "maxActions": 40,
+      "maxModelCalls": 40,
+      "maxHypotheses": 4,
+      "investigationMs": 360000,
+      "verificationMs": 120000,
+      "totalMs": 480000
+    },
+    "effectiveBudgetProvenance": "Integrating agent reports unchanged run environment and budgets. Identical config source independently verified. Original bundles did not persist historical environment overrides; current local env has no budget overrides.",
+    "limitations": [
+      "Stochastic model runs, sample size four per stage",
+      "First-to-third cohort spans recording/accounting changes as well as response-format recovery; not an isolated ablation",
+      "The selected second-to-third case brackets f7bee47 directly",
+      "Before token totals omit final malformed calls; do not compute cost/token improvement from those incomplete counters",
+      "Larger action, duration and token totals reflect deeper exploration and extra repair, not a cost/latency improvement",
+      "Stages A-C do not establish a saved reproduction; only selected latest Stage D does.",
+      "System prompt and browser observation content changed across stages; identical complaint/input/model/source budget defaults do not make this an isolated ablation.",
+      "All four fourth-stage outcomes are retained: one of three buggy investigations confirmed, two buggy non-discoveries, fixed negative control not_reproduced."
+    ],
+    "systemPromptSha256ByStage": {
+      "baseline_60d2294": "1eea8b5ccae0df82989c0d03ff9edadb9c43fe2ba7ad483dfec43bcd84c5a842",
+      "after_f7bee47": "cf6b38fe7304574c12286279b52d42781ce87c26cd485cf2ca489f726261a87b",
+      "after_2b541b2": "6fc9e74afb17ed00d8e110bf45719b288a03e9fa31be3b62b2021cf540a0b646"
+    }
+  },
+  "publicationReview": {
+    "onlyReviewedIdsMetricsAndSourceDiff": true,
+    "transcriptOrPrivateConversationIncluded": false,
+    "rawRecordingsIncluded": false,
+    "traceLinksMayRequireAccountAccess": true,
+    "afterHostedScreenshotStatus": "Awaiting integrating-agent capture/review",
+    "latestEntireLocalExport": [
+      {
+        "publicCopy": "latest-entire-local-viewer.html",
+        "sha256": "a5795300acf4d73e5f5ba1417dbac5192f77eaf3443e9f8ca392f30bfd56b1ec",
+        "bytes": 8007,
+        "sourceKind": "Reviewed local CLI-export data/viewer; not official Entire app UI"
+      },
+      {
+        "publicCopy": "latest-entire-export.safe.json",
+        "sha256": "70527138fd66e3751d6acfab75c72bec66620de0f0f26fe0b7304b1eca5639e4",
+        "bytes": 3165,
+        "sourceKind": "Reviewed local CLI-export data/viewer; not official Entire app UI"
+      },
+      {
+        "publicCopy": "latest-entire-local-viewer.jpg",
+        "sha256": "123985053490352f65fe8396a5decbfc2a00ca8796564b637532f9577daf017a",
+        "bytes": 145567,
+        "sourceKind": "Reviewed actual local CLI export viewer screenshot"
+      }
+    ]
+  },
+  "selectedLatestCase": {
+    "before": {
+      "runId": "70582bba-ec4a-4d46-9846-ecc305ec36fb",
+      "gitSha": "b8e9f7c995f021deb88e8e2acb8be38bb985ca1e",
+      "model": "claude-sonnet-4.6",
+      "traceId": "f997c43d7542b0c7baefb66cd610fe33",
+      "traceUrl": "https://app.neatlogs.com/traces/f997c43d7542b0c7baefb66cd610fe33",
+      "input": {
+        "targetUrl": "http://localhost:4173",
+        "complaint": "Sometimes the cart becomes empty after I change the delivery address. Find the conditions that cause this.",
+        "expected": "Cart items and quantities must be preserved after saving a changed delivery address.",
+        "oracleKind": "cart_preserved_after_checkout_change"
+      },
+      "status": "inconclusive",
+      "metrics": {
+        "actions": 5,
+        "elapsedMs": 17465,
+        "inputTokens": 11250,
+        "outputTokens": 323
+      },
+      "modelAttempts": 6,
+      "normalizedResponses": 0,
+      "invalidResponses": 1,
+      "usageCompleteForReceivedResponses": true,
+      "sourceRunJsonSha256": "0c073b7a6f414bae8e81a3ca23e68b77f5f7996f5c14003f5edb589d03010bc3"
+    },
+    "after": {
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "status": "bug_confirmed",
+      "targetUrl": "http://localhost:4173",
+      "input": {
+        "targetUrl": "http://localhost:4173",
+        "complaint": "Sometimes the cart becomes empty after I change the delivery address. Find the conditions that cause this.",
+        "expected": "Cart items and quantities must be preserved after saving a changed delivery address.",
+        "oracleKind": "cart_preserved_after_checkout_change"
+      },
+      "inputSha256": "9a66ceeb7cd0c77612d88ad52faa4aa0e789ab2144ff58d1593f845b09005bfc",
+      "gitSha": "2b541b20a97ef3df4261529bd48089792e01f2af",
+      "model": "claude-sonnet-4.6",
+      "traceId": "9096d7e75454f94d4c9cd11011604e13",
+      "traceUrl": "https://app.neatlogs.com/traces/9096d7e75454f94d4c9cd11011604e13",
+      "metrics": {
+        "actions": 13,
+        "elapsedMs": 51651,
+        "inputTokens": 41069,
+        "outputTokens": 1261,
+        "costUsd": 0.1563342
+      },
+      "modelAttempts": 16,
+      "modelAttemptsSource": "complete per-call model-usage.json",
+      "normalizedResponses": 4,
+      "invalidResponses": 1,
+      "formatFailureTermination": false,
+      "terminalEvent": {
+        "type": "completed",
+        "status": "bug_confirmed",
+        "message": "Regression assertion failed in 2/2 clean runs and the unchanged test passed on the corrected control.",
+        "id": 82,
+        "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+        "at": "2026-10-12T15:28:13.470Z"
+      },
+      "boundedFormatToolErrors": 0,
+      "runJsonSha256": "fac19aa68b195405d52bab5637181d02a726ff8c8fbf04ecf5a6f758f57c6307",
+      "traceJsonSha256": "005ee5b97ddafcd89b969828946873476d13fe290f15c823e5da7df26db617e2",
+      "ledgerSha256": "9161a886c472a2ff25a4a2629ccbc9e6c21ae25c54c7869b595a42b805abe73f"
+    },
+    "interpretation": "Same ordinary input, URL/model and source-defined budgets. Multiple generic engine/prompt/observation changes and stochastic provider outputs prevent single-change causal attribution. Latest case independently has 2/2 intended failures and unchanged saved-test fixed pass.",
+    "proof": "../live-confirmed-2026-10-12/README.md"
+  },
+  "latestFix": {
+    "checkpointId": "01M4RBGMN0JWSXDHD2TESXJ35A",
+    "fixSha": "2b541b20a97ef3df4261529bd48089792e01f2af",
+    "strategy": "manual-commit",
+    "branch": "agent-a-engine",
+    "checkpointCount": 3,
+    "filesTouched": [
+      "README.md",
+      "apps/runner/src/browser.ts",
+      "apps/runner/src/investigate.ts",
+      "apps/runner/src/llm.ts",
+      "apps/runner/test/browser.test.ts",
+      "apps/runner/test/investigation.test.ts",
+      "apps/runner/test/llm.test.ts"
+    ],
+    "fileCount": 7,
+    "sessionCount": 1,
+    "taskCount": 3,
+    "verifiedWith": "entire checkpoint explain 01M4RBGMN0JWSXDHD2TESXJ35A --json",
+    "commitFooterMatches": true,
+    "savedMetadataMatchesLiveCli": true,
+    "savedMetadataSha256": "1c36c2818dd1210b64ae2db58b81a99db2450c704be3b2aaf002bc7eb41aec46",
+    "rationale": "Generic visible disabled-state observations, bounded continuation after output-format failures, and gateway-header cost accounting improve evidence completeness/exploration without supplying a hidden bug recipe. Entire session/transcript/private task text deliberately omitted.",
+    "diffFile": "observation-continuation-2b541b2.patch",
+    "diffSha256": "f6980e9804249e13bbe48b839e2ceda2c59ff1a5871dd45b1842aab662ece0c5"
+  }
+}

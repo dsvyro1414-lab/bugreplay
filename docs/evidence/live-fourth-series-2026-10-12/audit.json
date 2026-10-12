@@ -1,0 +1,341 @@
+{
+  "auditedAtUtc": "2026-10-12T15:35:13.863909+00:00",
+  "cohort": "fourth",
+  "sourceSha": "2b541b20a97ef3df4261529bd48089792e01f2af",
+  "model": "claude-sonnet-4.6",
+  "acceptanceFile": "artifacts/acceptance-1791819033505.json",
+  "archive": {
+    "archive": "artifacts/archives/fourth-series-originals-20261012T153512Z.tar.gz",
+    "sha256": "8e0582f58648da72f38c34a7f227631cc79e934a72e394341f0270058c336f5d",
+    "bytes": 43430562,
+    "originalFileCount": 159,
+    "originalManifest": "artifacts/archives/fourth-series-originals-20261012T153512Z/original-manifest.json"
+  },
+  "results": [
+    {
+      "runId": "247e9123-b7aa-46d6-9f36-936a6531960e",
+      "targetUrl": "http://localhost:4173",
+      "status": "not_reproduced",
+      "trace": {
+        "runId": "247e9123-b7aa-46d6-9f36-936a6531960e",
+        "traceId": "027267f231876a46d5451fcd8e7ef6d5",
+        "gitSha": "2b541b20a97ef3df4261529bd48089792e01f2af",
+        "model": "claude-sonnet-4.6"
+      },
+      "metrics": {
+        "actions": 14,
+        "elapsedMs": 63924,
+        "inputTokens": 60315,
+        "outputTokens": 2220,
+        "costUsd": 0.23566949999999998
+      },
+      "modelCalls": 22,
+      "invalidResponses": 1,
+      "normalizedResponses": 13,
+      "gatewayCostUsd": 0.23566949999999998,
+      "gatewayCostSource": "x-litellm-response-cost",
+      "billingCostUsd": null,
+      "usageComplete": true,
+      "costComplete": true,
+      "ledgerTokensAndCostMatchRunView": true,
+      "liveApiRunViewMatches": true,
+      "modelUsageSha256": "f871133f0b306acc7836f616f4e78136306071ff7c65055d378f902e0a24e261"
+    },
+    {
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "targetUrl": "http://localhost:4173",
+      "status": "bug_confirmed",
+      "trace": {
+        "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+        "traceId": "9096d7e75454f94d4c9cd11011604e13",
+        "gitSha": "2b541b20a97ef3df4261529bd48089792e01f2af",
+        "model": "claude-sonnet-4.6"
+      },
+      "metrics": {
+        "actions": 13,
+        "elapsedMs": 51651,
+        "inputTokens": 41069,
+        "outputTokens": 1261,
+        "costUsd": 0.1563342
+      },
+      "modelCalls": 16,
+      "invalidResponses": 1,
+      "normalizedResponses": 4,
+      "gatewayCostUsd": 0.1563342,
+      "gatewayCostSource": "x-litellm-response-cost",
+      "billingCostUsd": null,
+      "usageComplete": true,
+      "costComplete": true,
+      "ledgerTokensAndCostMatchRunView": true,
+      "liveApiRunViewMatches": true,
+      "modelUsageSha256": "9161a886c472a2ff25a4a2629ccbc9e6c21ae25c54c7869b595a42b805abe73f"
+    },
+    {
+      "runId": "7c259071-2c8c-45ee-8c65-5fafa1395ae7",
+      "targetUrl": "http://localhost:4173",
+      "status": "not_reproduced",
+      "trace": {
+        "runId": "7c259071-2c8c-45ee-8c65-5fafa1395ae7",
+        "traceId": "4f4742b8ed44fb9a03f3c343721c4f39",
+        "gitSha": "2b541b20a97ef3df4261529bd48089792e01f2af",
+        "model": "claude-sonnet-4.6"
+      },
+      "metrics": {
+        "actions": 20,
+        "elapsedMs": 64727,
+        "inputTokens": 64690,
+        "outputTokens": 2245,
+        "costUsd": 0.2505195
+      },
+      "modelCalls": 24,
+      "invalidResponses": 0,
+      "normalizedResponses": 11,
+      "gatewayCostUsd": 0.2505195,
+      "gatewayCostSource": "x-litellm-response-cost",
+      "billingCostUsd": null,
+      "usageComplete": true,
+      "costComplete": true,
+      "ledgerTokensAndCostMatchRunView": true,
+      "liveApiRunViewMatches": true,
+      "modelUsageSha256": "d2e6840addd82f09a5fe2e55b7898bb57ad478c9e444c893d22599c4f131e75a"
+    },
+    {
+      "runId": "6d85b46a-df25-42a9-abe9-54978f07d964",
+      "targetUrl": "http://localhost:4174",
+      "status": "not_reproduced",
+      "trace": {
+        "runId": "6d85b46a-df25-42a9-abe9-54978f07d964",
+        "traceId": "4dcbbafed6c704e582955a33003bd4a8",
+        "gitSha": "2b541b20a97ef3df4261529bd48089792e01f2af",
+        "model": "claude-sonnet-4.6"
+      },
+      "metrics": {
+        "actions": 21,
+        "elapsedMs": 73639,
+        "inputTokens": 82219,
+        "outputTokens": 2476,
+        "costUsd": 0.31217670000000003
+      },
+      "modelCalls": 30,
+      "invalidResponses": 2,
+      "normalizedResponses": 16,
+      "gatewayCostUsd": 0.31217670000000003,
+      "gatewayCostSource": "x-litellm-response-cost",
+      "billingCostUsd": null,
+      "usageComplete": true,
+      "costComplete": true,
+      "ledgerTokensAndCostMatchRunView": true,
+      "liveApiRunViewMatches": true,
+      "modelUsageSha256": "1f3de13f4427fdfa238c8319885f46a83c39c4dff9f217a7ef0c173ff41abba5"
+    }
+  ],
+  "totals": {
+    "actions": 68,
+    "elapsedMs": 253941,
+    "inputTokens": 248293,
+    "outputTokens": 8202,
+    "costUsd": 0.9546999,
+    "modelCalls": 92,
+    "invalidResponses": 4,
+    "normalizedResponses": 44
+  },
+  "buggyDiscoveryRate": {
+    "numerator": 1,
+    "denominator": 3,
+    "percent": 33.333333333333336
+  },
+  "fixedNegativeControl": "not_reproduced",
+  "npmEvalExit": {
+    "code": 1,
+    "source": "Integrator execution report; retained because script requires all three buggy investigations confirmed, while product proof contract asks to record success rate."
+  },
+  "uniqueVideos": [
+    {
+      "file": "artifacts/247e9123-b7aa-46d6-9f36-936a6531960e/investigation-episode-1.webm",
+      "sha256": "725f56d3b2ee89b60794848204513c47ff2908f77754087fad03d70b10024281",
+      "bytes": 7135012,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp9",
+            "width": 1280,
+            "height": 900
+          }
+        ],
+        "format": {
+          "duration": "62.520000"
+        }
+      },
+      "fullDecodePassed": true
+    },
+    {
+      "file": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/investigation-episode-1.webm",
+      "sha256": "537c5d2371102ee330c731dc3a79ed6fec5677ed52b4acf290aaf98469214d82",
+      "bytes": 5720911,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp9",
+            "width": 1280,
+            "height": 900
+          }
+        ],
+        "format": {
+          "duration": "49.640000"
+        }
+      },
+      "fullDecodePassed": true
+    },
+    {
+      "file": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-1.webm",
+      "sha256": "9df104e8472d6f186f147d7ac022c87f75f960b062f776642664d26ba6a89bcc",
+      "bytes": 672298,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp9",
+            "width": 1280,
+            "height": 720
+          }
+        ],
+        "format": {
+          "duration": "4.480000"
+        }
+      },
+      "fullDecodePassed": true
+    },
+    {
+      "file": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-2.webm",
+      "sha256": "23d06df1ff2dcfc0ebf5b08ea0cfe4a031b7d10a7badd8fae33b3f1526f90c26",
+      "bytes": 670936,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp9",
+            "width": 1280,
+            "height": 720
+          }
+        ],
+        "format": {
+          "duration": "4.520000"
+        }
+      },
+      "fullDecodePassed": true
+    },
+    {
+      "file": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/candidate-1/control/verification-1.webm",
+      "sha256": "18c0ab74c95372888b44d5ba649eca7d051b1df72e0929a02cd28e1ec11fcd37",
+      "bytes": 641518,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp9",
+            "width": 1280,
+            "height": 720
+          }
+        ],
+        "format": {
+          "duration": "4.440000"
+        }
+      },
+      "fullDecodePassed": true
+    },
+    {
+      "file": "artifacts/7c259071-2c8c-45ee-8c65-5fafa1395ae7/investigation-episode-1.webm",
+      "sha256": "88aaf693228e9cf154bb52db27e073c2d5808eec764bdae3a8b1cef2018e2ee6",
+      "bytes": 3044722,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp9",
+            "width": 1280,
+            "height": 900
+          }
+        ],
+        "format": {
+          "duration": "23.400000"
+        }
+      },
+      "fullDecodePassed": true
+    },
+    {
+      "file": "artifacts/7c259071-2c8c-45ee-8c65-5fafa1395ae7/investigation-episode-2.webm",
+      "sha256": "e71eb3e5150d05635d355257f1c1a30a547bcfffdbb230231e49f8afe47830ab",
+      "bytes": 4850635,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp9",
+            "width": 1280,
+            "height": 900
+          }
+        ],
+        "format": {
+          "duration": "40.720000"
+        }
+      },
+      "fullDecodePassed": true
+    },
+    {
+      "file": "artifacts/6d85b46a-df25-42a9-abe9-54978f07d964/investigation-episode-1.webm",
+      "sha256": "63f84d57629d6ba852a7f24d1059e8abf154d1b23d66efb82f62201c77673470",
+      "bytes": 5786516,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp9",
+            "width": 1280,
+            "height": 900
+          }
+        ],
+        "format": {
+          "duration": "46.440000"
+        }
+      },
+      "fullDecodePassed": true
+    },
+    {
+      "file": "artifacts/6d85b46a-df25-42a9-abe9-54978f07d964/investigation-episode-2.webm",
+      "sha256": "fbc5119840f054409967d78d7e21ba7630248994597d5db7f08e144db8d67ea5",
+      "bytes": 3230141,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp9",
+            "width": 1280,
+            "height": 900
+          }
+        ],
+        "format": {
+          "duration": "26.720000"
+        }
+      },
+      "fullDecodePassed": true
+    }
+  ],
+  "limitations": [
+    "Selected success is 1/3 real buggy investigations, not 3/3; two buggy investigations ended not_reproduced.",
+    "Whole cohort cost is gateway response header accounting, not an invoice; cash billing and credits unknown.",
+    "Earlier three failed/inconclusive cohorts remain separately archived and must be included in all-attempt financial accounting.",
+    "Run source SHA comes from preserved trace.json; per-run environment budget snapshot is not persisted.",
+    "Whole original archive is private; reviewed selected proof/media are published separately."
+  ]
+}

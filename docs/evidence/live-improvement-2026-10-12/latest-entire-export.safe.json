@@ -1,0 +1,68 @@
+{
+  "title": "Entire CLI checkpoint metadata export · local evidence viewer",
+  "exportedAt": "2026-10-12T15:34:22.095Z",
+  "current": {
+    "checkpointId": "01M4RBGMN0JWSXDHD2TESXJ35A",
+    "sha": "2b541b20a97ef3df4261529bd48089792e01f2af",
+    "branch": "agent-a-engine",
+    "strategy": "manual-commit",
+    "createdAt": "2026-10-12T15:25:52.008073Z",
+    "sessionId": "01a13092-b55e-7cd2-88cc-6665d59d79dc",
+    "files": [
+      "README.md",
+      "apps/runner/src/browser.ts",
+      "apps/runner/src/investigate.ts",
+      "apps/runner/src/llm.ts",
+      "apps/runner/test/browser.test.ts",
+      "apps/runner/test/investigation.test.ts",
+      "apps/runner/test/llm.test.ts"
+    ],
+    "commitSubject": "Preserve bounded investigations through format errors and expose disabled controls"
+  },
+  "previous": {
+    "checkpointId": "01M4RAVKR1DWCDKTJ3ZH5AZAY3",
+    "sha": "f7bee47c254afc38683b87ad6d30899f16180a47",
+    "branch": "agent-a-engine",
+    "strategy": "manual-commit",
+    "createdAt": "2026-10-12T15:14:22.098068Z",
+    "sessionId": "01a13092-b55e-7cd2-88cc-6665d59d79dc",
+    "files": [
+      "README.md",
+      "apps/runner/src/investigate.ts",
+      "apps/runner/src/llm.ts",
+      "apps/runner/test/llm.test.ts"
+    ],
+    "commitSubject": "Recover prose-prefixed JSON decisions within existing call budgets"
+  },
+  "rootSessionGuard": {
+    "sessionId": "01a13092-b55e-7cd2-88cc-6665d59d79dc",
+    "resolution": "caller-env"
+  },
+  "validation": {
+    "passed": 46,
+    "total": 46,
+    "source": "Integration runner validation reported by project integrator; not an Entire metadata field."
+  },
+  "commands": [
+    "entire checkpoint explain 2b541b20a97ef3df4261529bd48089792e01f2af --json",
+    "entire checkpoint explain f7bee47c254afc38683b87ad6d30899f16180a47 --json",
+    "git show --format= --unified=2 2b541b20a97ef3df4261529bd48089792e01f2af -- apps/runner/src/{investigate,browser,llm}.ts"
+  ],
+  "excerpts": [
+    {
+      "file": "apps/runner/src/investigate.ts",
+      "title": "Bounded format recovery",
+      "diff": "+          if (consecutiveFormatFailures >= 3) {\n+            await complete('inconclusive', 'Three consecutive model decisions exhausted their format retries; partial evidence and all attempts were preserved.');\n+            return;\n+          }\n+          continue;\n+        }"
+    },
+    {
+      "file": "apps/runner/src/browser.ts",
+      "title": "Observed disabled controls",
+      "diff": "+      if (!await locator.isEnabled()) {\n+        // Include effective disabled state (for example, a disabled fieldset), not just\n+        // controls explicitly marked disabled in the accessibility snapshot.\n+        disabledControls.add(`${spec.role} ${JSON.stringify(spec.name)} [disabled]`);\n+        continue;\n+      }"
+    },
+    {
+      "file": "apps/runner/src/llm.ts",
+      "title": "Gateway accounting metadata",
+      "diff": "+          const cost = responseCost(response.headers.get('x-litellm-response-cost'));\n+          if (attempt && cost !== undefined) {\n+            attempt.costUsd = cost;\n+            attempt.costSource = 'x-litellm-response-cost';\n+          }"
+    }
+  ]
+}

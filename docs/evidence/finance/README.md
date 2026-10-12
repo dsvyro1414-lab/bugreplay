@@ -1,6 +1,6 @@
 # BugReplay financial model
 
-Status: **complete assumption-based workbook; not yet created in CFO.ai**. No paying customers, provider costs or commercial viability are claimed as measured facts.
+Status: **complete assumption-based workbook, created in the active CFO.ai workspace on October 12, 2026**. The native model, editable assumptions, monthly forecast, unit economics and actuals view were reviewed. Paying customers, complete provider bills and commercial viability remain unmeasured.
 
 Open [bugreplay-financial-model.xlsx](bugreplay-financial-model.xlsx). It includes a 12-month cash operating forecast, one Base/Downside selector, contribution economics, price/run-cost sensitivity, and an empty input table for actual run costs. The hypothetical launch horizon is November 2026–October 2027.
 
@@ -39,15 +39,27 @@ This covers inference, browser time and incremental storage/export, **before fix
 
 Measure average commercial inference cost over **all paid investigations**, including failures and cancellations. Hackathon credits are a financing benefit; they do not establish sustainable zero inference cost. Token counts require a verified rate or invoice before conversion to dollars. Measure and retain token/duration distributions as well as means before selecting a production budget.
 
+## Runtime cost evidence
+
+The [actual-attempt ledger](actual-attempt-cost-ledger.md) and [machine-readable source ledger](actual-attempt-cost-ledger.json) retain all saved October 11–12 runtime investigations, successful model smoke checks and rejected model-access probes. The four original baseline failures include terminal-response token usage recovered from Neatlogs. Authenticated gateway metadata verified the currently configured Sonnet 4.6 rates: $3.30 input/$16.50 output, $0.33 cache read and $4.125 cache write per million tokens. Historical rates and cache categories remain unknown. Conditional estimates using those rates are separate from the alternative Anthropic $3/$15 list reference, per-response gateway accounting headers, cash invoices and credits. Actual billed cash, promotional credit deductions and hosted browser/storage costs remain unknown.
+
+Use the [CFO.ai evidence supplement](cfo-actual-cost-supplement.txt) to update the workspace with the latest runtime snapshot. Keep both workbooks in `Planning`: conditional token estimates do not establish complete actual bills. Rebuild the ledger after more runs with `node docs/evidence/finance/build-cost-ledger.mjs`; new `model-usage.json` files contribute per-transport outcomes, tokens, duration and gateway accounting headers when present. Acceptance-summary and archived copies are not counted again.
+
+The [dated observed-evidence prompt](cfo-observed-evidence-prompt.txt) is the concise transfer for the final 17-investigation snapshot. It includes exact per-run outcomes/tokens/durations and the four latest investigations' complete $0.9546999 response-header accounting. The selected confirmed investigation alone accounts for $0.1563342, above the hypothetical $0.1293 variable-cost ceiling before browser/storage. Earlier accounting and complete cash/credit totals remain unknown.
+
 ## Accounting and timing
 
 Opening teams start at zero as a forecast assumption. Churn applies to opening teams; new teams start at the beginning of the month and do not churn in their first month. Closing teams are billed for a full month with no proration. Fractional teams represent expected cohorts. Revenue equals same-month collections. Inference/browser/storage, payment fees and fixed hosting form cost of revenue. Cash pay, marketing and other operating spend are separate operating expenses. The model excludes tax, debt, capex and working-capital timing; it is not a three-statement model. Runway is assessed at monthly closing balances, not intra-month payment dates.
 
 ## CFO.ai transfer and evidence
 
-Use the [ready-to-paste Ari prompt](cfo-transfer-prompt.md), [scenario inputs](scenario-assumptions.csv) and the workbook. The current browser reached CFO.ai plan selection, not an active modeling workspace. The [official neatHack instructions](https://neatlogs.com/hackathon) require actual CFO.ai use and describe a signup card/billing step. The account owner handles that commitment. This workbook does not substitute for sponsor evidence.
+The [ready-to-paste Ari prompt](cfo-transfer-prompt.md), [scenario inputs](scenario-assumptions.csv) and teammate workbook supplied the forecast inputs. Ari created a saved native model in the owner's active CFO.ai workspace. The reviewed native export is [BugReplay-CFO-Planning.xlsx](BugReplay-CFO-Planning.xlsx), copied byte for byte after checking metadata, strings and external relationships for personal data. Workspace access follows the owner's current permissions; owner-specific URLs remain in the local handoff.
 
-After creation, save a public model/export or reviewed screenshots, record one decision from the real CFO.ai model and update the evidence index. No billing information or personal account identifier belongs in Git.
+Ari also created a separate dated observed-engineering page and [native workbook export](BugReplay-CFO-Observed-Engineering.xlsx). Its [independent audit](cfo-observed-export-audit.json) reconciles all 17 run rows and ten numerical summary values to the project ledger. The [reviewed native screenshot](screens/cfo-observed-costs.jpg) displays latest-four gateway accounting and explicitly unknown complete project billing. This page preserves observed engineering evidence without replacing the forecast's unvalidated assumptions.
+
+[CFO.ai workspace review](cfo-workspace-review.md) links the reviewed screenshots and records the decision: retain $49/100 as an unvalidated hypothesis with a $0.1293 variable-cost ceiling, collect every paid attempt, and reprice or reduce the allowance if the full cost approaches the $0.285 downside assumption. The simulation changes visibly lowered full-allowance contribution to 38.2% and raised the required price to $106.67. The original $0.08 Base cost remains an assumption.
+
+The [independent export audit](cfo-workbook-audit.json) reconciled all 12 monthly results in each case and all 20 sensitivity cells. The export keeps `Planning` selected and actual cost/credits unknown. It is a separate editable snapshot and needs a new export after native-model changes. Independent review of the [native edit and restoration screenshots](cfo-workspace-review.md) verifies that saved contribution-table values recalculated and returned to Base. The Canvas preview maintains independent simulation state; its preview cash must not be substituted for the saved forecast. No billing information or personal account identifier belongs in Git.
 
 ## Verification and reproducibility
 

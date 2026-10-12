@@ -1,0 +1,3278 @@
+{
+  "id": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+  "status": "bug_confirmed",
+  "input": {
+    "targetUrl": "http://localhost:4173",
+    "complaint": "Sometimes the cart becomes empty after I change the delivery address. Find the conditions that cause this.",
+    "expected": "Cart items and quantities must be preserved after saving a changed delivery address.",
+    "oracleKind": "cart_preserved_after_checkout_change"
+  },
+  "createdAt": "2026-10-12T15:27:21.818Z",
+  "updatedAt": "2026-10-12T15:28:13.470Z",
+  "events": [
+    {
+      "type": "status",
+      "message": "Investigation queued.",
+      "status": "queued",
+      "id": 1,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:21.819Z"
+    },
+    {
+      "type": "artifact",
+      "message": "Saved trace.json",
+      "data": {
+        "artifact": {
+          "kind": "report",
+          "name": "trace.json",
+          "mimeType": "application/json",
+          "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/trace.json"
+        }
+      },
+      "id": 2,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:21.835Z"
+    },
+    {
+      "type": "observation",
+      "message": "Neatlogs investigation trace started.",
+      "data": {
+        "traceId": "9096d7e75454f94d4c9cd11011604e13",
+        "gitSha": "2b541b20a97ef3df4261529bd48089792e01f2af"
+      },
+      "id": 3,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:21.835Z"
+    },
+    {
+      "type": "status",
+      "status": "investigating",
+      "message": "Inspecting the controlled shop with a real browser.",
+      "id": 4,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:21.836Z"
+    },
+    {
+      "type": "action",
+      "message": "Open /",
+      "data": {
+        "record": {
+          "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+          "step": {
+            "id": "step-1",
+            "kind": "goto",
+            "path": "/"
+          },
+          "semantic": "navigation",
+          "after": {
+            "cart": [],
+            "address": "24 Market Street, Portland",
+            "saveSeq": 0,
+            "saved": false,
+            "busy": false
+          }
+        }
+      },
+      "id": 5,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:22.326Z"
+    },
+    {
+      "type": "artifact",
+      "message": "Saved observation-1-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "data": {
+        "artifact": {
+          "kind": "screenshot",
+          "name": "observation-1-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+          "mimeType": "image/png",
+          "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-1-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+        }
+      },
+      "id": 6,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:22.410Z"
+    },
+    {
+      "type": "observation",
+      "message": "Observed 7 available controls and 0 cart items.",
+      "data": {
+        "observation": {
+          "snapshotId": 1,
+          "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+          "url": "http://localhost:4173/",
+          "text": "Disabled controls (observed; no action refs):\nbutton \"Save delivery address\" [disabled]\n\nFieldwork\nSupply\nDemo shop. No real purchases.\nGood things for\neveryday work.\n\nThoughtful essentials. Made to be used,\npacked up, and used again.\n\nCanvas pouch\n$28.00\n\nA little order, wherever you go.\n\nHeavyweight cotton / slate blue\n\n+\nAdd to cart\nDesk notebook\n$18.00\n\nRoom for the next good idea.\n\nLay-flat binding / 160 dotted pages\n\n+\nAdd to cart\nTravel cup\n$32.00\n\nFor the desk and the way there.\n\nDouble-wall steel / 350 ml\n\n+\nAdd to cart\n\nThree everyday essentials.\nOne less thing to overthink.\n\nYour cart\n0 items\n\nYour cart is empty.\nAdd an everyday essential to get started.\n\nSubtotal\n$0.00\nDelivery\nCalculated with items\nTotal\n$0.00\nDelivery details\nCurrently delivering to\n\n24 Market Street, Portland\n\nDelivery address\nDelivery method\nStandard — 3–5 days ($5)\nExpress — next day ($12)\nSave delivery address\n\nA little welcome gift\n\nUse FIELD10 for 10% off your items.\n\nPromo code\nApply\n\nOne code per order.\n\nThis is a demo. No payment or order will be taken.\n\nFieldwork Supply\nBuilt for the everyday.",
+          "elements": [
+            {
+              "ref": "s1-e1",
+              "locator": {
+                "role": "button",
+                "name": "Add Canvas pouch",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s1-e2",
+              "locator": {
+                "role": "button",
+                "name": "Add Desk notebook",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s1-e3",
+              "locator": {
+                "role": "button",
+                "name": "Add Travel cup",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s1-e4",
+              "locator": {
+                "role": "textbox",
+                "name": "Delivery address",
+                "exact": true
+              },
+              "value": "24 Market Street, Portland"
+            },
+            {
+              "ref": "s1-e5",
+              "locator": {
+                "role": "combobox",
+                "name": "Delivery method",
+                "exact": true
+              },
+              "value": "standard",
+              "options": [
+                {
+                  "label": "Standard — 3–5 days ($5)",
+                  "value": "standard"
+                },
+                {
+                  "label": "Express — next day ($12)",
+                  "value": "express"
+                }
+              ]
+            },
+            {
+              "ref": "s1-e6",
+              "locator": {
+                "role": "textbox",
+                "name": "Promo code",
+                "exact": true
+              },
+              "value": ""
+            },
+            {
+              "ref": "s1-e7",
+              "locator": {
+                "role": "button",
+                "name": "Apply promo code",
+                "exact": true
+              }
+            }
+          ],
+          "state": {
+            "cart": [],
+            "address": "24 Market Street, Portland",
+            "saveSeq": 0,
+            "saved": false,
+            "busy": false
+          },
+          "screenshotName": "observation-1-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+        }
+      },
+      "screenshotUrl": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-1-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "id": 7,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:22.410Z"
+    },
+    {
+      "type": "artifact",
+      "message": "Saved model-usage.json",
+      "data": {
+        "artifact": {
+          "kind": "report",
+          "name": "model-usage.json",
+          "mimeType": "application/json",
+          "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/model-usage.json"
+        }
+      },
+      "id": 8,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:23.585Z"
+    },
+    {
+      "type": "observation",
+      "message": "Add items to cart to set up for testing address change",
+      "id": 9,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:23.586Z"
+    },
+    {
+      "type": "action",
+      "message": "click button \"Add Canvas pouch\"",
+      "data": {
+        "record": {
+          "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+          "step": {
+            "id": "step-2",
+            "kind": "click",
+            "locator": {
+              "role": "button",
+              "name": "Add Canvas pouch",
+              "exact": true
+            }
+          },
+          "semantic": "cart-add",
+          "before": {
+            "cart": [],
+            "address": "24 Market Street, Portland",
+            "saveSeq": 0,
+            "saved": false,
+            "busy": false
+          },
+          "after": {
+            "cart": [
+              {
+                "productId": "canvas-pouch",
+                "quantity": 1
+              }
+            ],
+            "address": "24 Market Street, Portland",
+            "saveSeq": 0,
+            "saved": false,
+            "busy": false
+          }
+        }
+      },
+      "id": 10,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:24.218Z"
+    },
+    {
+      "type": "artifact",
+      "message": "Saved observation-2-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "data": {
+        "artifact": {
+          "kind": "screenshot",
+          "name": "observation-2-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+          "mimeType": "image/png",
+          "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-2-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+        }
+      },
+      "id": 11,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:24.292Z"
+    },
+    {
+      "type": "observation",
+      "message": "Observed 8 available controls and 1 cart items.",
+      "data": {
+        "observation": {
+          "snapshotId": 2,
+          "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+          "url": "http://localhost:4173/",
+          "text": "Disabled controls (observed; no action refs):\nbutton \"Save delivery address\" [disabled]\n\nFieldwork\nSupply\nDemo shop. No real purchases.\nGood things for\neveryday work.\n\nThoughtful essentials. Made to be used,\npacked up, and used again.\n\nCanvas pouch\n$28.00\n\nA little order, wherever you go.\n\nHeavyweight cotton / slate blue\n\n+\nAdd to cart\nDesk notebook\n$18.00\n\nRoom for the next good idea.\n\nLay-flat binding / 160 dotted pages\n\n+\nAdd to cart\nTravel cup\n$32.00\n\nFor the desk and the way there.\n\nDouble-wall steel / 350 ml\n\n+\nAdd to cart\n\nThree everyday essentials.\nOne less thing to overthink.\n\nYour cart\n1 item\nCanvas pouch\nQty 1 Remove\n$28.00\nSubtotal\n$28.00\nDelivery\n$5.00\nTotal\n$33.00\nDelivery details\nCurrently delivering to\n\n24 Market Street, Portland\n\nDelivery address\nDelivery method\nStandard — 3–5 days ($5)\nExpress — next day ($12)\nSave delivery address\n\nA little welcome gift\n\nUse FIELD10 for 10% off your items.\n\nPromo code\nApply\n\nOne code per order.\n\nThis is a demo. No payment or order will be taken.\n\nFieldwork Supply\nBuilt for the everyday.",
+          "elements": [
+            {
+              "ref": "s2-e1",
+              "locator": {
+                "role": "button",
+                "name": "Add Canvas pouch",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s2-e2",
+              "locator": {
+                "role": "button",
+                "name": "Add Desk notebook",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s2-e3",
+              "locator": {
+                "role": "button",
+                "name": "Add Travel cup",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s2-e4",
+              "locator": {
+                "role": "button",
+                "name": "Remove Canvas pouch",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s2-e5",
+              "locator": {
+                "role": "textbox",
+                "name": "Delivery address",
+                "exact": true
+              },
+              "value": "24 Market Street, Portland"
+            },
+            {
+              "ref": "s2-e6",
+              "locator": {
+                "role": "combobox",
+                "name": "Delivery method",
+                "exact": true
+              },
+              "value": "standard",
+              "options": [
+                {
+                  "label": "Standard — 3–5 days ($5)",
+                  "value": "standard"
+                },
+                {
+                  "label": "Express — next day ($12)",
+                  "value": "express"
+                }
+              ]
+            },
+            {
+              "ref": "s2-e7",
+              "locator": {
+                "role": "textbox",
+                "name": "Promo code",
+                "exact": true
+              },
+              "value": ""
+            },
+            {
+              "ref": "s2-e8",
+              "locator": {
+                "role": "button",
+                "name": "Apply promo code",
+                "exact": true
+              }
+            }
+          ],
+          "state": {
+            "cart": [
+              {
+                "productId": "canvas-pouch",
+                "quantity": 1
+              }
+            ],
+            "address": "24 Market Street, Portland",
+            "saveSeq": 0,
+            "saved": false,
+            "busy": false
+          },
+          "screenshotName": "observation-2-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+        }
+      },
+      "screenshotUrl": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-2-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "id": 12,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:24.293Z"
+    },
+    {
+      "type": "observation",
+      "message": "Add more items to cart before checkpointing, then test address change",
+      "id": 13,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:25.478Z"
+    },
+    {
+      "type": "action",
+      "message": "click button \"Add Desk notebook\"",
+      "data": {
+        "record": {
+          "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+          "step": {
+            "id": "step-3",
+            "kind": "click",
+            "locator": {
+              "role": "button",
+              "name": "Add Desk notebook",
+              "exact": true
+            }
+          },
+          "semantic": "cart-add",
+          "before": {
+            "cart": [
+              {
+                "productId": "canvas-pouch",
+                "quantity": 1
+              }
+            ],
+            "address": "24 Market Street, Portland",
+            "saveSeq": 0,
+            "saved": false,
+            "busy": false
+          },
+          "after": {
+            "cart": [
+              {
+                "productId": "canvas-pouch",
+                "quantity": 1
+              },
+              {
+                "productId": "desk-notebook",
+                "quantity": 1
+              }
+            ],
+            "address": "24 Market Street, Portland",
+            "saveSeq": 0,
+            "saved": false,
+            "busy": false
+          }
+        }
+      },
+      "id": 14,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:26.121Z"
+    },
+    {
+      "type": "artifact",
+      "message": "Saved observation-3-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "data": {
+        "artifact": {
+          "kind": "screenshot",
+          "name": "observation-3-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+          "mimeType": "image/png",
+          "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-3-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+        }
+      },
+      "id": 15,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:26.193Z"
+    },
+    {
+      "type": "observation",
+      "message": "Observed 9 available controls and 2 cart items.",
+      "data": {
+        "observation": {
+          "snapshotId": 3,
+          "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+          "url": "http://localhost:4173/",
+          "text": "Disabled controls (observed; no action refs):\nbutton \"Save delivery address\" [disabled]\n\nFieldwork\nSupply\nDemo shop. No real purchases.\nGood things for\neveryday work.\n\nThoughtful essentials. Made to be used,\npacked up, and used again.\n\nCanvas pouch\n$28.00\n\nA little order, wherever you go.\n\nHeavyweight cotton / slate blue\n\n+\nAdd to cart\nDesk notebook\n$18.00\n\nRoom for the next good idea.\n\nLay-flat binding / 160 dotted pages\n\n+\nAdd to cart\nTravel cup\n$32.00\n\nFor the desk and the way there.\n\nDouble-wall steel / 350 ml\n\n+\nAdd to cart\n\nThree everyday essentials.\nOne less thing to overthink.\n\nYour cart\n2 items\nCanvas pouch\nQty 1 Remove\n$28.00\nDesk notebook\nQty 1 Remove\n$18.00\nSubtotal\n$46.00\nDelivery\n$5.00\nTotal\n$51.00\nDelivery details\nCurrently delivering to\n\n24 Market Street, Portland\n\nDelivery address\nDelivery method\nStandard — 3–5 days ($5)\nExpress — next day ($12)\nSave delivery address\n\nA little welcome gift\n\nUse FIELD10 for 10% off your items.\n\nPromo code\nApply\n\nOne code per order.\n\nThis is a demo. No payment or order will be taken.\n\nFieldwork Supply\nBuilt for the everyday.",
+          "elements": [
+            {
+              "ref": "s3-e1",
+              "locator": {
+                "role": "button",
+                "name": "Add Canvas pouch",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s3-e2",
+              "locator": {
+                "role": "button",
+                "name": "Add Desk notebook",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s3-e3",
+              "locator": {
+                "role": "button",
+                "name": "Add Travel cup",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s3-e4",
+              "locator": {
+                "role": "button",
+                "name": "Remove Canvas pouch",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s3-e5",
+              "locator": {
+                "role": "button",
+                "name": "Remove Desk notebook",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s3-e6",
+              "locator": {
+                "role": "textbox",
+                "name": "Delivery address",
+                "exact": true
+              },
+              "value": "24 Market Street, Portland"
+            },
+            {
+              "ref": "s3-e7",
+              "locator": {
+                "role": "combobox",
+                "name": "Delivery method",
+                "exact": true
+              },
+              "value": "standard",
+              "options": [
+                {
+                  "label": "Standard — 3–5 days ($5)",
+                  "value": "standard"
+                },
+                {
+                  "label": "Express — next day ($12)",
+                  "value": "express"
+                }
+              ]
+            },
+            {
+              "ref": "s3-e8",
+              "locator": {
+                "role": "textbox",
+                "name": "Promo code",
+                "exact": true
+              },
+              "value": ""
+            },
+            {
+              "ref": "s3-e9",
+              "locator": {
+                "role": "button",
+                "name": "Apply promo code",
+                "exact": true
+              }
+            }
+          ],
+          "state": {
+            "cart": [
+              {
+                "productId": "canvas-pouch",
+                "quantity": 1
+              },
+              {
+                "productId": "desk-notebook",
+                "quantity": 1
+              }
+            ],
+            "address": "24 Market Street, Portland",
+            "saveSeq": 0,
+            "saved": false,
+            "busy": false
+          },
+          "screenshotName": "observation-3-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+        }
+      },
+      "screenshotUrl": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-3-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "id": 16,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:26.194Z"
+    },
+    {
+      "type": "observation",
+      "message": "Checkpoint current cart state before testing address change",
+      "id": 17,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:27.214Z"
+    },
+    {
+      "type": "hypothesis",
+      "message": "Changing the delivery address to a new value and saving clears the cart",
+      "id": 18,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:28.897Z"
+    },
+    {
+      "type": "observation",
+      "message": "Fill in a new delivery address to trigger the Save button, then save it",
+      "id": 19,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:28.898Z"
+    },
+    {
+      "type": "action",
+      "message": "fill textbox \"Delivery address\"",
+      "data": {
+        "record": {
+          "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+          "step": {
+            "id": "step-4",
+            "kind": "fill",
+            "locator": {
+              "role": "textbox",
+              "name": "Delivery address",
+              "exact": true
+            },
+            "value": "100 Main Street, Seattle"
+          },
+          "semantic": "checkout-edit",
+          "before": {
+            "cart": [
+              {
+                "productId": "canvas-pouch",
+                "quantity": 1
+              },
+              {
+                "productId": "desk-notebook",
+                "quantity": 1
+              }
+            ],
+            "address": "24 Market Street, Portland",
+            "saveSeq": 0,
+            "saved": false,
+            "busy": false
+          },
+          "after": {
+            "cart": [
+              {
+                "productId": "canvas-pouch",
+                "quantity": 1
+              },
+              {
+                "productId": "desk-notebook",
+                "quantity": 1
+              }
+            ],
+            "address": "24 Market Street, Portland",
+            "saveSeq": 0,
+            "saved": false,
+            "busy": false
+          }
+        }
+      },
+      "id": 20,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:29.526Z"
+    },
+    {
+      "type": "artifact",
+      "message": "Saved observation-4-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "data": {
+        "artifact": {
+          "kind": "screenshot",
+          "name": "observation-4-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+          "mimeType": "image/png",
+          "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-4-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+        }
+      },
+      "id": 21,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:29.609Z"
+    },
+    {
+      "type": "observation",
+      "message": "Observed 10 available controls and 2 cart items.",
+      "data": {
+        "observation": {
+          "snapshotId": 4,
+          "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+          "url": "http://localhost:4173/",
+          "text": "Fieldwork\nSupply\nDemo shop. No real purchases.\nGood things for\neveryday work.\n\nThoughtful essentials. Made to be used,\npacked up, and used again.\n\nCanvas pouch\n$28.00\n\nA little order, wherever you go.\n\nHeavyweight cotton / slate blue\n\n+\nAdd to cart\nDesk notebook\n$18.00\n\nRoom for the next good idea.\n\nLay-flat binding / 160 dotted pages\n\n+\nAdd to cart\nTravel cup\n$32.00\n\nFor the desk and the way there.\n\nDouble-wall steel / 350 ml\n\n+\nAdd to cart\n\nThree everyday essentials.\nOne less thing to overthink.\n\nYour cart\n2 items\nCanvas pouch\nQty 1 Remove\n$28.00\nDesk notebook\nQty 1 Remove\n$18.00\nSubtotal\n$46.00\nDelivery\n$5.00\nTotal\n$51.00\nDelivery details\nCurrently delivering to\n\n24 Market Street, Portland\n\nDelivery address\nDelivery method\nStandard — 3–5 days ($5)\nExpress — next day ($12)\nSave delivery address\n\nA little welcome gift\n\nUse FIELD10 for 10% off your items.\n\nPromo code\nApply\n\nOne code per order.\n\nThis is a demo. No payment or order will be taken.\n\nFieldwork Supply\nBuilt for the everyday.",
+          "elements": [
+            {
+              "ref": "s4-e1",
+              "locator": {
+                "role": "button",
+                "name": "Add Canvas pouch",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s4-e2",
+              "locator": {
+                "role": "button",
+                "name": "Add Desk notebook",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s4-e3",
+              "locator": {
+                "role": "button",
+                "name": "Add Travel cup",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s4-e4",
+              "locator": {
+                "role": "button",
+                "name": "Remove Canvas pouch",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s4-e5",
+              "locator": {
+                "role": "button",
+                "name": "Remove Desk notebook",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s4-e6",
+              "locator": {
+                "role": "textbox",
+                "name": "Delivery address",
+                "exact": true
+              },
+              "value": "100 Main Street, Seattle"
+            },
+            {
+              "ref": "s4-e7",
+              "locator": {
+                "role": "combobox",
+                "name": "Delivery method",
+                "exact": true
+              },
+              "value": "standard",
+              "options": [
+                {
+                  "label": "Standard — 3–5 days ($5)",
+                  "value": "standard"
+                },
+                {
+                  "label": "Express — next day ($12)",
+                  "value": "express"
+                }
+              ]
+            },
+            {
+              "ref": "s4-e8",
+              "locator": {
+                "role": "button",
+                "name": "Save delivery address",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s4-e9",
+              "locator": {
+                "role": "textbox",
+                "name": "Promo code",
+                "exact": true
+              },
+              "value": ""
+            },
+            {
+              "ref": "s4-e10",
+              "locator": {
+                "role": "button",
+                "name": "Apply promo code",
+                "exact": true
+              }
+            }
+          ],
+          "state": {
+            "cart": [
+              {
+                "productId": "canvas-pouch",
+                "quantity": 1
+              },
+              {
+                "productId": "desk-notebook",
+                "quantity": 1
+              }
+            ],
+            "address": "24 Market Street, Portland",
+            "saveSeq": 0,
+            "saved": false,
+            "busy": false
+          },
+          "screenshotName": "observation-4-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+        }
+      },
+      "screenshotUrl": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-4-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "id": 22,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:29.610Z"
+    },
+    {
+      "type": "observation",
+      "message": "Click Save delivery address to test if saving the new address clears the cart",
+      "id": 23,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:30.691Z"
+    },
+    {
+      "type": "action",
+      "message": "click button \"Save delivery address\"",
+      "data": {
+        "record": {
+          "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+          "step": {
+            "id": "step-5",
+            "kind": "click",
+            "locator": {
+              "role": "button",
+              "name": "Save delivery address",
+              "exact": true
+            }
+          },
+          "semantic": "checkout-save",
+          "before": {
+            "cart": [
+              {
+                "productId": "canvas-pouch",
+                "quantity": 1
+              },
+              {
+                "productId": "desk-notebook",
+                "quantity": 1
+              }
+            ],
+            "address": "24 Market Street, Portland",
+            "saveSeq": 0,
+            "saved": false,
+            "busy": false
+          },
+          "after": {
+            "cart": [
+              {
+                "productId": "canvas-pouch",
+                "quantity": 1
+              },
+              {
+                "productId": "desk-notebook",
+                "quantity": 1
+              }
+            ],
+            "address": "100 Main Street, Seattle",
+            "saveSeq": 1,
+            "saved": true,
+            "busy": false
+          }
+        }
+      },
+      "id": 24,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:31.656Z"
+    },
+    {
+      "type": "artifact",
+      "message": "Saved observation-5-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "data": {
+        "artifact": {
+          "kind": "screenshot",
+          "name": "observation-5-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+          "mimeType": "image/png",
+          "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-5-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+        }
+      },
+      "id": 25,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:31.743Z"
+    },
+    {
+      "type": "observation",
+      "message": "Observed 9 available controls and 2 cart items.",
+      "data": {
+        "observation": {
+          "snapshotId": 5,
+          "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+          "url": "http://localhost:4173/",
+          "text": "Disabled controls (observed; no action refs):\nbutton \"Save delivery address\" [disabled]\n\nFieldwork\nSupply\nDemo shop. No real purchases.\nGood things for\neveryday work.\n\nThoughtful essentials. Made to be used,\npacked up, and used again.\n\nCanvas pouch\n$28.00\n\nA little order, wherever you go.\n\nHeavyweight cotton / slate blue\n\n+\nAdd to cart\nDesk notebook\n$18.00\n\nRoom for the next good idea.\n\nLay-flat binding / 160 dotted pages\n\n+\nAdd to cart\nTravel cup\n$32.00\n\nFor the desk and the way there.\n\nDouble-wall steel / 350 ml\n\n+\nAdd to cart\n\nThree everyday essentials.\nOne less thing to overthink.\n\nYour cart\n2 items\nCanvas pouch\nQty 1 Remove\n$28.00\nDesk notebook\nQty 1 Remove\n$18.00\nSubtotal\n$46.00\nDelivery\n$5.00\nTotal\n$51.00\nDelivery details\nCurrently delivering to\n\n100 Main Street, Seattle\n\nDelivery address\nDelivery method\nStandard — 3–5 days ($5)\nExpress — next day ($12)\nSave delivery address\n\nAddress saved\n\nA little welcome gift\n\nUse FIELD10 for 10% off your items.\n\nPromo code\nApply\n\nOne code per order.\n\nThis is a demo. No payment or order will be taken.\n\nFieldwork Supply\nBuilt for the everyday.",
+          "elements": [
+            {
+              "ref": "s5-e1",
+              "locator": {
+                "role": "button",
+                "name": "Add Canvas pouch",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s5-e2",
+              "locator": {
+                "role": "button",
+                "name": "Add Desk notebook",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s5-e3",
+              "locator": {
+                "role": "button",
+                "name": "Add Travel cup",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s5-e4",
+              "locator": {
+                "role": "button",
+                "name": "Remove Canvas pouch",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s5-e5",
+              "locator": {
+                "role": "button",
+                "name": "Remove Desk notebook",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s5-e6",
+              "locator": {
+                "role": "textbox",
+                "name": "Delivery address",
+                "exact": true
+              },
+              "value": "100 Main Street, Seattle"
+            },
+            {
+              "ref": "s5-e7",
+              "locator": {
+                "role": "combobox",
+                "name": "Delivery method",
+                "exact": true
+              },
+              "value": "standard",
+              "options": [
+                {
+                  "label": "Standard — 3–5 days ($5)",
+                  "value": "standard"
+                },
+                {
+                  "label": "Express — next day ($12)",
+                  "value": "express"
+                }
+              ]
+            },
+            {
+              "ref": "s5-e8",
+              "locator": {
+                "role": "textbox",
+                "name": "Promo code",
+                "exact": true
+              },
+              "value": ""
+            },
+            {
+              "ref": "s5-e9",
+              "locator": {
+                "role": "button",
+                "name": "Apply promo code",
+                "exact": true
+              }
+            }
+          ],
+          "state": {
+            "cart": [
+              {
+                "productId": "canvas-pouch",
+                "quantity": 1
+              },
+              {
+                "productId": "desk-notebook",
+                "quantity": 1
+              }
+            ],
+            "address": "100 Main Street, Seattle",
+            "saveSeq": 1,
+            "saved": true,
+            "busy": false
+          },
+          "screenshotName": "observation-5-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+        }
+      },
+      "screenshotUrl": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-5-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "id": 26,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:31.744Z"
+    },
+    {
+      "type": "observation",
+      "message": "Recovered one JSON decision from its response envelope; strict tool-schema validation still applies.",
+      "id": 27,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:33.879Z"
+    },
+    {
+      "type": "observation",
+      "message": "Read current cart to confirm state before testing next condition",
+      "id": 28,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:33.880Z"
+    },
+    {
+      "type": "observation",
+      "message": "Cart preserved after changing address to '100 Main Street, Seattle' with standard delivery. Now test with Express delivery method change - check if switching delivery method triggers cart clear",
+      "id": 29,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:35.669Z"
+    },
+    {
+      "type": "action",
+      "message": "select combobox \"Delivery method\"",
+      "data": {
+        "record": {
+          "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+          "step": {
+            "id": "step-6",
+            "kind": "select",
+            "locator": {
+              "role": "combobox",
+              "name": "Delivery method",
+              "exact": true
+            },
+            "value": "express"
+          },
+          "semantic": "checkout-edit",
+          "before": {
+            "cart": [
+              {
+                "productId": "canvas-pouch",
+                "quantity": 1
+              },
+              {
+                "productId": "desk-notebook",
+                "quantity": 1
+              }
+            ],
+            "address": "100 Main Street, Seattle",
+            "saveSeq": 1,
+            "saved": true,
+            "busy": false
+          },
+          "after": {
+            "cart": [
+              {
+                "productId": "canvas-pouch",
+                "quantity": 1
+              },
+              {
+                "productId": "desk-notebook",
+                "quantity": 1
+              }
+            ],
+            "address": "100 Main Street, Seattle",
+            "saveSeq": 1,
+            "saved": false,
+            "busy": false
+          }
+        }
+      },
+      "id": 30,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:36.298Z"
+    },
+    {
+      "type": "artifact",
+      "message": "Saved observation-6-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "data": {
+        "artifact": {
+          "kind": "screenshot",
+          "name": "observation-6-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+          "mimeType": "image/png",
+          "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-6-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+        }
+      },
+      "id": 31,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:36.376Z"
+    },
+    {
+      "type": "observation",
+      "message": "Observed 9 available controls and 2 cart items.",
+      "data": {
+        "observation": {
+          "snapshotId": 6,
+          "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+          "url": "http://localhost:4173/",
+          "text": "Disabled controls (observed; no action refs):\nbutton \"Save delivery address\" [disabled]\n\nFieldwork\nSupply\nDemo shop. No real purchases.\nGood things for\neveryday work.\n\nThoughtful essentials. Made to be used,\npacked up, and used again.\n\nCanvas pouch\n$28.00\n\nA little order, wherever you go.\n\nHeavyweight cotton / slate blue\n\n+\nAdd to cart\nDesk notebook\n$18.00\n\nRoom for the next good idea.\n\nLay-flat binding / 160 dotted pages\n\n+\nAdd to cart\nTravel cup\n$32.00\n\nFor the desk and the way there.\n\nDouble-wall steel / 350 ml\n\n+\nAdd to cart\n\nThree everyday essentials.\nOne less thing to overthink.\n\nYour cart\n2 items\nCanvas pouch\nQty 1 Remove\n$28.00\nDesk notebook\nQty 1 Remove\n$18.00\nSubtotal\n$46.00\nDelivery\n$12.00\nTotal\n$58.00\nDelivery details\nCurrently delivering to\n\n100 Main Street, Seattle\n\nDelivery address\nDelivery method\nStandard — 3–5 days ($5)\nExpress — next day ($12)\nSave delivery address\n\nA little welcome gift\n\nUse FIELD10 for 10% off your items.\n\nPromo code\nApply\n\nOne code per order.\n\nThis is a demo. No payment or order will be taken.\n\nFieldwork Supply\nBuilt for the everyday.",
+          "elements": [
+            {
+              "ref": "s6-e1",
+              "locator": {
+                "role": "button",
+                "name": "Add Canvas pouch",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s6-e2",
+              "locator": {
+                "role": "button",
+                "name": "Add Desk notebook",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s6-e3",
+              "locator": {
+                "role": "button",
+                "name": "Add Travel cup",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s6-e4",
+              "locator": {
+                "role": "button",
+                "name": "Remove Canvas pouch",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s6-e5",
+              "locator": {
+                "role": "button",
+                "name": "Remove Desk notebook",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s6-e6",
+              "locator": {
+                "role": "textbox",
+                "name": "Delivery address",
+                "exact": true
+              },
+              "value": "100 Main Street, Seattle"
+            },
+            {
+              "ref": "s6-e7",
+              "locator": {
+                "role": "combobox",
+                "name": "Delivery method",
+                "exact": true
+              },
+              "value": "express",
+              "options": [
+                {
+                  "label": "Standard — 3–5 days ($5)",
+                  "value": "standard"
+                },
+                {
+                  "label": "Express — next day ($12)",
+                  "value": "express"
+                }
+              ]
+            },
+            {
+              "ref": "s6-e8",
+              "locator": {
+                "role": "textbox",
+                "name": "Promo code",
+                "exact": true
+              },
+              "value": ""
+            },
+            {
+              "ref": "s6-e9",
+              "locator": {
+                "role": "button",
+                "name": "Apply promo code",
+                "exact": true
+              }
+            }
+          ],
+          "state": {
+            "cart": [
+              {
+                "productId": "canvas-pouch",
+                "quantity": 1
+              },
+              {
+                "productId": "desk-notebook",
+                "quantity": 1
+              }
+            ],
+            "address": "100 Main Street, Seattle",
+            "saveSeq": 1,
+            "saved": false,
+            "busy": false
+          },
+          "screenshotName": "observation-6-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+        }
+      },
+      "screenshotUrl": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-6-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "id": 32,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:36.377Z"
+    },
+    {
+      "type": "observation",
+      "message": "Save delivery address with Express method selected to test if that combination clears the cart",
+      "id": 33,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:39.190Z"
+    },
+    {
+      "type": "action",
+      "message": "click button \"Apply promo code\"",
+      "data": {
+        "record": {
+          "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+          "step": {
+            "id": "step-7",
+            "kind": "click",
+            "locator": {
+              "role": "button",
+              "name": "Apply promo code",
+              "exact": true
+            }
+          },
+          "semantic": "checkout-edit",
+          "before": {
+            "cart": [
+              {
+                "productId": "canvas-pouch",
+                "quantity": 1
+              },
+              {
+                "productId": "desk-notebook",
+                "quantity": 1
+              }
+            ],
+            "address": "100 Main Street, Seattle",
+            "saveSeq": 1,
+            "saved": false,
+            "busy": false
+          },
+          "after": {
+            "cart": [
+              {
+                "productId": "canvas-pouch",
+                "quantity": 1
+              },
+              {
+                "productId": "desk-notebook",
+                "quantity": 1
+              }
+            ],
+            "address": "100 Main Street, Seattle",
+            "saveSeq": 1,
+            "saved": false,
+            "busy": false
+          }
+        }
+      },
+      "id": 34,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:39.828Z"
+    },
+    {
+      "type": "artifact",
+      "message": "Saved observation-7-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "data": {
+        "artifact": {
+          "kind": "screenshot",
+          "name": "observation-7-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+          "mimeType": "image/png",
+          "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-7-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+        }
+      },
+      "id": 35,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:39.909Z"
+    },
+    {
+      "type": "observation",
+      "message": "Observed 9 available controls and 2 cart items.",
+      "data": {
+        "observation": {
+          "snapshotId": 7,
+          "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+          "url": "http://localhost:4173/",
+          "text": "Disabled controls (observed; no action refs):\nbutton \"Save delivery address\" [disabled]\n\nFieldwork\nSupply\nDemo shop. No real purchases.\nGood things for\neveryday work.\n\nThoughtful essentials. Made to be used,\npacked up, and used again.\n\nCanvas pouch\n$28.00\n\nA little order, wherever you go.\n\nHeavyweight cotton / slate blue\n\n+\nAdd to cart\nDesk notebook\n$18.00\n\nRoom for the next good idea.\n\nLay-flat binding / 160 dotted pages\n\n+\nAdd to cart\nTravel cup\n$32.00\n\nFor the desk and the way there.\n\nDouble-wall steel / 350 ml\n\n+\nAdd to cart\n\nThree everyday essentials.\nOne less thing to overthink.\n\nYour cart\n2 items\nCanvas pouch\nQty 1 Remove\n$28.00\nDesk notebook\nQty 1 Remove\n$18.00\nSubtotal\n$46.00\nDelivery\n$12.00\nTotal\n$58.00\nDelivery details\nCurrently delivering to\n\n100 Main Street, Seattle\n\nDelivery address\nDelivery method\nStandard — 3–5 days ($5)\nExpress — next day ($12)\nSave delivery address\n\nA little welcome gift\n\nUse FIELD10 for 10% off your items.\n\nPromo code\nApply\n\nEnter a promo code first.\n\nThis is a demo. No payment or order will be taken.\n\nFieldwork Supply\nBuilt for the everyday.",
+          "elements": [
+            {
+              "ref": "s7-e1",
+              "locator": {
+                "role": "button",
+                "name": "Add Canvas pouch",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s7-e2",
+              "locator": {
+                "role": "button",
+                "name": "Add Desk notebook",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s7-e3",
+              "locator": {
+                "role": "button",
+                "name": "Add Travel cup",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s7-e4",
+              "locator": {
+                "role": "button",
+                "name": "Remove Canvas pouch",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s7-e5",
+              "locator": {
+                "role": "button",
+                "name": "Remove Desk notebook",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s7-e6",
+              "locator": {
+                "role": "textbox",
+                "name": "Delivery address",
+                "exact": true
+              },
+              "value": "100 Main Street, Seattle"
+            },
+            {
+              "ref": "s7-e7",
+              "locator": {
+                "role": "combobox",
+                "name": "Delivery method",
+                "exact": true
+              },
+              "value": "express",
+              "options": [
+                {
+                  "label": "Standard — 3–5 days ($5)",
+                  "value": "standard"
+                },
+                {
+                  "label": "Express — next day ($12)",
+                  "value": "express"
+                }
+              ]
+            },
+            {
+              "ref": "s7-e8",
+              "locator": {
+                "role": "textbox",
+                "name": "Promo code",
+                "exact": true
+              },
+              "value": ""
+            },
+            {
+              "ref": "s7-e9",
+              "locator": {
+                "role": "button",
+                "name": "Apply promo code",
+                "exact": true
+              }
+            }
+          ],
+          "state": {
+            "cart": [
+              {
+                "productId": "canvas-pouch",
+                "quantity": 1
+              },
+              {
+                "productId": "desk-notebook",
+                "quantity": 1
+              }
+            ],
+            "address": "100 Main Street, Seattle",
+            "saveSeq": 1,
+            "saved": false,
+            "busy": false
+          },
+          "screenshotName": "observation-7-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+        }
+      },
+      "screenshotUrl": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-7-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "id": 36,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:39.909Z"
+    },
+    {
+      "type": "observation",
+      "message": "Recovered one JSON decision from its response envelope; strict tool-schema validation still applies.",
+      "id": 37,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:42.297Z"
+    },
+    {
+      "type": "observation",
+      "message": "Fill a new address to enable Save button for testing express delivery method + new address combination",
+      "id": 38,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:42.298Z"
+    },
+    {
+      "type": "action",
+      "message": "fill textbox \"Delivery address\"",
+      "data": {
+        "record": {
+          "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+          "step": {
+            "id": "step-8",
+            "kind": "fill",
+            "locator": {
+              "role": "textbox",
+              "name": "Delivery address",
+              "exact": true
+            },
+            "value": "200 Pine Street, Seattle"
+          },
+          "semantic": "checkout-edit",
+          "before": {
+            "cart": [
+              {
+                "productId": "canvas-pouch",
+                "quantity": 1
+              },
+              {
+                "productId": "desk-notebook",
+                "quantity": 1
+              }
+            ],
+            "address": "100 Main Street, Seattle",
+            "saveSeq": 1,
+            "saved": false,
+            "busy": false
+          },
+          "after": {
+            "cart": [
+              {
+                "productId": "canvas-pouch",
+                "quantity": 1
+              },
+              {
+                "productId": "desk-notebook",
+                "quantity": 1
+              }
+            ],
+            "address": "100 Main Street, Seattle",
+            "saveSeq": 1,
+            "saved": false,
+            "busy": false
+          }
+        }
+      },
+      "id": 39,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:42.902Z"
+    },
+    {
+      "type": "artifact",
+      "message": "Saved observation-8-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "data": {
+        "artifact": {
+          "kind": "screenshot",
+          "name": "observation-8-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+          "mimeType": "image/png",
+          "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-8-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+        }
+      },
+      "id": 40,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:42.976Z"
+    },
+    {
+      "type": "observation",
+      "message": "Observed 10 available controls and 2 cart items.",
+      "data": {
+        "observation": {
+          "snapshotId": 8,
+          "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+          "url": "http://localhost:4173/",
+          "text": "Fieldwork\nSupply\nDemo shop. No real purchases.\nGood things for\neveryday work.\n\nThoughtful essentials. Made to be used,\npacked up, and used again.\n\nCanvas pouch\n$28.00\n\nA little order, wherever you go.\n\nHeavyweight cotton / slate blue\n\n+\nAdd to cart\nDesk notebook\n$18.00\n\nRoom for the next good idea.\n\nLay-flat binding / 160 dotted pages\n\n+\nAdd to cart\nTravel cup\n$32.00\n\nFor the desk and the way there.\n\nDouble-wall steel / 350 ml\n\n+\nAdd to cart\n\nThree everyday essentials.\nOne less thing to overthink.\n\nYour cart\n2 items\nCanvas pouch\nQty 1 Remove\n$28.00\nDesk notebook\nQty 1 Remove\n$18.00\nSubtotal\n$46.00\nDelivery\n$12.00\nTotal\n$58.00\nDelivery details\nCurrently delivering to\n\n100 Main Street, Seattle\n\nDelivery address\nDelivery method\nStandard — 3–5 days ($5)\nExpress — next day ($12)\nSave delivery address\n\nA little welcome gift\n\nUse FIELD10 for 10% off your items.\n\nPromo code\nApply\n\nEnter a promo code first.\n\nThis is a demo. No payment or order will be taken.\n\nFieldwork Supply\nBuilt for the everyday.",
+          "elements": [
+            {
+              "ref": "s8-e1",
+              "locator": {
+                "role": "button",
+                "name": "Add Canvas pouch",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s8-e2",
+              "locator": {
+                "role": "button",
+                "name": "Add Desk notebook",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s8-e3",
+              "locator": {
+                "role": "button",
+                "name": "Add Travel cup",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s8-e4",
+              "locator": {
+                "role": "button",
+                "name": "Remove Canvas pouch",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s8-e5",
+              "locator": {
+                "role": "button",
+                "name": "Remove Desk notebook",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s8-e6",
+              "locator": {
+                "role": "textbox",
+                "name": "Delivery address",
+                "exact": true
+              },
+              "value": "200 Pine Street, Seattle"
+            },
+            {
+              "ref": "s8-e7",
+              "locator": {
+                "role": "combobox",
+                "name": "Delivery method",
+                "exact": true
+              },
+              "value": "express",
+              "options": [
+                {
+                  "label": "Standard — 3–5 days ($5)",
+                  "value": "standard"
+                },
+                {
+                  "label": "Express — next day ($12)",
+                  "value": "express"
+                }
+              ]
+            },
+            {
+              "ref": "s8-e8",
+              "locator": {
+                "role": "button",
+                "name": "Save delivery address",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s8-e9",
+              "locator": {
+                "role": "textbox",
+                "name": "Promo code",
+                "exact": true
+              },
+              "value": ""
+            },
+            {
+              "ref": "s8-e10",
+              "locator": {
+                "role": "button",
+                "name": "Apply promo code",
+                "exact": true
+              }
+            }
+          ],
+          "state": {
+            "cart": [
+              {
+                "productId": "canvas-pouch",
+                "quantity": 1
+              },
+              {
+                "productId": "desk-notebook",
+                "quantity": 1
+              }
+            ],
+            "address": "100 Main Street, Seattle",
+            "saveSeq": 1,
+            "saved": false,
+            "busy": false
+          },
+          "screenshotName": "observation-8-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+        }
+      },
+      "screenshotUrl": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-8-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "id": 41,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:42.976Z"
+    },
+    {
+      "type": "observation",
+      "message": "Save new address '200 Pine Street, Seattle' with Express delivery method to test if this combination clears the cart",
+      "id": 42,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:44.107Z"
+    },
+    {
+      "type": "action",
+      "message": "click button \"Save delivery address\"",
+      "data": {
+        "record": {
+          "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+          "step": {
+            "id": "step-9",
+            "kind": "click",
+            "locator": {
+              "role": "button",
+              "name": "Save delivery address",
+              "exact": true
+            }
+          },
+          "semantic": "checkout-save",
+          "before": {
+            "cart": [
+              {
+                "productId": "canvas-pouch",
+                "quantity": 1
+              },
+              {
+                "productId": "desk-notebook",
+                "quantity": 1
+              }
+            ],
+            "address": "100 Main Street, Seattle",
+            "saveSeq": 1,
+            "saved": false,
+            "busy": false
+          },
+          "after": {
+            "cart": [
+              {
+                "productId": "canvas-pouch",
+                "quantity": 1
+              },
+              {
+                "productId": "desk-notebook",
+                "quantity": 1
+              }
+            ],
+            "address": "200 Pine Street, Seattle",
+            "saveSeq": 2,
+            "saved": true,
+            "busy": false
+          }
+        }
+      },
+      "id": 43,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:45.134Z"
+    },
+    {
+      "type": "artifact",
+      "message": "Saved observation-9-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "data": {
+        "artifact": {
+          "kind": "screenshot",
+          "name": "observation-9-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+          "mimeType": "image/png",
+          "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-9-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+        }
+      },
+      "id": 44,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:45.226Z"
+    },
+    {
+      "type": "observation",
+      "message": "Observed 9 available controls and 2 cart items.",
+      "data": {
+        "observation": {
+          "snapshotId": 9,
+          "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+          "url": "http://localhost:4173/",
+          "text": "Disabled controls (observed; no action refs):\nbutton \"Save delivery address\" [disabled]\n\nFieldwork\nSupply\nDemo shop. No real purchases.\nGood things for\neveryday work.\n\nThoughtful essentials. Made to be used,\npacked up, and used again.\n\nCanvas pouch\n$28.00\n\nA little order, wherever you go.\n\nHeavyweight cotton / slate blue\n\n+\nAdd to cart\nDesk notebook\n$18.00\n\nRoom for the next good idea.\n\nLay-flat binding / 160 dotted pages\n\n+\nAdd to cart\nTravel cup\n$32.00\n\nFor the desk and the way there.\n\nDouble-wall steel / 350 ml\n\n+\nAdd to cart\n\nThree everyday essentials.\nOne less thing to overthink.\n\nYour cart\n2 items\nCanvas pouch\nQty 1 Remove\n$28.00\nDesk notebook\nQty 1 Remove\n$18.00\nSubtotal\n$46.00\nDelivery\n$12.00\nTotal\n$58.00\nDelivery details\nCurrently delivering to\n\n200 Pine Street, Seattle\n\nDelivery address\nDelivery method\nStandard — 3–5 days ($5)\nExpress — next day ($12)\nSave delivery address\n\nAddress saved\n\nA little welcome gift\n\nUse FIELD10 for 10% off your items.\n\nPromo code\nApply\n\nEnter a promo code first.\n\nThis is a demo. No payment or order will be taken.\n\nFieldwork Supply\nBuilt for the everyday.",
+          "elements": [
+            {
+              "ref": "s9-e1",
+              "locator": {
+                "role": "button",
+                "name": "Add Canvas pouch",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s9-e2",
+              "locator": {
+                "role": "button",
+                "name": "Add Desk notebook",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s9-e3",
+              "locator": {
+                "role": "button",
+                "name": "Add Travel cup",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s9-e4",
+              "locator": {
+                "role": "button",
+                "name": "Remove Canvas pouch",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s9-e5",
+              "locator": {
+                "role": "button",
+                "name": "Remove Desk notebook",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s9-e6",
+              "locator": {
+                "role": "textbox",
+                "name": "Delivery address",
+                "exact": true
+              },
+              "value": "200 Pine Street, Seattle"
+            },
+            {
+              "ref": "s9-e7",
+              "locator": {
+                "role": "combobox",
+                "name": "Delivery method",
+                "exact": true
+              },
+              "value": "express",
+              "options": [
+                {
+                  "label": "Standard — 3–5 days ($5)",
+                  "value": "standard"
+                },
+                {
+                  "label": "Express — next day ($12)",
+                  "value": "express"
+                }
+              ]
+            },
+            {
+              "ref": "s9-e8",
+              "locator": {
+                "role": "textbox",
+                "name": "Promo code",
+                "exact": true
+              },
+              "value": ""
+            },
+            {
+              "ref": "s9-e9",
+              "locator": {
+                "role": "button",
+                "name": "Apply promo code",
+                "exact": true
+              }
+            }
+          ],
+          "state": {
+            "cart": [
+              {
+                "productId": "canvas-pouch",
+                "quantity": 1
+              },
+              {
+                "productId": "desk-notebook",
+                "quantity": 1
+              }
+            ],
+            "address": "200 Pine Street, Seattle",
+            "saveSeq": 2,
+            "saved": true,
+            "busy": false
+          },
+          "screenshotName": "observation-9-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+        }
+      },
+      "screenshotUrl": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-9-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "id": 45,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:45.226Z"
+    },
+    {
+      "type": "hypothesis",
+      "message": "Saving an address that was previously saved (saveSeq > 0) with a promo code applied clears the cart",
+      "id": 46,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:47.280Z"
+    },
+    {
+      "type": "observation",
+      "message": "Previous tests showed cart preserved with new addresses and express delivery. Now test with a valid promo code applied before saving an address change.",
+      "id": 47,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:47.282Z"
+    },
+    {
+      "type": "action",
+      "message": "fill textbox \"Promo code\"",
+      "data": {
+        "record": {
+          "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+          "step": {
+            "id": "step-10",
+            "kind": "fill",
+            "locator": {
+              "role": "textbox",
+              "name": "Promo code",
+              "exact": true
+            },
+            "value": "FIELD10"
+          },
+          "semantic": "checkout-edit",
+          "before": {
+            "cart": [
+              {
+                "productId": "canvas-pouch",
+                "quantity": 1
+              },
+              {
+                "productId": "desk-notebook",
+                "quantity": 1
+              }
+            ],
+            "address": "200 Pine Street, Seattle",
+            "saveSeq": 2,
+            "saved": true,
+            "busy": false
+          },
+          "after": {
+            "cart": [
+              {
+                "productId": "canvas-pouch",
+                "quantity": 1
+              },
+              {
+                "productId": "desk-notebook",
+                "quantity": 1
+              }
+            ],
+            "address": "200 Pine Street, Seattle",
+            "saveSeq": 2,
+            "saved": false,
+            "busy": false
+          }
+        }
+      },
+      "id": 48,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:47.909Z"
+    },
+    {
+      "type": "artifact",
+      "message": "Saved observation-10-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "data": {
+        "artifact": {
+          "kind": "screenshot",
+          "name": "observation-10-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+          "mimeType": "image/png",
+          "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-10-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+        }
+      },
+      "id": 49,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:47.992Z"
+    },
+    {
+      "type": "observation",
+      "message": "Observed 9 available controls and 2 cart items.",
+      "data": {
+        "observation": {
+          "snapshotId": 10,
+          "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+          "url": "http://localhost:4173/",
+          "text": "Disabled controls (observed; no action refs):\nbutton \"Save delivery address\" [disabled]\n\nFieldwork\nSupply\nDemo shop. No real purchases.\nGood things for\neveryday work.\n\nThoughtful essentials. Made to be used,\npacked up, and used again.\n\nCanvas pouch\n$28.00\n\nA little order, wherever you go.\n\nHeavyweight cotton / slate blue\n\n+\nAdd to cart\nDesk notebook\n$18.00\n\nRoom for the next good idea.\n\nLay-flat binding / 160 dotted pages\n\n+\nAdd to cart\nTravel cup\n$32.00\n\nFor the desk and the way there.\n\nDouble-wall steel / 350 ml\n\n+\nAdd to cart\n\nThree everyday essentials.\nOne less thing to overthink.\n\nYour cart\n2 items\nCanvas pouch\nQty 1 Remove\n$28.00\nDesk notebook\nQty 1 Remove\n$18.00\nSubtotal\n$46.00\nDelivery\n$12.00\nTotal\n$58.00\nDelivery details\nCurrently delivering to\n\n200 Pine Street, Seattle\n\nDelivery address\nDelivery method\nStandard — 3–5 days ($5)\nExpress — next day ($12)\nSave delivery address\n\nA little welcome gift\n\nUse FIELD10 for 10% off your items.\n\nPromo code\nApply\n\nOne code per order.\n\nThis is a demo. No payment or order will be taken.\n\nFieldwork Supply\nBuilt for the everyday.",
+          "elements": [
+            {
+              "ref": "s10-e1",
+              "locator": {
+                "role": "button",
+                "name": "Add Canvas pouch",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s10-e2",
+              "locator": {
+                "role": "button",
+                "name": "Add Desk notebook",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s10-e3",
+              "locator": {
+                "role": "button",
+                "name": "Add Travel cup",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s10-e4",
+              "locator": {
+                "role": "button",
+                "name": "Remove Canvas pouch",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s10-e5",
+              "locator": {
+                "role": "button",
+                "name": "Remove Desk notebook",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s10-e6",
+              "locator": {
+                "role": "textbox",
+                "name": "Delivery address",
+                "exact": true
+              },
+              "value": "200 Pine Street, Seattle"
+            },
+            {
+              "ref": "s10-e7",
+              "locator": {
+                "role": "combobox",
+                "name": "Delivery method",
+                "exact": true
+              },
+              "value": "express",
+              "options": [
+                {
+                  "label": "Standard — 3–5 days ($5)",
+                  "value": "standard"
+                },
+                {
+                  "label": "Express — next day ($12)",
+                  "value": "express"
+                }
+              ]
+            },
+            {
+              "ref": "s10-e8",
+              "locator": {
+                "role": "textbox",
+                "name": "Promo code",
+                "exact": true
+              },
+              "value": "FIELD10"
+            },
+            {
+              "ref": "s10-e9",
+              "locator": {
+                "role": "button",
+                "name": "Apply promo code",
+                "exact": true
+              }
+            }
+          ],
+          "state": {
+            "cart": [
+              {
+                "productId": "canvas-pouch",
+                "quantity": 1
+              },
+              {
+                "productId": "desk-notebook",
+                "quantity": 1
+              }
+            ],
+            "address": "200 Pine Street, Seattle",
+            "saveSeq": 2,
+            "saved": false,
+            "busy": false
+          },
+          "screenshotName": "observation-10-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+        }
+      },
+      "screenshotUrl": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-10-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "id": 50,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:47.993Z"
+    },
+    {
+      "type": "observation",
+      "message": "Apply the promo code FIELD10 first, then save a new address to test if promo+address change combination clears the cart",
+      "id": 51,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:49.323Z"
+    },
+    {
+      "type": "action",
+      "message": "click button \"Apply promo code\"",
+      "data": {
+        "record": {
+          "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+          "step": {
+            "id": "step-11",
+            "kind": "click",
+            "locator": {
+              "role": "button",
+              "name": "Apply promo code",
+              "exact": true
+            }
+          },
+          "semantic": "checkout-edit",
+          "before": {
+            "cart": [
+              {
+                "productId": "canvas-pouch",
+                "quantity": 1
+              },
+              {
+                "productId": "desk-notebook",
+                "quantity": 1
+              }
+            ],
+            "address": "200 Pine Street, Seattle",
+            "saveSeq": 2,
+            "saved": false,
+            "busy": false
+          },
+          "after": {
+            "cart": [
+              {
+                "productId": "canvas-pouch",
+                "quantity": 1
+              },
+              {
+                "productId": "desk-notebook",
+                "quantity": 1
+              }
+            ],
+            "address": "200 Pine Street, Seattle",
+            "saveSeq": 2,
+            "saved": false,
+            "busy": false
+          }
+        }
+      },
+      "id": 52,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:50.015Z"
+    },
+    {
+      "type": "artifact",
+      "message": "Saved observation-11-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "data": {
+        "artifact": {
+          "kind": "screenshot",
+          "name": "observation-11-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+          "mimeType": "image/png",
+          "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-11-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+        }
+      },
+      "id": 53,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:50.109Z"
+    },
+    {
+      "type": "observation",
+      "message": "Observed 9 available controls and 2 cart items.",
+      "data": {
+        "observation": {
+          "snapshotId": 11,
+          "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+          "url": "http://localhost:4173/",
+          "text": "Disabled controls (observed; no action refs):\nbutton \"Save delivery address\" [disabled]\n\nFieldwork\nSupply\nDemo shop. No real purchases.\nGood things for\neveryday work.\n\nThoughtful essentials. Made to be used,\npacked up, and used again.\n\nCanvas pouch\n$28.00\n\nA little order, wherever you go.\n\nHeavyweight cotton / slate blue\n\n+\nAdd to cart\nDesk notebook\n$18.00\n\nRoom for the next good idea.\n\nLay-flat binding / 160 dotted pages\n\n+\nAdd to cart\nTravel cup\n$32.00\n\nFor the desk and the way there.\n\nDouble-wall steel / 350 ml\n\n+\nAdd to cart\n\nThree everyday essentials.\nOne less thing to overthink.\n\nYour cart\n2 items\nCanvas pouch\nQty 1 Remove\n$28.00\nDesk notebook\nQty 1 Remove\n$18.00\nSubtotal\n$46.00\nFIELD10 discount\n−$4.60\nDelivery\n$12.00\nTotal\n$53.40\nDelivery details\nCurrently delivering to\n\n200 Pine Street, Seattle\n\nDelivery address\nDelivery method\nStandard — 3–5 days ($5)\nExpress — next day ($12)\nSave delivery address\n\nA little welcome gift\n\nUse FIELD10 for 10% off your items.\n\nPromo code\nApply\n\nFIELD10 applied. 10% off your items.\n\nThis is a demo. No payment or order will be taken.\n\nFieldwork Supply\nBuilt for the everyday.",
+          "elements": [
+            {
+              "ref": "s11-e1",
+              "locator": {
+                "role": "button",
+                "name": "Add Canvas pouch",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s11-e2",
+              "locator": {
+                "role": "button",
+                "name": "Add Desk notebook",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s11-e3",
+              "locator": {
+                "role": "button",
+                "name": "Add Travel cup",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s11-e4",
+              "locator": {
+                "role": "button",
+                "name": "Remove Canvas pouch",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s11-e5",
+              "locator": {
+                "role": "button",
+                "name": "Remove Desk notebook",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s11-e6",
+              "locator": {
+                "role": "textbox",
+                "name": "Delivery address",
+                "exact": true
+              },
+              "value": "200 Pine Street, Seattle"
+            },
+            {
+              "ref": "s11-e7",
+              "locator": {
+                "role": "combobox",
+                "name": "Delivery method",
+                "exact": true
+              },
+              "value": "express",
+              "options": [
+                {
+                  "label": "Standard — 3–5 days ($5)",
+                  "value": "standard"
+                },
+                {
+                  "label": "Express — next day ($12)",
+                  "value": "express"
+                }
+              ]
+            },
+            {
+              "ref": "s11-e8",
+              "locator": {
+                "role": "textbox",
+                "name": "Promo code",
+                "exact": true
+              },
+              "value": "FIELD10"
+            },
+            {
+              "ref": "s11-e9",
+              "locator": {
+                "role": "button",
+                "name": "Apply promo code",
+                "exact": true
+              }
+            }
+          ],
+          "state": {
+            "cart": [
+              {
+                "productId": "canvas-pouch",
+                "quantity": 1
+              },
+              {
+                "productId": "desk-notebook",
+                "quantity": 1
+              }
+            ],
+            "address": "200 Pine Street, Seattle",
+            "saveSeq": 2,
+            "saved": false,
+            "busy": false
+          },
+          "screenshotName": "observation-11-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+        }
+      },
+      "screenshotUrl": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-11-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "id": 54,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:50.109Z"
+    },
+    {
+      "type": "observation",
+      "message": "Recovered one JSON decision from its response envelope; strict tool-schema validation still applies.",
+      "id": 55,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:51.848Z"
+    },
+    {
+      "type": "observation",
+      "message": "Fill a new address while promo FIELD10 is applied, to test if saving clears the cart",
+      "id": 56,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:51.850Z"
+    },
+    {
+      "type": "action",
+      "message": "fill textbox \"Delivery address\"",
+      "data": {
+        "record": {
+          "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+          "step": {
+            "id": "step-12",
+            "kind": "fill",
+            "locator": {
+              "role": "textbox",
+              "name": "Delivery address",
+              "exact": true
+            },
+            "value": "300 Oak Avenue, Portland"
+          },
+          "semantic": "checkout-edit",
+          "before": {
+            "cart": [
+              {
+                "productId": "canvas-pouch",
+                "quantity": 1
+              },
+              {
+                "productId": "desk-notebook",
+                "quantity": 1
+              }
+            ],
+            "address": "200 Pine Street, Seattle",
+            "saveSeq": 2,
+            "saved": false,
+            "busy": false
+          },
+          "after": {
+            "cart": [
+              {
+                "productId": "canvas-pouch",
+                "quantity": 1
+              },
+              {
+                "productId": "desk-notebook",
+                "quantity": 1
+              }
+            ],
+            "address": "200 Pine Street, Seattle",
+            "saveSeq": 2,
+            "saved": false,
+            "busy": false
+          }
+        }
+      },
+      "id": 57,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:52.479Z"
+    },
+    {
+      "type": "artifact",
+      "message": "Saved observation-12-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "data": {
+        "artifact": {
+          "kind": "screenshot",
+          "name": "observation-12-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+          "mimeType": "image/png",
+          "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-12-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+        }
+      },
+      "id": 58,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:52.559Z"
+    },
+    {
+      "type": "observation",
+      "message": "Observed 10 available controls and 2 cart items.",
+      "data": {
+        "observation": {
+          "snapshotId": 12,
+          "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+          "url": "http://localhost:4173/",
+          "text": "Fieldwork\nSupply\nDemo shop. No real purchases.\nGood things for\neveryday work.\n\nThoughtful essentials. Made to be used,\npacked up, and used again.\n\nCanvas pouch\n$28.00\n\nA little order, wherever you go.\n\nHeavyweight cotton / slate blue\n\n+\nAdd to cart\nDesk notebook\n$18.00\n\nRoom for the next good idea.\n\nLay-flat binding / 160 dotted pages\n\n+\nAdd to cart\nTravel cup\n$32.00\n\nFor the desk and the way there.\n\nDouble-wall steel / 350 ml\n\n+\nAdd to cart\n\nThree everyday essentials.\nOne less thing to overthink.\n\nYour cart\n2 items\nCanvas pouch\nQty 1 Remove\n$28.00\nDesk notebook\nQty 1 Remove\n$18.00\nSubtotal\n$46.00\nFIELD10 discount\n−$4.60\nDelivery\n$12.00\nTotal\n$53.40\nDelivery details\nCurrently delivering to\n\n200 Pine Street, Seattle\n\nDelivery address\nDelivery method\nStandard — 3–5 days ($5)\nExpress — next day ($12)\nSave delivery address\n\nA little welcome gift\n\nUse FIELD10 for 10% off your items.\n\nPromo code\nApply\n\nFIELD10 applied. 10% off your items.\n\nThis is a demo. No payment or order will be taken.\n\nFieldwork Supply\nBuilt for the everyday.",
+          "elements": [
+            {
+              "ref": "s12-e1",
+              "locator": {
+                "role": "button",
+                "name": "Add Canvas pouch",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s12-e2",
+              "locator": {
+                "role": "button",
+                "name": "Add Desk notebook",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s12-e3",
+              "locator": {
+                "role": "button",
+                "name": "Add Travel cup",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s12-e4",
+              "locator": {
+                "role": "button",
+                "name": "Remove Canvas pouch",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s12-e5",
+              "locator": {
+                "role": "button",
+                "name": "Remove Desk notebook",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s12-e6",
+              "locator": {
+                "role": "textbox",
+                "name": "Delivery address",
+                "exact": true
+              },
+              "value": "300 Oak Avenue, Portland"
+            },
+            {
+              "ref": "s12-e7",
+              "locator": {
+                "role": "combobox",
+                "name": "Delivery method",
+                "exact": true
+              },
+              "value": "express",
+              "options": [
+                {
+                  "label": "Standard — 3–5 days ($5)",
+                  "value": "standard"
+                },
+                {
+                  "label": "Express — next day ($12)",
+                  "value": "express"
+                }
+              ]
+            },
+            {
+              "ref": "s12-e8",
+              "locator": {
+                "role": "button",
+                "name": "Save delivery address",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s12-e9",
+              "locator": {
+                "role": "textbox",
+                "name": "Promo code",
+                "exact": true
+              },
+              "value": "FIELD10"
+            },
+            {
+              "ref": "s12-e10",
+              "locator": {
+                "role": "button",
+                "name": "Apply promo code",
+                "exact": true
+              }
+            }
+          ],
+          "state": {
+            "cart": [
+              {
+                "productId": "canvas-pouch",
+                "quantity": 1
+              },
+              {
+                "productId": "desk-notebook",
+                "quantity": 1
+              }
+            ],
+            "address": "200 Pine Street, Seattle",
+            "saveSeq": 2,
+            "saved": false,
+            "busy": false
+          },
+          "screenshotName": "observation-12-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+        }
+      },
+      "screenshotUrl": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-12-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "id": 59,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:52.559Z"
+    },
+    {
+      "type": "observation",
+      "message": "Click Save delivery address with promo FIELD10 applied and new address '300 Oak Avenue, Portland' to test if saveSeq>0 + promo + new address clears the cart",
+      "id": 60,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:54.482Z"
+    },
+    {
+      "type": "action",
+      "message": "click button \"Save delivery address\"",
+      "data": {
+        "record": {
+          "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+          "step": {
+            "id": "step-13",
+            "kind": "click",
+            "locator": {
+              "role": "button",
+              "name": "Save delivery address",
+              "exact": true
+            }
+          },
+          "semantic": "checkout-save",
+          "before": {
+            "cart": [
+              {
+                "productId": "canvas-pouch",
+                "quantity": 1
+              },
+              {
+                "productId": "desk-notebook",
+                "quantity": 1
+              }
+            ],
+            "address": "200 Pine Street, Seattle",
+            "saveSeq": 2,
+            "saved": false,
+            "busy": false
+          },
+          "after": {
+            "cart": [],
+            "address": "300 Oak Avenue, Portland",
+            "saveSeq": 3,
+            "saved": true,
+            "busy": false
+          }
+        }
+      },
+      "id": 61,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:55.430Z"
+    },
+    {
+      "type": "artifact",
+      "message": "Saved observation-13-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "data": {
+        "artifact": {
+          "kind": "screenshot",
+          "name": "observation-13-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+          "mimeType": "image/png",
+          "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-13-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+        }
+      },
+      "id": 62,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:55.509Z"
+    },
+    {
+      "type": "observation",
+      "message": "Observed 7 available controls and 0 cart items.",
+      "data": {
+        "observation": {
+          "snapshotId": 13,
+          "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+          "url": "http://localhost:4173/",
+          "text": "Disabled controls (observed; no action refs):\nbutton \"Save delivery address\" [disabled]\n\nFieldwork\nSupply\nDemo shop. No real purchases.\nGood things for\neveryday work.\n\nThoughtful essentials. Made to be used,\npacked up, and used again.\n\nCanvas pouch\n$28.00\n\nA little order, wherever you go.\n\nHeavyweight cotton / slate blue\n\n+\nAdd to cart\nDesk notebook\n$18.00\n\nRoom for the next good idea.\n\nLay-flat binding / 160 dotted pages\n\n+\nAdd to cart\nTravel cup\n$32.00\n\nFor the desk and the way there.\n\nDouble-wall steel / 350 ml\n\n+\nAdd to cart\n\nThree everyday essentials.\nOne less thing to overthink.\n\nYour cart\n0 items\n\nYour cart is empty.\nAdd an everyday essential to get started.\n\nSubtotal\n$0.00\nFIELD10 discount\n−$0.00\nDelivery\nCalculated with items\nTotal\n$0.00\nDelivery details\nCurrently delivering to\n\n300 Oak Avenue, Portland\n\nDelivery address\nDelivery method\nStandard — 3–5 days ($5)\nExpress — next day ($12)\nSave delivery address\n\nAddress saved\n\nA little welcome gift\n\nUse FIELD10 for 10% off your items.\n\nPromo code\nApply\n\nFIELD10 applied. 10% off your items.\n\nThis is a demo. No payment or order will be taken.\n\nFieldwork Supply\nBuilt for the everyday.",
+          "elements": [
+            {
+              "ref": "s13-e1",
+              "locator": {
+                "role": "button",
+                "name": "Add Canvas pouch",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s13-e2",
+              "locator": {
+                "role": "button",
+                "name": "Add Desk notebook",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s13-e3",
+              "locator": {
+                "role": "button",
+                "name": "Add Travel cup",
+                "exact": true
+              }
+            },
+            {
+              "ref": "s13-e4",
+              "locator": {
+                "role": "textbox",
+                "name": "Delivery address",
+                "exact": true
+              },
+              "value": "300 Oak Avenue, Portland"
+            },
+            {
+              "ref": "s13-e5",
+              "locator": {
+                "role": "combobox",
+                "name": "Delivery method",
+                "exact": true
+              },
+              "value": "express",
+              "options": [
+                {
+                  "label": "Standard — 3–5 days ($5)",
+                  "value": "standard"
+                },
+                {
+                  "label": "Express — next day ($12)",
+                  "value": "express"
+                }
+              ]
+            },
+            {
+              "ref": "s13-e6",
+              "locator": {
+                "role": "textbox",
+                "name": "Promo code",
+                "exact": true
+              },
+              "value": "FIELD10"
+            },
+            {
+              "ref": "s13-e7",
+              "locator": {
+                "role": "button",
+                "name": "Apply promo code",
+                "exact": true
+              }
+            }
+          ],
+          "state": {
+            "cart": [],
+            "address": "300 Oak Avenue, Portland",
+            "saveSeq": 3,
+            "saved": true,
+            "busy": false
+          },
+          "screenshotName": "observation-13-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+        }
+      },
+      "screenshotUrl": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-13-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "id": 63,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:55.510Z"
+    },
+    {
+      "type": "observation",
+      "message": "Recovered one JSON decision from its response envelope; strict tool-schema validation still applies.",
+      "id": 64,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:59.347Z"
+    },
+    {
+      "type": "observation",
+      "message": "Cart was emptied after saving address '300 Oak Avenue, Portland' with promo FIELD10 applied, express delivery, and saveSeq=3. This matches the hypothesis: saving an address with saveSeq>0 and promo code applied clears the cart. Submitting candidate with checkpoint-1 and end step step-13.",
+      "id": 65,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:59.348Z"
+    },
+    {
+      "type": "artifact",
+      "message": "Saved repro.spec.ts",
+      "data": {
+        "artifact": {
+          "kind": "test",
+          "name": "repro.spec.ts",
+          "mimeType": "text/plain",
+          "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/repro.spec.ts"
+        }
+      },
+      "id": 66,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:59.359Z"
+    },
+    {
+      "type": "artifact",
+      "message": "Saved reproduction.json",
+      "data": {
+        "artifact": {
+          "kind": "reproduction",
+          "name": "reproduction.json",
+          "mimeType": "application/json",
+          "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/reproduction.json"
+        }
+      },
+      "id": 67,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:59.360Z"
+    },
+    {
+      "type": "status",
+      "status": "verifying",
+      "message": "Running the saved regression test in two independent clean browser processes.",
+      "id": 68,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:27:59.361Z"
+    },
+    {
+      "type": "artifact",
+      "message": "Saved verification.json",
+      "data": {
+        "artifact": {
+          "kind": "verification",
+          "name": "verification.json",
+          "mimeType": "application/json",
+          "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/verification.json"
+        }
+      },
+      "id": 69,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:28:07.372Z"
+    },
+    {
+      "type": "artifact",
+      "message": "Saved verification-1.webm",
+      "data": {
+        "artifact": {
+          "kind": "video",
+          "name": "verification-1.webm",
+          "mimeType": "video/webm",
+          "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/verification-1.webm"
+        }
+      },
+      "id": 70,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:28:07.373Z"
+    },
+    {
+      "type": "artifact",
+      "message": "Saved verification-1-before.png",
+      "data": {
+        "artifact": {
+          "kind": "screenshot",
+          "name": "verification-1-before.png",
+          "mimeType": "image/png",
+          "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/verification-1-before.png"
+        }
+      },
+      "id": 71,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:28:07.373Z"
+    },
+    {
+      "type": "artifact",
+      "message": "Saved verification-1-after.png",
+      "data": {
+        "artifact": {
+          "kind": "screenshot",
+          "name": "verification-1-after.png",
+          "mimeType": "image/png",
+          "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/verification-1-after.png"
+        }
+      },
+      "id": 72,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:28:07.373Z"
+    },
+    {
+      "type": "artifact",
+      "message": "Saved verification-2.webm",
+      "data": {
+        "artifact": {
+          "kind": "video",
+          "name": "verification-2.webm",
+          "mimeType": "video/webm",
+          "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/verification-2.webm"
+        }
+      },
+      "id": 73,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:28:07.374Z"
+    },
+    {
+      "type": "artifact",
+      "message": "Saved verification-2-before.png",
+      "data": {
+        "artifact": {
+          "kind": "screenshot",
+          "name": "verification-2-before.png",
+          "mimeType": "image/png",
+          "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/verification-2-before.png"
+        }
+      },
+      "id": 74,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:28:07.374Z"
+    },
+    {
+      "type": "artifact",
+      "message": "Saved verification-2-after.png",
+      "data": {
+        "artifact": {
+          "kind": "screenshot",
+          "name": "verification-2-after.png",
+          "mimeType": "image/png",
+          "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/verification-2-after.png"
+        }
+      },
+      "id": 75,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:28:07.375Z"
+    },
+    {
+      "type": "verification",
+      "message": "Saved test: 2/2 intended assertion failures.",
+      "data": {
+        "result": {
+          "attempts": [
+            {
+              "attempt": 1,
+              "classification": "matched_failure",
+              "errorType": "BUGREPLAY_CART_PRESERVATION",
+              "error": "Error: BUGREPLAY_CART_PRESERVATION\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 10\u001b[39m\n\u001b[31m+ Received  +  1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   Object {\u001b[39m\n\u001b[32m-     \"productId\": \"canvas-pouch\",\u001b[39m\n\u001b[32m-     \"quantity\": 1,\u001b[39m\n\u001b[32m-   },\u001b[39m\n\u001b[32m-   Object {\u001b[39m\n\u001b[32m-     \"productId\": \"desk-notebook\",\u001b[39m\n\u001b[32m-     \"quantity\": 1,\u001b[39m\n\u001b[32m-   },\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n\n  284 |     assertAllowedNetwork();\n  285 |     stage('cart_assertion');\n> 286 |     expect(operationState.cart, 'BUGREPLAY_CART_PRESERVATION').toEqual(initial.cart);\n      |                                                                ^\n  287 |     stage('passed');\n  288 |   } catch (error) {\n  289 |     thrown = error;\n    at artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/repro.spec.ts:286:64",
+              "stage": "cart_assertion_failed",
+              "exitCode": 1,
+              "initialCart": [
+                {
+                  "productId": "canvas-pouch",
+                  "quantity": 1
+                },
+                {
+                  "productId": "desk-notebook",
+                  "quantity": 1
+                }
+              ],
+              "actualCart": [],
+              "evidence": {
+                "version": 1,
+                "nonce": "89220626-4537-4f32-90c1-33e4daa71861",
+                "stage": "cart_assertion_failed",
+                "assertionReached": true,
+                "contextClosed": true,
+                "stepId": "step-13",
+                "initialCart": [
+                  {
+                    "productId": "canvas-pouch",
+                    "quantity": 1
+                  },
+                  {
+                    "productId": "desk-notebook",
+                    "quantity": 1
+                  }
+                ],
+                "initialState": {
+                  "cart": [
+                    {
+                      "productId": "canvas-pouch",
+                      "quantity": 1
+                    },
+                    {
+                      "productId": "desk-notebook",
+                      "quantity": 1
+                    }
+                  ],
+                  "address": "24 Market Street, Portland",
+                  "saveSeq": 0,
+                  "saved": false,
+                  "busy": false
+                },
+                "beforeScreenshot": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-attempt-1-89220626/test-results/repro-cart-survives-a-completed-checkout-address-change/before.png",
+                "beforeSaveState": {
+                  "cart": [
+                    {
+                      "productId": "canvas-pouch",
+                      "quantity": 1
+                    },
+                    {
+                      "productId": "desk-notebook",
+                      "quantity": 1
+                    }
+                  ],
+                  "address": "200 Pine Street, Seattle",
+                  "saveSeq": 2,
+                  "saved": false,
+                  "busy": false
+                },
+                "actualCart": [],
+                "actualState": {
+                  "cart": [],
+                  "address": "300 Oak Avenue, Portland",
+                  "saveSeq": 3,
+                  "saved": true,
+                  "busy": false
+                },
+                "afterScreenshot": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-attempt-1-89220626/test-results/repro-cart-survives-a-completed-checkout-address-change/after.png",
+                "error": "BUGREPLAY_CART_PRESERVATION\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 10\u001b[39m\n\u001b[31m+ Received  +  1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   Object {\u001b[39m\n\u001b[32m-     \"productId\": \"canvas-pouch\",\u001b[39m\n\u001b[32m-     \"quantity\": 1,\u001b[39m\n\u001b[32m-   },\u001b[39m\n\u001b[32m-   Object {\u001b[39m\n\u001b[32m-     \"productId\": \"desk-notebook\",\u001b[39m\n\u001b[32m-     \"quantity\": 1,\u001b[39m\n\u001b[32m-   },\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m",
+                "errorType": "cart_assertion_failed",
+                "videoPath": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-attempt-1-89220626/test-results/repro-cart-survives-a-completed-checkout-address-change/video/page@af6176e703e6baff18e18a3fcdf256b8.webm",
+                "repeatConsistency": {
+                  "consistent": true
+                }
+              },
+              "videoName": "verification-1.webm"
+            },
+            {
+              "attempt": 2,
+              "classification": "matched_failure",
+              "errorType": "BUGREPLAY_CART_PRESERVATION",
+              "error": "Error: BUGREPLAY_CART_PRESERVATION\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 10\u001b[39m\n\u001b[31m+ Received  +  1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   Object {\u001b[39m\n\u001b[32m-     \"productId\": \"canvas-pouch\",\u001b[39m\n\u001b[32m-     \"quantity\": 1,\u001b[39m\n\u001b[32m-   },\u001b[39m\n\u001b[32m-   Object {\u001b[39m\n\u001b[32m-     \"productId\": \"desk-notebook\",\u001b[39m\n\u001b[32m-     \"quantity\": 1,\u001b[39m\n\u001b[32m-   },\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n\n  284 |     assertAllowedNetwork();\n  285 |     stage('cart_assertion');\n> 286 |     expect(operationState.cart, 'BUGREPLAY_CART_PRESERVATION').toEqual(initial.cart);\n      |                                                                ^\n  287 |     stage('passed');\n  288 |   } catch (error) {\n  289 |     thrown = error;\n    at artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/repro.spec.ts:286:64",
+              "stage": "cart_assertion_failed",
+              "exitCode": 1,
+              "initialCart": [
+                {
+                  "productId": "canvas-pouch",
+                  "quantity": 1
+                },
+                {
+                  "productId": "desk-notebook",
+                  "quantity": 1
+                }
+              ],
+              "actualCart": [],
+              "evidence": {
+                "version": 1,
+                "nonce": "011b6312-8dad-405a-acf9-8656d986ab6c",
+                "stage": "cart_assertion_failed",
+                "assertionReached": true,
+                "contextClosed": true,
+                "stepId": "step-13",
+                "initialCart": [
+                  {
+                    "productId": "canvas-pouch",
+                    "quantity": 1
+                  },
+                  {
+                    "productId": "desk-notebook",
+                    "quantity": 1
+                  }
+                ],
+                "initialState": {
+                  "cart": [
+                    {
+                      "productId": "canvas-pouch",
+                      "quantity": 1
+                    },
+                    {
+                      "productId": "desk-notebook",
+                      "quantity": 1
+                    }
+                  ],
+                  "address": "24 Market Street, Portland",
+                  "saveSeq": 0,
+                  "saved": false,
+                  "busy": false
+                },
+                "beforeScreenshot": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-attempt-2-011b6312/test-results/repro-cart-survives-a-completed-checkout-address-change/before.png",
+                "beforeSaveState": {
+                  "cart": [
+                    {
+                      "productId": "canvas-pouch",
+                      "quantity": 1
+                    },
+                    {
+                      "productId": "desk-notebook",
+                      "quantity": 1
+                    }
+                  ],
+                  "address": "200 Pine Street, Seattle",
+                  "saveSeq": 2,
+                  "saved": false,
+                  "busy": false
+                },
+                "actualCart": [],
+                "actualState": {
+                  "cart": [],
+                  "address": "300 Oak Avenue, Portland",
+                  "saveSeq": 3,
+                  "saved": true,
+                  "busy": false
+                },
+                "afterScreenshot": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-attempt-2-011b6312/test-results/repro-cart-survives-a-completed-checkout-address-change/after.png",
+                "error": "BUGREPLAY_CART_PRESERVATION\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 10\u001b[39m\n\u001b[31m+ Received  +  1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   Object {\u001b[39m\n\u001b[32m-     \"productId\": \"canvas-pouch\",\u001b[39m\n\u001b[32m-     \"quantity\": 1,\u001b[39m\n\u001b[32m-   },\u001b[39m\n\u001b[32m-   Object {\u001b[39m\n\u001b[32m-     \"productId\": \"desk-notebook\",\u001b[39m\n\u001b[32m-     \"quantity\": 1,\u001b[39m\n\u001b[32m-   },\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m",
+                "errorType": "cart_assertion_failed",
+                "videoPath": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-attempt-2-011b6312/test-results/repro-cart-survives-a-completed-checkout-address-change/video/page@0041b44b2eb8a4e0dba54f07c9121feb.webm",
+                "repeatConsistency": {
+                  "consistent": true
+                }
+              },
+              "videoName": "verification-2.webm"
+            }
+          ],
+          "matchedFailures": 2,
+          "verdict": "confirmed"
+        }
+      },
+      "id": 76,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:28:07.375Z"
+    },
+    {
+      "type": "artifact",
+      "message": "Saved control-verification.json",
+      "data": {
+        "artifact": {
+          "kind": "verification",
+          "name": "control-verification.json",
+          "mimeType": "application/json",
+          "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/control-verification.json"
+        }
+      },
+      "id": 77,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:28:11.284Z"
+    },
+    {
+      "type": "verification",
+      "message": "Executed the unchanged saved test on the corrected control.",
+      "data": {
+        "control": {
+          "attempts": [
+            {
+              "attempt": 1,
+              "classification": "passed",
+              "stage": "passed",
+              "exitCode": 0,
+              "initialCart": [
+                {
+                  "productId": "canvas-pouch",
+                  "quantity": 1
+                },
+                {
+                  "productId": "desk-notebook",
+                  "quantity": 1
+                }
+              ],
+              "actualCart": [
+                {
+                  "productId": "canvas-pouch",
+                  "quantity": 1
+                },
+                {
+                  "productId": "desk-notebook",
+                  "quantity": 1
+                }
+              ],
+              "evidence": {
+                "version": 1,
+                "nonce": "f278fd40-36aa-45cc-86fc-c9c1c849b73a",
+                "stage": "passed",
+                "assertionReached": true,
+                "contextClosed": true,
+                "stepId": "step-13",
+                "initialCart": [
+                  {
+                    "productId": "canvas-pouch",
+                    "quantity": 1
+                  },
+                  {
+                    "productId": "desk-notebook",
+                    "quantity": 1
+                  }
+                ],
+                "initialState": {
+                  "cart": [
+                    {
+                      "productId": "canvas-pouch",
+                      "quantity": 1
+                    },
+                    {
+                      "productId": "desk-notebook",
+                      "quantity": 1
+                    }
+                  ],
+                  "address": "24 Market Street, Portland",
+                  "saveSeq": 0,
+                  "saved": false,
+                  "busy": false
+                },
+                "beforeScreenshot": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/candidate-1/control/verification-attempt-1-f278fd40/test-results/repro-cart-survives-a-completed-checkout-address-change/before.png",
+                "beforeSaveState": {
+                  "cart": [
+                    {
+                      "productId": "canvas-pouch",
+                      "quantity": 1
+                    },
+                    {
+                      "productId": "desk-notebook",
+                      "quantity": 1
+                    }
+                  ],
+                  "address": "200 Pine Street, Seattle",
+                  "saveSeq": 2,
+                  "saved": false,
+                  "busy": false
+                },
+                "actualCart": [
+                  {
+                    "productId": "canvas-pouch",
+                    "quantity": 1
+                  },
+                  {
+                    "productId": "desk-notebook",
+                    "quantity": 1
+                  }
+                ],
+                "actualState": {
+                  "cart": [
+                    {
+                      "productId": "canvas-pouch",
+                      "quantity": 1
+                    },
+                    {
+                      "productId": "desk-notebook",
+                      "quantity": 1
+                    }
+                  ],
+                  "address": "300 Oak Avenue, Portland",
+                  "saveSeq": 3,
+                  "saved": true,
+                  "busy": false
+                },
+                "afterScreenshot": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/candidate-1/control/verification-attempt-1-f278fd40/test-results/repro-cart-survives-a-completed-checkout-address-change/after.png",
+                "videoPath": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/candidate-1/control/verification-attempt-1-f278fd40/test-results/repro-cart-survives-a-completed-checkout-address-change/video/page@9a0d1ccfc74adc111ce3fca220ff0979.webm"
+              },
+              "videoName": "verification-1.webm"
+            }
+          ],
+          "matchedFailures": 0,
+          "verdict": "not_matched"
+        }
+      },
+      "id": 78,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:28:11.285Z"
+    },
+    {
+      "type": "artifact",
+      "message": "Saved investigation-episode-1.webm",
+      "data": {
+        "artifact": {
+          "kind": "video",
+          "name": "investigation-episode-1.webm",
+          "mimeType": "video/webm",
+          "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/investigation-episode-1.webm"
+        }
+      },
+      "id": 79,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:28:13.455Z"
+    },
+    {
+      "type": "observation",
+      "message": "Saved original investigation episode 1 video.",
+      "data": {
+        "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+        "episodeNumber": 1
+      },
+      "id": 80,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:28:13.456Z"
+    },
+    {
+      "type": "artifact",
+      "message": "Saved report.md",
+      "data": {
+        "artifact": {
+          "kind": "report",
+          "name": "report.md",
+          "mimeType": "text/markdown",
+          "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/report.md"
+        }
+      },
+      "id": 81,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:28:13.469Z"
+    },
+    {
+      "type": "completed",
+      "status": "bug_confirmed",
+      "message": "Regression assertion failed in 2/2 clean runs and the unchanged test passed on the corrected control.",
+      "id": 82,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "at": "2026-10-12T15:28:13.470Z"
+    }
+  ],
+  "artifacts": [
+    {
+      "kind": "report",
+      "name": "trace.json",
+      "mimeType": "application/json",
+      "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/trace.json"
+    },
+    {
+      "kind": "screenshot",
+      "name": "observation-1-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "mimeType": "image/png",
+      "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-1-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+    },
+    {
+      "kind": "report",
+      "name": "model-usage.json",
+      "mimeType": "application/json",
+      "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/model-usage.json"
+    },
+    {
+      "kind": "screenshot",
+      "name": "observation-2-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "mimeType": "image/png",
+      "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-2-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+    },
+    {
+      "kind": "screenshot",
+      "name": "observation-3-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "mimeType": "image/png",
+      "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-3-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+    },
+    {
+      "kind": "screenshot",
+      "name": "observation-4-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "mimeType": "image/png",
+      "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-4-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+    },
+    {
+      "kind": "screenshot",
+      "name": "observation-5-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "mimeType": "image/png",
+      "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-5-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+    },
+    {
+      "kind": "screenshot",
+      "name": "observation-6-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "mimeType": "image/png",
+      "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-6-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+    },
+    {
+      "kind": "screenshot",
+      "name": "observation-7-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "mimeType": "image/png",
+      "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-7-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+    },
+    {
+      "kind": "screenshot",
+      "name": "observation-8-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "mimeType": "image/png",
+      "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-8-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+    },
+    {
+      "kind": "screenshot",
+      "name": "observation-9-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "mimeType": "image/png",
+      "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-9-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+    },
+    {
+      "kind": "screenshot",
+      "name": "observation-10-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "mimeType": "image/png",
+      "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-10-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+    },
+    {
+      "kind": "screenshot",
+      "name": "observation-11-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "mimeType": "image/png",
+      "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-11-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+    },
+    {
+      "kind": "screenshot",
+      "name": "observation-12-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "mimeType": "image/png",
+      "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-12-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+    },
+    {
+      "kind": "screenshot",
+      "name": "observation-13-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+      "mimeType": "image/png",
+      "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/observation-13-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png"
+    },
+    {
+      "kind": "test",
+      "name": "repro.spec.ts",
+      "mimeType": "text/plain",
+      "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/repro.spec.ts"
+    },
+    {
+      "kind": "reproduction",
+      "name": "reproduction.json",
+      "mimeType": "application/json",
+      "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/reproduction.json"
+    },
+    {
+      "kind": "verification",
+      "name": "verification.json",
+      "mimeType": "application/json",
+      "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/verification.json"
+    },
+    {
+      "kind": "video",
+      "name": "verification-1.webm",
+      "mimeType": "video/webm",
+      "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/verification-1.webm"
+    },
+    {
+      "kind": "screenshot",
+      "name": "verification-1-before.png",
+      "mimeType": "image/png",
+      "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/verification-1-before.png"
+    },
+    {
+      "kind": "screenshot",
+      "name": "verification-1-after.png",
+      "mimeType": "image/png",
+      "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/verification-1-after.png"
+    },
+    {
+      "kind": "video",
+      "name": "verification-2.webm",
+      "mimeType": "video/webm",
+      "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/verification-2.webm"
+    },
+    {
+      "kind": "screenshot",
+      "name": "verification-2-before.png",
+      "mimeType": "image/png",
+      "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/verification-2-before.png"
+    },
+    {
+      "kind": "screenshot",
+      "name": "verification-2-after.png",
+      "mimeType": "image/png",
+      "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/verification-2-after.png"
+    },
+    {
+      "kind": "verification",
+      "name": "control-verification.json",
+      "mimeType": "application/json",
+      "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/control-verification.json"
+    },
+    {
+      "kind": "video",
+      "name": "investigation-episode-1.webm",
+      "mimeType": "video/webm",
+      "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/investigation-episode-1.webm"
+    },
+    {
+      "kind": "report",
+      "name": "report.md",
+      "mimeType": "text/markdown",
+      "url": "/api/runs/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/artifacts/report.md"
+    }
+  ],
+  "metrics": {
+    "actions": 13,
+    "elapsedMs": 51651,
+    "inputTokens": 41069,
+    "outputTokens": 1261,
+    "costUsd": 0.1563342
+  },
+  "verification": {
+    "attempts": 2,
+    "matchedFailures": 2,
+    "verdict": "confirmed"
+  }
+}

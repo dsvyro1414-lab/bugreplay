@@ -1,0 +1,70 @@
+{
+  "formatVersion": 1,
+  "note": "Manual readback of the terminal response absent from local aggregate token metrics. Original run.json files remain unchanged.",
+  "recoveries": [
+    {
+      "runId": "e07bdfa3-c839-4e68-b784-640244403b2c",
+      "traceId": "17af3d753892ebeeff61afa08ee24492",
+      "spanId": "3a84b1fc98334277",
+      "inputTokens": 2372,
+      "outputTokens": 103,
+      "totalTokens": 2475,
+      "durationMs": 2474.025,
+      "providerSpanStatus": "SUCCESS",
+      "localParserOutcome": "malformed JSON; run inconclusive",
+      "sourceUrl": "https://app.neatlogs.com/traces/17af3d753892ebeeff61afa08ee24492",
+      "screenshot": "artifacts/submission-2026-10-12/screens/neatlogs-before-tokens.jpg",
+      "verifiedOn": "2026-10-12",
+      "verification": "Authenticated Neatlogs UI readback by root agent; screenshot independently viewed by finance agent.",
+      "billingVerified": false
+    },
+    {
+      "runId": "6992fe74-3395-430a-95ab-d73c207d70b6",
+      "traceId": "9def2222c525da5cd96e9f033c7a8c40",
+      "spanId": "0ca154ae9bd47650",
+      "inputTokens": 2064,
+      "outputTokens": 121,
+      "totalTokens": 2185,
+      "durationMs": null,
+      "providerSpanStatus": "SUCCESS",
+      "localParserOutcome": "malformed JSON; run inconclusive",
+      "sourceUrl": "https://app.neatlogs.com/traces/9def2222c525da5cd96e9f033c7a8c40",
+      "screenshot": "artifacts/submission-2026-10-12/screens/neatlogs-before-tokens-2.jpg",
+      "verifiedOn": "2026-10-12",
+      "verification": "Authenticated Neatlogs UI readback by root agent; screenshot independently viewed by finance agent. Exact duration not supplied; rounded UI duration is 2.4 seconds.",
+      "billingVerified": false
+    },
+    {
+      "runId": "7e60e53a-1a02-4f81-918d-24649030fae0",
+      "traceId": "b2aeb7ba5a5169b5cfcc6c4e85222c21",
+      "spanId": "64e4af3993d8da2b",
+      "inputTokens": 2028,
+      "outputTokens": 106,
+      "totalTokens": 2134,
+      "durationMs": 1941.481,
+      "providerSpanStatus": "SUCCESS",
+      "localParserOutcome": "malformed JSON; run inconclusive",
+      "sourceUrl": "https://app.neatlogs.com/traces/b2aeb7ba5a5169b5cfcc6c4e85222c21",
+      "screenshot": "artifacts/submission-2026-10-12/screens/neatlogs-before-tokens-3.jpg",
+      "verifiedOn": "2026-10-12",
+      "verification": "Authenticated Neatlogs UI readback by root agent; screenshot independently viewed by finance agent.",
+      "billingVerified": false
+    },
+    {
+      "runId": "39b9bed4-fca9-4884-a7b9-3035fc860685",
+      "traceId": "3efb728f257f7b218895df26999aae68",
+      "spanId": "479da65433d969da",
+      "inputTokens": 2046,
+      "outputTokens": 74,
+      "totalTokens": 2120,
+      "durationMs": 1783.323,
+      "providerSpanStatus": "SUCCESS",
+      "localParserOutcome": "malformed JSON; run inconclusive",
+      "sourceUrl": "https://app.neatlogs.com/traces/3efb728f257f7b218895df26999aae68",
+      "screenshot": "artifacts/submission-2026-10-12/screens/neatlogs-before-tokens-4.jpg",
+      "verifiedOn": "2026-10-12",
+      "verification": "Authenticated Neatlogs UI readback by root agent; screenshot independently viewed by finance agent.",
+      "billingVerified": false
+    }
+  ]
+}

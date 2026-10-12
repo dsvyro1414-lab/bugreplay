@@ -1,0 +1,179 @@
+{
+  "config": {
+    "argv": [
+      "<user-home>/.npm/_npx/387698761821791d/node_modules/node/bin/node",
+      "node_modules/@playwright/test/cli.js",
+      "test",
+      "--config",
+      "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-attempt-2-011b6312/playwright.config.mjs",
+      "--workers=1",
+      "--retries=0"
+    ],
+    "configFile": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-attempt-2-011b6312/playwright.config.mjs",
+    "rootDir": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+    "failOnFlakyTests": false,
+    "forbidOnly": true,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 75487,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-attempt-2-011b6312/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+        "testIgnore": [],
+        "testMatch": [
+          "/^artifacts\\/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236\\/repro\\.spec\\.ts$/"
+        ],
+        "timeout": 74487
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-attempt-2-011b6312/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+        "snapshotDir": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+        "testIgnore": [],
+        "testMatch": {},
+        "timeout": 74487,
+        "use": {
+          "browserName": "chromium",
+          "headless": true
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json",
+        {
+          "outputFile": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-attempt-2-011b6312/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "repro.spec.ts",
+      "file": "repro.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "cart survives a completed checkout address change",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 74487,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 3469,
+                  "error": {
+                    "message": "Error: BUGREPLAY_CART_PRESERVATION\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 10\u001b[39m\n\u001b[31m+ Received  +  1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   Object {\u001b[39m\n\u001b[32m-     \"productId\": \"canvas-pouch\",\u001b[39m\n\u001b[32m-     \"quantity\": 1,\u001b[39m\n\u001b[32m-   },\u001b[39m\n\u001b[32m-   Object {\u001b[39m\n\u001b[32m-     \"productId\": \"desk-notebook\",\u001b[39m\n\u001b[32m-     \"quantity\": 1,\u001b[39m\n\u001b[32m-   },\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m",
+                    "stack": "Error: BUGREPLAY_CART_PRESERVATION\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 10\u001b[39m\n\u001b[31m+ Received  +  1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   Object {\u001b[39m\n\u001b[32m-     \"productId\": \"canvas-pouch\",\u001b[39m\n\u001b[32m-     \"quantity\": 1,\u001b[39m\n\u001b[32m-   },\u001b[39m\n\u001b[32m-   Object {\u001b[39m\n\u001b[32m-     \"productId\": \"desk-notebook\",\u001b[39m\n\u001b[32m-     \"quantity\": 1,\u001b[39m\n\u001b[32m-   },\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n    at artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/repro.spec.ts:286:64",
+                    "location": {
+                      "file": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/repro.spec.ts",
+                      "column": 64,
+                      "line": 286
+                    },
+                    "snippet": "  284 |     assertAllowedNetwork();\n  285 |     stage('cart_assertion');\n> 286 |     expect(operationState.cart, 'BUGREPLAY_CART_PRESERVATION').toEqual(initial.cart);\n      |                                                                ^\n  287 |     stage('passed');\n  288 |   } catch (error) {\n  289 |     thrown = error;"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/repro.spec.ts",
+                        "column": 64,
+                        "line": 286
+                      },
+                      "message": "Error: BUGREPLAY_CART_PRESERVATION\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 10\u001b[39m\n\u001b[31m+ Received  +  1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   Object {\u001b[39m\n\u001b[32m-     \"productId\": \"canvas-pouch\",\u001b[39m\n\u001b[32m-     \"quantity\": 1,\u001b[39m\n\u001b[32m-   },\u001b[39m\n\u001b[32m-   Object {\u001b[39m\n\u001b[32m-     \"productId\": \"desk-notebook\",\u001b[39m\n\u001b[32m-     \"quantity\": 1,\u001b[39m\n\u001b[32m-   },\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n\n  284 |     assertAllowedNetwork();\n  285 |     stage('cart_assertion');\n> 286 |     expect(operationState.cart, 'BUGREPLAY_CART_PRESERVATION').toEqual(initial.cart);\n      |                                                                ^\n  287 |     stage('passed');\n  288 |   } catch (error) {\n  289 |     thrown = error;\n    at artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/repro.spec.ts:286:64"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T15:28:03.783Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "verification-evidence",
+                      "contentType": "application/json",
+                      "body": "ewogICJ2ZXJzaW9uIjogMSwKICAibm9uY2UiOiAiMDExYjYzMTItOGRhZC00MDVhLWFjZjktODY1NmQ5ODZhYjZjIiwKICAic3RhZ2UiOiAiY2FydF9hc3NlcnRpb25fZmFpbGVkIiwKICAiYXNzZXJ0aW9uUmVhY2hlZCI6IHRydWUsCiAgImNvbnRleHRDbG9zZWQiOiB0cnVlLAogICJzdGVwSWQiOiAic3RlcC0xMyIsCiAgImluaXRpYWxDYXJ0IjogWwogICAgewogICAgICAicHJvZHVjdElkIjogImNhbnZhcy1wb3VjaCIsCiAgICAgICJxdWFudGl0eSI6IDEKICAgIH0sCiAgICB7CiAgICAgICJwcm9kdWN0SWQiOiAiZGVzay1ub3RlYm9vayIsCiAgICAgICJxdWFudGl0eSI6IDEKICAgIH0KICBdLAogICJpbml0aWFsU3RhdGUiOiB7CiAgICAiY2FydCI6IFsKICAgICAgewogICAgICAgICJwcm9kdWN0SWQiOiAiY2FudmFzLXBvdWNoIiwKICAgICAgICAicXVhbnRpdHkiOiAxCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAicHJvZHVjdElkIjogImRlc2stbm90ZWJvb2siLAogICAgICAgICJxdWFudGl0eSI6IDEKICAgICAgfQogICAgXSwKICAgICJhZGRyZXNzIjogIjI0IE1hcmtldCBTdHJlZXQsIFBvcnRsYW5kIiwKICAgICJzYXZlU2VxIjogMCwKICAgICJzYXZlZCI6IGZhbHNlLAogICAgImJ1c3kiOiBmYWxzZQogIH0sCiAgImJlZm9yZVNjcmVlbnNob3QiOiAiL1VzZXJzL2Rhdmlkc2tyb2JhL1Byb2plY3RzL0hhY2thdGhvbi9hcnRpZmFjdHMvYjhmZmQ3NTctNmFlZC00MDVkLWI3YWMtZWQzYjFjNGQ5MjM2L3ZlcmlmaWNhdGlvbi1hdHRlbXB0LTItMDExYjYzMTIvdGVzdC1yZXN1bHRzL3JlcHJvLWNhcnQtc3Vydml2ZXMtYS1jb21wbGV0ZWQtY2hlY2tvdXQtYWRkcmVzcy1jaGFuZ2UvYmVmb3JlLnBuZyIsCiAgImJlZm9yZVNhdmVTdGF0ZSI6IHsKICAgICJjYXJ0IjogWwogICAgICB7CiAgICAgICAgInByb2R1Y3RJZCI6ICJjYW52YXMtcG91Y2giLAogICAgICAgICJxdWFudGl0eSI6IDEKICAgICAgfSwKICAgICAgewogICAgICAgICJwcm9kdWN0SWQiOiAiZGVzay1ub3RlYm9vayIsCiAgICAgICAgInF1YW50aXR5IjogMQogICAgICB9CiAgICBdLAogICAgImFkZHJlc3MiOiAiMjAwIFBpbmUgU3RyZWV0LCBTZWF0dGxlIiwKICAgICJzYXZlU2VxIjogMiwKICAgICJzYXZlZCI6IGZhbHNlLAogICAgImJ1c3kiOiBmYWxzZQogIH0sCiAgImFjdHVhbENhcnQiOiBbXSwKICAiYWN0dWFsU3RhdGUiOiB7CiAgICAiY2FydCI6IFtdLAogICAgImFkZHJlc3MiOiAiMzAwIE9hayBBdmVudWUsIFBvcnRsYW5kIiwKICAgICJzYXZlU2VxIjogMywKICAgICJzYXZlZCI6IHRydWUsCiAgICAiYnVzeSI6IGZhbHNlCiAgfSwKICAiYWZ0ZXJTY3JlZW5zaG90IjogIi9Vc2Vycy9kYXZpZHNrcm9iYS9Qcm9qZWN0cy9IYWNrYXRob24vYXJ0aWZhY3RzL2I4ZmZkNzU3LTZhZWQtNDA1ZC1iN2FjLWVkM2IxYzRkOTIzNi92ZXJpZmljYXRpb24tYXR0ZW1wdC0yLTAxMWI2MzEyL3Rlc3QtcmVzdWx0cy9yZXByby1jYXJ0LXN1cnZpdmVzLWEtY29tcGxldGVkLWNoZWNrb3V0LWFkZHJlc3MtY2hhbmdlL2FmdGVyLnBuZyIsCiAgImVycm9yIjogIkJVR1JFUExBWV9DQVJUX1BSRVNFUlZBVElPTlxuXG5cdTAwMWJbMm1leHBlY3QoXHUwMDFiWzIybVx1MDAxYlszMW1yZWNlaXZlZFx1MDAxYlszOW1cdTAwMWJbMm0pLlx1MDAxYlsyMm10b0VxdWFsXHUwMDFiWzJtKFx1MDAxYlsyMm1cdTAwMWJbMzJtZXhwZWN0ZWRcdTAwMWJbMzltXHUwMDFiWzJtKSAvLyBkZWVwIGVxdWFsaXR5XHUwMDFiWzIybVxuXG5cdTAwMWJbMzJtLSBFeHBlY3RlZCAgLSAxMFx1MDAxYlszOW1cblx1MDAxYlszMW0rIFJlY2VpdmVkICArICAxXHUwMDFiWzM5bVxuXG5cdTAwMWJbMzJtLSBBcnJheSBbXHUwMDFiWzM5bVxuXHUwMDFiWzMybS0gICBPYmplY3Qge1x1MDAxYlszOW1cblx1MDAxYlszMm0tICAgICBcInByb2R1Y3RJZFwiOiBcImNhbnZhcy1wb3VjaFwiLFx1MDAxYlszOW1cblx1MDAxYlszMm0tICAgICBcInF1YW50aXR5XCI6IDEsXHUwMDFiWzM5bVxuXHUwMDFiWzMybS0gICB9LFx1MDAxYlszOW1cblx1MDAxYlszMm0tICAgT2JqZWN0IHtcdTAwMWJbMzltXG5cdTAwMWJbMzJtLSAgICAgXCJwcm9kdWN0SWRcIjogXCJkZXNrLW5vdGVib29rXCIsXHUwMDFiWzM5bVxuXHUwMDFiWzMybS0gICAgIFwicXVhbnRpdHlcIjogMSxcdTAwMWJbMzltXG5cdTAwMWJbMzJtLSAgIH0sXHUwMDFiWzM5bVxuXHUwMDFiWzMybS0gXVx1MDAxYlszOW1cblx1MDAxYlszMW0rIEFycmF5IFtdXHUwMDFiWzM5bSIsCiAgImVycm9yVHlwZSI6ICJjYXJ0X2Fzc2VydGlvbl9mYWlsZWQiLAogICJ2aWRlb1BhdGgiOiAiL1VzZXJzL2Rhdmlkc2tyb2JhL1Byb2plY3RzL0hhY2thdGhvbi9hcnRpZmFjdHMvYjhmZmQ3NTctNmFlZC00MDVkLWI3YWMtZWQzYjFjNGQ5MjM2L3ZlcmlmaWNhdGlvbi1hdHRlbXB0LTItMDExYjYzMTIvdGVzdC1yZXN1bHRzL3JlcHJvLWNhcnQtc3Vydml2ZXMtYS1jb21wbGV0ZWQtY2hlY2tvdXQtYWRkcmVzcy1jaGFuZ2UvdmlkZW8vcGFnZUAwMDQxYjQ0YjJlYjhhNGUwZGJhNTRmMDdjOTEyMWZlYi53ZWJtIgp9"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-attempt-2-011b6312/test-results/repro-cart-survives-a-completed-checkout-address-change/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/repro.spec.ts",
+                    "column": 64,
+                    "line": 286
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "39a77a05e0c54e188911-c0f9605ddb2066bf45e1",
+          "file": "repro.spec.ts",
+          "line": 198,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-12T15:28:03.604Z",
+    "duration": 3759.654,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "config": {
+    "argv": [
+      "<user-home>/.npm/_npx/387698761821791d/node_modules/node/bin/node",
+      "node_modules/@playwright/test/cli.js",
+      "test",
+      "--config",
+      "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/candidate-1/control/verification-attempt-1-f278fd40/playwright.config.mjs",
+      "--workers=1",
+      "--retries=0"
+    ],
+    "configFile": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/candidate-1/control/verification-attempt-1-f278fd40/playwright.config.mjs",
+    "rootDir": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+    "failOnFlakyTests": false,
+    "forbidOnly": true,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 111489,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/candidate-1/control/verification-attempt-1-f278fd40/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+        "testIgnore": [],
+        "testMatch": [
+          "/^artifacts\\/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236\\/repro\\.spec\\.ts$/"
+        ],
+        "timeout": 110489
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/candidate-1/control/verification-attempt-1-f278fd40/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+        "snapshotDir": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+        "testIgnore": [],
+        "testMatch": {},
+        "timeout": 110489,
+        "use": {
+          "browserName": "chromium",
+          "headless": true
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json",
+        {
+          "outputFile": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/candidate-1/control/verification-attempt-1-f278fd40/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "repro.spec.ts",
+      "file": "repro.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "cart survives a completed checkout address change",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 110489,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3392,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T15:28:07.778Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "verification-evidence",
+                      "contentType": "application/json",
+                      "body": "ewogICJ2ZXJzaW9uIjogMSwKICAibm9uY2UiOiAiZjI3OGZkNDAtMzZhYS00NWNjLTg2ZmMtYzljMWM4NDliNzNhIiwKICAic3RhZ2UiOiAicGFzc2VkIiwKICAiYXNzZXJ0aW9uUmVhY2hlZCI6IHRydWUsCiAgImNvbnRleHRDbG9zZWQiOiB0cnVlLAogICJzdGVwSWQiOiAic3RlcC0xMyIsCiAgImluaXRpYWxDYXJ0IjogWwogICAgewogICAgICAicHJvZHVjdElkIjogImNhbnZhcy1wb3VjaCIsCiAgICAgICJxdWFudGl0eSI6IDEKICAgIH0sCiAgICB7CiAgICAgICJwcm9kdWN0SWQiOiAiZGVzay1ub3RlYm9vayIsCiAgICAgICJxdWFudGl0eSI6IDEKICAgIH0KICBdLAogICJpbml0aWFsU3RhdGUiOiB7CiAgICAiY2FydCI6IFsKICAgICAgewogICAgICAgICJwcm9kdWN0SWQiOiAiY2FudmFzLXBvdWNoIiwKICAgICAgICAicXVhbnRpdHkiOiAxCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAicHJvZHVjdElkIjogImRlc2stbm90ZWJvb2siLAogICAgICAgICJxdWFudGl0eSI6IDEKICAgICAgfQogICAgXSwKICAgICJhZGRyZXNzIjogIjI0IE1hcmtldCBTdHJlZXQsIFBvcnRsYW5kIiwKICAgICJzYXZlU2VxIjogMCwKICAgICJzYXZlZCI6IGZhbHNlLAogICAgImJ1c3kiOiBmYWxzZQogIH0sCiAgImJlZm9yZVNjcmVlbnNob3QiOiAiL1VzZXJzL2Rhdmlkc2tyb2JhL1Byb2plY3RzL0hhY2thdGhvbi9hcnRpZmFjdHMvYjhmZmQ3NTctNmFlZC00MDVkLWI3YWMtZWQzYjFjNGQ5MjM2L2NhbmRpZGF0ZS0xL2NvbnRyb2wvdmVyaWZpY2F0aW9uLWF0dGVtcHQtMS1mMjc4ZmQ0MC90ZXN0LXJlc3VsdHMvcmVwcm8tY2FydC1zdXJ2aXZlcy1hLWNvbXBsZXRlZC1jaGVja291dC1hZGRyZXNzLWNoYW5nZS9iZWZvcmUucG5nIiwKICAiYmVmb3JlU2F2ZVN0YXRlIjogewogICAgImNhcnQiOiBbCiAgICAgIHsKICAgICAgICAicHJvZHVjdElkIjogImNhbnZhcy1wb3VjaCIsCiAgICAgICAgInF1YW50aXR5IjogMQogICAgICB9LAogICAgICB7CiAgICAgICAgInByb2R1Y3RJZCI6ICJkZXNrLW5vdGVib29rIiwKICAgICAgICAicXVhbnRpdHkiOiAxCiAgICAgIH0KICAgIF0sCiAgICAiYWRkcmVzcyI6ICIyMDAgUGluZSBTdHJlZXQsIFNlYXR0bGUiLAogICAgInNhdmVTZXEiOiAyLAogICAgInNhdmVkIjogZmFsc2UsCiAgICAiYnVzeSI6IGZhbHNlCiAgfSwKICAiYWN0dWFsQ2FydCI6IFsKICAgIHsKICAgICAgInByb2R1Y3RJZCI6ICJjYW52YXMtcG91Y2giLAogICAgICAicXVhbnRpdHkiOiAxCiAgICB9LAogICAgewogICAgICAicHJvZHVjdElkIjogImRlc2stbm90ZWJvb2siLAogICAgICAicXVhbnRpdHkiOiAxCiAgICB9CiAgXSwKICAiYWN0dWFsU3RhdGUiOiB7CiAgICAiY2FydCI6IFsKICAgICAgewogICAgICAgICJwcm9kdWN0SWQiOiAiY2FudmFzLXBvdWNoIiwKICAgICAgICAicXVhbnRpdHkiOiAxCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAicHJvZHVjdElkIjogImRlc2stbm90ZWJvb2siLAogICAgICAgICJxdWFudGl0eSI6IDEKICAgICAgfQogICAgXSwKICAgICJhZGRyZXNzIjogIjMwMCBPYWsgQXZlbnVlLCBQb3J0bGFuZCIsCiAgICAic2F2ZVNlcSI6IDMsCiAgICAic2F2ZWQiOiB0cnVlLAogICAgImJ1c3kiOiBmYWxzZQogIH0sCiAgImFmdGVyU2NyZWVuc2hvdCI6ICIvVXNlcnMvZGF2aWRza3JvYmEvUHJvamVjdHMvSGFja2F0aG9uL2FydGlmYWN0cy9iOGZmZDc1Ny02YWVkLTQwNWQtYjdhYy1lZDNiMWM0ZDkyMzYvY2FuZGlkYXRlLTEvY29udHJvbC92ZXJpZmljYXRpb24tYXR0ZW1wdC0xLWYyNzhmZDQwL3Rlc3QtcmVzdWx0cy9yZXByby1jYXJ0LXN1cnZpdmVzLWEtY29tcGxldGVkLWNoZWNrb3V0LWFkZHJlc3MtY2hhbmdlL2FmdGVyLnBuZyIsCiAgInZpZGVvUGF0aCI6ICIvVXNlcnMvZGF2aWRza3JvYmEvUHJvamVjdHMvSGFja2F0aG9uL2FydGlmYWN0cy9iOGZmZDc1Ny02YWVkLTQwNWQtYjdhYy1lZDNiMWM0ZDkyMzYvY2FuZGlkYXRlLTEvY29udHJvbC92ZXJpZmljYXRpb24tYXR0ZW1wdC0xLWYyNzhmZDQwL3Rlc3QtcmVzdWx0cy9yZXByby1jYXJ0LXN1cnZpdmVzLWEtY29tcGxldGVkLWNoZWNrb3V0LWFkZHJlc3MtY2hhbmdlL3ZpZGVvL3BhZ2VAOWEwZDFjY2ZjNzRhZGMxMTFjZTNmY2EyMjBmZjA5Nzkud2VibSIKfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "39a77a05e0c54e188911-c0f9605ddb2066bf45e1",
+          "file": "repro.spec.ts",
+          "line": 198,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-12T15:28:07.596Z",
+    "duration": 3680.321,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

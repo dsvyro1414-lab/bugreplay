@@ -1,0 +1,22 @@
+{
+  "file": "docs/evidence/finance/BugReplay-CFO-Observed-Engineering.xlsx",
+  "sha256": "6046de225b141496272281dbb5258149c917eb8d6e1024d4de6f114b31a8fb7b",
+  "bytes": 14266,
+  "sheets": 6,
+  "formulas": 399,
+  "cachedFormulaErrors": [],
+  "referenceErrors": [],
+  "investigationRowsReconciled": 17,
+  "tokensInput": 556919,
+  "tokensOutput": 16881,
+  "latestFourHeaderSubtotalUsd": 0.9546999,
+  "selectedConfirmedHeaderUsd": 0.1563342,
+  "summaryChecks": 10,
+  "cashAndCreditTreatment": "Unknown; not overwritten with zero",
+  "limitations": [
+    "Standalone engineering-evidence snapshot, separate from planning workbook.",
+    "Evidence basis cells use generic artifact names; authoritative per-file availability and hashes are in actual-attempt-cost-ledger.json. Not every failed run has verification/control artifacts.",
+    "Historical run SHA cells are Unknown in this export; the project ledger records known historical SHAs.",
+    "CFO.ai states repository source files were supplied, not independently fetched."
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "checkedAtUtc": "2026-10-12T15:43:29.492633+00:00",
+  "phase": "preliminary_release_review_before_final_media_ready",
+  "finalReleaseAuditComplete": false,
+  "cohortsVerifiedAgainstOriginalRunJson": [
+    {
+      "name": "first",
+      "acceptancePath": "artifacts/acceptance-1791817314403.json",
+      "acceptanceSha256": "328df2822e661d823f06d05bfbe3223df2eb6844d4b4cd81c2e52db33de2c72e",
+      "statusCounts": {
+        "inconclusive": 4
+      }
+    },
+    {
+      "name": "second",
+      "acceptancePath": "artifacts/acceptance-1791817917137.json",
+      "acceptanceSha256": "375c20d9af64ce5fc23f0f42f0b86907bc8ada27834d2fcf423c5775b2bc56cd",
+      "statusCounts": {
+        "inconclusive": 4
+      }
+    },
+    {
+      "name": "third",
+      "acceptancePath": "artifacts/acceptance-1791818265909.json",
+      "acceptanceSha256": "b0cd4559dc85f37988f3830d6f51ca0bd30b5e8faca6906b8cc2de1e2167e4ee",
+      "statusCounts": {
+        "inconclusive": 2,
+        "not_reproduced": 2
+      }
+    },
+    {
+      "name": "fourth",
+      "acceptancePath": "artifacts/acceptance-1791819033505.json",
+      "acceptanceSha256": "5579dfc35d9e1822f24b5e16a70ea1d10e2e02f161cf179d0286b3f399a7c466",
+      "statusCounts": {
+        "not_reproduced": 3,
+        "bug_confirmed": 1
+      }
+    }
+  ],
+  "thirdOutcomeSummaryCorrect": true,
+  "selectedIdentity": {
+    "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+    "traceId": "9096d7e75454f94d4c9cd11011604e13",
+    "gitSha": "2b541b20a97ef3df4261529bd48089792e01f2af",
+    "model": "claude-sonnet-4.6"
+  },
+  "selectedOriginal70FilesAndArchiveHashUnchanged": true,
+  "all34PublicCopyHashesMatchAudit": true,
+  "unchangedPublicAndManualTestSha256": "bd9c42ba5744e7ed47cec25dcc47dd0341f9c7da88d034a700014b4a169c208a",
+  "ownedTextFilesChecked": 63,
+  "credentialOrHomePathFindings": [],
+  "missingLocalMarkdownLinks": [],
+  "pending": [
+    "Final media ready signal, final MP4 full decode/narration/scene review and public access check.",
+    "Hosted Neatlogs after UI capture remains pending; after trace identity/local proof exists.",
+    "Native CFO export public copy/link is handled by finance.",
+    "Correct team/member registration/check-in, leader email, Discord cutoff/official launch post, public posts/form/confirmation are not verified."
+  ],
+  "unownedStaleClaimReportedToIntegrator": {
+    "file": "README.md",
+    "claim": "No completed cfo.ai model, live benchmark, trace-driven improvement ... claimed here.",
+    "resolution": "Integrator owns root README; requested update while retaining pending submission/cutoff."
+  }
+}

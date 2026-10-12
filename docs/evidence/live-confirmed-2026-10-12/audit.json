@@ -1,0 +1,809 @@
+{
+  "auditedAtUtc": "2026-10-12T15:32:18.767083+00:00",
+  "kind": "independent_review_of_preserved_automatic_real_run",
+  "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+  "traceId": "9096d7e75454f94d4c9cd11011604e13",
+  "gitSha": "2b541b20a97ef3df4261529bd48089792e01f2af",
+  "model": "claude-sonnet-4.6",
+  "status": "bug_confirmed",
+  "originalPreservation": {
+    "archive": "artifacts/archives/first-real-confirmed-original-20261012T152902Z.tar.gz",
+    "sha256": "ee64e0d3536763b43e73475c8a097a4c1cdaccbd08bf4d4886eb0bdd586035fd",
+    "bytes": 12529922,
+    "originalFileCount": 70,
+    "originalManifest": "artifacts/archives/first-real-confirmed-original-20261012T152902Z/original-manifest.json"
+  },
+  "testSha256": "bd9c42ba5744e7ed47cec25dcc47dd0341f9c7da88d034a700014b4a169c208a",
+  "checks": {
+    "twoIntendedFailures": true,
+    "independentNonces": true,
+    "fixedControlPassed": true,
+    "candidateTestByteIdentical": true,
+    "reproductionIsWholeTrustedActionLog": true,
+    "allRegisteredArtifactsFetchedWithMatchingHashes": true,
+    "runViewMatchesOriginal": true,
+    "uniqueVideosAllDecode": true,
+    "inputTokensMatch": true,
+    "outputTokensMatch": true,
+    "gatewayCostMatchesAllAttempts": true,
+    "sixBeforeAfterPngVisuallyReviewed": true
+  },
+  "modelUsage": {
+    "calls": 16,
+    "invalidResponses": 1,
+    "normalizedResponses": 4,
+    "inputTokens": 41069,
+    "outputTokens": 1261,
+    "usageComplete": true,
+    "gatewayCostUsd": 0.1563342,
+    "gatewayCostSource": "x-litellm-response-cost",
+    "gatewayCostComplete": true,
+    "billingCostUsd": null,
+    "billingSource": "Unknown; gateway accounting does not establish invoiced cash charges or promotional credits."
+  },
+  "metrics": {
+    "actions": 13,
+    "elapsedMs": 51651,
+    "inputTokens": 41069,
+    "outputTokens": 1261,
+    "costUsd": 0.1563342
+  },
+  "playwrightReports": [
+    {
+      "path": "candidate-1/control/verification-attempt-1-f278fd40/results.json",
+      "stats": {
+        "startTime": "2026-10-12T15:28:07.596Z",
+        "duration": 3680.321,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "sourceSha256": "78c0d928483dc089c182da7f8bc3a3f8f59f99a1a3673b1bd5990fb629a7fb8b"
+    },
+    {
+      "path": "verification-attempt-1-89220626/results.json",
+      "stats": {
+        "startTime": "2026-10-12T15:27:59.602Z",
+        "duration": 3763.986,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "sourceSha256": "7bb16cf97f79d4daa58183983dc9965ae4c5cdac7f7413e8c3ddb41e6285354b"
+    },
+    {
+      "path": "verification-attempt-2-011b6312/results.json",
+      "stats": {
+        "startTime": "2026-10-12T15:28:03.604Z",
+        "duration": 3759.654,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "sourceSha256": "ad35b7769e4587f0a325fbea576b911c4fb926f39226d68ae074b435784c5984"
+    }
+  ],
+  "media": [
+    {
+      "file": "candidate-1/control/verification-1.webm",
+      "sha256": "18c0ab74c95372888b44d5ba649eca7d051b1df72e0929a02cd28e1ec11fcd37",
+      "bytes": 641518,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp9",
+            "width": 1280,
+            "height": 720
+          }
+        ],
+        "format": {
+          "duration": "4.440000"
+        }
+      },
+      "fullDecodeExitCode": 0,
+      "decodeErrors": ""
+    },
+    {
+      "file": "investigation-episode-1.webm",
+      "sha256": "537c5d2371102ee330c731dc3a79ed6fec5677ed52b4acf290aaf98469214d82",
+      "bytes": 5720911,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp9",
+            "width": 1280,
+            "height": 900
+          }
+        ],
+        "format": {
+          "duration": "49.640000"
+        }
+      },
+      "fullDecodeExitCode": 0,
+      "decodeErrors": ""
+    },
+    {
+      "file": "verification-1.webm",
+      "sha256": "9df104e8472d6f186f147d7ac022c87f75f960b062f776642664d26ba6a89bcc",
+      "bytes": 672298,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp9",
+            "width": 1280,
+            "height": 720
+          }
+        ],
+        "format": {
+          "duration": "4.480000"
+        }
+      },
+      "fullDecodeExitCode": 0,
+      "decodeErrors": ""
+    },
+    {
+      "file": "verification-2.webm",
+      "sha256": "23d06df1ff2dcfc0ebf5b08ea0cfe4a031b7d10a7badd8fae33b3f1526f90c26",
+      "bytes": 670936,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp9",
+            "width": 1280,
+            "height": 720
+          }
+        ],
+        "format": {
+          "duration": "4.520000"
+        }
+      },
+      "fullDecodeExitCode": 0,
+      "decodeErrors": ""
+    }
+  ],
+  "api": {
+    "checkedAt": "2026-10-12T15:30:50.034764+00:00",
+    "runViewMatchesOriginal": true,
+    "artifactCount": 27,
+    "allHashMatch": true,
+    "artifacts": [
+      {
+        "name": "trace.json",
+        "status": 200,
+        "contentType": "application/json",
+        "bytes": 190,
+        "sha256": "005ee5b97ddafcd89b969828946873476d13fe290f15c823e5da7df26db617e2",
+        "matchesLocal": true
+      },
+      {
+        "name": "observation-1-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+        "status": 200,
+        "contentType": "image/png",
+        "bytes": 120572,
+        "sha256": "6dbe3b11f669eb9474b75ad1251f72d2b41953c7abd07b937af0d7e0719cea0d",
+        "matchesLocal": true
+      },
+      {
+        "name": "model-usage.json",
+        "status": 200,
+        "contentType": "application/json",
+        "bytes": 4836,
+        "sha256": "9161a886c472a2ff25a4a2629ccbc9e6c21ae25c54c7869b595a42b805abe73f",
+        "matchesLocal": true
+      },
+      {
+        "name": "observation-2-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+        "status": 200,
+        "contentType": "image/png",
+        "bytes": 119156,
+        "sha256": "c15f71bacf9969ad2bca6cc0436a63d7fa0a0e4a664feaeb22285d5051e7eaaa",
+        "matchesLocal": true
+      },
+      {
+        "name": "observation-3-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+        "status": 200,
+        "contentType": "image/png",
+        "bytes": 122485,
+        "sha256": "f18038254daa71b18beaacc1fbcc6ea9a3cddbf97fc13fe94933193fe8343d77",
+        "matchesLocal": true
+      },
+      {
+        "name": "observation-4-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+        "status": 200,
+        "contentType": "image/png",
+        "bytes": 123317,
+        "sha256": "23faf531fdb0c83549d6159aaa724ef518c95799157feec1c47059153f6422a0",
+        "matchesLocal": true
+      },
+      {
+        "name": "observation-5-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+        "status": 200,
+        "contentType": "image/png",
+        "bytes": 123048,
+        "sha256": "77c200c45801929237035725414c527e36826115db1ddc51db6616770dfaa312",
+        "matchesLocal": true
+      },
+      {
+        "name": "observation-6-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+        "status": 200,
+        "contentType": "image/png",
+        "bytes": 122388,
+        "sha256": "06db4dbcde7fd0c4560a6b2074356ba42204e9a9aeebf2157d0aea9225417318",
+        "matchesLocal": true
+      },
+      {
+        "name": "observation-7-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+        "status": 200,
+        "contentType": "image/png",
+        "bytes": 122611,
+        "sha256": "095910ce762075c705ff8711c30895631a7ff7b5e3c7a24e09b6f1aa006b066f",
+        "matchesLocal": true
+      },
+      {
+        "name": "observation-8-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+        "status": 200,
+        "contentType": "image/png",
+        "bytes": 123554,
+        "sha256": "5a042b484f4d67eb37946a611ae8c7ec4834209f52a6244251cfdfa96a050ab0",
+        "matchesLocal": true
+      },
+      {
+        "name": "observation-9-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+        "status": 200,
+        "contentType": "image/png",
+        "bytes": 123593,
+        "sha256": "27aca3303a944b12191e77f757cc00fa459855654ce126098f9eb939b31089b1",
+        "matchesLocal": true
+      },
+      {
+        "name": "observation-10-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+        "status": 200,
+        "contentType": "image/png",
+        "bytes": 123797,
+        "sha256": "7f84fd25b8219036a38227e51507538a16c687e151723391acc34ae19fd33a4a",
+        "matchesLocal": true
+      },
+      {
+        "name": "observation-11-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+        "status": 200,
+        "contentType": "image/png",
+        "bytes": 125900,
+        "sha256": "fe614b8ac4a28574c9d2f4e0c96bdb8247175cc006e2934675ac12854c363ced",
+        "matchesLocal": true
+      },
+      {
+        "name": "observation-12-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+        "status": 200,
+        "contentType": "image/png",
+        "bytes": 127071,
+        "sha256": "61bec7c84e39de326c0bb056ff1d84fc714092a1286e15d0837b388c5826ec91",
+        "matchesLocal": true
+      },
+      {
+        "name": "observation-13-4aa25d84-b4d6-498f-bb74-f89c59e6e384.png",
+        "status": 200,
+        "contentType": "image/png",
+        "bytes": 125271,
+        "sha256": "98c324cff37a82578ba59798c547a9a50adce72a730f975602d601ff1c5d2305",
+        "matchesLocal": true
+      },
+      {
+        "name": "repro.spec.ts",
+        "status": 200,
+        "contentType": "text/plain",
+        "bytes": 13341,
+        "sha256": "bd9c42ba5744e7ed47cec25dcc47dd0341f9c7da88d034a700014b4a169c208a",
+        "matchesLocal": true
+      },
+      {
+        "name": "reproduction.json",
+        "status": 200,
+        "contentType": "application/json",
+        "bytes": 3021,
+        "sha256": "2cfeb417a288cb252861d6c673339a231602579000570dc1a5e0fda289293e24",
+        "matchesLocal": true
+      },
+      {
+        "name": "verification.json",
+        "status": 200,
+        "contentType": "application/json",
+        "bytes": 9342,
+        "sha256": "c9ee80bd77b6341939a230f6c28550ad445331cf7320a73b80a86ce0bf390f58",
+        "matchesLocal": true
+      },
+      {
+        "name": "verification-1.webm",
+        "status": 200,
+        "contentType": "video/webm",
+        "bytes": 672298,
+        "sha256": "9df104e8472d6f186f147d7ac022c87f75f960b062f776642664d26ba6a89bcc",
+        "matchesLocal": true
+      },
+      {
+        "name": "verification-1-before.png",
+        "status": 200,
+        "contentType": "image/png",
+        "bytes": 122485,
+        "sha256": "f18038254daa71b18beaacc1fbcc6ea9a3cddbf97fc13fe94933193fe8343d77",
+        "matchesLocal": true
+      },
+      {
+        "name": "verification-1-after.png",
+        "status": 200,
+        "contentType": "image/png",
+        "bytes": 125271,
+        "sha256": "98c324cff37a82578ba59798c547a9a50adce72a730f975602d601ff1c5d2305",
+        "matchesLocal": true
+      },
+      {
+        "name": "verification-2.webm",
+        "status": 200,
+        "contentType": "video/webm",
+        "bytes": 670936,
+        "sha256": "23d06df1ff2dcfc0ebf5b08ea0cfe4a031b7d10a7badd8fae33b3f1526f90c26",
+        "matchesLocal": true
+      },
+      {
+        "name": "verification-2-before.png",
+        "status": 200,
+        "contentType": "image/png",
+        "bytes": 122485,
+        "sha256": "f18038254daa71b18beaacc1fbcc6ea9a3cddbf97fc13fe94933193fe8343d77",
+        "matchesLocal": true
+      },
+      {
+        "name": "verification-2-after.png",
+        "status": 200,
+        "contentType": "image/png",
+        "bytes": 125271,
+        "sha256": "98c324cff37a82578ba59798c547a9a50adce72a730f975602d601ff1c5d2305",
+        "matchesLocal": true
+      },
+      {
+        "name": "control-verification.json",
+        "status": 200,
+        "contentType": "application/json",
+        "bytes": 3249,
+        "sha256": "204e883b4ebf45697040458ea834bce7fb33b4c6c088cd05e07e2885e24609dd",
+        "matchesLocal": true
+      },
+      {
+        "name": "investigation-episode-1.webm",
+        "status": 200,
+        "contentType": "video/webm",
+        "bytes": 5720911,
+        "sha256": "537c5d2371102ee330c731dc3a79ed6fec5677ed52b4acf290aaf98469214d82",
+        "matchesLocal": true
+      },
+      {
+        "name": "report.md",
+        "status": 200,
+        "contentType": "text/markdown",
+        "bytes": 14719,
+        "sha256": "ceebc68fc29535ce04941980b4ecb8e89fdd5eee0eec142613d7dca6cfb3f814",
+        "matchesLocal": true
+      }
+    ]
+  },
+  "publicCopies": [
+    {
+      "source": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/repro.spec.ts",
+      "publicCopy": "repro.spec.ts",
+      "originalSha256": "bd9c42ba5744e7ed47cec25dcc47dd0341f9c7da88d034a700014b4a169c208a",
+      "publicSha256": "bd9c42ba5744e7ed47cec25dcc47dd0341f9c7da88d034a700014b4a169c208a",
+      "bytes": 13341,
+      "transform": "None; byte-identical copy."
+    },
+    {
+      "source": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/reproduction.json",
+      "publicCopy": "reproduction.json",
+      "originalSha256": "2cfeb417a288cb252861d6c673339a231602579000570dc1a5e0fda289293e24",
+      "publicSha256": "2cfeb417a288cb252861d6c673339a231602579000570dc1a5e0fda289293e24",
+      "bytes": 3021,
+      "transform": "None; byte-identical copy."
+    },
+    {
+      "source": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/trace.json",
+      "publicCopy": "trace.json",
+      "originalSha256": "005ee5b97ddafcd89b969828946873476d13fe290f15c823e5da7df26db617e2",
+      "publicSha256": "005ee5b97ddafcd89b969828946873476d13fe290f15c823e5da7df26db617e2",
+      "bytes": 190,
+      "transform": "None; byte-identical copy."
+    },
+    {
+      "source": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/model-usage.json",
+      "publicCopy": "model-usage.json",
+      "originalSha256": "9161a886c472a2ff25a4a2629ccbc9e6c21ae25c54c7869b595a42b805abe73f",
+      "publicSha256": "9161a886c472a2ff25a4a2629ccbc9e6c21ae25c54c7869b595a42b805abe73f",
+      "bytes": 4836,
+      "transform": "None; byte-identical copy."
+    },
+    {
+      "source": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/action-log.json",
+      "publicCopy": "action-log.json",
+      "originalSha256": "1f38bd16690e42690bd3f8d564f021126e59de7e48f44ff5820365f0b81f3ea9",
+      "publicSha256": "1f38bd16690e42690bd3f8d564f021126e59de7e48f44ff5820365f0b81f3ea9",
+      "bytes": 12643,
+      "transform": "None; byte-identical copy."
+    },
+    {
+      "source": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/run.json",
+      "publicCopy": "run.json",
+      "originalSha256": "fac19aa68b195405d52bab5637181d02a726ff8c8fbf04ecf5a6f758f57c6307",
+      "publicSha256": "787c7e5a521dd99d859cccef39b490c94b742680075f6aaf9a406e0437f30869",
+      "bytes": 119631,
+      "transform": "Replace workspace absolute prefixes with repository-relative paths and other local home prefixes with <user-home>; include escaped regex representations."
+    },
+    {
+      "source": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification.json",
+      "publicCopy": "verification.json",
+      "originalSha256": "c9ee80bd77b6341939a230f6c28550ad445331cf7320a73b80a86ce0bf390f58",
+      "publicSha256": "894cf39a877a77134340b3a234679f566220cfc8e2247f98fdf1538ecfa467dc",
+      "bytes": 9038,
+      "transform": "Replace workspace absolute prefixes with repository-relative paths and other local home prefixes with <user-home>; include escaped regex representations."
+    },
+    {
+      "source": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/control-verification.json",
+      "publicCopy": "control-verification.json",
+      "originalSha256": "204e883b4ebf45697040458ea834bce7fb33b4c6c088cd05e07e2885e24609dd",
+      "publicSha256": "07f6e087ad969e3b447ecacd3670843eb1e922fc5f1dbf6f99c057f1f37ec439",
+      "bytes": 3135,
+      "transform": "Replace workspace absolute prefixes with repository-relative paths and other local home prefixes with <user-home>; include escaped regex representations."
+    },
+    {
+      "source": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/report.md",
+      "publicCopy": "report.md",
+      "originalSha256": "ceebc68fc29535ce04941980b4ecb8e89fdd5eee0eec142613d7dca6cfb3f814",
+      "publicSha256": "e7c062b09bf9727b78097dc4903fd2d62d7d193f54d704f6227248c7aabf8211",
+      "bytes": 14415,
+      "transform": "Replace workspace absolute prefixes with repository-relative paths and other local home prefixes with <user-home>; include escaped regex representations."
+    },
+    {
+      "source": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-1-before.png",
+      "publicCopy": "verification-1-before.png",
+      "originalSha256": "f18038254daa71b18beaacc1fbcc6ea9a3cddbf97fc13fe94933193fe8343d77",
+      "publicSha256": "f18038254daa71b18beaacc1fbcc6ea9a3cddbf97fc13fe94933193fe8343d77",
+      "bytes": 122485,
+      "transform": "None; byte-identical copy."
+    },
+    {
+      "source": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-1-after.png",
+      "publicCopy": "verification-1-after.png",
+      "originalSha256": "98c324cff37a82578ba59798c547a9a50adce72a730f975602d601ff1c5d2305",
+      "publicSha256": "98c324cff37a82578ba59798c547a9a50adce72a730f975602d601ff1c5d2305",
+      "bytes": 125271,
+      "transform": "None; byte-identical copy."
+    },
+    {
+      "source": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-1-stdout.txt",
+      "publicCopy": "verification-1-stdout.txt",
+      "originalSha256": "55e2d3ff86126aaaf67516bef378e66a89b1559249d21827b4585ee88c397ef9",
+      "publicSha256": "f18373ac8afe4fa64e2d324014d7d9cc6d2bb32c5f9fb428c0906de3219217fc",
+      "bytes": 1236,
+      "transform": "Replace workspace absolute prefixes with repository-relative paths and other local home prefixes with <user-home>; include escaped regex representations."
+    },
+    {
+      "source": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-1-stderr.txt",
+      "publicCopy": "verification-1-stderr.txt",
+      "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "publicSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "transform": "Replace workspace absolute prefixes with repository-relative paths and other local home prefixes with <user-home>; include escaped regex representations."
+    },
+    {
+      "source": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-2-before.png",
+      "publicCopy": "verification-2-before.png",
+      "originalSha256": "f18038254daa71b18beaacc1fbcc6ea9a3cddbf97fc13fe94933193fe8343d77",
+      "publicSha256": "f18038254daa71b18beaacc1fbcc6ea9a3cddbf97fc13fe94933193fe8343d77",
+      "bytes": 122485,
+      "transform": "None; byte-identical copy."
+    },
+    {
+      "source": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-2-after.png",
+      "publicCopy": "verification-2-after.png",
+      "originalSha256": "98c324cff37a82578ba59798c547a9a50adce72a730f975602d601ff1c5d2305",
+      "publicSha256": "98c324cff37a82578ba59798c547a9a50adce72a730f975602d601ff1c5d2305",
+      "bytes": 125271,
+      "transform": "None; byte-identical copy."
+    },
+    {
+      "source": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-2-stdout.txt",
+      "publicCopy": "verification-2-stdout.txt",
+      "originalSha256": "55e2d3ff86126aaaf67516bef378e66a89b1559249d21827b4585ee88c397ef9",
+      "publicSha256": "f18373ac8afe4fa64e2d324014d7d9cc6d2bb32c5f9fb428c0906de3219217fc",
+      "bytes": 1236,
+      "transform": "Replace workspace absolute prefixes with repository-relative paths and other local home prefixes with <user-home>; include escaped regex representations."
+    },
+    {
+      "source": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-2-stderr.txt",
+      "publicCopy": "verification-2-stderr.txt",
+      "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "publicSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "transform": "Replace workspace absolute prefixes with repository-relative paths and other local home prefixes with <user-home>; include escaped regex representations."
+    },
+    {
+      "source": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/candidate-1/control/verification-1-before.png",
+      "publicCopy": "control-before.png",
+      "originalSha256": "f18038254daa71b18beaacc1fbcc6ea9a3cddbf97fc13fe94933193fe8343d77",
+      "publicSha256": "f18038254daa71b18beaacc1fbcc6ea9a3cddbf97fc13fe94933193fe8343d77",
+      "bytes": 122485,
+      "transform": "None; byte-identical copy."
+    },
+    {
+      "source": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/candidate-1/control/verification-1-after.png",
+      "publicCopy": "control-after.png",
+      "originalSha256": "109dc42849d56664167d900e1e239d86b1bd1fa2ef15cb91a8af2a0d39c1d503",
+      "publicSha256": "109dc42849d56664167d900e1e239d86b1bd1fa2ef15cb91a8af2a0d39c1d503",
+      "bytes": 127387,
+      "transform": "None; byte-identical copy."
+    },
+    {
+      "source": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/candidate-1/control/verification-attempt-1-f278fd40/results.json",
+      "publicCopy": "candidate-1/control/verification-attempt-1-f278fd40/results.json",
+      "originalSha256": "78c0d928483dc089c182da7f8bc3a3f8f59f99a1a3673b1bd5990fb629a7fb8b",
+      "publicSha256": "3f2fa6dcf3ce6fae4301c1bcf14dbc539121848c77d07280dc7e71f7ea7d7e43",
+      "bytes": 7107,
+      "transform": "Replace workspace absolute prefixes with repository-relative paths and other local home prefixes with <user-home>; include escaped regex representations."
+    },
+    {
+      "source": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-attempt-1-89220626/results.json",
+      "publicCopy": "verification-attempt-1-89220626/results.json",
+      "originalSha256": "7bb16cf97f79d4daa58183983dc9965ae4c5cdac7f7413e8c3ddb41e6285354b",
+      "publicSha256": "f3549a9a021091d680a0cdf227d77947ea59b434c845e2c66b482dc7d4f42df3",
+      "bytes": 11750,
+      "transform": "Replace workspace absolute prefixes with repository-relative paths and other local home prefixes with <user-home>; include escaped regex representations."
+    },
+    {
+      "source": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-attempt-2-011b6312/results.json",
+      "publicCopy": "verification-attempt-2-011b6312/results.json",
+      "originalSha256": "ad35b7769e4587f0a325fbea576b911c4fb926f39226d68ae074b435784c5984",
+      "publicSha256": "747c3488ddd550274bc8cecef7b074ebe4bb76758c0c663070734f386ecfd3db",
+      "bytes": 11750,
+      "transform": "Replace workspace absolute prefixes with repository-relative paths and other local home prefixes with <user-home>; include escaped regex representations."
+    },
+    {
+      "source": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/candidate-1/control/verification-attempt-1-f278fd40/playwright.config.mjs",
+      "publicCopy": "candidate-1/control/verification-attempt-1-f278fd40/playwright.config.mjs",
+      "originalSha256": "6029d01eac4444be424513f21ae04feedf7abf694543293e4ee8b351e3b1bc2d",
+      "publicSha256": "1dbf5fe84e4165b11abcb0f8ff0fadbe08fbf56b84303e0097f88157067906d9",
+      "bytes": 707,
+      "transform": "Replace workspace absolute prefixes with repository-relative paths and other local home prefixes with <user-home>; include escaped regex representations."
+    },
+    {
+      "source": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-attempt-1-89220626/playwright.config.mjs",
+      "publicCopy": "verification-attempt-1-89220626/playwright.config.mjs",
+      "originalSha256": "c137243f61e36a3bf610eaacd1ad3149172b0d9538cf848568253384be42638a",
+      "publicSha256": "7da6aa1c842395a68709d79451e96451fa5b4d3f7892ca7a430e2ed2a24354e0",
+      "bytes": 665,
+      "transform": "Replace workspace absolute prefixes with repository-relative paths and other local home prefixes with <user-home>; include escaped regex representations."
+    },
+    {
+      "source": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-attempt-2-011b6312/playwright.config.mjs",
+      "publicCopy": "verification-attempt-2-011b6312/playwright.config.mjs",
+      "originalSha256": "20c2f0abf3c721d6a476f510b8ee3961c0fd41fdd52a681bf279a552de85ac0e",
+      "publicSha256": "07d69b455f7d06f1d06cfff5d3c9ae14464c9a9b346f7b5333aa289ec9d8e816",
+      "bytes": 665,
+      "transform": "Replace workspace absolute prefixes with repository-relative paths and other local home prefixes with <user-home>; include escaped regex representations."
+    },
+    {
+      "source": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/candidate-1/control/verification-attempt-1-f278fd40/evidence.json",
+      "publicCopy": "candidate-1/control/verification-attempt-1-f278fd40/evidence.json",
+      "originalSha256": "ab86f681440a114a3d9f149c0705c64489f57e6f86d97d1ce7627045af8f44d7",
+      "publicSha256": "35cb4441b4922aeebd47e154e1bc2d054958d8973d445ace29e04e0e88e1c728",
+      "bytes": 2020,
+      "transform": "Replace workspace absolute prefixes with repository-relative paths and other local home prefixes with <user-home>; include escaped regex representations."
+    },
+    {
+      "source": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-attempt-1-89220626/evidence.json",
+      "publicCopy": "verification-attempt-1-89220626/evidence.json",
+      "originalSha256": "0629ee20322af97a87e1d638a4f4061a7b3c106a25bc56c8e8fa574f0d795e83",
+      "publicSha256": "562f01cd78e8059dc0e46a6fbd382136391ebbed2cb6c01dd9039ef0959ad5d4",
+      "bytes": 2433,
+      "transform": "Replace workspace absolute prefixes with repository-relative paths and other local home prefixes with <user-home>; include escaped regex representations."
+    },
+    {
+      "source": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-attempt-2-011b6312/evidence.json",
+      "publicCopy": "verification-attempt-2-011b6312/evidence.json",
+      "originalSha256": "fb619ed1d319f3389b33c558013f3331bd135f91e444df403647bbe77c9a9456",
+      "publicSha256": "b17394756d8caedef58a94ef73a2d913420183c0a41c945bc5d8c59193287f1f",
+      "bytes": 2433,
+      "transform": "Replace workspace absolute prefixes with repository-relative paths and other local home prefixes with <user-home>; include escaped regex representations."
+    },
+    {
+      "source": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/candidate-1/control/verification-1-stdout.txt",
+      "publicCopy": "candidate-1/control/verification-1-stdout.txt",
+      "originalSha256": "c9143cccd3d88ad76733c42e78edb29b91f186b0cc00f608b930f1502474e846",
+      "publicSha256": "c9143cccd3d88ad76733c42e78edb29b91f186b0cc00f608b930f1502474e846",
+      "bytes": 52,
+      "transform": "Replace workspace absolute prefixes with repository-relative paths and other local home prefixes with <user-home>; include escaped regex representations."
+    },
+    {
+      "source": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/candidate-1/control/verification-1-stderr.txt",
+      "publicCopy": "candidate-1/control/verification-1-stderr.txt",
+      "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "publicSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "transform": "Replace workspace absolute prefixes with repository-relative paths and other local home prefixes with <user-home>; include escaped regex representations."
+    },
+    {
+      "source": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/investigation-episode-1.webm",
+      "publicCopy": "investigation-episode-1.webm",
+      "originalSha256": "537c5d2371102ee330c731dc3a79ed6fec5677ed52b4acf290aaf98469214d82",
+      "publicSha256": "537c5d2371102ee330c731dc3a79ed6fec5677ed52b4acf290aaf98469214d82",
+      "bytes": 5720911,
+      "transform": "None; byte-identical copy.",
+      "visualReview": "Original headless controlled-shop viewport only. Keyframes reviewed at 4 s intervals for investigation, 1 s intervals for all replays. Complete decode passed."
+    },
+    {
+      "source": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-1.webm",
+      "publicCopy": "verification-1.webm",
+      "originalSha256": "9df104e8472d6f186f147d7ac022c87f75f960b062f776642664d26ba6a89bcc",
+      "publicSha256": "9df104e8472d6f186f147d7ac022c87f75f960b062f776642664d26ba6a89bcc",
+      "bytes": 672298,
+      "transform": "None; byte-identical copy.",
+      "visualReview": "Original headless controlled-shop viewport only. Keyframes reviewed at 4 s intervals for investigation, 1 s intervals for all replays. Complete decode passed."
+    },
+    {
+      "source": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-2.webm",
+      "publicCopy": "verification-2.webm",
+      "originalSha256": "23d06df1ff2dcfc0ebf5b08ea0cfe4a031b7d10a7badd8fae33b3f1526f90c26",
+      "publicSha256": "23d06df1ff2dcfc0ebf5b08ea0cfe4a031b7d10a7badd8fae33b3f1526f90c26",
+      "bytes": 670936,
+      "transform": "None; byte-identical copy.",
+      "visualReview": "Original headless controlled-shop viewport only. Keyframes reviewed at 4 s intervals for investigation, 1 s intervals for all replays. Complete decode passed."
+    },
+    {
+      "source": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/candidate-1/control/verification-1.webm",
+      "publicCopy": "control.webm",
+      "originalSha256": "18c0ab74c95372888b44d5ba649eca7d051b1df72e0929a02cd28e1ec11fcd37",
+      "publicSha256": "18c0ab74c95372888b44d5ba649eca7d051b1df72e0929a02cd28e1ec11fcd37",
+      "bytes": 641518,
+      "transform": "None; byte-identical copy.",
+      "visualReview": "Original headless controlled-shop viewport only. Keyframes reviewed at 4 s intervals for investigation, 1 s intervals for all replays. Complete decode passed."
+    }
+  ],
+  "limitations": [
+    "One selected real controlled-shop case is confirmed; no success rate for the whole fourth series is claimed here.",
+    "Automatic fixed-control video and PNG files exist inside candidate-1/control but are not registered as RunView artifacts; reviewed PNG copies are included here.",
+    "BASE_URL is set by verifier.ts; all three persisted configs target the exact same repro.spec.ts. Environment variables are intentionally not archived. The configured control URL is localhost:4174 per integrator and source default; no secret-bearing environment snapshot is used as evidence.",
+    "Invocation timeouts/output directories/nonces differ between the three independent processes; the saved test steps and assertion bytes are identical.",
+    "Gateway header costs are accounting evidence, not independently verified invoiced cash billing or promotional-credit usage.",
+    "No manual npm run repro was executed by this auditor."
+  ],
+  "uiScreenshots": [
+    {
+      "file": "product-confirmed-workspace.jpg",
+      "sha256": "743ca823d3e0d43278ba217ca50588a4fa18d1e166c6dfbd067b22047e51fb12",
+      "visuallyReviewed": true,
+      "containsOnly": "BugReplay controlled product UI, synthetic complaint and selected run evidence."
+    },
+    {
+      "file": "product-confirmed-evidence.jpg",
+      "sha256": "0c547a5968fea32d1d56062631368112883395d68984890facfaec493e1f4c9a",
+      "visuallyReviewed": true,
+      "containsOnly": "BugReplay controlled product UI, synthetic complaint and selected run evidence."
+    }
+  ],
+  "videoVisualReview": {
+    "method": "Contact sheets extracted by FFmpeg; investigator every4s, three replay clips every1s, originalshoponly.",
+    "noExternalOrPersonalUiSeen": true,
+    "allOriginalVideosPublishedByteIdentical": true
+  },
+  "manualControl": {
+    "archive": "artifacts/archives/manual-fixed-control-originals-20261012T153326Z.tar.gz",
+    "sha256": "03cfc33a770b0cce36d3d7e214160c7caa5760397fd0bd49fba657d37284da3a",
+    "bytes": 1625268,
+    "fileCount": 14,
+    "originalSelected70FilesUnchanged": true,
+    "testSha256": "bd9c42ba5744e7ed47cec25dcc47dd0341f9c7da88d034a700014b4a169c208a",
+    "manifest": "artifacts/archives/manual-fixed-control-originals-20261012T153326Z/original-manifest.json",
+    "classification": "passed",
+    "reportedInvocation": {
+      "ARTIFACT_ROOT": "artifacts/manual-control-2026-10-12",
+      "command": "npm run repro -- --run b8ffd757-6aed-405d-b7ac-ed3b1c4d9236 --base-url http://localhost:4174",
+      "source": "Integrator executed command; environment not archived."
+    },
+    "result": {
+      "classification": "passed",
+      "exitCode": 0,
+      "assertionReached": true,
+      "contextClosed": true,
+      "stepId": "step-13",
+      "cartPreserved": true,
+      "beforeSaveSeq": 2,
+      "afterSaveSeq": 3,
+      "nonce": "fa80d029-59aa-43cd-bbc6-5ed2279e19dc"
+    },
+    "manualPngMatchReviewedAutomaticControl": {
+      "before": true,
+      "after": true
+    },
+    "videoFullDecodePassed": true,
+    "publicCopies": [
+      {
+        "publicCopy": "manual-control/candidate-1/repro.spec.ts",
+        "originalSha256": "bd9c42ba5744e7ed47cec25dcc47dd0341f9c7da88d034a700014b4a169c208a",
+        "publicSha256": "bd9c42ba5744e7ed47cec25dcc47dd0341f9c7da88d034a700014b4a169c208a",
+        "transform": "Machine/home prefixes only; exact test and PNG untouched."
+      },
+      {
+        "publicCopy": "manual-control/repro.spec.ts",
+        "originalSha256": "bd9c42ba5744e7ed47cec25dcc47dd0341f9c7da88d034a700014b4a169c208a",
+        "publicSha256": "bd9c42ba5744e7ed47cec25dcc47dd0341f9c7da88d034a700014b4a169c208a",
+        "transform": "Machine/home prefixes only; exact test and PNG untouched."
+      },
+      {
+        "publicCopy": "manual-control/verification-1-after.png",
+        "originalSha256": "109dc42849d56664167d900e1e239d86b1bd1fa2ef15cb91a8af2a0d39c1d503",
+        "publicSha256": "109dc42849d56664167d900e1e239d86b1bd1fa2ef15cb91a8af2a0d39c1d503",
+        "transform": "Machine/home prefixes only; exact test and PNG untouched."
+      },
+      {
+        "publicCopy": "manual-control/verification-1-stdout.txt",
+        "originalSha256": "c9143cccd3d88ad76733c42e78edb29b91f186b0cc00f608b930f1502474e846",
+        "publicSha256": "c9143cccd3d88ad76733c42e78edb29b91f186b0cc00f608b930f1502474e846",
+        "transform": "Machine/home prefixes only; exact test and PNG untouched."
+      },
+      {
+        "publicCopy": "manual-control/verification-1.json",
+        "originalSha256": "4ed904e57d3ae528585882619b5cc80df5d2b119fa9091f88c395f21aab3e42f",
+        "publicSha256": "154e4b1bd2e9b710b31f9cd9790f0faf1194833e3d4e2656bc185f7da283ee0e",
+        "transform": "Machine/home prefixes only; exact test and PNG untouched."
+      },
+      {
+        "publicCopy": "manual-control/verification-attempt-1-fa80d029/evidence.json",
+        "originalSha256": "6507f55152740874b0eb1e4f7942883bd4d917b365259f9aa1543fe853b9f078",
+        "publicSha256": "29735ad65ccfa2a8366ab3ded3b80d24b8174bd1533bf2f44918120b4f46ba9f",
+        "transform": "Machine/home prefixes only; exact test and PNG untouched."
+      },
+      {
+        "publicCopy": "manual-control/verification-attempt-1-fa80d029/playwright.config.mjs",
+        "originalSha256": "97883f7aed5db191cd390f9ef7a88428869456926f94f5235bc5708981331a94",
+        "publicSha256": "68ec06a830944f92a30ff138b2ae6475304b7aee62fa5c2a58d02b330009345c",
+        "transform": "Machine/home prefixes only; exact test and PNG untouched."
+      },
+      {
+        "publicCopy": "manual-control/verification-attempt-1-fa80d029/results.json",
+        "originalSha256": "96c1b5e660a03d6a585f47b6c4d469821d4c293f3f41f0444a574b238bad3b27",
+        "publicSha256": "affb7db0a59b71ebdcb7f9ccd899cb86f84edc094d0b1442bd4fad279e691ecd",
+        "transform": "Machine/home prefixes only; exact test and PNG untouched."
+      },
+      {
+        "publicCopy": "manual-control/verification-attempt-1-fa80d029/test-results/.last-run.json",
+        "originalSha256": "91d1c43004802cd49950d78eb11c8fa7d05da8ffffe219a8b13b2f561bc00903",
+        "publicSha256": "91d1c43004802cd49950d78eb11c8fa7d05da8ffffe219a8b13b2f561bc00903",
+        "transform": "Machine/home prefixes only; exact test and PNG untouched."
+      },
+      {
+        "publicCopy": "manual-control/verification-attempt-1-fa80d029/test-results/repro-cart-survives-a-completed-checkout-address-change/after.png",
+        "originalSha256": "109dc42849d56664167d900e1e239d86b1bd1fa2ef15cb91a8af2a0d39c1d503",
+        "publicSha256": "109dc42849d56664167d900e1e239d86b1bd1fa2ef15cb91a8af2a0d39c1d503",
+        "transform": "Machine/home prefixes only; exact test and PNG untouched."
+      },
+      {
+        "publicCopy": "manual-control/verification-attempt-1-fa80d029/test-results/repro-cart-survives-a-completed-checkout-address-change/before.png",
+        "originalSha256": "f18038254daa71b18beaacc1fbcc6ea9a3cddbf97fc13fe94933193fe8343d77",
+        "publicSha256": "f18038254daa71b18beaacc1fbcc6ea9a3cddbf97fc13fe94933193fe8343d77",
+        "transform": "Machine/home prefixes only; exact test and PNG untouched."
+      },
+      {
+        "publicCopy": "manual-control/verification.json",
+        "originalSha256": "5a03d0b484d6bed94c898494873fc524750acdfa4563eaefba3d397fe75e01a2",
+        "publicSha256": "251baf4ada647b896562a56bd65708b33c56f0f7f9b91d7a3211a5c874f7eda9",
+        "transform": "Machine/home prefixes only; exact test and PNG untouched."
+      }
+    ]
+  }
+}

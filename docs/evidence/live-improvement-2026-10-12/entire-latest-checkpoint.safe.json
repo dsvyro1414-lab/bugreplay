@@ -1,0 +1,24 @@
+{
+  "checkpointId": "01M4RBGMN0JWSXDHD2TESXJ35A",
+  "fixSha": "2b541b20a97ef3df4261529bd48089792e01f2af",
+  "strategy": "manual-commit",
+  "branch": "agent-a-engine",
+  "checkpointCount": 3,
+  "filesTouched": [
+    "README.md",
+    "apps/runner/src/browser.ts",
+    "apps/runner/src/investigate.ts",
+    "apps/runner/src/llm.ts",
+    "apps/runner/test/browser.test.ts",
+    "apps/runner/test/investigation.test.ts",
+    "apps/runner/test/llm.test.ts"
+  ],
+  "fileCount": 7,
+  "sessionCount": 1,
+  "taskCount": 3,
+  "verifiedWith": "entire checkpoint explain 01M4RBGMN0JWSXDHD2TESXJ35A --json",
+  "commitFooterMatches": true,
+  "savedMetadataMatchesLiveCli": true,
+  "savedMetadataSha256": "1c36c2818dd1210b64ae2db58b81a99db2450c704be3b2aaf002bc7eb41aec46",
+  "rationale": "Generic visible disabled-state observations, bounded continuation after output-format failures, and gateway-header cost accounting improve evidence completeness/exploration without supplying a hidden bug recipe. Entire session/transcript/private task text deliberately omitted."
+}

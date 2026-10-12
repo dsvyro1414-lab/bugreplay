@@ -1,0 +1,115 @@
+{
+  "kind": "neatlogs_hosted_trace_readback_whitelist",
+  "retrievedAt": "2026-10-12T15:40:37.068Z",
+  "source": {
+    "sdk": "neatlogs@1.1.28",
+    "method": "GET",
+    "origin": "https://ingest.neatlogs.com",
+    "path": "/api/traces/v3/9096d7e75454f94d4c9cd11011604e13",
+    "httpStatus": 200,
+    "documentedImplementation": "Installed SDK CLI doctor readback: node_modules/neatlogs/dist/cli.mjs lines 13024\u201313039",
+    "rawSourceSha256": "4c0f8564bd5ce4ab48614cdb74a4b453224096a9155822870b83515b37ccadb7",
+    "rawSourceIncluded": false
+  },
+  "hosted": {
+    "traceId": "9096d7e75454f94d4c9cd11011604e13",
+    "name": "bugreplay.investigation",
+    "workflowName": "bugreplay",
+    "status": "success",
+    "createdAt": "2026-10-12T15:27:21.836Z",
+    "updatedAt": "2026-10-12T15:28:13.000Z",
+    "latencyMs": 51635,
+    "spanCount": 50,
+    "duplicateSpanCount": 0,
+    "rootCount": 1,
+    "unknownParentCount": 0,
+    "providerModel": "claude-sonnet-4.6",
+    "providerTransportCalls": 16,
+    "modelDecisionWrappers": 15,
+    "hostedLlmCallsIncludingWrappers": 31,
+    "toolCalls": 18,
+    "promptTokens": 41069,
+    "completionTokens": 1261,
+    "totalTokens": 42330,
+    "reportedSpanErrors": 0,
+    "verifications": {
+      "verifier.replay": {
+        "verdict": "confirmed",
+        "matchedFailures": 2,
+        "attempts": [
+          {
+            "attempt": 1,
+            "classification": "matched_failure",
+            "errorType": "BUGREPLAY_CART_PRESERVATION",
+            "stage": "cart_assertion_failed",
+            "exitCode": 1
+          },
+          {
+            "attempt": 2,
+            "classification": "matched_failure",
+            "errorType": "BUGREPLAY_CART_PRESERVATION",
+            "stage": "cart_assertion_failed",
+            "exitCode": 1
+          }
+        ],
+        "artifactRunIdMatches": true
+      },
+      "verifier.control": {
+        "verdict": "not_matched",
+        "matchedFailures": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "classification": "passed",
+            "errorType": null,
+            "stage": "passed",
+            "exitCode": 0
+          }
+        ],
+        "artifactRunIdMatches": true
+      }
+    },
+    "nodeCounts": {
+      "browser.start": 1,
+      "bugreplay.investigation": 1,
+      "claude-sonnet-4.6": 16,
+      "model.next": 15,
+      "browser.click": 7,
+      "browser.checkpointCart": 1,
+      "browser.fill": 4,
+      "browser.readCart": 1,
+      "browser.select": 1,
+      "compiler.compile": 1,
+      "verifier.replay": 1,
+      "verifier.control": 1
+    }
+  },
+  "localIdentity": {
+    "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+    "traceId": "9096d7e75454f94d4c9cd11011604e13",
+    "gitSha": "2b541b20a97ef3df4261529bd48089792e01f2af",
+    "model": "claude-sonnet-4.6",
+    "source": "Preserved original trace.json; hosted verifier artifact paths independently match runId. Hosted response does not expose gitSha custom attribute."
+  },
+  "localLedger": {
+    "source": "Preserved original model-usage.json",
+    "transportAttempts": 16,
+    "completed": 15,
+    "invalidResponses": 1,
+    "normalizedCompletedResponses": 4,
+    "gatewayCostUsd": 0.1563342,
+    "gatewayCostSource": "x-litellm-response-cost",
+    "costComplete": true,
+    "billingCostUsd": null,
+    "promotionalCreditsUsd": null
+  },
+  "limitations": [
+    "Hosted status is success; this route does not return explicit finalizationStatus, custom root gitSha, or root verdict attributes.",
+    "Replay and control verdicts are verified in hosted child-span outputs. Git SHA comes from the preserved local trace identity.",
+    "Hosted llmCalls=31 counts 16 provider spans plus 15 wrappers; it does not represent 31 billable transport attempts.",
+    "The hosted span-error counter is zero, while the complete local ledger retains one handled invalid response; do not equate SDK span errors with all model-format failures.",
+    "Hosted output strings are not a byte-identical original model-response archive; original raw JSON-object counts cannot be recovered from this readback. No raw model content is included.",
+    "Hosted totalTokensCost is not populated as billing evidence. Actual gateway-header cost is shown separately; cash invoice and promotional credits remain unknown.",
+    "This is a local viewer of an authenticated Neatlogs hosted API readback, not the official Neatlogs UI."
+  ]
+}

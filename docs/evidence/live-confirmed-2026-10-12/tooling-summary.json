@@ -1,0 +1,52 @@
+{
+  "reviewedAtUtc": "2026-10-12T15:38:57.051971+00:00",
+  "publication": "Whitelisted summary only. Original tooling files remain local and ignored; their paths are provenance labels, not public download links. No keys or credential-bearing environment exported.",
+  "results": [
+    {
+      "commandLabel": "npm run doctor:neatlogs before baseline",
+      "originalIgnoredPath": "artifacts/tooling/neatlogs-preflight-1791817228678-ad1e2a98.json",
+      "originalSha256": "991d7fc3fc60789f7dc50d0b6b9f573a654ceb4413847624ab03e556a0201746",
+      "reviewedFields": {
+        "kind": "neatlogs_delivery_preflight",
+        "at": "2026-10-12T15:00:28.676Z",
+        "status": "pass",
+        "sdkVersion": "1.1.28",
+        "exitCode": 0,
+        "reasonCodes": [],
+        "traceId": "cf2ce376186f5345b3fb60c9e6a65e9a",
+        "finalizedReadbackVerified": true
+      }
+    },
+    {
+      "commandLabel": "npm run doctor:neatlogs before fourth series",
+      "originalIgnoredPath": "artifacts/tooling/neatlogs-preflight-1791818779825-35eb0f2d.json",
+      "originalSha256": "3ecd4ac0c1c20ef2f3794cc588d2491c40d98ea3fe37be5f054724d48f46231f",
+      "reviewedFields": {
+        "kind": "neatlogs_delivery_preflight",
+        "at": "2026-10-12T15:26:19.824Z",
+        "status": "pass",
+        "sdkVersion": "1.1.28",
+        "exitCode": 0,
+        "reasonCodes": [],
+        "traceId": "37583d826d4b24aae6e6ef79c9bf5c84",
+        "finalizedReadbackVerified": true
+      }
+    },
+    {
+      "commandLabel": "npm run smoke:llm",
+      "originalIgnoredPath": "artifacts/tooling/llm-smoke-1791817241011.json",
+      "originalSha256": "01e8db6b3ddc9bf0a56ac550f1748810983e0f784f2e8c2fd3aedb6f1583271e",
+      "reviewedFields": {
+        "kind": "model_api_access_check",
+        "at": "2026-10-12T15:00:41.009Z",
+        "status": "pass",
+        "model": "claude-sonnet-4.6",
+        "runtimeDecisionVerified": true,
+        "calls": 1,
+        "inputTokens": 133,
+        "outputTokens": 20,
+        "note": "One real model request. No browser investigation or reproduction was performed."
+      }
+    }
+  ]
+}

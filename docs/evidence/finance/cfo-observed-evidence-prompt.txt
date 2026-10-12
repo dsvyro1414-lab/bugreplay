@@ -1,0 +1,38 @@
+Append a dated "Observed engineering evidence — 2026-10-12" page or section to the saved BugReplay CFO.ai model. Use only the public project evidence below. Preserve the forecast assumptions and keep Planning selected. Do not fill the actual all-in commercial-cost input, net credits, or overwrite the saved forecast. This is engineering usage evidence, not revenue or paying-customer validation.
+
+Scope: all 17 saved investigations (including the October 11 preflight-blocked run), 2 successful model smoke calls, and 5 rejected Bedrock access probes. Earlier failed/inconclusive versions are retained. Unknown means unknown, never zero.
+
+Investigation table: elapsed duration includes the run workflow; token counts include every recorded transport response, including invalid responses. The first October 12 cohort's missing terminal-response tokens were recovered from reviewed Neatlogs screenshots. Inference model for the 16 October 12 investigations: Claude Sonnet 4.6; October 11 model unknown.
+
+Run ID | Target | Outcome | Input/output tokens | Elapsed seconds | Complete response-header gateway accounting USD
+66349e06-fc57-4de9-836f-b0a0d7ca0584 | buggy | inconclusive | Unknown/Unknown | 3.430 | Unknown
+e07bdfa3-c839-4e68-b784-640244403b2c | buggy | inconclusive | 11259/391 | 15.818 | Unknown
+6992fe74-3395-430a-95ab-d73c207d70b6 | buggy | inconclusive | 8635/328 | 10.446 | Unknown
+7e60e53a-1a02-4f81-918d-24649030fae0 | buggy | inconclusive | 8530/310 | 10.590 | Unknown
+39b9bed4-fca9-4884-a7b9-3035fc860685 | fixed | inconclusive | 8592/268 | 10.073 | Unknown
+70582bba-ec4a-4d46-9846-ecc305ec36fb | buggy | inconclusive | 11250/323 | 17.465 | Unknown
+6348e730-4d90-4e40-a3e7-6186a2825ca6 | buggy | inconclusive | 11322/293 | 12.773 | Unknown
+88928c9e-85d5-4806-a8e0-69d59f27790d | buggy | inconclusive | 11276/339 | 12.749 | Unknown
+9bf6f448-a6f3-43a7-9378-93602e6c7dbb | fixed | inconclusive | 11208/261 | 12.679 | Unknown
+5a3547da-c82d-4847-b67e-3985407c7fe3 | buggy | inconclusive | 26994/767 | 25.978 | Unknown
+5e7c759d-aedf-4102-b17c-a5f3ecff5104 | buggy | not_reproduced | 65169/2195 | 60.974 | Unknown
+19ecc208-aa4c-47ce-bc92-5e3523dfae59 | buggy | not_reproduced | 115544/2605 | 86.806 | Unknown
+c4010a11-3341-416c-a863-52aff89893a5 | fixed | inconclusive | 18847/599 | 19.171 | Unknown
+247e9123-b7aa-46d6-9f36-936a6531960e | buggy | not_reproduced | 60315/2220 | 63.924 | 0.2356695
+b8ffd757-6aed-405d-b7ac-ed3b1c4d9236 | buggy | bug_confirmed | 41069/1261 | 51.651 | 0.1563342
+7c259071-2c8c-45ee-8c65-5fafa1395ae7 | buggy | not_reproduced | 64690/2245 | 64.727 | 0.2505195
+6d85b46a-df25-42a9-abe9-54978f07d964 | fixed | not_reproduced | 82219/2476 | 73.639 | 0.3121767
+
+All-investigation accounted-token subtotal: 556919 input/16881 output. This does not make complete all-attempt billing known.
+
+The four latest investigations at SHA 2b541b20a97ef3df4261529bd48089792e01f2af have complete x-litellm-response-cost header coverage. Their gateway accounting sums to $0.9546999, or $0.238674975 per attempt across these four cases. Outcomes: one of three buggy investigations confirmed; two buggy investigations did not reproduce; the separate fixed-shop investigation did not reproduce. The selected confirmed run b8ffd757-6aed-405d-b7ac-ed3b1c4d9236 has two clean intended assertion failures and a passing byte-identical test against the fixed URL. Its gateway accounting alone is $0.1563342, exceeding the assumed $0.1293 full-variable-cost ceiling before browser/storage costs. These four cases do not estimate a general success rate or commercial cost distribution.
+
+Gateway accounting for the earlier 13 investigations is Unknown. Current read-only gateway metadata verified $3.30 input/$16.50 output per million tokens, $0.33 cache read and $4.125 cache write. Historical rates/cache categories are not known. Applying current ordinary rates to all recorded investigation tokens gives a CONDITIONAL NON-CACHE estimate of $2.1163692; including the two smokes, $2.1179070. Do not add this estimate to header costs: they overlap. Source: docs/evidence/finance/gateway-rate-reference.json, observed 2026-10-12T15:16:59.061Z.
+
+Smokes: 2026-10-11T18:07:47.476Z, claude-sonnet-4.6, 133/20 input/output tokens, configured non-cache estimate $0.0007689, header accounting/duration/cash bill Unknown; 2026-10-12T15:00:41.009Z, claude-sonnet-4.6, 133/20 input/output tokens, configured non-cache estimate $0.0007689, header accounting/duration/cash bill Unknown. Five rejected Bedrock probes have unknown tokens and billing; a 403 does not establish zero cost.
+
+Complete project gateway accounting, cash invoice charges, promotional credit deductions, hosted browser/storage costs and coding/CFO subscription costs remain Unknown. Keep credits separate. Account-wide totals are not allocated; project billing remains unknown.
+
+Decision: keep $49/100 as an unvalidated hypothesis, retain every outcome, and evaluate pricing/allowance against complete variable cost. Show the measured latest-cohort accounting separately from conditional historical estimates and missing cash/credit inputs. Retain the original Base/Downside revenue, cash and margin assumptions.
+
+Evidence: docs/evidence/finance/actual-attempt-cost-ledger.json and .md, each original run's model-usage.json, verification.json, control-verification.json and report.md. Add the selected run ID and source SHA beside the observed costs. Return the new page/section link and identify any unsupported cost field as Unknown.

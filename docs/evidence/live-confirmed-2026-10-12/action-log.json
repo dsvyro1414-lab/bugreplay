@@ -1,0 +1,562 @@
+{
+  "records": [
+    {
+      "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+      "step": {
+        "id": "step-1",
+        "kind": "goto",
+        "path": "/"
+      },
+      "semantic": "navigation",
+      "after": {
+        "cart": [],
+        "address": "24 Market Street, Portland",
+        "saveSeq": 0,
+        "saved": false,
+        "busy": false
+      }
+    },
+    {
+      "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+      "step": {
+        "id": "step-2",
+        "kind": "click",
+        "locator": {
+          "role": "button",
+          "name": "Add Canvas pouch",
+          "exact": true
+        }
+      },
+      "semantic": "cart-add",
+      "before": {
+        "cart": [],
+        "address": "24 Market Street, Portland",
+        "saveSeq": 0,
+        "saved": false,
+        "busy": false
+      },
+      "after": {
+        "cart": [
+          {
+            "productId": "canvas-pouch",
+            "quantity": 1
+          }
+        ],
+        "address": "24 Market Street, Portland",
+        "saveSeq": 0,
+        "saved": false,
+        "busy": false
+      }
+    },
+    {
+      "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+      "step": {
+        "id": "step-3",
+        "kind": "click",
+        "locator": {
+          "role": "button",
+          "name": "Add Desk notebook",
+          "exact": true
+        }
+      },
+      "semantic": "cart-add",
+      "before": {
+        "cart": [
+          {
+            "productId": "canvas-pouch",
+            "quantity": 1
+          }
+        ],
+        "address": "24 Market Street, Portland",
+        "saveSeq": 0,
+        "saved": false,
+        "busy": false
+      },
+      "after": {
+        "cart": [
+          {
+            "productId": "canvas-pouch",
+            "quantity": 1
+          },
+          {
+            "productId": "desk-notebook",
+            "quantity": 1
+          }
+        ],
+        "address": "24 Market Street, Portland",
+        "saveSeq": 0,
+        "saved": false,
+        "busy": false
+      }
+    },
+    {
+      "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+      "step": {
+        "id": "step-4",
+        "kind": "fill",
+        "locator": {
+          "role": "textbox",
+          "name": "Delivery address",
+          "exact": true
+        },
+        "value": "100 Main Street, Seattle"
+      },
+      "semantic": "checkout-edit",
+      "before": {
+        "cart": [
+          {
+            "productId": "canvas-pouch",
+            "quantity": 1
+          },
+          {
+            "productId": "desk-notebook",
+            "quantity": 1
+          }
+        ],
+        "address": "24 Market Street, Portland",
+        "saveSeq": 0,
+        "saved": false,
+        "busy": false
+      },
+      "after": {
+        "cart": [
+          {
+            "productId": "canvas-pouch",
+            "quantity": 1
+          },
+          {
+            "productId": "desk-notebook",
+            "quantity": 1
+          }
+        ],
+        "address": "24 Market Street, Portland",
+        "saveSeq": 0,
+        "saved": false,
+        "busy": false
+      }
+    },
+    {
+      "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+      "step": {
+        "id": "step-5",
+        "kind": "click",
+        "locator": {
+          "role": "button",
+          "name": "Save delivery address",
+          "exact": true
+        }
+      },
+      "semantic": "checkout-save",
+      "before": {
+        "cart": [
+          {
+            "productId": "canvas-pouch",
+            "quantity": 1
+          },
+          {
+            "productId": "desk-notebook",
+            "quantity": 1
+          }
+        ],
+        "address": "24 Market Street, Portland",
+        "saveSeq": 0,
+        "saved": false,
+        "busy": false
+      },
+      "after": {
+        "cart": [
+          {
+            "productId": "canvas-pouch",
+            "quantity": 1
+          },
+          {
+            "productId": "desk-notebook",
+            "quantity": 1
+          }
+        ],
+        "address": "100 Main Street, Seattle",
+        "saveSeq": 1,
+        "saved": true,
+        "busy": false
+      }
+    },
+    {
+      "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+      "step": {
+        "id": "step-6",
+        "kind": "select",
+        "locator": {
+          "role": "combobox",
+          "name": "Delivery method",
+          "exact": true
+        },
+        "value": "express"
+      },
+      "semantic": "checkout-edit",
+      "before": {
+        "cart": [
+          {
+            "productId": "canvas-pouch",
+            "quantity": 1
+          },
+          {
+            "productId": "desk-notebook",
+            "quantity": 1
+          }
+        ],
+        "address": "100 Main Street, Seattle",
+        "saveSeq": 1,
+        "saved": true,
+        "busy": false
+      },
+      "after": {
+        "cart": [
+          {
+            "productId": "canvas-pouch",
+            "quantity": 1
+          },
+          {
+            "productId": "desk-notebook",
+            "quantity": 1
+          }
+        ],
+        "address": "100 Main Street, Seattle",
+        "saveSeq": 1,
+        "saved": false,
+        "busy": false
+      }
+    },
+    {
+      "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+      "step": {
+        "id": "step-7",
+        "kind": "click",
+        "locator": {
+          "role": "button",
+          "name": "Apply promo code",
+          "exact": true
+        }
+      },
+      "semantic": "checkout-edit",
+      "before": {
+        "cart": [
+          {
+            "productId": "canvas-pouch",
+            "quantity": 1
+          },
+          {
+            "productId": "desk-notebook",
+            "quantity": 1
+          }
+        ],
+        "address": "100 Main Street, Seattle",
+        "saveSeq": 1,
+        "saved": false,
+        "busy": false
+      },
+      "after": {
+        "cart": [
+          {
+            "productId": "canvas-pouch",
+            "quantity": 1
+          },
+          {
+            "productId": "desk-notebook",
+            "quantity": 1
+          }
+        ],
+        "address": "100 Main Street, Seattle",
+        "saveSeq": 1,
+        "saved": false,
+        "busy": false
+      }
+    },
+    {
+      "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+      "step": {
+        "id": "step-8",
+        "kind": "fill",
+        "locator": {
+          "role": "textbox",
+          "name": "Delivery address",
+          "exact": true
+        },
+        "value": "200 Pine Street, Seattle"
+      },
+      "semantic": "checkout-edit",
+      "before": {
+        "cart": [
+          {
+            "productId": "canvas-pouch",
+            "quantity": 1
+          },
+          {
+            "productId": "desk-notebook",
+            "quantity": 1
+          }
+        ],
+        "address": "100 Main Street, Seattle",
+        "saveSeq": 1,
+        "saved": false,
+        "busy": false
+      },
+      "after": {
+        "cart": [
+          {
+            "productId": "canvas-pouch",
+            "quantity": 1
+          },
+          {
+            "productId": "desk-notebook",
+            "quantity": 1
+          }
+        ],
+        "address": "100 Main Street, Seattle",
+        "saveSeq": 1,
+        "saved": false,
+        "busy": false
+      }
+    },
+    {
+      "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+      "step": {
+        "id": "step-9",
+        "kind": "click",
+        "locator": {
+          "role": "button",
+          "name": "Save delivery address",
+          "exact": true
+        }
+      },
+      "semantic": "checkout-save",
+      "before": {
+        "cart": [
+          {
+            "productId": "canvas-pouch",
+            "quantity": 1
+          },
+          {
+            "productId": "desk-notebook",
+            "quantity": 1
+          }
+        ],
+        "address": "100 Main Street, Seattle",
+        "saveSeq": 1,
+        "saved": false,
+        "busy": false
+      },
+      "after": {
+        "cart": [
+          {
+            "productId": "canvas-pouch",
+            "quantity": 1
+          },
+          {
+            "productId": "desk-notebook",
+            "quantity": 1
+          }
+        ],
+        "address": "200 Pine Street, Seattle",
+        "saveSeq": 2,
+        "saved": true,
+        "busy": false
+      }
+    },
+    {
+      "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+      "step": {
+        "id": "step-10",
+        "kind": "fill",
+        "locator": {
+          "role": "textbox",
+          "name": "Promo code",
+          "exact": true
+        },
+        "value": "FIELD10"
+      },
+      "semantic": "checkout-edit",
+      "before": {
+        "cart": [
+          {
+            "productId": "canvas-pouch",
+            "quantity": 1
+          },
+          {
+            "productId": "desk-notebook",
+            "quantity": 1
+          }
+        ],
+        "address": "200 Pine Street, Seattle",
+        "saveSeq": 2,
+        "saved": true,
+        "busy": false
+      },
+      "after": {
+        "cart": [
+          {
+            "productId": "canvas-pouch",
+            "quantity": 1
+          },
+          {
+            "productId": "desk-notebook",
+            "quantity": 1
+          }
+        ],
+        "address": "200 Pine Street, Seattle",
+        "saveSeq": 2,
+        "saved": false,
+        "busy": false
+      }
+    },
+    {
+      "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+      "step": {
+        "id": "step-11",
+        "kind": "click",
+        "locator": {
+          "role": "button",
+          "name": "Apply promo code",
+          "exact": true
+        }
+      },
+      "semantic": "checkout-edit",
+      "before": {
+        "cart": [
+          {
+            "productId": "canvas-pouch",
+            "quantity": 1
+          },
+          {
+            "productId": "desk-notebook",
+            "quantity": 1
+          }
+        ],
+        "address": "200 Pine Street, Seattle",
+        "saveSeq": 2,
+        "saved": false,
+        "busy": false
+      },
+      "after": {
+        "cart": [
+          {
+            "productId": "canvas-pouch",
+            "quantity": 1
+          },
+          {
+            "productId": "desk-notebook",
+            "quantity": 1
+          }
+        ],
+        "address": "200 Pine Street, Seattle",
+        "saveSeq": 2,
+        "saved": false,
+        "busy": false
+      }
+    },
+    {
+      "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+      "step": {
+        "id": "step-12",
+        "kind": "fill",
+        "locator": {
+          "role": "textbox",
+          "name": "Delivery address",
+          "exact": true
+        },
+        "value": "300 Oak Avenue, Portland"
+      },
+      "semantic": "checkout-edit",
+      "before": {
+        "cart": [
+          {
+            "productId": "canvas-pouch",
+            "quantity": 1
+          },
+          {
+            "productId": "desk-notebook",
+            "quantity": 1
+          }
+        ],
+        "address": "200 Pine Street, Seattle",
+        "saveSeq": 2,
+        "saved": false,
+        "busy": false
+      },
+      "after": {
+        "cart": [
+          {
+            "productId": "canvas-pouch",
+            "quantity": 1
+          },
+          {
+            "productId": "desk-notebook",
+            "quantity": 1
+          }
+        ],
+        "address": "200 Pine Street, Seattle",
+        "saveSeq": 2,
+        "saved": false,
+        "busy": false
+      }
+    },
+    {
+      "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+      "step": {
+        "id": "step-13",
+        "kind": "click",
+        "locator": {
+          "role": "button",
+          "name": "Save delivery address",
+          "exact": true
+        }
+      },
+      "semantic": "checkout-save",
+      "before": {
+        "cart": [
+          {
+            "productId": "canvas-pouch",
+            "quantity": 1
+          },
+          {
+            "productId": "desk-notebook",
+            "quantity": 1
+          }
+        ],
+        "address": "200 Pine Street, Seattle",
+        "saveSeq": 2,
+        "saved": false,
+        "busy": false
+      },
+      "after": {
+        "cart": [],
+        "address": "300 Oak Avenue, Portland",
+        "saveSeq": 3,
+        "saved": true,
+        "busy": false
+      }
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "checkpoint-1",
+      "episodeId": "4aa25d84-b4d6-498f-bb74-f89c59e6e384",
+      "afterStepId": "step-3",
+      "state": {
+        "cart": [
+          {
+            "productId": "canvas-pouch",
+            "quantity": 1
+          },
+          {
+            "productId": "desk-notebook",
+            "quantity": 1
+          }
+        ],
+        "address": "24 Market Street, Portland",
+        "saveSeq": 0,
+        "saved": false,
+        "busy": false
+      }
+    }
+  ]
+}

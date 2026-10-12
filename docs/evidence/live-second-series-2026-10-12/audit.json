@@ -1,0 +1,510 @@
+{
+  "kind": "independent_second_series_original_audit",
+  "auditedAtUtc": "2026-10-12T15:14:14.809708+00:00",
+  "gitSha": "b8e9f7c995f021deb88e8e2acb8be38bb985ca1e",
+  "acceptance": "not_passed",
+  "comparisonConclusion": "No successful parser improvement established: all four still ended on a malformed response. Recording and token-accounting capture now exists.",
+  "runs": [
+    {
+      "runId": "70582bba-ec4a-4d46-9846-ecc305ec36fb",
+      "targetUrl": "http://localhost:4173",
+      "attempt": 1,
+      "status": "inconclusive",
+      "gitSha": "b8e9f7c995f021deb88e8e2acb8be38bb985ca1e",
+      "model": "claude-sonnet-4.6",
+      "traceId": "f997c43d7542b0c7baefb66cd610fe33",
+      "createdAt": "2026-10-12T15:10:59.986Z",
+      "metrics": {
+        "actions": 5,
+        "elapsedMs": 17465,
+        "inputTokens": 11250,
+        "outputTokens": 323
+      },
+      "stopReason": "Model response was not a JSON object; no browser action was executed.",
+      "missingConfirmationFiles": [
+        "repro.spec.ts",
+        "reproduction.json",
+        "verification.json",
+        "control-verification.json"
+      ],
+      "usageCompleteForLoggedResponses": true,
+      "billingCostUsd": null,
+      "modelAttempts": 6,
+      "ledgerMatchesRunView": true,
+      "invalidResponseTokensIncluded": true,
+      "originalInvestigationVideo": {
+        "bytes": 1879377,
+        "ffprobe": {
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "codec_name": "vp9",
+              "width": 1280,
+              "height": 900
+            }
+          ],
+          "format": {
+            "duration": "13.760000"
+          }
+        },
+        "fullDecode": "pass"
+      }
+    },
+    {
+      "runId": "6348e730-4d90-4e40-a3e7-6186a2825ca6",
+      "targetUrl": "http://localhost:4173",
+      "attempt": 2,
+      "status": "inconclusive",
+      "gitSha": "b8e9f7c995f021deb88e8e2acb8be38bb985ca1e",
+      "model": "claude-sonnet-4.6",
+      "traceId": "ced6a513302bae366601093163b7c66b",
+      "createdAt": "2026-10-12T15:11:18.039Z",
+      "metrics": {
+        "actions": 5,
+        "elapsedMs": 12773,
+        "inputTokens": 11322,
+        "outputTokens": 293
+      },
+      "stopReason": "Model response was not a JSON object; no browser action was executed.",
+      "missingConfirmationFiles": [
+        "repro.spec.ts",
+        "reproduction.json",
+        "verification.json",
+        "control-verification.json"
+      ],
+      "usageCompleteForLoggedResponses": true,
+      "billingCostUsd": null,
+      "modelAttempts": 6,
+      "ledgerMatchesRunView": true,
+      "invalidResponseTokensIncluded": true,
+      "originalInvestigationVideo": {
+        "bytes": 1965127,
+        "ffprobe": {
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "codec_name": "vp9",
+              "width": 1280,
+              "height": 900
+            }
+          ],
+          "format": {
+            "duration": "12.680000"
+          }
+        },
+        "fullDecode": "pass"
+      }
+    },
+    {
+      "runId": "88928c9e-85d5-4806-a8e0-69d59f27790d",
+      "targetUrl": "http://localhost:4173",
+      "attempt": 3,
+      "status": "inconclusive",
+      "gitSha": "b8e9f7c995f021deb88e8e2acb8be38bb985ca1e",
+      "model": "claude-sonnet-4.6",
+      "traceId": "8fb6c4f09c4c9449ce8a91ba2d24f8ff",
+      "createdAt": "2026-10-12T15:11:31.076Z",
+      "metrics": {
+        "actions": 5,
+        "elapsedMs": 12749,
+        "inputTokens": 11276,
+        "outputTokens": 339
+      },
+      "stopReason": "Model response was not a JSON object; no browser action was executed.",
+      "missingConfirmationFiles": [
+        "repro.spec.ts",
+        "reproduction.json",
+        "verification.json",
+        "control-verification.json"
+      ],
+      "usageCompleteForLoggedResponses": true,
+      "billingCostUsd": null,
+      "modelAttempts": 6,
+      "ledgerMatchesRunView": true,
+      "invalidResponseTokensIncluded": true,
+      "originalInvestigationVideo": {
+        "bytes": 1717349,
+        "ffprobe": {
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "codec_name": "vp9",
+              "width": 1280,
+              "height": 900
+            }
+          ],
+          "format": {
+            "duration": "12.560000"
+          }
+        },
+        "fullDecode": "pass"
+      }
+    },
+    {
+      "runId": "9bf6f448-a6f3-43a7-9378-93602e6c7dbb",
+      "targetUrl": "http://localhost:4174",
+      "attempt": 1,
+      "status": "inconclusive",
+      "gitSha": "b8e9f7c995f021deb88e8e2acb8be38bb985ca1e",
+      "model": "claude-sonnet-4.6",
+      "traceId": "c633a4daf76dd1f3a9c44331ca682d29",
+      "createdAt": "2026-10-12T15:11:44.109Z",
+      "metrics": {
+        "actions": 5,
+        "elapsedMs": 12679,
+        "inputTokens": 11208,
+        "outputTokens": 261
+      },
+      "stopReason": "Model response was not a JSON object; no browser action was executed.",
+      "missingConfirmationFiles": [
+        "repro.spec.ts",
+        "reproduction.json",
+        "verification.json",
+        "control-verification.json"
+      ],
+      "usageCompleteForLoggedResponses": true,
+      "billingCostUsd": null,
+      "modelAttempts": 6,
+      "ledgerMatchesRunView": true,
+      "invalidResponseTokensIncluded": true,
+      "originalInvestigationVideo": {
+        "bytes": 1643664,
+        "ffprobe": {
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "codec_name": "vp9",
+              "width": 1280,
+              "height": 900
+            }
+          ],
+          "format": {
+            "duration": "12.640000"
+          }
+        },
+        "fullDecode": "pass"
+      }
+    }
+  ],
+  "totals": {
+    "inputTokens": 45056,
+    "outputTokens": 1216,
+    "elapsedMs": 55666,
+    "actions": 20,
+    "calls": 24
+  },
+  "counts": {
+    "textFiles": 29,
+    "pngFiles": 20,
+    "videoFiles": 4
+  },
+  "checks": [
+    "All run, trace and usage identities matched",
+    "RunView metrics exactly matched acceptance summary and per-call usage sums",
+    "All 24 attempts include token usage including four invalid responses",
+    "Sequential events.jsonl exactly matched RunView events",
+    "All registered artifacts existed",
+    "Four original VP9 investigation videos fully decoded with ffmpeg",
+    "PNG signatures and dimensions valid",
+    "Selected text files had no common credential-pattern hits",
+    "Every original copied file matched its source SHA-256"
+  ],
+  "limits": [
+    "No browser investigation or replay executed by this audit",
+    "Investigation videos are not independent reproduction replays",
+    "Full decode verifies media integrity; not an exhaustive frame-by-frame privacy review",
+    "Billing rates, billed dollars and promotional credits remain unknown",
+    "No confirmed reproduction, before/after improvement or submission established"
+  ],
+  "fileHashes": [
+    {
+      "path": "artifacts/acceptance-1791817917137.json",
+      "bytes": 1294,
+      "sha256": "375c20d9af64ce5fc23f0f42f0b86907bc8ada27834d2fcf423c5775b2bc56cd"
+    },
+    {
+      "path": "artifacts/70582bba-ec4a-4d46-9846-ecc305ec36fb/action-log.json",
+      "bytes": 4600,
+      "sha256": "b2db188ffb17f65133d051317cd46314952e6090dd3737b4273d1b27bc98c835"
+    },
+    {
+      "path": "artifacts/70582bba-ec4a-4d46-9846-ecc305ec36fb/agent-state.json",
+      "bytes": 6369,
+      "sha256": "c36333dd3856ccd007ac946e8974442d3e5c4f467c27ac846bc9ffb193ebca45"
+    },
+    {
+      "path": "artifacts/70582bba-ec4a-4d46-9846-ecc305ec36fb/events.jsonl",
+      "bytes": 22032,
+      "sha256": "ac2cff50cfd36b15328f18c1ea8aaef80e112ac432f21feee1538dd4f76093b0"
+    },
+    {
+      "path": "artifacts/70582bba-ec4a-4d46-9846-ecc305ec36fb/investigation-episode-1.webm",
+      "bytes": 1879377,
+      "sha256": "c7ebd5c102b711811ad5833e34cbb08f216937f49a5561c3827ec7bc18c3c83a"
+    },
+    {
+      "path": "artifacts/70582bba-ec4a-4d46-9846-ecc305ec36fb/model-usage.json",
+      "bytes": 1402,
+      "sha256": "b4a2418ecc02ad1a0fbe8b6f91d28ff31c7ff96b7da7555838446494832a4288"
+    },
+    {
+      "path": "artifacts/70582bba-ec4a-4d46-9846-ecc305ec36fb/observation-1-0d5ad3a8-eb63-4104-9db5-8726603e2916.png",
+      "bytes": 120572,
+      "sha256": "6dbe3b11f669eb9474b75ad1251f72d2b41953c7abd07b937af0d7e0719cea0d"
+    },
+    {
+      "path": "artifacts/70582bba-ec4a-4d46-9846-ecc305ec36fb/observation-2-0d5ad3a8-eb63-4104-9db5-8726603e2916.png",
+      "bytes": 119156,
+      "sha256": "c15f71bacf9969ad2bca6cc0436a63d7fa0a0e4a664feaeb22285d5051e7eaaa"
+    },
+    {
+      "path": "artifacts/70582bba-ec4a-4d46-9846-ecc305ec36fb/observation-3-0d5ad3a8-eb63-4104-9db5-8726603e2916.png",
+      "bytes": 122485,
+      "sha256": "f18038254daa71b18beaacc1fbcc6ea9a3cddbf97fc13fe94933193fe8343d77"
+    },
+    {
+      "path": "artifacts/70582bba-ec4a-4d46-9846-ecc305ec36fb/observation-4-0d5ad3a8-eb63-4104-9db5-8726603e2916.png",
+      "bytes": 123005,
+      "sha256": "6873ba865cc0b00231fb68888eae606b96008db03a7dad2ff932d1f863644358"
+    },
+    {
+      "path": "artifacts/70582bba-ec4a-4d46-9846-ecc305ec36fb/observation-5-0d5ad3a8-eb63-4104-9db5-8726603e2916.png",
+      "bytes": 122497,
+      "sha256": "d0455aa28e2a161873b5e7fc7d1b31708b6aeee45854d4a5eb67ed27982ce0ec"
+    },
+    {
+      "path": "artifacts/70582bba-ec4a-4d46-9846-ecc305ec36fb/report.md",
+      "bytes": 2417,
+      "sha256": "63b8b6f620365e56618a020cedc9273a3dd1c62dc84b606f523a81405c7adf34"
+    },
+    {
+      "path": "artifacts/70582bba-ec4a-4d46-9846-ecc305ec36fb/run.json",
+      "bytes": 37955,
+      "sha256": "0c073b7a6f414bae8e81a3ca23e68b77f5f7996f5c14003f5edb589d03010bc3"
+    },
+    {
+      "path": "artifacts/70582bba-ec4a-4d46-9846-ecc305ec36fb/trace.json",
+      "bytes": 190,
+      "sha256": "d7ad78ec1502d777a5cef3c8036426f797eb143bea824553c124743b81229ad9"
+    },
+    {
+      "path": "artifacts/6348e730-4d90-4e40-a3e7-6186a2825ca6/action-log.json",
+      "bytes": 4604,
+      "sha256": "790189ef64b167eea7657e3d25c85aa94669f9eef4be2d0937aa1af880c2b39d"
+    },
+    {
+      "path": "artifacts/6348e730-4d90-4e40-a3e7-6186a2825ca6/agent-state.json",
+      "bytes": 6435,
+      "sha256": "8eab98c2ef069f62f278e8de877b1c7ab88293c32ed81ecc32c7e9ec4ef2cde0"
+    },
+    {
+      "path": "artifacts/6348e730-4d90-4e40-a3e7-6186a2825ca6/events.jsonl",
+      "bytes": 22108,
+      "sha256": "98e7ca5a3722d0ba083b537baeb84e8b354de188305912d72a23c76b8f5ed56c"
+    },
+    {
+      "path": "artifacts/6348e730-4d90-4e40-a3e7-6186a2825ca6/investigation-episode-1.webm",
+      "bytes": 1965127,
+      "sha256": "a7d635db5165dce018eec37955574c1eb087e37145f32a149102e0871afda309"
+    },
+    {
+      "path": "artifacts/6348e730-4d90-4e40-a3e7-6186a2825ca6/model-usage.json",
+      "bytes": 1401,
+      "sha256": "87618f777320f705848f9aa2411b7e7c8ccb2755fa5fc8a52f173803847bcda5"
+    },
+    {
+      "path": "artifacts/6348e730-4d90-4e40-a3e7-6186a2825ca6/observation-1-19899990-e41b-4d41-9eb4-876e7e5f67a6.png",
+      "bytes": 120572,
+      "sha256": "6dbe3b11f669eb9474b75ad1251f72d2b41953c7abd07b937af0d7e0719cea0d"
+    },
+    {
+      "path": "artifacts/6348e730-4d90-4e40-a3e7-6186a2825ca6/observation-2-19899990-e41b-4d41-9eb4-876e7e5f67a6.png",
+      "bytes": 119156,
+      "sha256": "c15f71bacf9969ad2bca6cc0436a63d7fa0a0e4a664feaeb22285d5051e7eaaa"
+    },
+    {
+      "path": "artifacts/6348e730-4d90-4e40-a3e7-6186a2825ca6/observation-3-19899990-e41b-4d41-9eb4-876e7e5f67a6.png",
+      "bytes": 122485,
+      "sha256": "f18038254daa71b18beaacc1fbcc6ea9a3cddbf97fc13fe94933193fe8343d77"
+    },
+    {
+      "path": "artifacts/6348e730-4d90-4e40-a3e7-6186a2825ca6/observation-4-19899990-e41b-4d41-9eb4-876e7e5f67a6.png",
+      "bytes": 123317,
+      "sha256": "23faf531fdb0c83549d6159aaa724ef518c95799157feec1c47059153f6422a0"
+    },
+    {
+      "path": "artifacts/6348e730-4d90-4e40-a3e7-6186a2825ca6/observation-5-19899990-e41b-4d41-9eb4-876e7e5f67a6.png",
+      "bytes": 123048,
+      "sha256": "77c200c45801929237035725414c527e36826115db1ddc51db6616770dfaa312"
+    },
+    {
+      "path": "artifacts/6348e730-4d90-4e40-a3e7-6186a2825ca6/report.md",
+      "bytes": 2483,
+      "sha256": "549860a700e1cbc94d0fb5c5b5b5c0d7ad882750a23948f572b4d15d2e2eabcc"
+    },
+    {
+      "path": "artifacts/6348e730-4d90-4e40-a3e7-6186a2825ca6/run.json",
+      "bytes": 38031,
+      "sha256": "3017a9889cb3eb26933e08b475481ca7f5aa728330bdcff0da2b17adfb709b9d"
+    },
+    {
+      "path": "artifacts/6348e730-4d90-4e40-a3e7-6186a2825ca6/trace.json",
+      "bytes": 190,
+      "sha256": "1e69d1ce0583932370bc18fa140794c7c2c6f9a409317fe71c805059b5b71d5d"
+    },
+    {
+      "path": "artifacts/88928c9e-85d5-4806-a8e0-69d59f27790d/action-log.json",
+      "bytes": 4602,
+      "sha256": "18b77150f8ca261cb445c67c6ffa620da3909c3cbb43ea949812ff5ac8db8ac3"
+    },
+    {
+      "path": "artifacts/88928c9e-85d5-4806-a8e0-69d59f27790d/agent-state.json",
+      "bytes": 6456,
+      "sha256": "34bacb87f22d7cd49df2ca425f4422a4f2d6171afce987cf347921a6e357b216"
+    },
+    {
+      "path": "artifacts/88928c9e-85d5-4806-a8e0-69d59f27790d/events.jsonl",
+      "bytes": 22124,
+      "sha256": "83f42df4b382addfb2cdfcc6883acfa07cde62289155f361cff3a66229494dc2"
+    },
+    {
+      "path": "artifacts/88928c9e-85d5-4806-a8e0-69d59f27790d/investigation-episode-1.webm",
+      "bytes": 1717349,
+      "sha256": "1f67bce79d3aa81ec8798204cbd481d30e6219fe9727cbc2fb58b06ff9670272"
+    },
+    {
+      "path": "artifacts/88928c9e-85d5-4806-a8e0-69d59f27790d/model-usage.json",
+      "bytes": 1402,
+      "sha256": "4f1df2f00da9d715460bb3e4d4ae755a02196dd004f5d99ba2a8c8cd9094f512"
+    },
+    {
+      "path": "artifacts/88928c9e-85d5-4806-a8e0-69d59f27790d/observation-1-d1cf2afd-adfa-4ffc-b540-b169982314bb.png",
+      "bytes": 120572,
+      "sha256": "6dbe3b11f669eb9474b75ad1251f72d2b41953c7abd07b937af0d7e0719cea0d"
+    },
+    {
+      "path": "artifacts/88928c9e-85d5-4806-a8e0-69d59f27790d/observation-2-d1cf2afd-adfa-4ffc-b540-b169982314bb.png",
+      "bytes": 119156,
+      "sha256": "c15f71bacf9969ad2bca6cc0436a63d7fa0a0e4a664feaeb22285d5051e7eaaa"
+    },
+    {
+      "path": "artifacts/88928c9e-85d5-4806-a8e0-69d59f27790d/observation-3-d1cf2afd-adfa-4ffc-b540-b169982314bb.png",
+      "bytes": 122485,
+      "sha256": "f18038254daa71b18beaacc1fbcc6ea9a3cddbf97fc13fe94933193fe8343d77"
+    },
+    {
+      "path": "artifacts/88928c9e-85d5-4806-a8e0-69d59f27790d/observation-4-d1cf2afd-adfa-4ffc-b540-b169982314bb.png",
+      "bytes": 123029,
+      "sha256": "0147450bbeda087934afc9110f2bb5a075332d428602783ad16c43bbb039be09"
+    },
+    {
+      "path": "artifacts/88928c9e-85d5-4806-a8e0-69d59f27790d/observation-5-d1cf2afd-adfa-4ffc-b540-b169982314bb.png",
+      "bytes": 122661,
+      "sha256": "00fd6374afe91d5b2c4bc94a537dc4d57c2d57950ea2ed9d0a6c020f88ea3c87"
+    },
+    {
+      "path": "artifacts/88928c9e-85d5-4806-a8e0-69d59f27790d/report.md",
+      "bytes": 2504,
+      "sha256": "eb14fdc110358736f713d7db26d554fb6267aa2f41a3dcd19223e1b69673f618"
+    },
+    {
+      "path": "artifacts/88928c9e-85d5-4806-a8e0-69d59f27790d/run.json",
+      "bytes": 38047,
+      "sha256": "bc3955baa0e5176b01deeec56ec2fe4bb335908da468b77bf32a509e018ce58a"
+    },
+    {
+      "path": "artifacts/88928c9e-85d5-4806-a8e0-69d59f27790d/trace.json",
+      "bytes": 190,
+      "sha256": "32ceed46c3fd54f6f5e74b0180374d717e954464342090f8732002c32a6fe804"
+    },
+    {
+      "path": "artifacts/9bf6f448-a6f3-43a7-9378-93602e6c7dbb/action-log.json",
+      "bytes": 4602,
+      "sha256": "be9f24cc785398fa8994f3be86534f62478d87759d9868e544398df6c66d51af"
+    },
+    {
+      "path": "artifacts/9bf6f448-a6f3-43a7-9378-93602e6c7dbb/agent-state.json",
+      "bytes": 6372,
+      "sha256": "ea15248b7fb5aae35aace1f1a405dcd87f4f1e6b35538b7ee74ff60df1cb912b"
+    },
+    {
+      "path": "artifacts/9bf6f448-a6f3-43a7-9378-93602e6c7dbb/events.jsonl",
+      "bytes": 22040,
+      "sha256": "1a498d9e569b6627d8dea0a3679abdf9e195d9fb640e1cac816efdd1d2a7d418"
+    },
+    {
+      "path": "artifacts/9bf6f448-a6f3-43a7-9378-93602e6c7dbb/investigation-episode-1.webm",
+      "bytes": 1643664,
+      "sha256": "f63b7877e734dd751535aef73f0e838008ffd312fb697f314f465e7d356f7afc"
+    },
+    {
+      "path": "artifacts/9bf6f448-a6f3-43a7-9378-93602e6c7dbb/model-usage.json",
+      "bytes": 1401,
+      "sha256": "6bdb1ca6b999df34f15a2f70cebb919c389762de3fbc384dafd8dd3a48d29053"
+    },
+    {
+      "path": "artifacts/9bf6f448-a6f3-43a7-9378-93602e6c7dbb/observation-1-2951dafb-8023-4272-858d-3028aff77b80.png",
+      "bytes": 120572,
+      "sha256": "6dbe3b11f669eb9474b75ad1251f72d2b41953c7abd07b937af0d7e0719cea0d"
+    },
+    {
+      "path": "artifacts/9bf6f448-a6f3-43a7-9378-93602e6c7dbb/observation-2-2951dafb-8023-4272-858d-3028aff77b80.png",
+      "bytes": 119156,
+      "sha256": "c15f71bacf9969ad2bca6cc0436a63d7fa0a0e4a664feaeb22285d5051e7eaaa"
+    },
+    {
+      "path": "artifacts/9bf6f448-a6f3-43a7-9378-93602e6c7dbb/observation-3-2951dafb-8023-4272-858d-3028aff77b80.png",
+      "bytes": 122485,
+      "sha256": "f18038254daa71b18beaacc1fbcc6ea9a3cddbf97fc13fe94933193fe8343d77"
+    },
+    {
+      "path": "artifacts/9bf6f448-a6f3-43a7-9378-93602e6c7dbb/observation-4-2951dafb-8023-4272-858d-3028aff77b80.png",
+      "bytes": 123029,
+      "sha256": "0147450bbeda087934afc9110f2bb5a075332d428602783ad16c43bbb039be09"
+    },
+    {
+      "path": "artifacts/9bf6f448-a6f3-43a7-9378-93602e6c7dbb/observation-5-2951dafb-8023-4272-858d-3028aff77b80.png",
+      "bytes": 122661,
+      "sha256": "00fd6374afe91d5b2c4bc94a537dc4d57c2d57950ea2ed9d0a6c020f88ea3c87"
+    },
+    {
+      "path": "artifacts/9bf6f448-a6f3-43a7-9378-93602e6c7dbb/report.md",
+      "bytes": 2420,
+      "sha256": "075d568fbb6a6f0320b134330cc2e6b751c202f06791a232026963f3d7f9363f"
+    },
+    {
+      "path": "artifacts/9bf6f448-a6f3-43a7-9378-93602e6c7dbb/run.json",
+      "bytes": 37963,
+      "sha256": "f369d690ef8ba1b38688bfb2a770f39b26df8e2745c9dc9b6a594cf97cb9953e"
+    },
+    {
+      "path": "artifacts/9bf6f448-a6f3-43a7-9378-93602e6c7dbb/trace.json",
+      "bytes": 190,
+      "sha256": "9069c4c53633120d9b860f104c7bf3b2ffa1f9d7d8a24ed6fa88447b359f2c03"
+    }
+  ],
+  "archive": {
+    "localPath": "artifacts/archives/second-series-inconclusive-20261012T151414Z.tar.gz",
+    "sha256": "239249d9ccc5184479bbc15b066f02e54647c87fd016df12d335b18cf67a769e",
+    "bytes": 9451381,
+    "originalFileCount": 53,
+    "publiclyAccessible": false
+  },
+  "neatlogsRawFormatEvidence": {
+    "runId": "70582bba-ec4a-4d46-9846-ecc305ec36fb",
+    "traceId": "f997c43d7542b0c7baefb66cd610fe33",
+    "viewMode": "Raw",
+    "observedFormat": "Prose followed by an unfenced JSON object suffix containing readCart/args {}",
+    "certainty": "Visually verified in the original screenshot. This is second-series evidence, not the first baseline trace.",
+    "screenshot": {
+      "path": "artifacts/submission-2026-10-12/screens/neatlogs-before-raw-response.jpg",
+      "bytes": 386173,
+      "sha256": "3e9b7ef8ff31dd6af6bd2da923da7f7f8085911f62f71b331c3964e833abb21c",
+      "publiclyAccessible": false
+    }
+  }
+}

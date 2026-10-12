@@ -1,0 +1,131 @@
+{
+  "version": 1,
+  "complaint": "Sometimes the cart becomes empty after I change the delivery address. Find the conditions that cause this.",
+  "expected": "Cart items and quantities must be preserved after saving a changed delivery address.",
+  "observed": "After saving a new delivery address ('300 Oak Avenue, Portland') with promo code FIELD10 applied, express delivery method selected, and this being the 3rd save (saveSeq went from 2 to 3), the cart was emptied. Cart had 2 items (canvas-pouch x1, desk-notebook x1) before the save and 0 items after.",
+  "steps": [
+    {
+      "id": "step-1",
+      "kind": "goto",
+      "path": "/"
+    },
+    {
+      "id": "step-2",
+      "kind": "click",
+      "locator": {
+        "role": "button",
+        "name": "Add Canvas pouch",
+        "exact": true
+      }
+    },
+    {
+      "id": "step-3",
+      "kind": "click",
+      "locator": {
+        "role": "button",
+        "name": "Add Desk notebook",
+        "exact": true
+      }
+    },
+    {
+      "id": "step-4",
+      "kind": "fill",
+      "locator": {
+        "role": "textbox",
+        "name": "Delivery address",
+        "exact": true
+      },
+      "value": "100 Main Street, Seattle"
+    },
+    {
+      "id": "step-5",
+      "kind": "click",
+      "locator": {
+        "role": "button",
+        "name": "Save delivery address",
+        "exact": true
+      }
+    },
+    {
+      "id": "step-6",
+      "kind": "select",
+      "locator": {
+        "role": "combobox",
+        "name": "Delivery method",
+        "exact": true
+      },
+      "value": "express"
+    },
+    {
+      "id": "step-7",
+      "kind": "click",
+      "locator": {
+        "role": "button",
+        "name": "Apply promo code",
+        "exact": true
+      }
+    },
+    {
+      "id": "step-8",
+      "kind": "fill",
+      "locator": {
+        "role": "textbox",
+        "name": "Delivery address",
+        "exact": true
+      },
+      "value": "200 Pine Street, Seattle"
+    },
+    {
+      "id": "step-9",
+      "kind": "click",
+      "locator": {
+        "role": "button",
+        "name": "Save delivery address",
+        "exact": true
+      }
+    },
+    {
+      "id": "step-10",
+      "kind": "fill",
+      "locator": {
+        "role": "textbox",
+        "name": "Promo code",
+        "exact": true
+      },
+      "value": "FIELD10"
+    },
+    {
+      "id": "step-11",
+      "kind": "click",
+      "locator": {
+        "role": "button",
+        "name": "Apply promo code",
+        "exact": true
+      }
+    },
+    {
+      "id": "step-12",
+      "kind": "fill",
+      "locator": {
+        "role": "textbox",
+        "name": "Delivery address",
+        "exact": true
+      },
+      "value": "300 Oak Avenue, Portland"
+    },
+    {
+      "id": "step-13",
+      "kind": "click",
+      "locator": {
+        "role": "button",
+        "name": "Save delivery address",
+        "exact": true
+      }
+    }
+  ],
+  "oracle": {
+    "kind": "cart_preserved_after_checkout_change",
+    "captureAfterStepId": "step-3",
+    "compareAfterStepId": "step-13"
+  }
+}

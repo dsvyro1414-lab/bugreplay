@@ -1,0 +1,119 @@
+{
+  "file": "docs/evidence/finance/BugReplay-CFO-Planning.xlsx",
+  "sha256": "7ad47495c36d9fe7ba51fbfff74d6799a35a931d0aea72ae7340dbbc9f689590",
+  "checkedAtUtc": "2026-10-12T15:33:48.313180+00:00",
+  "method": "Read-only OOXML formula/reference/error scan and independent Decimal cash-flow calculation. Artifact Tool imported and inspected key ranges, and rendered Summary for visual review. Source workbook not edited or re-exported.",
+  "sheetNames": [
+    "Summary",
+    "Assumptions",
+    "Monthly cash",
+    "Price-cost sensitivity",
+    "Assumptions vs actuals",
+    "Base forecast",
+    "Downside forecast",
+    "Credits",
+    "Read me"
+  ],
+  "formulaCount": 1518,
+  "cachedExcelErrors": [],
+  "invalidReferenceFormulas": [],
+  "costBasis": "Planning",
+  "selectedCase": "Base",
+  "actuals": {
+    "expectedPaidAttemptCount": null,
+    "inputRowsPopulated": 0,
+    "allRunCost": "Unknown",
+    "status": "Unknown",
+    "promotionalCreditRowsPopulated": 0
+  },
+  "scenarioChecks": {
+    "Base": {
+      "annualRevenueUsd": "42966.41728625997857863655850",
+      "annualGrossProfitUsd": "36605.40990726552838962345260",
+      "endingCashUsd": "30405.40990726552838962345260",
+      "firstNegativeMonth": null,
+      "monthsIndependentlyReconciled": 12
+    },
+    "Downside": {
+      "annualRevenueUsd": "10901.89530090536197517475840",
+      "annualGrossProfitUsd": "2967.193856856274077449453568",
+      "endingCashUsd": "-17032.80614314372592255054643",
+      "firstNegativeMonth": 5,
+      "monthsIndependentlyReconciled": 12
+    }
+  },
+  "ceilingIndependent": "0.1293",
+  "sensitivityCellsIndependentlyReconciled": 20,
+  "downsideMinimumPriceIndependent": "106.6666666666666666666666667",
+  "visualReview": {
+    "sheet": "Summary",
+    "range": "A1:E17",
+    "result": "Main values and first-negative-month label readable, no clipping observed."
+  },
+  "limits": [
+    "Read-only export scan and independent calculations do not establish Excel desktop recalculation. Native driver edit/recalculation/restoration were verified separately from reviewed screenshots. Workspace access for an unauthenticated judge was not tested."
+  ],
+  "nativeWorkspaceScreenshotReview": {
+    "method": "Independent visual review of original screenshots supplied by the browser operator. No browser control or model edits performed by reviewer.",
+    "savedInferenceDriverRestoredUsd": 0.06,
+    "editedAllInCostUsd": 0.285,
+    "editedNativeFullAllowanceContributionPercent": 38.22,
+    "editedNativeMinimumPriceUsd": 106.67,
+    "restoredAllInCostUsd": 0.08,
+    "restoredNativeFullAllowanceContributionPercent": 80.06,
+    "restoredNativeMinimumPriceUsd": 30.74,
+    "restorationVerified": true,
+    "canvasCaveat": "The Canvas above the native table preserves independent preview state, including $19,619.96 preview cash. This does not represent the restored saved forecast.",
+    "sources": [
+      {
+        "path": "docs/evidence/finance/screens/cfo-base-summary.jpg",
+        "sha256": "a962b1ccd8b44b3f441b6d59c4d3202b41d5dc18ee1883020486521c1ca2e2d8",
+        "byteIdenticalToReviewedOriginal": true
+      },
+      {
+        "path": "docs/evidence/finance/screens/cfo-base-forecast.jpg",
+        "sha256": "c25c28d3e231dbed0a1be7d33484d861a90ed4bd88640821c10ec47e7dbd6c48",
+        "byteIdenticalToReviewedOriginal": true
+      },
+      {
+        "path": "docs/evidence/finance/screens/cfo-native-table-edited-0285.jpg",
+        "sha256": "fe884d017b763c439d5d3c315c3a4e77317a313f835ee6e91f7b6a6b86ab2cf8",
+        "byteIdenticalToReviewedOriginal": true
+      },
+      {
+        "path": "docs/evidence/finance/screens/cfo-native-table-restored-008.jpg",
+        "sha256": "7f4eeafcfbe7234500f522a74f8549f8c2805283e0fb41296a302bad56e27922",
+        "byteIdenticalToReviewedOriginal": true
+      },
+      {
+        "path": "docs/evidence/finance/screens/cfo-measured-unknown.jpg",
+        "sha256": "bfb2d8ebd05698ce58c7b895647b63fa75e779c497aba9602e8fb59cba6c0a45",
+        "byteIdenticalToReviewedOriginal": true
+      }
+    ],
+    "localSavedDriverProof": {
+      "path": "artifacts/submission-2026-10-12/screens/cfo-saved-cost-restored-006.jpg",
+      "sha256": "1a6ba6aa3480e0ddab7c73d963578b23964545e38a3269ae42f3a4cc41fb4f69"
+    }
+  },
+  "privacyReview": {
+    "metadataReviewed": true,
+    "sharedStringsReviewed": true,
+    "externalRelationships": 0,
+    "personalAccountDataFound": false,
+    "nativeDownloadUnchanged": true,
+    "publicCopyByteIdentical": true,
+    "note": "Creator is openpyxl; lastModifiedBy and custom properties are empty. No owner name, email, account URL, password or API credential found in package XML/relationships."
+  },
+  "observedEvidencePageReview": {
+    "pageCreated": true,
+    "sourceScreenshot": "docs/evidence/finance/screens/cfo-observed-costs.jpg",
+    "sourceSha256": "5d0ceb621c2151a6701168ff5685a1e59cb52c0985add4aed1eb90e8066fab8c",
+    "latestHeaderAccountingMatchesLedger": true,
+    "selectedRunCostUsd": 0.1563342,
+    "latestFourHeaderSubtotalUsd": 0.9546999,
+    "completeProjectCashBillKnown": false,
+    "forecastAssumptionsOverwritten": false,
+    "note": "Separately dated native observed-evidence page. Reviewed screenshot shows the exact latest-four header accounting and explicit incompleteness; it does not assert that CFO.ai independently fetched repository source files."
+  }
+}

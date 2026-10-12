@@ -1,0 +1,105 @@
+{
+  "archive": "artifacts/archives/manual-fixed-control-originals-20261012T153326Z.tar.gz",
+  "sha256": "03cfc33a770b0cce36d3d7e214160c7caa5760397fd0bd49fba657d37284da3a",
+  "bytes": 1625268,
+  "fileCount": 14,
+  "originalSelected70FilesUnchanged": true,
+  "testSha256": "bd9c42ba5744e7ed47cec25dcc47dd0341f9c7da88d034a700014b4a169c208a",
+  "manifest": "artifacts/archives/manual-fixed-control-originals-20261012T153326Z/original-manifest.json",
+  "classification": "passed",
+  "reportedInvocation": {
+    "ARTIFACT_ROOT": "artifacts/manual-control-2026-10-12",
+    "command": "npm run repro -- --run b8ffd757-6aed-405d-b7ac-ed3b1c4d9236 --base-url http://localhost:4174",
+    "source": "Integrator executed command; environment not archived."
+  },
+  "result": {
+    "classification": "passed",
+    "exitCode": 0,
+    "assertionReached": true,
+    "contextClosed": true,
+    "stepId": "step-13",
+    "cartPreserved": true,
+    "beforeSaveSeq": 2,
+    "afterSaveSeq": 3,
+    "nonce": "fa80d029-59aa-43cd-bbc6-5ed2279e19dc"
+  },
+  "manualPngMatchReviewedAutomaticControl": {
+    "before": true,
+    "after": true
+  },
+  "videoFullDecodePassed": true,
+  "publicCopies": [
+    {
+      "publicCopy": "manual-control/candidate-1/repro.spec.ts",
+      "originalSha256": "bd9c42ba5744e7ed47cec25dcc47dd0341f9c7da88d034a700014b4a169c208a",
+      "publicSha256": "bd9c42ba5744e7ed47cec25dcc47dd0341f9c7da88d034a700014b4a169c208a",
+      "transform": "Machine/home prefixes only; exact test and PNG untouched."
+    },
+    {
+      "publicCopy": "manual-control/repro.spec.ts",
+      "originalSha256": "bd9c42ba5744e7ed47cec25dcc47dd0341f9c7da88d034a700014b4a169c208a",
+      "publicSha256": "bd9c42ba5744e7ed47cec25dcc47dd0341f9c7da88d034a700014b4a169c208a",
+      "transform": "Machine/home prefixes only; exact test and PNG untouched."
+    },
+    {
+      "publicCopy": "manual-control/verification-1-after.png",
+      "originalSha256": "109dc42849d56664167d900e1e239d86b1bd1fa2ef15cb91a8af2a0d39c1d503",
+      "publicSha256": "109dc42849d56664167d900e1e239d86b1bd1fa2ef15cb91a8af2a0d39c1d503",
+      "transform": "Machine/home prefixes only; exact test and PNG untouched."
+    },
+    {
+      "publicCopy": "manual-control/verification-1-stdout.txt",
+      "originalSha256": "c9143cccd3d88ad76733c42e78edb29b91f186b0cc00f608b930f1502474e846",
+      "publicSha256": "c9143cccd3d88ad76733c42e78edb29b91f186b0cc00f608b930f1502474e846",
+      "transform": "Machine/home prefixes only; exact test and PNG untouched."
+    },
+    {
+      "publicCopy": "manual-control/verification-1.json",
+      "originalSha256": "4ed904e57d3ae528585882619b5cc80df5d2b119fa9091f88c395f21aab3e42f",
+      "publicSha256": "154e4b1bd2e9b710b31f9cd9790f0faf1194833e3d4e2656bc185f7da283ee0e",
+      "transform": "Machine/home prefixes only; exact test and PNG untouched."
+    },
+    {
+      "publicCopy": "manual-control/verification-attempt-1-fa80d029/evidence.json",
+      "originalSha256": "6507f55152740874b0eb1e4f7942883bd4d917b365259f9aa1543fe853b9f078",
+      "publicSha256": "29735ad65ccfa2a8366ab3ded3b80d24b8174bd1533bf2f44918120b4f46ba9f",
+      "transform": "Machine/home prefixes only; exact test and PNG untouched."
+    },
+    {
+      "publicCopy": "manual-control/verification-attempt-1-fa80d029/playwright.config.mjs",
+      "originalSha256": "97883f7aed5db191cd390f9ef7a88428869456926f94f5235bc5708981331a94",
+      "publicSha256": "68ec06a830944f92a30ff138b2ae6475304b7aee62fa5c2a58d02b330009345c",
+      "transform": "Machine/home prefixes only; exact test and PNG untouched."
+    },
+    {
+      "publicCopy": "manual-control/verification-attempt-1-fa80d029/results.json",
+      "originalSha256": "96c1b5e660a03d6a585f47b6c4d469821d4c293f3f41f0444a574b238bad3b27",
+      "publicSha256": "affb7db0a59b71ebdcb7f9ccd899cb86f84edc094d0b1442bd4fad279e691ecd",
+      "transform": "Machine/home prefixes only; exact test and PNG untouched."
+    },
+    {
+      "publicCopy": "manual-control/verification-attempt-1-fa80d029/test-results/.last-run.json",
+      "originalSha256": "91d1c43004802cd49950d78eb11c8fa7d05da8ffffe219a8b13b2f561bc00903",
+      "publicSha256": "91d1c43004802cd49950d78eb11c8fa7d05da8ffffe219a8b13b2f561bc00903",
+      "transform": "Machine/home prefixes only; exact test and PNG untouched."
+    },
+    {
+      "publicCopy": "manual-control/verification-attempt-1-fa80d029/test-results/repro-cart-survives-a-completed-checkout-address-change/after.png",
+      "originalSha256": "109dc42849d56664167d900e1e239d86b1bd1fa2ef15cb91a8af2a0d39c1d503",
+      "publicSha256": "109dc42849d56664167d900e1e239d86b1bd1fa2ef15cb91a8af2a0d39c1d503",
+      "transform": "Machine/home prefixes only; exact test and PNG untouched."
+    },
+    {
+      "publicCopy": "manual-control/verification-attempt-1-fa80d029/test-results/repro-cart-survives-a-completed-checkout-address-change/before.png",
+      "originalSha256": "f18038254daa71b18beaacc1fbcc6ea9a3cddbf97fc13fe94933193fe8343d77",
+      "publicSha256": "f18038254daa71b18beaacc1fbcc6ea9a3cddbf97fc13fe94933193fe8343d77",
+      "transform": "Machine/home prefixes only; exact test and PNG untouched."
+    },
+    {
+      "publicCopy": "manual-control/verification.json",
+      "originalSha256": "5a03d0b484d6bed94c898494873fc524750acdfa4563eaefba3d397fe75e01a2",
+      "publicSha256": "251baf4ada647b896562a56bd65708b33c56f0f7f9b91d7a3211a5c874f7eda9",
+      "transform": "Machine/home prefixes only; exact test and PNG untouched."
+    }
+  ]
+}

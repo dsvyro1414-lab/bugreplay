@@ -1,0 +1,14 @@
+{
+  "retrievedAtUtc": "2026-10-12T15:16:59.061Z",
+  "model": "claude-sonnet-4.6",
+  "sourceType": "Authenticated read-only gateway /model/info",
+  "rates": {
+    "model": "claude-sonnet-4.6",
+    "inputCostPerTokenUsd": 0.0000033,
+    "outputCostPerTokenUsd": 0.0000165,
+    "cacheReadInputCostPerTokenUsd": 3.3e-7,
+    "cacheCreationInputCostPerTokenUsd": 0.000004125
+  },
+  "historicalRatesVerified": false,
+  "note": "Selected public model pricing fields only. Account-wide totals are not allocated; project billing remains unknown."
+}

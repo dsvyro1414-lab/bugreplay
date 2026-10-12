@@ -1,0 +1,32 @@
+{
+  "kind": "reviewed_entire_checkpoint_metadata",
+  "checkpointId": "01M4RAVKR1DWCDKTJ3ZH5AZAY3",
+  "fixCommitSha": "f7bee47c254afc38683b87ad6d30899f16180a47",
+  "strategy": "manual-commit",
+  "branch": "agent-a-engine",
+  "checkpointCount": 3,
+  "sessionCount": 1,
+  "filesTouchedCount": 4,
+  "filesTouched": [
+    "README.md",
+    "apps/runner/src/investigate.ts",
+    "apps/runner/src/llm.ts",
+    "apps/runner/test/llm.test.ts"
+  ],
+  "taskCount": 2,
+  "verification": {
+    "command": "entire checkpoint explain 01M4RAVKR1DWCDKTJ3ZH5AZAY3 --json",
+    "verifiedAtUtc": "2026-10-12T15:24:06.479232+00:00",
+    "liveMetadataMatchedSavedCheckpointId": true,
+    "commitFooterMatched": true,
+    "savedMetadataSha256": "330179bb5afe256a0771b6a90323687a74358725db5a3f74a8d67c4bcc923bc7"
+  },
+  "sourceRationale": "A hosted trace showed successful provider output containing prose plus an unfenced JSON suffix while the strict wrapper stopped the run. This source change accepts one unambiguous whole JSON suffix and adds one bounded format repair within the existing transport, call and wall-clock budgets. It does not supply a bug trigger or mark an unverified candidate as confirmed.",
+  "publicationReview": {
+    "transcriptCopied": false,
+    "privateConversationCopied": false,
+    "sessionPromptsCopied": false,
+    "rawRecordingsCopied": false,
+    "sessionAndTaskTokenMetadataCopied": false
+  }
+}

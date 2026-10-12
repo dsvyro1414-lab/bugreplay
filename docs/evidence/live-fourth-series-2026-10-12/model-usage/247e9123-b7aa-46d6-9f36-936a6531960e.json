@@ -1,0 +1,247 @@
+{
+  "runId": "247e9123-b7aa-46d6-9f36-936a6531960e",
+  "model": "claude-sonnet-4.6",
+  "usageComplete": true,
+  "costComplete": true,
+  "knownGatewayCostUsd": 0.23566949999999998,
+  "gatewayCostUsd": 0.23566949999999998,
+  "gatewayCostSource": "x-litellm-response-cost",
+  "billingCostUsd": null,
+  "billingSource": "Unknown; gateway accounting does not establish invoiced cash charges or promotional credits.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "startedAt": "2026-10-12T15:26:20.531Z",
+      "durationMs": 1585,
+      "status": "completed",
+      "costUsd": 0.0053592,
+      "costSource": "x-litellm-response-cost",
+      "inputTokens": 1469,
+      "outputTokens": 31
+    },
+    {
+      "attempt": 2,
+      "startedAt": "2026-10-12T15:26:22.745Z",
+      "durationMs": 1442,
+      "status": "completed",
+      "costUsd": 0.0060984,
+      "costSource": "x-litellm-response-cost",
+      "inputTokens": 1643,
+      "outputTokens": 41
+    },
+    {
+      "attempt": 3,
+      "startedAt": "2026-10-12T15:26:24.928Z",
+      "durationMs": 1674,
+      "status": "completed",
+      "costUsd": 0.0065736,
+      "costSource": "x-litellm-response-cost",
+      "inputTokens": 1857,
+      "outputTokens": 27
+    },
+    {
+      "attempt": 4,
+      "startedAt": "2026-10-12T15:26:26.890Z",
+      "durationMs": 1416,
+      "status": "completed",
+      "costUsd": 0.0079035,
+      "costSource": "x-litellm-response-cost",
+      "inputTokens": 2085,
+      "outputTokens": 62
+    },
+    {
+      "attempt": 5,
+      "startedAt": "2026-10-12T15:26:29.028Z",
+      "durationMs": 1811,
+      "status": "completed",
+      "costUsd": 0.008098200000000002,
+      "costSource": "x-litellm-response-cost",
+      "inputTokens": 2264,
+      "outputTokens": 38
+    },
+    {
+      "attempt": 6,
+      "startedAt": "2026-10-12T15:26:31.896Z",
+      "durationMs": 1870,
+      "status": "completed",
+      "costUsd": 0.009084900000000002,
+      "costSource": "x-litellm-response-cost",
+      "inputTokens": 2418,
+      "outputTokens": 67,
+      "normalized": true
+    },
+    {
+      "attempt": 7,
+      "startedAt": "2026-10-12T15:26:34.052Z",
+      "durationMs": 4422,
+      "status": "completed",
+      "costUsd": 0.009632700000000001,
+      "costSource": "x-litellm-response-cost",
+      "inputTokens": 2469,
+      "outputTokens": 90,
+      "normalized": true
+    },
+    {
+      "attempt": 8,
+      "startedAt": "2026-10-12T15:26:38.821Z",
+      "durationMs": 2144,
+      "status": "completed",
+      "costUsd": 0.0099891,
+      "costSource": "x-litellm-response-cost",
+      "inputTokens": 2522,
+      "outputTokens": 101,
+      "normalized": true
+    },
+    {
+      "attempt": 9,
+      "startedAt": "2026-10-12T15:26:41.595Z",
+      "durationMs": 2092,
+      "status": "invalid_response",
+      "costUsd": 0.0112002,
+      "costSource": "x-litellm-response-cost",
+      "inputTokens": 2689,
+      "outputTokens": 141,
+      "errorCode": "ModelOutputFormatError"
+    },
+    {
+      "attempt": 10,
+      "startedAt": "2026-10-12T15:26:43.687Z",
+      "durationMs": 1600,
+      "status": "completed",
+      "costUsd": 0.009784500000000002,
+      "costSource": "x-litellm-response-cost",
+      "inputTokens": 2745,
+      "outputTokens": 44
+    },
+    {
+      "attempt": 11,
+      "startedAt": "2026-10-12T15:26:45.662Z",
+      "durationMs": 1671,
+      "status": "completed",
+      "costUsd": 0.0105567,
+      "costSource": "x-litellm-response-cost",
+      "inputTokens": 2824,
+      "outputTokens": 75
+    },
+    {
+      "attempt": 12,
+      "startedAt": "2026-10-12T15:26:48.045Z",
+      "durationMs": 1693,
+      "status": "completed",
+      "costUsd": 0.011249700000000001,
+      "costSource": "x-litellm-response-cost",
+      "inputTokens": 3014,
+      "outputTokens": 79,
+      "normalized": true
+    },
+    {
+      "attempt": 13,
+      "startedAt": "2026-10-12T15:26:50.428Z",
+      "durationMs": 1328,
+      "status": "completed",
+      "costUsd": 0.0108207,
+      "costSource": "x-litellm-response-cost",
+      "inputTokens": 3064,
+      "outputTokens": 43
+    },
+    {
+      "attempt": 14,
+      "startedAt": "2026-10-12T15:26:52.146Z",
+      "durationMs": 2289,
+      "status": "completed",
+      "costUsd": 0.012243,
+      "costSource": "x-litellm-response-cost",
+      "inputTokens": 3075,
+      "outputTokens": 127,
+      "normalized": true
+    },
+    {
+      "attempt": 15,
+      "startedAt": "2026-10-12T15:26:55.145Z",
+      "durationMs": 1959,
+      "status": "completed",
+      "costUsd": 0.0119097,
+      "costSource": "x-litellm-response-cost",
+      "inputTokens": 3094,
+      "outputTokens": 103,
+      "normalized": true
+    },
+    {
+      "attempt": 16,
+      "startedAt": "2026-10-12T15:26:58.162Z",
+      "durationMs": 2719,
+      "status": "completed",
+      "costUsd": 0.012639000000000001,
+      "costSource": "x-litellm-response-cost",
+      "inputTokens": 3105,
+      "outputTokens": 145,
+      "normalized": true
+    },
+    {
+      "attempt": 17,
+      "startedAt": "2026-10-12T15:27:01.150Z",
+      "durationMs": 3337,
+      "status": "completed",
+      "costUsd": 0.0140349,
+      "costSource": "x-litellm-response-cost",
+      "inputTokens": 3213,
+      "outputTokens": 208,
+      "normalized": true
+    },
+    {
+      "attempt": 18,
+      "startedAt": "2026-10-12T15:27:05.195Z",
+      "durationMs": 1797,
+      "status": "completed",
+      "costUsd": 0.012450899999999999,
+      "costSource": "x-litellm-response-cost",
+      "inputTokens": 3308,
+      "outputTokens": 93,
+      "normalized": true
+    },
+    {
+      "attempt": 19,
+      "startedAt": "2026-10-12T15:27:07.714Z",
+      "durationMs": 1502,
+      "status": "completed",
+      "costUsd": 0.0123519,
+      "costSource": "x-litellm-response-cost",
+      "inputTokens": 3368,
+      "outputTokens": 75,
+      "normalized": true
+    },
+    {
+      "attempt": 20,
+      "startedAt": "2026-10-12T15:27:10.346Z",
+      "durationMs": 3957,
+      "status": "completed",
+      "costUsd": 0.015044700000000001,
+      "costSource": "x-litellm-response-cost",
+      "inputTokens": 3369,
+      "outputTokens": 238,
+      "normalized": true
+    },
+    {
+      "attempt": 21,
+      "startedAt": "2026-10-12T15:27:14.978Z",
+      "durationMs": 2503,
+      "status": "completed",
+      "costUsd": 0.013246200000000001,
+      "costSource": "x-litellm-response-cost",
+      "inputTokens": 3379,
+      "outputTokens": 127,
+      "normalized": true
+    },
+    {
+      "attempt": 22,
+      "startedAt": "2026-10-12T15:27:17.828Z",
+      "durationMs": 3393,
+      "status": "completed",
+      "costUsd": 0.0153978,
+      "costSource": "x-litellm-response-cost",
+      "inputTokens": 3341,
+      "outputTokens": 265,
+      "normalized": true
+    }
+  ]
+}

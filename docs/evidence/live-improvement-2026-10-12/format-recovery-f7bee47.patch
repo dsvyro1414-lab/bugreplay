@@ -1,0 +1,90 @@
+diff --git a/apps/runner/src/llm.ts b/apps/runner/src/llm.ts
+index 3fa9839..9e6c488 100644
+--- a/apps/runner/src/llm.ts
++++ b/apps/runner/src/llm.ts
+@@ -75,6 +75,11 @@ const JSON_INSTRUCTION = [
+   'and optionally hypothesis (a short testable hypothesis string).',
+   'Use only the tools described in the supplied instructions. Do not include private chain-of-thought.',
+ ].join(' ');
++const FORMAT_REPAIR_INSTRUCTION = [
++  'The previous reply was not one valid JSON object. No browser action was executed.',
++  'Return exactly one JSON object with tool, args, summary, and optionally hypothesis, using only the documented tools.',
++  'Do not include Markdown, additional prose, or private chain-of-thought.',
++].join(' ');
+ 
+ function errorCode(error: unknown): string {
+   if (!error || typeof error !== 'object') return 'UnknownError';
+@@ -113,27 +118,32 @@ function tokenCount(value: unknown): number | undefined {
+ 
+ function parseDecision(text: string): Pick<ModelResult, 'decision' | 'normalized'> {
+   let value: unknown;
++  let normalized = false;
+   try { value = JSON.parse(text); } catch {
+-    // Some compatible gateways ignore json_object and add prose around one JSON fence.
+-    // Accept that single unambiguous envelope; never search arbitrary text for braces.
+-    const fenced = (text.match(/```/g) || []).length === 2
+-      ? text.match(/^([\s\S]*?)```json[ \t]*\r?\n([\s\S]*?)\r?\n```([\s\S]*)$/i)
+-      : null;
+-    if (!fenced || /[{}\[\]]/.test(fenced[1] + fenced[3])) {
+-      throw new ModelOutputFormatError('Model response was not a JSON object; no browser action was executed.');
++    // Compatible gateways can add prose before one complete JSON object or around one JSON fence.
++    // The whole candidate must parse; competing objects, arrays, fences, and trailing text are rejected.
++    let candidate: string | undefined;
++    if (!text.includes('```')) {
++      const objectStart = text.indexOf('{');
++      if (objectStart >= 0 && !/[{}\[\]]/.test(text.slice(0, objectStart))) candidate = text.slice(objectStart).trim();
++    } else {
++      const fenced = (text.match(/```/g) || []).length === 2
++        ? text.match(/^([\s\S]*?)```json[ \t]*\r?\n([\s\S]*?)\r?\n```([\s\S]*)$/i)
++        : null;
++      if (fenced && !/[{}\[\]]/.test(fenced[1] + fenced[3])) candidate = fenced[2];
+     }
+-    try { value = JSON.parse(fenced[2]); } catch {
++    if (candidate === undefined) {
+       throw new ModelOutputFormatError('Model response was not a JSON object; no browser action was executed.');
+     }
+-    if (!value || typeof value !== 'object' || Array.isArray(value)) {
+-      throw new ModelOutputFormatError('Model response must be one JSON object; no browser action was executed.');
++    try { value = JSON.parse(candidate); } catch {
++      throw new ModelOutputFormatError('Model response was not a JSON object; no browser action was executed.');
+     }
+-    return { decision: value, normalized: true };
++    normalized = true;
+   }
+   if (!value || typeof value !== 'object' || Array.isArray(value)) {
+     throw new ModelOutputFormatError('Model response must be one JSON object; no browser action was executed.');
+   }
+-  return { decision: value };
++  return { decision: value, ...(normalized ? { normalized: true } : {}) };
+ }
+ 
+ export class ModelClient {
+@@ -169,6 +179,7 @@ export class ModelClient {
+     if (remainingCalls < 1) throw new Error('The model-call budget is exhausted.');
+     const combinedSignal = AbortSignal.any([signal, AbortSignal.timeout(30_000)]);
+     let callsUsed = 0;
++    let requestMessages = messages;
+     for (let attempt = 0; attempt < 2; attempt++) {
+       combinedSignal.throwIfAborted();
+       this.attempts++;
+@@ -179,7 +190,7 @@ export class ModelClient {
+       };
+       this.ledger.push(entry);
+       try {
+-        const result = await this.request(messages, combinedSignal, entry);
++        const result = await this.request(requestMessages, combinedSignal, entry);
+         entry.durationMs = Math.max(0, Date.now() - started);
+         entry.status = 'completed';
+         if (result.normalized) entry.normalized = true;
+@@ -192,6 +203,11 @@ export class ModelClient {
+           if (signal.aborted) throw new Error('Model request cancelled.');
+           throw new Error('Model request exceeded the 30-second total timeout.');
+         }
++        if (attempt === 0 && callsUsed < remainingCalls && error instanceof ModelOutputFormatError) {
++          // Repair only the output format, without echoing rejected prose or extending any budget.
++          requestMessages = [...messages, { role: 'user', content: FORMAT_REPAIR_INSTRUCTION }];
++          continue;
++        }
+         if (attempt === 0 && callsUsed < remainingCalls && transient(error)) {
+           await delay(350, undefined, { signal: combinedSignal });
+           continue;

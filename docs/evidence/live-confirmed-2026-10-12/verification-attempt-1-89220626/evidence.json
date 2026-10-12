@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "nonce": "89220626-4537-4f32-90c1-33e4daa71861",
+  "stage": "cart_assertion_failed",
+  "assertionReached": true,
+  "contextClosed": true,
+  "stepId": "step-13",
+  "initialCart": [
+    {
+      "productId": "canvas-pouch",
+      "quantity": 1
+    },
+    {
+      "productId": "desk-notebook",
+      "quantity": 1
+    }
+  ],
+  "initialState": {
+    "cart": [
+      {
+        "productId": "canvas-pouch",
+        "quantity": 1
+      },
+      {
+        "productId": "desk-notebook",
+        "quantity": 1
+      }
+    ],
+    "address": "24 Market Street, Portland",
+    "saveSeq": 0,
+    "saved": false,
+    "busy": false
+  },
+  "beforeScreenshot": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-attempt-1-89220626/test-results/repro-cart-survives-a-completed-checkout-address-change/before.png",
+  "beforeSaveState": {
+    "cart": [
+      {
+        "productId": "canvas-pouch",
+        "quantity": 1
+      },
+      {
+        "productId": "desk-notebook",
+        "quantity": 1
+      }
+    ],
+    "address": "200 Pine Street, Seattle",
+    "saveSeq": 2,
+    "saved": false,
+    "busy": false
+  },
+  "actualCart": [],
+  "actualState": {
+    "cart": [],
+    "address": "300 Oak Avenue, Portland",
+    "saveSeq": 3,
+    "saved": true,
+    "busy": false
+  },
+  "afterScreenshot": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-attempt-1-89220626/test-results/repro-cart-survives-a-completed-checkout-address-change/after.png",
+  "error": "BUGREPLAY_CART_PRESERVATION\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 10\u001b[39m\n\u001b[31m+ Received  +  1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   Object {\u001b[39m\n\u001b[32m-     \"productId\": \"canvas-pouch\",\u001b[39m\n\u001b[32m-     \"quantity\": 1,\u001b[39m\n\u001b[32m-   },\u001b[39m\n\u001b[32m-   Object {\u001b[39m\n\u001b[32m-     \"productId\": \"desk-notebook\",\u001b[39m\n\u001b[32m-     \"quantity\": 1,\u001b[39m\n\u001b[32m-   },\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m",
+  "errorType": "cart_assertion_failed",
+  "videoPath": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-attempt-1-89220626/test-results/repro-cart-survives-a-completed-checkout-address-change/video/page@af6176e703e6baff18e18a3fcdf256b8.webm"
+}

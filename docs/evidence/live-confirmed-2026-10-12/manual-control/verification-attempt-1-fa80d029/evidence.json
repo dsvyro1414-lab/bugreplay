@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "nonce": "fa80d029-59aa-43cd-bbc6-5ed2279e19dc",
+  "stage": "passed",
+  "assertionReached": true,
+  "contextClosed": true,
+  "stepId": "step-13",
+  "initialCart": [
+    {
+      "productId": "canvas-pouch",
+      "quantity": 1
+    },
+    {
+      "productId": "desk-notebook",
+      "quantity": 1
+    }
+  ],
+  "initialState": {
+    "cart": [
+      {
+        "productId": "canvas-pouch",
+        "quantity": 1
+      },
+      {
+        "productId": "desk-notebook",
+        "quantity": 1
+      }
+    ],
+    "address": "24 Market Street, Portland",
+    "saveSeq": 0,
+    "saved": false,
+    "busy": false
+  },
+  "beforeScreenshot": "artifacts/manual-control-2026-10-12/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-attempt-1-fa80d029/test-results/repro-cart-survives-a-completed-checkout-address-change/before.png",
+  "beforeSaveState": {
+    "cart": [
+      {
+        "productId": "canvas-pouch",
+        "quantity": 1
+      },
+      {
+        "productId": "desk-notebook",
+        "quantity": 1
+      }
+    ],
+    "address": "200 Pine Street, Seattle",
+    "saveSeq": 2,
+    "saved": false,
+    "busy": false
+  },
+  "actualCart": [
+    {
+      "productId": "canvas-pouch",
+      "quantity": 1
+    },
+    {
+      "productId": "desk-notebook",
+      "quantity": 1
+    }
+  ],
+  "actualState": {
+    "cart": [
+      {
+        "productId": "canvas-pouch",
+        "quantity": 1
+      },
+      {
+        "productId": "desk-notebook",
+        "quantity": 1
+      }
+    ],
+    "address": "300 Oak Avenue, Portland",
+    "saveSeq": 3,
+    "saved": true,
+    "busy": false
+  },
+  "afterScreenshot": "artifacts/manual-control-2026-10-12/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-attempt-1-fa80d029/test-results/repro-cart-survives-a-completed-checkout-address-change/after.png",
+  "videoPath": "artifacts/manual-control-2026-10-12/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/verification-attempt-1-fa80d029/test-results/repro-cart-survives-a-completed-checkout-address-change/video/page@88795f61b5e4d811c83fd1e74d7b1ab5.webm"
+}

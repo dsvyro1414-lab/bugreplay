@@ -1,0 +1,112 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "classification": "passed",
+      "stage": "passed",
+      "exitCode": 0,
+      "initialCart": [
+        {
+          "productId": "canvas-pouch",
+          "quantity": 1
+        },
+        {
+          "productId": "desk-notebook",
+          "quantity": 1
+        }
+      ],
+      "actualCart": [
+        {
+          "productId": "canvas-pouch",
+          "quantity": 1
+        },
+        {
+          "productId": "desk-notebook",
+          "quantity": 1
+        }
+      ],
+      "evidence": {
+        "version": 1,
+        "nonce": "f278fd40-36aa-45cc-86fc-c9c1c849b73a",
+        "stage": "passed",
+        "assertionReached": true,
+        "contextClosed": true,
+        "stepId": "step-13",
+        "initialCart": [
+          {
+            "productId": "canvas-pouch",
+            "quantity": 1
+          },
+          {
+            "productId": "desk-notebook",
+            "quantity": 1
+          }
+        ],
+        "initialState": {
+          "cart": [
+            {
+              "productId": "canvas-pouch",
+              "quantity": 1
+            },
+            {
+              "productId": "desk-notebook",
+              "quantity": 1
+            }
+          ],
+          "address": "24 Market Street, Portland",
+          "saveSeq": 0,
+          "saved": false,
+          "busy": false
+        },
+        "beforeScreenshot": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/candidate-1/control/verification-attempt-1-f278fd40/test-results/repro-cart-survives-a-completed-checkout-address-change/before.png",
+        "beforeSaveState": {
+          "cart": [
+            {
+              "productId": "canvas-pouch",
+              "quantity": 1
+            },
+            {
+              "productId": "desk-notebook",
+              "quantity": 1
+            }
+          ],
+          "address": "200 Pine Street, Seattle",
+          "saveSeq": 2,
+          "saved": false,
+          "busy": false
+        },
+        "actualCart": [
+          {
+            "productId": "canvas-pouch",
+            "quantity": 1
+          },
+          {
+            "productId": "desk-notebook",
+            "quantity": 1
+          }
+        ],
+        "actualState": {
+          "cart": [
+            {
+              "productId": "canvas-pouch",
+              "quantity": 1
+            },
+            {
+              "productId": "desk-notebook",
+              "quantity": 1
+            }
+          ],
+          "address": "300 Oak Avenue, Portland",
+          "saveSeq": 3,
+          "saved": true,
+          "busy": false
+        },
+        "afterScreenshot": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/candidate-1/control/verification-attempt-1-f278fd40/test-results/repro-cart-survives-a-completed-checkout-address-change/after.png",
+        "videoPath": "artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/candidate-1/control/verification-attempt-1-f278fd40/test-results/repro-cart-survives-a-completed-checkout-address-change/video/page@9a0d1ccfc74adc111ce3fca220ff0979.webm"
+      },
+      "videoName": "verification-1.webm"
+    }
+  ],
+  "matchedFailures": 0,
+  "verdict": "not_matched"
+}

@@ -7,26 +7,7 @@
     "docs/evidence/product-readiness.md"
   ],
   "session_count": 1,
-  "sessions": [
-    {
-      "index": 0,
-      "session_id": "01a12f4c-c786-7bf2-ba48-f317e46306b1",
-      "agent": "Codex",
-      "model": "gpt-6-astra",
-      "created_at": "2026-10-12T08:51:40.667247Z",
-      "turn_id": "9537755621bc",
-      "files_touched": [
-        "docs/evidence/product-readiness.md"
-      ],
-      "token_usage": {
-        "input_tokens": 34123,
-        "cache_creation_tokens": 0,
-        "cache_read_tokens": 214784,
-        "output_tokens": 2430,
-        "api_call_count": 7,
-        "subagent_tokens_complete": true
-      }
-    }
-  ],
-  "tasks": []
+  "tasks_count": 0,
+  "evidenceScope": "Historical documentation readiness checkpoint only; not the checkpoint for the runtime fix.",
+  "review": "Session/turn identities and token-accounting metadata omitted. Original retained privately; no transcript or credentials published."
 }

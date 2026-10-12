@@ -1,0 +1,62 @@
+{
+  "note": "Agent A smoke benchmark; independent B audit is still required.",
+  "results": [
+    {
+      "targetUrl": "http://localhost:4173",
+      "attempt": 1,
+      "runId": "247e9123-b7aa-46d6-9f36-936a6531960e",
+      "status": "not_reproduced",
+      "metrics": {
+        "actions": 14,
+        "elapsedMs": 63924,
+        "inputTokens": 60315,
+        "outputTokens": 2220,
+        "costUsd": 0.23566949999999998
+      }
+    },
+    {
+      "targetUrl": "http://localhost:4173",
+      "attempt": 2,
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "status": "bug_confirmed",
+      "verification": {
+        "attempts": 2,
+        "matchedFailures": 2,
+        "verdict": "confirmed"
+      },
+      "metrics": {
+        "actions": 13,
+        "elapsedMs": 51651,
+        "inputTokens": 41069,
+        "outputTokens": 1261,
+        "costUsd": 0.1563342
+      }
+    },
+    {
+      "targetUrl": "http://localhost:4173",
+      "attempt": 3,
+      "runId": "7c259071-2c8c-45ee-8c65-5fafa1395ae7",
+      "status": "not_reproduced",
+      "metrics": {
+        "actions": 20,
+        "elapsedMs": 64727,
+        "inputTokens": 64690,
+        "outputTokens": 2245,
+        "costUsd": 0.2505195
+      }
+    },
+    {
+      "targetUrl": "http://localhost:4174",
+      "attempt": 1,
+      "runId": "6d85b46a-df25-42a9-abe9-54978f07d964",
+      "status": "not_reproduced",
+      "metrics": {
+        "actions": 21,
+        "elapsedMs": 73639,
+        "inputTokens": 82219,
+        "outputTokens": 2476,
+        "costUsd": 0.31217670000000003
+      }
+    }
+  ]
+}

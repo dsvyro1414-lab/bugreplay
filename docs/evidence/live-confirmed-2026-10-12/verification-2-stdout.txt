@@ -1,0 +1,38 @@
+
+Running 1 test using 1 worker
+F
+
+  1) ../repro.spec.ts:198:1 › cart survives a completed checkout address change ────────────────────
+
+    Error: BUGREPLAY_CART_PRESERVATION
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 10
+    + Received  +  1
+
+    - Array [
+    -   Object {
+    -     "productId": "canvas-pouch",
+    -     "quantity": 1,
+    -   },
+    -   Object {
+    -     "productId": "desk-notebook",
+    -     "quantity": 1,
+    -   },
+    - ]
+    + Array []
+
+      284 |     assertAllowedNetwork();
+      285 |     stage('cart_assertion');
+    > 286 |     expect(operationState.cart, 'BUGREPLAY_CART_PRESERVATION').toEqual(initial.cart);
+          |                                                                ^
+      287 |     stage('passed');
+      288 |   } catch (error) {
+      289 |     thrown = error;
+        at artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/repro.spec.ts:286:64
+
+    Error Context: test-results/repro-cart-survives-a-completed-checkout-address-change/error-context.md
+
+  1 failed
+    ../repro.spec.ts:198:1 › cart survives a completed checkout address change ─────────────────────
