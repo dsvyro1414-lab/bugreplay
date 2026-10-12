@@ -102,3 +102,13 @@ The integrator reopened the selected trace `9096d7e75454f94d4c9cd11011604e13` in
 This supplementary official UI evidence was collected **after the final movie montage**. Both reviewed movie files were rehashed and remain unchanged; their Neatlogs after scene still truthfully depicts the earlier authenticated hosted-data local export.
 
 The integrator also inspected logged-in Discord: announcements was visible but empty; global searches returned two deadline and 17 submission results. **No authoritative final submission cutoff or official submission post was found.** A participant’s 23:55 message is not organizer confirmation; the organizer/sponsor 7pm IST opening-time post is not a cutoff. Registration/team/leader-email/public-post/form/confirmation gates remain unverified.
+
+### 2026-10-12 — Reviewed SaaS demo revision
+
+The owner requested a faster SaaS presentation and selected the female Ainsley preset for neural narration. The new [primary demo](demo/bugreplay-saas-demo.mp4) is **92.500 seconds**, 1280×720 at 30 fps, 2,775 frames, H.264/AAC, **9,908,253 bytes**, SHA-256 **`6a5ab41ddd0e4c823cd650af74c85b193538be550b6778320ea1cf2207a6f3c9`**. Both earlier reviewed films and the original evidence remain preserved.
+
+- HyperFrames renders larger genuine interface crops with short typographic transitions. Both complete independent buggy recordings (4.48s and 4.52s) and the complete corrected-control recording (4.44s) retain their original consecutive source time at 1×. Investigation excerpts are explicitly edited; native sponsor screens and the local Entire CLI viewer retain accurate labels.
+- Composition checks passed at every shot midpoint and proof endpoints. The integrator independently decoded the complete MP4 without errors and visually reviewed all 44 decoded samples, including replay/control transitions, sponsor evidence and closing limitations. The film distinguishes 2/2 verification from 1/3 discovery and retains unknown billing/credits. [Source and media audit](demo/saas-cut/README.md).
+- Six completed Seed Audio 1.0 jobs provide the Ainsley narration. Original WAVs and losslessly cut PCM edits remain in the private owner bundle. One redundant sentence and excess silence were removed; retained speech has no tempo or pitch change. Automated transcript and waveform checks passed; human auditory review is not claimed. The production quote totals **8.0 Higgsfield credits**; actual charged credits, USD invoices and promotional allocation remain **unknown**, separate from investigation accounting.
+
+This is a reviewed media revision. The public quote-post, team/check-in details, latest Discord cutoff and final form confirmation still require completion after the owner's video review.

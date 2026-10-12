@@ -1,0 +1,100 @@
+1
+00:00:00,100 --> 00:00:02,180
+“The cart disappeared.”
+
+2
+00:00:03,120 --> 00:00:07,560
+BugReplay turns browser symptoms into evidence
+you can actually run.
+
+3
+00:00:08,100 --> 00:00:10,380
+Give it a URL and the expected behavior.
+
+4
+00:00:11,060 --> 00:00:16,840
+The model explores the interface, learns from
+browser observations, and records the complete
+setup.
+
+5
+00:00:17,640 --> 00:00:20,220
+No source code. No hidden trigger recipe.
+
+6
+00:00:21,120 --> 00:00:23,280
+This investigation found the disappearing cart.
+
+7
+00:00:24,100 --> 00:00:25,780
+Then the model steps aside.
+
+8
+00:00:26,540 --> 00:00:29,300
+The saved Playwright test runs twice in clean
+browsers.
+
+9
+00:00:30,400 --> 00:00:33,360
+Both fail on the intended cart preservation
+assertion.
+
+10
+00:00:34,700 --> 00:00:36,720
+Two items become zero.
+
+11
+00:00:37,540 --> 00:00:38,140
+That is the proof.
+
+12
+00:00:38,900 --> 00:00:41,140
+Change only the base URL.
+
+13
+00:00:42,700 --> 00:00:45,940
+The exact same test passes on the corrected
+shop.
+
+14
+00:00:47,040 --> 00:00:49,120
+Same steps. Same assertion.
+
+15
+00:00:50,020 --> 00:00:55,400
+You get the test, report, screenshots, and
+original recordings.
+
+16
+00:00:56,600 --> 00:01:00,520
+Neatlogs exposed malformed responses that
+interrupted exploration.
+
+17
+00:01:01,540 --> 00:01:04,940
+We added bounded recovery, then traced the real
+rerun.
+
+18
+00:01:05,640 --> 00:01:08,300
+Entire links the fix to its checkpoint and diff.
+
+19
+00:01:09,040 --> 00:01:13,140
+CFO AI models pricing and separates measured
+usage from estimates.
+
+20
+00:01:13,140 --> 00:01:15,720
+Failed attempts count too.
+
+21
+00:01:16,600 --> 00:01:23,300
+One controlled shop. One defect class. One of
+three final buggy investigations confirmed it.
+
+22
+00:01:24,020 --> 00:01:31,720
+Complete cash billing remains unknown.
+BugReplay. From a vague report to a verified
+reproduction.

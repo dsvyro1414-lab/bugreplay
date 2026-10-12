@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "language": "en-US",
+  "targetSeconds": 92.5,
+  "rangeSeconds": [
+    80,
+    95
+  ],
+  "voiceSource": "Parent-supplied natural neural narration; no local macOS speech",
+  "delivery": "Natural, confident, flowing; brief pauses between thoughts, no exaggerated presenter delivery.",
+  "blocks": [
+    {
+      "id": "hook",
+      "text": "\u201cThe cart disappeared.\u201d BugReplay turns browser symptoms into evidence you can actually run.",
+      "startSeconds": 0,
+      "intendedDurationSeconds": 8,
+      "timingFlexible": true,
+      "timeStretchAllowed": false
+    },
+    {
+      "id": "investigate",
+      "text": "Give it a URL and the expected behavior. The model explores the interface, learns from browser observations, and records the complete setup. No source code. No hidden trigger recipe. This investigation found the disappearing cart.",
+      "startSeconds": 8,
+      "intendedDurationSeconds": 16,
+      "timingFlexible": true,
+      "timeStretchAllowed": false
+    },
+    {
+      "id": "verify",
+      "text": "Then the model steps aside. The saved Playwright test runs twice in clean browsers. Both fail on the intended cart preservation assertion. Two items become zero. That is the proof.",
+      "startSeconds": 24,
+      "intendedDurationSeconds": 14.8,
+      "timingFlexible": true,
+      "timeStretchAllowed": false
+    },
+    {
+      "id": "control",
+      "text": "Change only the base URL. The exact same test passes on the corrected shop. Same steps. Same assertion. You get the test, report, screenshots, and original recordings.",
+      "startSeconds": 38.8,
+      "intendedDurationSeconds": 17.7,
+      "timingFlexible": true,
+      "timeStretchAllowed": false
+    },
+    {
+      "id": "improve",
+      "text": "Neatlogs exposed malformed responses that interrupted exploration. We added bounded recovery, then traced the real rerun. Entire links the fix to its checkpoint and diff. CFO AI models pricing and separates measured usage from estimates. Failed attempts count too.",
+      "startSeconds": 56.5,
+      "intendedDurationSeconds": 20,
+      "timingFlexible": true,
+      "timeStretchAllowed": false
+    },
+    {
+      "id": "limits",
+      "text": "One controlled shop. One defect class. One of three final buggy investigations confirmed it. Complete cash billing remains unknown. BugReplay. From a vague report to a verified reproduction.",
+      "startSeconds": 76.5,
+      "intendedDurationSeconds": 16,
+      "timingFlexible": true,
+      "timeStretchAllowed": false
+    }
+  ],
+  "wordCount": 172,
+  "audio": {
+    "status": "six-real-neural-files-edited-and-automatically-transcription-checked",
+    "timeStretchAllowed": false,
+    "edit": "One complete redundant hook sentence removed; leading pads and one anomalous internal gap trimmed. Retained words are unretimed."
+  }
+}

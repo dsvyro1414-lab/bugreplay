@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=1280, height=720">
+  <title>BugReplay — from report to reproduction</title>
+  <script src="assets/gsap.min.js"></script><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="saas-demo" data-composition-id="saas-demo" data-start="0" data-duration="{{DURATION}}" data-width="1280" data-height="720">
+  <div class="background"></div><div class="ambient-line"></div><div class="ambient-dot"></div>
+  <div class="brand">Bug<b>Replay</b></div>{{PROTOTYPE}}
+  {{SHELLS}}{{SCENES}}{{MEDIA}}{{AUDIO}}{{CAPTIONS}}
+</div>
+<script>
+window.__timelines = window.__timelines || {};
+const tl = gsap.timeline({ paused:true });
+const beats = {{BEATS}};
+tl.to('.ambient-line',{rotation:35,x:50,y:40,duration:{{DURATION}},ease:'none'},0);
+tl.to('.ambient-dot',{x:140,y:-30,duration:{{DURATION}},ease:'sine.inOut'},0);
+beats.forEach((beat,index)=>{
+  const target='#'+beat.id+' .hit';
+  const modes=[{x:-95,y:0,scale:1,rotation:0,ease:'expo.out'},{x:0,y:55,scale:1,rotation:2,ease:'circ.out'},{x:0,y:0,scale:1.11,rotation:0,ease:'power4.out'}];
+  const m=modes[index%3];
+  tl.fromTo(target,{x:m.x,y:m.y,scale:m.scale,rotation:m.rotation,opacity:0},{x:0,y:0,scale:1,rotation:0,opacity:1,duration:.46,ease:m.ease,stagger:.055},beat.start+.04);
+  const rule=document.querySelector('#'+beat.id+' .rule');
+  if(rule)tl.fromTo(rule,{scaleX:0},{scaleX:1,duration:.6,ease:'power3.out'},beat.start+.24);
+});
+const blueBeat=beats.find(beat=>beat.id==='hook-promise');
+const productBeat=beats.find(beat=>beat.id==='hook-product');
+tl.set('.brand',{color:'#f3f5f9'},blueBeat.start).set('.brand b',{color:'#f3f5f9'},blueBeat.start);
+tl.set('.brand',{color:'#142033'},productBeat.start).set('.brand b',{color:'#2459e8'},productBeat.start);
+{{MEDIA_MOTION}}
+window.__timelines['saas-demo']=tl;
+</script>
+</body></html>

@@ -89,7 +89,7 @@ Original investigation recordings are saved per clean browser episode as `invest
 
 ## Development and hackathon
 
-Watch the reviewed [170-second final demo](demo/bugreplay-final-demo.mp4) or the [138-second X version](demo/bugreplay-final-demo-x.mp4). Both show actual live-investigation and replay footage, the unchanged passing control, and authentic Neatlogs, Entire and CFO.ai evidence. Export viewers and edited excerpts are explicitly labeled. [Montage source, captions and media audits](demo/final-cut/README.md) document provenance and limits. The older [52-second product preview](demo/bugreplay-product-preview.mp4) remains a scripted engineering preview.
+Watch the reviewed [92.5-second SaaS demo](demo/bugreplay-saas-demo.mp4), with neural Ainsley narration, larger interface crops, both complete independent replays at 1×, the unchanged passing control, and genuine Neatlogs, Entire and CFO.ai evidence. Its Neatlogs after scene uses the actual official hosted UI; the Entire scene explicitly labels the authentic local CLI export. [Editable HyperFrames source, script, captions and media audit](demo/saas-cut/README.md) document provenance and limits. The earlier [170-second demo](demo/bugreplay-final-demo.mp4), [138-second edit](demo/bugreplay-final-demo-x.mp4), and their [montage source](demo/final-cut/README.md) remain preserved. The [52-second product preview](demo/bugreplay-product-preview.mp4) is a historical scripted engineering preview.
 
 Product-only checks and builds do not require private model or telemetry keys:
 

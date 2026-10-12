@@ -1,0 +1,137 @@
+{
+  "method": "Sentence boundaries from automated transcription of the final edited WAVs; typography corrected to the approved script. Captions are a separate optional track.",
+  "cues": [
+    {
+      "blockId": "hook",
+      "startSeconds": 0,
+      "endSeconds": 2.08,
+      "text": "\u201cThe cart disappeared.\u201d"
+    },
+    {
+      "blockId": "hook",
+      "startSeconds": 3.02,
+      "endSeconds": 7.46,
+      "text": "BugReplay turns browser symptoms into evidence you can actually run."
+    },
+    {
+      "blockId": "investigate",
+      "startSeconds": 0,
+      "endSeconds": 2.28,
+      "text": "Give it a URL and the expected behavior."
+    },
+    {
+      "blockId": "investigate",
+      "startSeconds": 2.96,
+      "endSeconds": 8.74,
+      "text": "The model explores the interface, learns from browser observations, and records the complete setup."
+    },
+    {
+      "blockId": "investigate",
+      "startSeconds": 9.54,
+      "endSeconds": 12.12,
+      "text": "No source code. No hidden trigger recipe."
+    },
+    {
+      "blockId": "investigate",
+      "startSeconds": 13.02,
+      "endSeconds": 15.18,
+      "text": "This investigation found the disappearing cart."
+    },
+    {
+      "blockId": "verify",
+      "startSeconds": 0,
+      "endSeconds": 1.68,
+      "text": "Then the model steps aside."
+    },
+    {
+      "blockId": "verify",
+      "startSeconds": 2.44,
+      "endSeconds": 5.2,
+      "text": "The saved Playwright test runs twice in clean browsers."
+    },
+    {
+      "blockId": "verify",
+      "startSeconds": 6.3,
+      "endSeconds": 9.26,
+      "text": "Both fail on the intended cart preservation assertion."
+    },
+    {
+      "blockId": "verify",
+      "startSeconds": 10.6,
+      "endSeconds": 12.62,
+      "text": "Two items become zero."
+    },
+    {
+      "blockId": "verify",
+      "startSeconds": 13.44,
+      "endSeconds": 14.04,
+      "text": "That is the proof."
+    },
+    {
+      "blockId": "control",
+      "startSeconds": 0,
+      "endSeconds": 2.24,
+      "text": "Change only the base URL."
+    },
+    {
+      "blockId": "control",
+      "startSeconds": 3.8,
+      "endSeconds": 7.04,
+      "text": "The exact same test passes on the corrected shop."
+    },
+    {
+      "blockId": "control",
+      "startSeconds": 8.14,
+      "endSeconds": 10.22,
+      "text": "Same steps. Same assertion."
+    },
+    {
+      "blockId": "control",
+      "startSeconds": 11.12,
+      "endSeconds": 16.5,
+      "text": "You get the test, report, screenshots, and original recordings."
+    },
+    {
+      "blockId": "improve",
+      "startSeconds": 0,
+      "endSeconds": 3.92,
+      "text": "Neatlogs exposed malformed responses that interrupted exploration."
+    },
+    {
+      "blockId": "improve",
+      "startSeconds": 4.94,
+      "endSeconds": 8.34,
+      "text": "We added bounded recovery, then traced the real rerun."
+    },
+    {
+      "blockId": "improve",
+      "startSeconds": 9.04,
+      "endSeconds": 11.7,
+      "text": "Entire links the fix to its checkpoint and diff."
+    },
+    {
+      "blockId": "improve",
+      "startSeconds": 12.44,
+      "endSeconds": 16.54,
+      "text": "CFO AI models pricing and separates measured usage from estimates."
+    },
+    {
+      "blockId": "improve",
+      "startSeconds": 16.54,
+      "endSeconds": 19.12,
+      "text": "Failed attempts count too."
+    },
+    {
+      "blockId": "limits",
+      "startSeconds": 0,
+      "endSeconds": 6.7,
+      "text": "One controlled shop. One defect class. One of three final buggy investigations confirmed it."
+    },
+    {
+      "blockId": "limits",
+      "startSeconds": 7.42,
+      "endSeconds": 15.12,
+      "text": "Complete cash billing remains unknown. BugReplay. From a vague report to a verified reproduction."
+    }
+  ]
+}
