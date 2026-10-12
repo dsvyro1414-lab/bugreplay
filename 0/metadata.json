@@ -1,0 +1,62 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4RG4KNW73KYPQMBCS7V1XT2",
+  "session_id": "01a13092-b55e-7cd2-88cc-6665d59d79dc",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-12T16:46:47.095538Z",
+  "branch": "agent-a-engine",
+  "checkpoints_count": 1,
+  "save_step_count": 1,
+  "files_touched": [
+    "README.md",
+    "demo/saas-cut/BRIEF.md",
+    "demo/saas-cut/SCENE-PLAN.md",
+    "demo/saas-cut/SCRIPT.md",
+    "demo/saas-cut/build.mjs",
+    "demo/saas-cut/index.template.html",
+    "demo/saas-cut/styles.css",
+    "hackathon.md"
+  ],
+  "agent": "Codex",
+  "model": "gpt-6.1-sol",
+  "turn_id": "266427b665f9",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 1604677,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 74963328,
+    "output_tokens": 147611,
+    "api_call_count": 683,
+    "subagent_tokens_complete": false
+  },
+  "session_metrics": {
+    "turn_count": 4
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-12T16:46:46.503546Z",
+    "agent_lines": 0,
+    "agent_removed": 0,
+    "human_added": 1094,
+    "human_modified": 1,
+    "human_removed": 0,
+    "total_committed": 1094,
+    "total_lines_changed": 1095,
+    "agent_percentage": 0,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 134,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "demo/saas-cut/BRIEF.md": 13,
+        "demo/saas-cut/SCENE-PLAN.md": 28,
+        "demo/saas-cut/SCRIPT.md": 27,
+        "demo/saas-cut/narration-plan.json": 66
+      }
+    }
+  ]
+}
