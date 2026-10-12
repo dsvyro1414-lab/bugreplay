@@ -1,0 +1,87 @@
+{
+  "checkedAt": "2026-10-12",
+  "branch": "agent-b-product",
+  "engineBaseline": "d892d7d",
+  "scope": "Scripted engineering evaluation of the real demo shop through BrowserSession, compileCandidate, and independently executed saved Playwright tests",
+  "command": "npm exec -- tsx --test evals/product.test.ts",
+  "node": "24.19.0",
+  "testResults": {
+    "tests": 5,
+    "passed": 5,
+    "failed": 0,
+    "skipped": 0,
+    "durationMs": 40874.599833
+  },
+  "artifactRoot": "artifacts/product-eval/2026-10-12T08-58-03.943Z-ef3e0210",
+  "modelUsed": false,
+  "neatlogsUsed": false,
+  "cases": [
+    {
+      "name": "ordinary-address",
+      "result": "preserved",
+      "artifact": "artifacts/product-eval/2026-10-12T08-58-03.943Z-ef3e0210/ordinary-address/browser-log.json"
+    },
+    {
+      "name": "express-only",
+      "result": "preserved",
+      "artifact": "artifacts/product-eval/2026-10-12T08-58-03.943Z-ef3e0210/express-only/browser-log.json"
+    },
+    {
+      "name": "promo-only",
+      "result": "preserved",
+      "artifact": "artifacts/product-eval/2026-10-12T08-58-03.943Z-ef3e0210/promo-only/browser-log.json"
+    },
+    {
+      "name": "combined-conditions",
+      "result": "two intended buggy failures and exact unchanged control pass",
+      "artifact": "artifacts/product-eval/2026-10-12T08-58-03.943Z-ef3e0210/combined-conditions/summary.json"
+    },
+    {
+      "name": "persistence-and-save-signal",
+      "result": "reload persisted cart/address, new context started empty, editing invalidated old saved status, sequence incremented",
+      "artifact": "artifacts/product-eval/2026-10-12T08-58-03.943Z-ef3e0210/persistence-and-save-signal.json"
+    }
+  ],
+  "savedTest": {
+    "path": "artifacts/product-eval/2026-10-12T08-58-03.943Z-ef3e0210/combined-conditions/repro.spec.ts",
+    "sha256": "06f2d8aafbbd4f3c5f83c458fe89788b3fd4f14937540e04014089be85fdb3fa",
+    "buggy": {
+      "verdict": "confirmed",
+      "matchedFailures": 2,
+      "attempts": 2
+    },
+    "correctedControl": {
+      "verdict": "not_matched",
+      "attempts": 1,
+      "exactSameSavedFile": true
+    },
+    "selectorFault": "inconclusive",
+    "unavailableTarget": "inconclusive",
+    "assertionMarker": "BUGREPLAY_CART_PRESERVATION"
+  },
+  "independentAudit": {
+    "sourceInspected": true,
+    "stdoutAndStderrInspected": true,
+    "playwrightJsonReportsInspected": true,
+    "buggyAndControlAfterScreenshotsVisuallyInspected": true,
+    "completedVideoAndBeforeAfterFilesExistAndAreNonempty": true,
+    "buggyAudit": "artifacts/product-eval/2026-10-12T08-58-03.943Z-ef3e0210/combined-conditions/buggy-replay/independent-file-audit.json",
+    "controlAudit": "artifacts/product-eval/2026-10-12T08-58-03.943Z-ef3e0210/combined-conditions/control-replay/independent-file-audit.json"
+  },
+  "sourceSha256": {
+    "evals/product.test.ts": "6f605510d76102bba00d2a119a4df5a7438e8ecab00cdd2477ce06265b0d0d7b",
+    "apps/demo-shop/src/App.tsx": "84a21abc70665a0b3a3ba31ba7dff06010a10094bd7dd59113b0299c97983917",
+    "apps/demo-shop/vite.config.ts": "83b222906b0e6b1d33c12f6a28c1734a3a817432dfd2a14ad4c6241762ff6010",
+    "apps/runner/src/browser.ts": "6802d318a55caf316252f8d8be5cb1ad77be34fb5086126d9eb23234fe7fea0b",
+    "apps/runner/src/compiler.ts": "216a0f867e5425bb37e7e30c046cb8bbb87e11cbd59f150fed8dc5c2fae6ee71",
+    "apps/runner/src/verifier.ts": "2be98b2cec246991821bb11418c2f426683923181f3db23749e20a490cea10cf"
+  },
+  "limitations": [
+    "Known fixture conditions were scripted; no autonomous LLM discovery or success rate is established.",
+    "No real-model usage cost, hosted Neatlogs investigation trace, or trace-driven improvement is established by this suite.",
+    "Raw local artifacts are ignored and are not publicly accessible evidence links.",
+    "UI/API end-to-end acceptance is a separate check; this suite executes the shared browser/compiler/verifier directly.",
+    "The current engine writes verification before/after PNGs but does not register them as RunView artifacts; those dedicated files are unavailable through the artifact API until Agent A registers them.",
+    "No cfo.ai result, final demo, or submission is established."
+  ]
+}

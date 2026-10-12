@@ -1,0 +1,39 @@
+{
+  "kind": "saved-playwright-file-and-output-audit",
+  "attempts": [
+    {
+      "attempt": 1,
+      "exitCode": 1,
+      "reporterStatus": "failed",
+      "classification": "matched_failure",
+      "stage": "cart_assertion_failed",
+      "reportFile": "combined-conditions/buggy-replay/verification-attempt-1-7c0a06e0/results.json",
+      "stdout": {
+        "bytes": 1298,
+        "sha256": "811ad577bbadf694469328c3ca36d2fa58732c0088d007ceda16308e869eb538"
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "video": "verification-1.webm"
+    },
+    {
+      "attempt": 2,
+      "exitCode": 1,
+      "reporterStatus": "failed",
+      "classification": "matched_failure",
+      "stage": "cart_assertion_failed",
+      "reportFile": "combined-conditions/buggy-replay/verification-attempt-2-773ab2ca/results.json",
+      "stdout": {
+        "bytes": 1298,
+        "sha256": "811ad577bbadf694469328c3ca36d2fa58732c0088d007ceda16308e869eb538"
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "video": "verification-2.webm"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "status": "awaiting_real_evidence",
+  "finalGitSha": null,
+  "mainRun": {"id": null, "model": null, "elapsedSeconds": null, "verdict": null, "matchedFailures": null, "attempts": null, "testSha256": null, "testFile": null, "reportFile": null, "reproductionFile": null, "verificationFile": null, "videoFile": null},
+  "control": {"sourceRunId": null, "baseUrl": null, "verdict": null, "testSha256": null, "verificationFile": null, "videoFile": null},
+  "acceptance": {"summaryFile": null, "buggyRunIds": [], "fixedRunId": null},
+  "improvement": {"beforeRunId": null, "afterRunId": null, "beforeGitSha": null, "afterGitSha": null, "beforeTraceUrl": null, "afterTraceUrl": null, "observedWeakness": null, "change": null, "metricName": null, "metricUnit": null, "beforeValue": null, "afterValue": null, "conditions": null, "entireCheckpoint": null, "checkpointEvidenceFile": null},
+  "finance": {"cfoModelUrl": null, "cfoExportFile": null, "cfoScreenCaptureFile": null, "costBasis": null, "decision": null},
+  "recordings": [],
+  "finalVideo": {"file": null, "durationSeconds": null, "hasNarration": false, "captionsReviewed": false},
+  "publicLinks": {"repository": "https://github.com/dsvyro1414-lab/bugreplay", "demo": null, "evidence": null},
+  "humanReview": {"sameRunArtifacts": false, "intendedAssertions": false, "unchangedControlTest": false, "privacy": false, "claimsMatchFootage": false, "sponsorScreensAuthentic": false}
+}

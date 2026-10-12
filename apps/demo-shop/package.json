@@ -1,0 +1,12 @@
+{
+  "name": "@bugreplay/demo-shop",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "SHOP_VARIANT=buggy vite --host localhost --port 4173 --strictPort",
+    "dev:control": "SHOP_VARIANT=fixed vite --host localhost --port 4174 --strictPort",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit"
+  }
+}

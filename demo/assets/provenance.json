@@ -1,0 +1,17 @@
+{
+  "kind": "scripted-engineering-preview",
+  "modelUsed": false,
+  "evaluationDirectory": "2026-10-12T08-58-03.943Z-ef3e0210",
+  "specSha256": "06f2d8aafbbd4f3c5f83c458fe89788b3fd4f14937540e04014089be85fdb3fa",
+  "buggy": {
+    "verdict": "confirmed",
+    "matchedFailures": 2,
+    "attempts": 2
+  },
+  "control": {
+    "verdict": "not_matched",
+    "attempts": 1,
+    "exactSameSavedFile": true
+  },
+  "media": "Original local screenshots and original closed-context verification recording. No fake browser activity."
+}

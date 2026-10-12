@@ -1,0 +1,16 @@
+{
+  "xlsxFormulaErrors": [],
+  "externalWorkbookLinks": false,
+  "chartBindings": [
+    "'Forecast'!$H$6:$H$17",
+    "'Forecast'!$I$6:$I$17"
+  ],
+  "chartLineColors": [
+    "25466A",
+    "CCCCCC",
+    "CCCCCC",
+    "D9D9D9"
+  ],
+  "defaultCase": "Base",
+  "excelDesktopVerified": false
+}
