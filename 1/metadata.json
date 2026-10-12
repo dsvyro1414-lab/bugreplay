@@ -1,0 +1,76 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4RM8MY4CGPKKC1HMY0MV8HW",
+  "session_id": "01a13127-f0bf-7530-8859-e1fdd07cb448",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-12T17:58:52.482258Z",
+  "branch": "agent-a-engine",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "README.md",
+    "demo/saas-cut/BRIEF.md",
+    "demo/saas-cut/README.md",
+    "demo/saas-cut/build.mjs",
+    "demo/saas-cut/edit-plan.json",
+    "demo/saas-cut/index.template.html",
+    "demo/saas-cut/stabilize-investigation.py",
+    "docs/evidence/index.md",
+    "hackathon.md"
+  ],
+  "agent": "Codex",
+  "model": "gpt-6.1-sol",
+  "turn_id": "eb86b10261ed",
+  "checkpoint_transcript_start": 307,
+  "transcript_lines_at_start": 307,
+  "compact_transcript_start": 39,
+  "token_usage": {
+    "input_tokens": 50769,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 6962176,
+    "output_tokens": 18403,
+    "api_call_count": 47,
+    "subagent_tokens_complete": false
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-12T17:58:52.383269Z",
+    "agent_lines": 0,
+    "agent_removed": 0,
+    "human_added": 295,
+    "human_modified": 57,
+    "human_removed": 0,
+    "total_committed": 295,
+    "total_lines_changed": 353,
+    "agent_percentage": 0,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 8852,
+      "user_lines_removed": 24,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "README.md": 1,
+        "demo/saas-cut/BRIEF.md": 3,
+        "demo/saas-cut/README.md": 19,
+        "demo/saas-cut/build.mjs": 17,
+        "demo/saas-cut/edit-plan.json": 1,
+        "demo/saas-cut/index.template.html": 2,
+        "demo/saas-cut/media-audit-v5.json": 130,
+        "demo/saas-cut/stabilize-investigation.py": 231,
+        "demo/saas-cut/stabilized-investigation/manifest.json": 8446,
+        "hackathon.md": 2
+      },
+      "user_removed_per_file": {
+        "README.md": 1,
+        "demo/saas-cut/BRIEF.md": 3,
+        "demo/saas-cut/README.md": 8,
+        "demo/saas-cut/build.mjs": 6,
+        "demo/saas-cut/edit-plan.json": 1,
+        "demo/saas-cut/index.template.html": 3,
+        "hackathon.md": 2
+      }
+    }
+  ]
+}

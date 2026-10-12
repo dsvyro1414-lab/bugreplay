@@ -1,0 +1,17 @@
+{
+  "tool_use_id": "01a1312e-4dd9-7b92-b283-5392ede69295",
+  "agent_id": "01a1312e-4dd9-7b92-b283-5392ede69295",
+  "subagent_type": "default",
+  "files": [
+    "demo/saas-cut/stabilize-investigation.py"
+  ],
+  "token_usage": {
+    "input_tokens": 59968,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 1348864,
+    "output_tokens": 10439,
+    "api_call_count": 18
+  },
+  "started_at": "2026-10-12T11:34:42.633677-06:00",
+  "completed_at": "2026-10-12T11:58:44.036667-06:00"
+}
