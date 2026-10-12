@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "revision": 4,
+  "status": "Verified: fixed-position text reveal, independent targeted decoded-frame review, full decode and byte-identical decoded audio passed",
+  "video": {
+    "file": "demo/bugreplay-saas-demo-v4.mp4",
+    "sha256": "f39754ddfc40dde3422c253a7a3b12f8087597f58ab630bb66dbd894a726f43d",
+    "bytes": 4649667,
+    "durationSeconds": 64,
+    "width": 1280,
+    "height": 720,
+    "framesPerSecond": 30,
+    "frameCount": 1920,
+    "videoCodec": "H.264",
+    "audioCodec": "AAC",
+    "fullDecodePassed": true,
+    "downloadsCopyByteIdentical": true
+  },
+  "change": {
+    "previousRevision": 3,
+    "previousVideo": "demo/bugreplay-saas-demo-v3.mp4",
+    "cause": "Every .hit text element translated 24px during a 0.22s reveal, approximately 7 frames at 30 fps. Right-hand evidence panels were already stationary.",
+    "fix": "Remove x:-24 and x:0 from the text tween. Keep opacity, duration, easing, stagger and all scene timing unchanged.",
+    "textElements": 79,
+    "seekSamples": 216,
+    "geometryInvariantPassed": true,
+    "sourceProvenanceFieldsIdentical": {
+      "normalization": true,
+      "durationSeconds": true,
+      "selectedRunId": true,
+      "engineGitSha": true,
+      "testSha256": true,
+      "blocks": true,
+      "shots": true,
+      "media": true,
+      "assets": true,
+      "soundEffects": true
+    }
+  },
+  "compositionChecks": {
+    "ok": true,
+    "lintErrors": 0,
+    "lintWarnings": 27,
+    "warningScope": "Existing timeline density and monolithic scene-structure advice; no new lint warnings.",
+    "runtimeErrors": 0,
+    "layoutErrors": 0,
+    "contrastErrors": 0,
+    "motionSidecarEnabled": false,
+    "dedicatedGeometryAudit": {
+      "textElements": 79,
+      "samples": 216,
+      "failures": [],
+      "passed": true
+    },
+    "command": "HYPERFRAMES_NO_TELEMETRY=1 HYPERFRAMES_RUN_ID=bugreplay-saas-v4-20261012 npx --yes hyperframes@0.8.147 check artifacts/submission-2026-10-12/saas-cut-v4/project --at 0.12,1,2,4,6,8,10.2,12.6,15.2,19.6,24.5,27.2,31.7,34.5,36.2,40.2,43.2,45.5,47.5,50,53,56,58,60,62 --snapshots --json"
+  },
+  "audioPreservation": {
+    "originalPcmSha256": "73f5fd8fec2367e8b462bfbed66169bc0804f9c3037179a40ac541cc9503494d",
+    "revisedPcmSha256": "73f5fd8fec2367e8b462bfbed66169bc0804f9c3037179a40ac541cc9503494d",
+    "decodedAudioByteIdentical": true
+  },
+  "render": {
+    "framework": "HyperFrames",
+    "version": "0.8.147",
+    "quality": "high",
+    "fps": 30,
+    "workers": 4,
+    "durationSeconds": 28.9,
+    "command": "HYPERFRAMES_NO_TELEMETRY=1 HYPERFRAMES_RUN_ID=bugreplay-saas-v4-20261012 npx --yes hyperframes@0.8.147 render artifacts/submission-2026-10-12/saas-cut-v4/project --quality high --fps 30 --workers 4 --output artifacts/submission-2026-10-12/saas-cut-v4/BugReplay-saas-demo-v4.mp4"
+  },
+  "limits": [
+    "Revision 4 edits presentation only and makes no new product acceptance or investigation claims.",
+    "Original source browser recordings and v3 MP4 remain untouched.",
+    "No continuous human playback review is claimed; verification uses source geometry, decoded frames, full decode and exact audio comparison."
+  ],
+  "independentDecodedFrameReview": {
+    "kind": "Independent actual-decoded-frame review",
+    "video": "artifacts/submission-2026-10-12/saas-cut-v4/BugReplay-saas-demo-v4.mp4",
+    "sha256": "f39754ddfc40dde3422c253a7a3b12f8087597f58ab630bb66dbd894a726f43d",
+    "format": {
+      "durationSeconds": 64,
+      "width": 1280,
+      "height": 720,
+      "frameRate": "30/1",
+      "frames": 1920
+    },
+    "result": "Passed targeted decoded-frame review. V4 text fades at a fixed position; matching settled foreground and right media preserve their visual content.",
+    "checkedTextScenes": [
+      "hook-complaint",
+      "observe",
+      "replay-verification-1-webm",
+      "neat-after",
+      "cfo-model"
+    ],
+    "textSamples": 30,
+    "v4MaxAbsoluteHorizontalOffsetPx": 0,
+    "v4MaxAbsoluteVerticalOffsetPx": 0,
+    "v4MinHorizontalCorrelation": 0.999373,
+    "v3EntranceHorizontalOffsetRangePx": [
+      -12,
+      0
+    ],
+    "settledForegroundSamples": 5,
+    "settledForegroundMaxMeanAbsoluteChannelDifference": 0.87933,
+    "mediaSamples": 13,
+    "mediaMaxMeanAbsoluteChannelDifference": 0.28859,
+    "mediaMinPsnrDb": 48.967,
+    "mediaMaxFractionPixelsOver24ChannelDifference": 0.0000405,
+    "contactSheetsActuallyInspected": [
+      "contact-sheet-entrances.jpg",
+      "contact-sheet-sponsors.jpg",
+      "contact-sheet-settled.jpg"
+    ],
+    "visualFindings": "No missing text, layout jump, incorrect right media, or changed settled content observed in the inspected selected frames.",
+    "detailedMeasurementsFile": "qa.json",
+    "limitations": [
+      "Selected-frame visual review only; no continuous human playback review.",
+      "Correlation proves integer-pixel positioning in five sampled text regions; it does not claim every pixel or every scene has been reviewed.",
+      "Media comparisons include lossy-compression differences; source pixels were not expected to be byte-identical between separately encoded exports.",
+      "Audio was not independently listened to in this review."
+    ]
+  },
+  "rootVisualReview": {
+    "contactSheetsInspected": [
+      "v4-entrance.jpg",
+      "independent-v4/contact-sheet-entrances.jpg",
+      "independent-v4/contact-sheet-settled.jpg",
+      "independent-v4/contact-sheet-sponsors.jpg"
+    ],
+    "location": "artifacts/video-jitter-review",
+    "findings": "Text reveal stays at the settled position. Inspected matching frames preserve the accepted layout, content and right-side media."
+  }
+}

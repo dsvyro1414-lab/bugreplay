@@ -123,3 +123,15 @@ The owner requested no voice, larger left-side copy, removal of technical bottom
 - The final mix contains four existing licensed whoosh cues and one chime, with no voice assets. Numerical comparison to those five cues gave 0.997014 correlation; audio outside their intervals plus 100ms guards was exactly zero for 58.20125 seconds. No additional voice generation or model investigation was performed. The six previous voice jobs and their 8.0-credit quote remain historical production accounting, with actual debit and cash cost unknown.
 
 The v3 handoff remains prepared for owner review; no public quote-post or final form submission is asserted. [Current source and media audit](demo/saas-cut/README.md).
+
+
+### 2026-10-12 — Fixed-position SaaS revision 4
+
+The owner requested removal of the remaining jerky movement while preserving the accepted v3 edit. The [v4 MP4](demo/bugreplay-saas-demo-v4.mp4) is **64.000 seconds**, 1280×720 at 30 fps, 1,920 frames, H.264/AAC, **4,649,667 bytes**, SHA-256 **`f39754ddfc40dde3422c253a7a3b12f8087597f58ab630bb66dbd894a726f43d`**. Revision 3 and all original browser recordings remain untouched.
+
+- Cause: every text/number entrance translated 24px over 0.22s (about seven output frames). Right-side evidence panels were already stationary. An independent scan of all v3 frames found no settled-text reset or worker-boundary jump.
+- Fix: remove only the horizontal text translation. Preserve opacity duration, easing, stagger, all 24 scene windows, wording, fonts, media assets/crops and five sound effects. Source provenance comparisons match for all preserved fields. Browser geometry checks cover 79 text elements across 216 seek samples, including backward seeks, with no movement or transform.
+- HyperFrames 0.8.147 checks pass at 25 timestamps with zero lint/runtime/layout/contrast errors; the 27 existing timeline-density/scene-structure warnings remain. High-quality rendering completed in 28.9s. Full FFmpeg decode passed. Decoded audio has the exact same PCM SHA-256 as v3.
+- An independent reviewer checked 30 decoded text-position samples in five scenes: horizontal and vertical displacement are both 0px. Five settled-text and 13 media comparisons preserve the accepted visuals within lossy encoding differences. Root and reviewer inspected three comparative contact sheets. These are targeted decoded-frame checks, not a claim of continuous human playback/listening. [Commands, measurements and limitations](demo/saas-cut/media-audit-v4.json).
+
+This revision changes presentation only. No new investigation, product-acceptance result, sponsor action or submission is claimed.

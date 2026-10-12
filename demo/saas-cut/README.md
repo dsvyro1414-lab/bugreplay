@@ -1,6 +1,8 @@
-# BugReplay SaaS cut — silent revision 3
+# BugReplay SaaS cut — silent revision 4
 
-The final [64-second MP4](../bugreplay-saas-demo-v3.mp4) has no voice or narration. It uses larger left-side copy, fixed screenshot geometry, and stable presentation derivatives of the genuine browser proof. Small technical bottom labels have been removed. Five existing quiet licensed editorial sound effects remain.
+The current [64-second MP4](../bugreplay-saas-demo-v4.mp4) removes the 24px horizontal text entrance from the accepted [revision 3](../bugreplay-saas-demo-v3.mp4). Text fades at its final coordinates, with the same 0.22-second duration, easing and stagger. All scene timings, media assets, framing, fonts, wording and five quiet sound effects are preserved. It has no voice or narration. [Revision 4 audit](media-audit-v4.json).
+
+The evidence, normalization and historical verification details below describe the preserved v3 baseline. Revision 4 changes only the text entrance and builds to a separate output directory.
 
 ## Evidence and preservation
 
@@ -24,15 +26,15 @@ These are edited presentation derivatives. Source durations and final outcomes a
 
 ## Build
 
-Use a full repository checkout at the v3 release SHA recorded in the owner bundle's `RELEASE.json`. Its filtered engine-source archive preserves the earlier verified engine snapshot. Install the pinned, hash-checked GSAP runtime before building. The examples use the locally staged licensed effects; for a portable owner bundle, add `--sfx-dir /absolute/path/to/bundle/narration/sfx` to the builder command.
+Use a full repository checkout containing revision 4. Revision 3 remains reproducible at commit `161ca84`. Install the pinned, hash-checked GSAP runtime before building. The examples use the locally staged licensed effects; for a portable owner bundle, add `--sfx-dir /absolute/path/to/bundle/narration/sfx` to the builder command.
 
 From the repository root:
 
 ```bash
 node demo/setup-runtime.mjs
 node demo/saas-cut/build.mjs
-HYPERFRAMES_NO_TELEMETRY=1 HYPERFRAMES_RUN_ID=bugreplay-saas-v3-20261012 npx --yes hyperframes@0.8.147 check artifacts/submission-2026-10-12/saas-cut-v3/project --snapshots --json
-HYPERFRAMES_NO_TELEMETRY=1 HYPERFRAMES_RUN_ID=bugreplay-saas-v3-20261012 npx --yes hyperframes@0.8.147 render artifacts/submission-2026-10-12/saas-cut-v3/project --quality high --fps 30 --workers 4 --output artifacts/submission-2026-10-12/saas-cut-v3/BugReplay-saas-demo-v3.mp4
+HYPERFRAMES_NO_TELEMETRY=1 HYPERFRAMES_RUN_ID=bugreplay-saas-v4-20261012 npx --yes hyperframes@0.8.147 check artifacts/submission-2026-10-12/saas-cut-v4/project --snapshots --json
+HYPERFRAMES_NO_TELEMETRY=1 HYPERFRAMES_RUN_ID=bugreplay-saas-v4-20261012 npx --yes hyperframes@0.8.147 render artifacts/submission-2026-10-12/saas-cut-v4/project --quality high --fps 30 --workers 4 --output artifacts/submission-2026-10-12/saas-cut-v4/BugReplay-saas-demo-v4.mp4
 ```
 
 `build.mjs`, `index.template.html`, `styles.css` and `edit-plan.json` define the 1280 × 720 composition. The generated project and staged recordings stay under ignored `artifacts/`. `--audio-manifest` is rejected for this silent revision. A portable owner bundle supplies the licensed effects through `--sfx-dir narration/sfx`. `--normalized-dir` optionally selects another reviewed derivative directory.
@@ -40,8 +42,8 @@ HYPERFRAMES_NO_TELEMETRY=1 HYPERFRAMES_RUN_ID=bugreplay-saas-v3-20261012 npx --y
 `normalize-proof.py` can regenerate derivatives from the untouched source WebMs using Python with NumPy/Pillow and FFmpeg. Write its frame intermediates to an ignored directory, then point the builder there:
 
 ```bash
-python3 demo/saas-cut/normalize-proof.py --out artifacts/submission-2026-10-12/saas-cut-v3/rebuilt-normalized
-node demo/saas-cut/build.mjs --normalized-dir artifacts/submission-2026-10-12/saas-cut-v3/rebuilt-normalized
+python3 demo/saas-cut/normalize-proof.py --out artifacts/submission-2026-10-12/saas-cut-v4/rebuilt-normalized
+node demo/saas-cut/build.mjs --normalized-dir artifacts/submission-2026-10-12/saas-cut-v4/rebuilt-normalized
 ```
 
 Use a Python environment containing NumPy and Pillow. The builder checks derivative hashes and the reviewed evidence contract. The manifest records original evidence hashes, independently checked during this release review. Codec versions may produce different derivative bytes on another machine, so regenerated outputs require a new review. Preview the generated project with `npx --yes hyperframes@0.8.147 preview --port 4182` from its directory.
