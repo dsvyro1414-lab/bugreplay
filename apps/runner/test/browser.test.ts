@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { createServer, type Server } from 'node:http';
-import { mkdtemp, readdir, rm } from 'node:fs/promises';
+import { mkdtemp, readFile, readdir, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { after, before, test } from 'node:test';
@@ -246,5 +246,30 @@ test('synthetic adapter cannot create an episode after cancellation closes a pen
     await assert.rejects(starting, /closed/);
     assert.equal(fixtureSession.browser.actionCount, 0);
     assert.equal(fixtureSession.browser.records.length, 0);
+  } finally { await fixtureSession.close(); }
+});
+
+test('original investigation videos finalize once on restart and concurrent close after a failed action', async () => {
+  const events: BrowserEvent[] = [];
+  const fixtureSession = await session({ events, timeoutMs: 900 });
+  const { browser, artifactDir } = fixtureSession;
+  try {
+    let observation = await browser.start();
+    observation = await browser.act({ kind: 'click', ref: ref(observation, 'Add item') });
+    const firstEpisode = browser.episodeId;
+    observation = await browser.restart();
+    assert.deepEqual(events.filter(event => event.videoName).map(event => event.videoName), ['investigation-episode-1.webm']);
+    assert.equal(events.find(event => event.videoName)?.data?.episodeId, firstEpisode);
+    await assert.rejects(browser.act({ kind: 'click', ref: ref(observation, 'Break adapter') }), /partially executed/);
+    await Promise.all([browser.close(), browser.close()]);
+    assert.equal(browser.actionCount, 4, 'Recording must not add browser actions.');
+    assert.deepEqual(events.filter(event => event.videoName).map(event => event.videoName), [
+      'investigation-episode-1.webm', 'investigation-episode-2.webm',
+    ]);
+    for (const videoName of ['investigation-episode-1.webm', 'investigation-episode-2.webm']) {
+      const bytes = await readFile(join(artifactDir, videoName));
+      assert.ok(bytes.length > 100, 'A finalized original recording must contain video bytes.');
+      assert.equal(bytes.subarray(0, 4).toString('hex'), '1a45dfa3', 'Playwright must produce a WebM/EBML container.');
+    }
   } finally { await fixtureSession.close(); }
 });

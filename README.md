@@ -81,6 +81,10 @@ The saved test asserts correct behavior. Replay exits **1** for the intended reg
 
 Defaults: 40 real browser actions, 40 model transport attempts (including retry), 4 declared hypotheses, 6 minutes investigation, 2 minutes verification, 8 minutes total. Configure `MAX_ACTIONS`, `MAX_MODEL_CALLS`, `MAX_HYPOTHESES`, `INVESTIGATION_MS`, `VERIFICATION_MS`, `TOTAL_MS`. Missing token/cost information remains absent; unknown cost is not zero.
 
+Each real run saves `model-usage.json`, including every transport attempt and reported tokens even when decision parsing fails. `usageComplete` distinguishes complete reported usage from partial totals; billing remains unknown until supplied by the gateway. The parser accepts a strict JSON object or one unambiguous fenced JSON object, then applies the same strict tool schema before any browser action. Multiple code blocks, invalid JSON and non-object decisions remain rejected.
+
+Original investigation recordings are saved per clean browser episode as `investigation-episode-N.webm`, including failed episodes. They are finalized when the context closes and registered as API downloads; independent verification videos remain separate.
+
 ## Development and hackathon
 
 Watch the [52-second product preview](demo/bugreplay-product-preview.mp4), built with [reproducible HyperFrames source](demo/README.md). It shows real UI/shop evidence and a scripted replay, clearly labeled as an engineering preview. It is not the final live-model/sponsor demo.

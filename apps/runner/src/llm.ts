@@ -22,6 +22,18 @@ export interface ModelResult {
   inputTokens?: number;
   outputTokens?: number;
   callsUsed: number;
+  normalized?: boolean;
+}
+
+export interface ModelAttempt {
+  attempt: number;
+  startedAt: string;
+  durationMs: number;
+  status: 'completed' | 'invalid_response' | 'failed';
+  inputTokens?: number;
+  outputTokens?: number;
+  errorCode?: string;
+  normalized?: boolean;
 }
 
 export class ModelConfigurationError extends Error {
@@ -88,15 +100,40 @@ function transient(error: unknown): boolean {
   ]).has(errorCode(error));
 }
 
-function parseDecision(text: string): unknown {
+class ModelOutputFormatError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = 'ModelOutputFormatError';
+  }
+}
+
+function tokenCount(value: unknown): number | undefined {
+  return typeof value === 'number' && Number.isSafeInteger(value) && value >= 0 ? value : undefined;
+}
+
+function parseDecision(text: string): Pick<ModelResult, 'decision' | 'normalized'> {
   let value: unknown;
   try { value = JSON.parse(text); } catch {
-    throw new Error('Model response was not a JSON object; no browser action was executed.');
+    // Some compatible gateways ignore json_object and add prose around one JSON fence.
+    // Accept that single unambiguous envelope; never search arbitrary text for braces.
+    const fenced = (text.match(/```/g) || []).length === 2
+      ? text.match(/^([\s\S]*?)```json[ \t]*\r?\n([\s\S]*?)\r?\n```([\s\S]*)$/i)
+      : null;
+    if (!fenced || /[{}\[\]]/.test(fenced[1] + fenced[3])) {
+      throw new ModelOutputFormatError('Model response was not a JSON object; no browser action was executed.');
+    }
+    try { value = JSON.parse(fenced[2]); } catch {
+      throw new ModelOutputFormatError('Model response was not a JSON object; no browser action was executed.');
+    }
+    if (!value || typeof value !== 'object' || Array.isArray(value)) {
+      throw new ModelOutputFormatError('Model response must be one JSON object; no browser action was executed.');
+    }
+    return { decision: value, normalized: true };
   }
   if (!value || typeof value !== 'object' || Array.isArray(value)) {
-    throw new Error('Model response must be one JSON object; no browser action was executed.');
+    throw new ModelOutputFormatError('Model response must be one JSON object; no browser action was executed.');
   }
-  return value;
+  return { decision: value };
 }
 
 export class ModelClient {
@@ -104,6 +141,7 @@ export class ModelClient {
   private readonly openai?: OpenAI;
   private readonly bedrock?: BedrockRuntimeClient;
   private attempts = 0;
+  private readonly ledger: ModelAttempt[] = [];
 
   constructor(config: ModelConfig = readModelConfig()) {
     this.config = config;
@@ -124,6 +162,8 @@ export class ModelClient {
 
   /** Counts every transport attempt, including the single allowed retry. */
   get calls(): number { return this.attempts; }
+  /** Includes usage from received responses even when their decision cannot be parsed. */
+  get attemptLedger(): readonly ModelAttempt[] { return this.ledger.map(attempt => ({ ...attempt })); }
 
   async next(messages: ModelMessage[], signal: AbortSignal, remainingCalls = Number.POSITIVE_INFINITY): Promise<ModelResult> {
     if (remainingCalls < 1) throw new Error('The model-call budget is exhausted.');
@@ -133,10 +173,21 @@ export class ModelClient {
       combinedSignal.throwIfAborted();
       this.attempts++;
       callsUsed++;
+      const started = Date.now();
+      const entry: ModelAttempt = {
+        attempt: this.attempts, startedAt: new Date(started).toISOString(), durationMs: 0, status: 'failed',
+      };
+      this.ledger.push(entry);
       try {
-        const result = await this.request(messages, combinedSignal);
+        const result = await this.request(messages, combinedSignal, entry);
+        entry.durationMs = Math.max(0, Date.now() - started);
+        entry.status = 'completed';
+        if (result.normalized) entry.normalized = true;
         return { ...result, callsUsed };
       } catch (error) {
+        entry.durationMs = Math.max(0, Date.now() - started);
+        entry.status = error instanceof ModelOutputFormatError ? 'invalid_response' : 'failed';
+        entry.errorCode = combinedSignal.aborted ? (signal.aborted ? 'CANCELLED' : 'TIMEOUT') : errorCode(error);
         if (combinedSignal.aborted) {
           if (signal.aborted) throw new Error('Model request cancelled.');
           throw new Error('Model request exceeded the 30-second total timeout.');
@@ -145,7 +196,7 @@ export class ModelClient {
           await delay(350, undefined, { signal: combinedSignal });
           continue;
         }
-        if (error instanceof SyntaxError || (error instanceof Error && error.message.startsWith('Model response'))) throw error;
+        if (error instanceof ModelOutputFormatError) throw error;
         const code = errorCode(error);
         if (code === 'CredentialsProviderError') {
           throw new ModelConfigurationError('Bedrock AWS credentials were not found. Set AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY or configure a supported AWS credential provider.');
@@ -158,7 +209,7 @@ export class ModelClient {
     throw new Error('Model request failed after its retry.');
   }
 
-  private async request(messages: ModelMessage[], signal: AbortSignal): Promise<Omit<ModelResult, 'callsUsed'>> {
+  private async request(messages: ModelMessage[], signal: AbortSignal, attempt: ModelAttempt): Promise<Omit<ModelResult, 'callsUsed'>> {
     if (this.openai) {
       const response = await this.openai.chat.completions.create({
         model: this.config.model,
@@ -166,12 +217,16 @@ export class ModelClient {
         response_format: { type: 'json_object' },
         max_completion_tokens: 1_500,
       }, { signal });
+      const inputTokens = tokenCount(response.usage?.prompt_tokens);
+      const outputTokens = tokenCount(response.usage?.completion_tokens);
+      if (inputTokens !== undefined) attempt.inputTokens = inputTokens;
+      if (outputTokens !== undefined) attempt.outputTokens = outputTokens;
       const message = response.choices[0]?.message;
-      if (!message?.content) throw new Error('Model response contained no JSON decision.');
+      if (!message?.content) throw new ModelOutputFormatError('Model response contained no JSON decision.');
       return {
-        decision: parseDecision(message.content),
-        ...(response.usage?.prompt_tokens !== undefined ? { inputTokens: response.usage.prompt_tokens } : {}),
-        ...(response.usage?.completion_tokens !== undefined ? { outputTokens: response.usage.completion_tokens } : {}),
+        ...parseDecision(message.content),
+        ...(inputTokens !== undefined ? { inputTokens } : {}),
+        ...(outputTokens !== undefined ? { outputTokens } : {}),
       };
     }
     const system = [{ text: JSON_INSTRUCTION }, ...messages.filter(message => message.role === 'system').map(message => ({ text: message.content }))];
@@ -183,12 +238,16 @@ export class ModelClient {
       messages: bedrockMessages,
       inferenceConfig: { maxTokens: 1_500 },
     }), { abortSignal: signal });
+    const inputTokens = tokenCount(response.usage?.inputTokens);
+    const outputTokens = tokenCount(response.usage?.outputTokens);
+    if (inputTokens !== undefined) attempt.inputTokens = inputTokens;
+    if (outputTokens !== undefined) attempt.outputTokens = outputTokens;
     const text = response.output?.message?.content?.map(block => 'text' in block ? block.text : '').join('') || '';
-    if (!text) throw new Error('Model response contained no JSON decision.');
+    if (!text) throw new ModelOutputFormatError('Model response contained no JSON decision.');
     return {
-      decision: parseDecision(text),
-      ...(response.usage?.inputTokens !== undefined ? { inputTokens: response.usage.inputTokens } : {}),
-      ...(response.usage?.outputTokens !== undefined ? { outputTokens: response.usage.outputTokens } : {}),
+      ...parseDecision(text),
+      ...(inputTokens !== undefined ? { inputTokens } : {}),
+      ...(outputTokens !== undefined ? { outputTokens } : {}),
     };
   }
 

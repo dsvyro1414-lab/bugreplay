@@ -9,12 +9,12 @@ let baseUrl: string;
 const counts = new Map<string, number>();
 const messages = [{ role: 'user' as const, content: 'Choose one browser action.' }];
 
-function reply(response: ServerResponse, content: string): void {
+function reply(response: ServerResponse, content: string, usage: unknown = { prompt_tokens: 19, completion_tokens: 11, total_tokens: 30 }): void {
   response.writeHead(200, { 'Content-Type': 'application/json' });
   response.end(JSON.stringify({
     id: 'synthetic-completion', object: 'chat.completion', created: 0, model: 'synthetic',
     choices: [{ index: 0, message: { role: 'assistant', content }, finish_reason: 'stop' }],
-    usage: { prompt_tokens: 19, completion_tokens: 11, total_tokens: 30 },
+    usage,
   }));
 }
 
@@ -35,7 +35,21 @@ before(async () => {
     } else if (input.model === 'cancel') {
       setTimeout(() => reply(response, '{"tool":"observe","args":{},"summary":"Inspect the page."}'), 500);
     } else if (input.model === 'malformed') {
-      reply(response, '```json\n{"tool":"observe"}\n```');
+      reply(response, '```json\n{"tool":"observe"\n```');
+    } else if (input.model === 'observed-fence') {
+      reply(response, 'The cart was preserved after saving a new address. Let me read the cart.\n\n```json\n{"summary":"Cart preserved after the changed address saved.","tool":"readCart","args":{}}\n```');
+    } else if (input.model === 'multiple-fences') {
+      reply(response, '```json\n{"tool":"observe","args":{},"summary":"First."}\n```\n```json\n{"tool":"restart","args":{},"summary":"Second."}\n```');
+    } else if (input.model === 'competing-object') {
+      reply(response, '{"tool":"restart"}\n```json\n{"tool":"observe","args":{},"summary":"Inspect."}\n```');
+    } else if (input.model === 'truncated-fence') {
+      reply(response, '```json\n{"tool":"observe","args":{},"summary":"Inspect."}');
+    } else if (input.model === 'fenced-array') {
+      reply(response, '```json\n[{"tool":"observe"}]\n```');
+    } else if (input.model === 'malformed-usage') {
+      reply(response, '{"tool":"observe","args":{},"summary":"Inspect."}', { prompt_tokens: '19', completion_tokens: -11 });
+    } else if (input.model === 'zero-and-fractional-usage') {
+      reply(response, '{"tool":"observe","args":{},"summary":"Inspect."}', { prompt_tokens: 0, completion_tokens: 1.5 });
     } else {
       reply(response, '{"tool":"observe","args":{},"summary":"Inspect the page."}');
     }
@@ -61,6 +75,17 @@ test('one transient retry counts both HTTP attempts and preserves reported usage
   assert.deepEqual(result.decision, { tool: 'observe', args: {}, summary: 'Inspect the page.' });
   assert.equal(result.inputTokens, 19);
   assert.equal(result.outputTokens, 11);
+  assert.equal(result.normalized, undefined);
+  const ledger = model.attemptLedger;
+  assert.equal(ledger.length, 2);
+  assert.equal(ledger[0].status, 'failed');
+  assert.equal(ledger[0].inputTokens, undefined);
+  assert.equal(ledger[1].status, 'completed');
+  assert.equal(ledger[1].inputTokens, 19);
+  assert.equal(ledger[1].outputTokens, 11);
+  assert.ok(ledger.every(entry => Number.isFinite(Date.parse(entry.startedAt)) && entry.durationMs >= 0));
+  ledger[1].inputTokens = 123;
+  assert.equal(model.attemptLedger[1].inputTokens, 19);
 });
 
 test('remaining-call budget prevents a transient retry', async () => {
@@ -76,6 +101,44 @@ test('malformed JSON is not retried or returned as an executable decision', asyn
   const model = client('malformed');
   await assert.rejects(model.next(messages, AbortSignal.timeout(5_000), 2), /not a JSON object/);
   assert.equal(model.calls, 1);
+  assert.deepEqual(model.attemptLedger.map(({ status, inputTokens, outputTokens }) => ({ status, inputTokens, outputTokens })), [
+    { status: 'invalid_response', inputTokens: 19, outputTokens: 11 },
+  ]);
+});
+
+test('the observed prose plus one JSON fence normalizes without another model call', async () => {
+  const model = client('observed-fence');
+  const result = await model.next(messages, AbortSignal.timeout(5_000), 2);
+  assert.deepEqual(result.decision, { summary: 'Cart preserved after the changed address saved.', tool: 'readCart', args: {} });
+  assert.equal(result.normalized, true);
+  assert.equal(model.calls, 1);
+  assert.equal(model.attemptLedger[0].normalized, true);
+  assert.equal(model.attemptLedger[0].status, 'completed');
+});
+
+test('ambiguous or truncated fenced output cannot become an executable decision', async () => {
+  for (const name of ['multiple-fences', 'competing-object', 'truncated-fence', 'fenced-array']) {
+    const model = client(name);
+    await assert.rejects(model.next(messages, AbortSignal.timeout(5_000), 2), /JSON object/);
+    assert.equal(model.calls, 1);
+    assert.equal(model.attemptLedger[0].status, 'invalid_response');
+    assert.equal(model.attemptLedger[0].inputTokens, 19);
+  }
+});
+
+test('malformed provider usage stays unknown and valid zero usage is retained', async () => {
+  const malformed = client('malformed-usage');
+  const result = await malformed.next(messages, AbortSignal.timeout(5_000), 1);
+  assert.equal(result.inputTokens, undefined);
+  assert.equal(result.outputTokens, undefined);
+  assert.equal(malformed.attemptLedger[0].inputTokens, undefined);
+  assert.equal(malformed.attemptLedger[0].outputTokens, undefined);
+  const partial = client('zero-and-fractional-usage');
+  const zero = await partial.next(messages, AbortSignal.timeout(5_000), 1);
+  assert.equal(zero.inputTokens, 0);
+  assert.equal(zero.outputTokens, undefined);
+  assert.equal(partial.attemptLedger[0].inputTokens, 0);
+  assert.equal(partial.attemptLedger[0].outputTokens, undefined);
 });
 
 test('caller deadline aborts the transport without a retry', async () => {
@@ -84,6 +147,10 @@ test('caller deadline aborts the transport without a retry', async () => {
   await assert.rejects(model.next(messages, AbortSignal.timeout(50), 2), /cancelled/);
   assert.ok(Date.now() - started < 1_000);
   assert.equal(model.calls, 1);
+  assert.equal(model.attemptLedger[0].status, 'failed');
+  assert.equal(model.attemptLedger[0].errorCode, 'CANCELLED');
+  assert.equal(model.attemptLedger[0].inputTokens, undefined);
+  assert.equal(model.attemptLedger[0].outputTokens, undefined);
 });
 
 test('provider error bodies cannot leak credentials through API errors', async () => {
@@ -95,6 +162,8 @@ test('provider error bodies cannot leak credentials through API errors', async (
     return true;
   });
   assert.equal(model.calls, 1);
+  assert.equal(model.attemptLedger[0].status, 'failed');
+  assert.doesNotMatch(JSON.stringify(model.attemptLedger), /TEST-PRIVATE-CREDENTIAL/);
 });
 
 test('missing and unsafe model configuration fails before transport', () => {

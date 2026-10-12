@@ -1,5 +1,5 @@
 import { randomUUID } from 'node:crypto';
-import { mkdir } from 'node:fs/promises';
+import { mkdir, rename } from 'node:fs/promises';
 import { join } from 'node:path';
 import { chromium, type Browser as PlaywrightBrowser, type BrowserContext, type Locator, type Page } from 'playwright';
 import type { ActionRecord, ActionSemantic, BrowserObservation, CartCheckpoint, CartItem, LocatorSpec, ReproStep, ShopState } from '@bugreplay/contracts';
@@ -9,6 +9,7 @@ export interface BrowserEvent {
   message: string;
   data?: Record<string, unknown>;
   screenshotName?: string;
+  videoName?: string;
 }
 export interface BrowserOptions {
   targetUrl: string;
@@ -30,6 +31,13 @@ export class BrowserToolError extends Error {
 }
 
 interface AriaNode { role?: string; name?: string; disabled?: boolean; children?: AriaNode[] }
+interface EpisodeRecording {
+  context: BrowserContext;
+  episodeId: string;
+  number: number;
+  page?: Page;
+  closePromise?: Promise<void>;
+}
 const roles = new Set<LocatorSpec['role']>(['button', 'link', 'textbox', 'combobox', 'checkbox']);
 const scopeRoles = new Set(['region', 'dialog', 'listitem']);
 const semantics = new Set<ActionSemantic>(['navigation', 'cart-add', 'cart-remove', 'cart-clear', 'checkout-edit', 'checkout-save', 'checkout-submit']);
@@ -57,6 +65,9 @@ export class BrowserSession {
   private refs = new Map<string, LocatorSpec>();
   private navigationBlock?: string;
   private closed = false;
+  private closePromise?: Promise<void>;
+  private recording?: EpisodeRecording;
+  private episodeNumber = 0;
 
   constructor(private readonly options: BrowserOptions) {
     const target = new URL(options.targetUrl);
@@ -98,7 +109,7 @@ export class BrowserSession {
     this.ensureStarted();
     this.ensureActionAvailable();
     this.invalidateRefs();
-    await this.context?.close();
+    await this.closeEpisode();
     return this.newEpisode();
   }
 
@@ -171,11 +182,43 @@ export class BrowserSession {
   async close(): Promise<void> {
     this.closed = true;
     this.invalidateRefs();
-    await this.context?.close().catch(() => undefined);
-    await this.browser?.close().catch(() => undefined);
-    this.context = undefined;
-    this.page = undefined;
-    this.browser = undefined;
+    if (!this.closePromise) this.closePromise = (async () => {
+      await this.closeEpisode().catch(() => undefined);
+      await this.browser?.close().catch(() => undefined);
+      this.context = undefined;
+      this.page = undefined;
+      this.browser = undefined;
+    })();
+    await this.closePromise;
+  }
+
+  private async closeEpisode(): Promise<void> {
+    const recording = this.recording;
+    if (!recording) return;
+    if (!recording.closePromise) recording.closePromise = (async () => {
+      let closeError: unknown;
+      try { await recording.context.close(); } catch (error) { closeError = error; }
+      const video = recording.page?.video();
+      if (video) {
+        try {
+          const videoName = `investigation-episode-${recording.number}.webm`;
+          // Context closure finalizes the uncut Playwright recording. Moving preserves its original bytes.
+          await rename(await video.path(), join(this.options.artifactDir, videoName));
+          await this.emit({ type: 'observation', message: `Saved original investigation episode ${recording.number} video.`, videoName,
+            data: { episodeId: recording.episodeId, episodeNumber: recording.number } });
+        } catch {
+          await this.emit({ type: 'tool_error', message: `Could not finalize investigation episode ${recording.number} video.`,
+            data: { episodeId: recording.episodeId, episodeNumber: recording.number } });
+        }
+      }
+      if (this.recording === recording) {
+        this.recording = undefined;
+        this.context = undefined;
+        this.page = undefined;
+      }
+      if (closeError) throw closeError;
+    })();
+    await recording.closePromise;
   }
 
   private async newEpisode(): Promise<BrowserObservation> {
@@ -186,12 +229,25 @@ export class BrowserSession {
     this.requiresRestart = false;
     this.navigationBlock = undefined;
     this.invalidateRefs();
-    const context = await this.browser.newContext({ serviceWorkers: 'block', acceptDownloads: false, viewport: { width: 1280, height: 900 } });
+    const recordingDir = join(this.options.artifactDir, 'investigation-recordings');
+    await mkdir(recordingDir, { recursive: true });
+    if (this.closed || !this.browser) throw new BrowserToolError('The browser session is closed.');
+    const context = await this.browser.newContext({ serviceWorkers: 'block', acceptDownloads: false, viewport: { width: 1280, height: 900 },
+      recordVideo: { dir: recordingDir, size: { width: 1280, height: 900 } } });
     if (this.closed) {
       await context.close();
       throw new BrowserToolError('The browser session was closed while creating a clean episode.');
     }
     this.context = context;
+    const recording: EpisodeRecording = { context, episodeId: this.episodeId, number: ++this.episodeNumber };
+    this.recording = recording;
+    context.on('page', page => {
+      if (!recording.page) recording.page = page;
+      else if (page !== recording.page) {
+        this.navigationBlock = 'Popup navigation is unsupported by the controlled-shop adapter.';
+        void page.close().catch(() => undefined);
+      }
+    });
     this.context.setDefaultTimeout(this.timeout());
     this.context.setDefaultNavigationTimeout(this.timeout());
     await this.context.route('**/*', async route => {
@@ -222,13 +278,12 @@ export class BrowserSession {
       if (this.permitted(url)) socket.connectToServer();
       else await socket.close({ code: 1008, reason: 'Origin not allowed' });
     });
-    this.page = await this.context.newPage();
-    this.context.on('page', popup => {
-      if (popup !== this.page) {
-        this.navigationBlock = 'Popup navigation is unsupported by the controlled-shop adapter.';
-        void popup.close().catch(() => undefined);
-      }
-    });
+    const page = await context.newPage();
+    if (this.closed) {
+      await this.closeEpisode();
+      throw new BrowserToolError('The browser session was closed while creating a clean episode.');
+    }
+    this.page = page;
     try {
       this.consumeAction();
       await this.page.goto(this.options.targetUrl, { waitUntil: 'domcontentloaded', timeout: this.timeout() });
