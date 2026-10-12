@@ -13,3 +13,11 @@
 <send_user_message_question_reply>
 [{"questionItemId":"[\"request_user_input_async\",\"call_AVz0DRdaUEaL2sSTiCvurExs\",0]","question":"Для новой нейронной озвучки выбери голос в открытом списке Higgsfield. Сервис требует выбрать голос перед генерацией; монтаж продолжаю.","answer":"Ainsley — женский"}]
 </send_user_message_question_reply>
+
+---
+
+переделай видео еще раз, сделай, не знаю. Короче, там когда ты снимал, ну, видимо, скриншот там и так далее, они подлагивают, они дергаются. Еще раз пожалуйста сделай. Вот далее вот внизу там надписи: Original Investigation, Edited Expert, One Expert, Speed, Actual Interface Scope. Вот это вот всё убери, это лишнее. А вот слева вот эти надписи можно сделать побольше.
+
+---
+
+бля и можно без голоса нет?
