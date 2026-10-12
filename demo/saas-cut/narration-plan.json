@@ -1,4 +1,7 @@
 {
+  "revision": 2,
+  "status": "Historical narrated revision; unused in final silent revision 3",
+  "usedInRevision3": false,
   "version": 1,
   "language": "en-US",
   "targetSeconds": 92.5,

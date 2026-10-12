@@ -1,70 +1,148 @@
 {
-  "schemaVersion": 1,
-  "status": "Verified: full MP4 decode, numerical audio checks, and independent decoded-frame review passed",
+  "schemaVersion": 2,
+  "revision": 3,
+  "status": "Verified: silent final MP4, full decode, independent 49-sample and SFX-only review passed",
   "video": {
-    "file": "demo/bugreplay-saas-demo.mp4",
-    "sha256": "6a5ab41ddd0e4c823cd650af74c85b193538be550b6778320ea1cf2207a6f3c9",
-    "bytes": 9908253,
-    "durationSeconds": 92.5,
+    "file": "demo/bugreplay-saas-demo-v3.mp4",
+    "sha256": "72ed81f424e1da42ea0287a4af1b610066194e3f3a5ea363896a02605134121a",
+    "bytes": 5046878,
+    "durationSeconds": 64,
     "width": 1280,
     "height": 720,
     "framesPerSecond": 30,
-    "frameCount": 2775,
+    "frameCount": 1920,
     "videoCodec": "H.264",
     "audioCodec": "AAC",
     "sampleRateHz": 48000,
-    "channels": 2
+    "channels": 2,
+    "publicCopyByteIdentical": true
   },
   "composition": {
     "framework": "HyperFrames",
     "version": "0.8.147",
     "quality": "high",
-    "shots": 25,
-    "actualMediaEntries": 26,
-    "narrationBlocks": 6,
-    "retainedScriptWords": 172,
-    "renderedHtmlSha256": "625415779612dd3b3de29b612e667bfb1188bbd396dcbeea1858a2ecfb13a3a3",
-    "fullIndependentReplaySeconds": [
-      4.48,
-      4.52
-    ],
-    "fullCorrectedControlSeconds": 4.44,
-    "originalPlaybackSpeedFactor": 1,
+    "shots": 24,
+    "actualMediaEntries": 16,
+    "narrated": false,
+    "narrationBlocks": 0,
+    "speechAssets": 0,
+    "renderedHtmlSha256": "9f8ac04898ed5f16f0c289458f4bb58b946ac744849a8458754909a7418a5e82",
+    "bottomTechnicalSourceLabels": 0,
+    "mediaTransformTweens": 0,
+    "fixedEvidenceGeometry": true,
+    "largeLeftCopy": true,
     "originalRecordingsIntact": true,
-    "reframing": "Crops follow actual recorded viewport changes; investigation uses labeled chronological excerpts. All three verification/control source time ranges are complete."
+    "sourceProvenance": "Tracked original evidence and normalized/manifest.json retain provenance outside the rendered frame."
   },
-  "narration": {
-    "provider": "Higgsfield",
-    "model": "Seed Audio 1.0",
-    "presetVoice": "Ainsley",
-    "editedVoiceSeconds": 89.502875,
-    "pictureSeconds": 92.5,
-    "timeStretchApplied": false,
-    "wordEdits": "One complete redundant hook sentence removed; all other authored words retained. Leading pads and anomalous silence trimmed. Original provider files preserved.",
-    "automatedTranscriptCheck": "All retained authored sentences verified in final six edited files; transcription is not a human listening review.",
-    "sourcePcmCutMatch": "Independent exact PCM comparisons passed for all six edited files.",
-    "productionAccountingFile": "demo/saas-cut/audio-production-accounting.json",
-    "totalQuotedCredits": 8,
-    "actualDebitedCredits": null,
-    "usdCashCost": null,
-    "promotionalCreditAllocation": null,
-    "accountingScope": "Narration production is separate from investigation gateway accounting.",
-    "mixMetrics": {
-      "method": "Numerical scan of the complete decoded AAC mix; no human auditory review claimed",
-      "sampleRateHz": 48000,
-      "channels": 2,
-      "sampleCountAcrossChannels": 8880000,
-      "peakDbFS": -1.569,
-      "rmsDbFS": -20.605,
-      "samplesAtOrAboveDigitalFullScale": 0
+  "normalization": {
+    "manifest": "demo/saas-cut/normalized/manifest.json",
+    "sourceFramesPerSecond": 25,
+    "totalSourceDurationSeconds": 13.44,
+    "sourceDurationRetained": true,
+    "presentationDerivativesNotUnmodifiedRecordings": true,
+    "intermediateVisualUpdatesAndTimingNotClaimedUnmodified": true,
+    "method": "Observed viewport-scale and cart-header alignment; authentic neighboring crops held for documented navigation, singleton resize flash and cart-header-offscreen ranges. No synthesized UI, AI interpolation or original evidence changes.",
+    "originalOutcomesUnchanged": "Both buggy replays finish at 0 items/$0; corrected control retains 2 items/$53.40.",
+    "clips": [
+      {
+        "originalFile": "docs/evidence/live-confirmed-2026-10-12/verification-1.webm",
+        "originalSha256": "9df104e8472d6f186f147d7ac022c87f75f960b062f776642664d26ba6a89bcc",
+        "derivativeFile": "verification-1-stabilized.mp4",
+        "derivativeSha256": "6a2331dc6a8212310156c117a190371df5b22989046e9dec470377b9cc27a831",
+        "durationSeconds": 4.48,
+        "sourceFrames": 112,
+        "heldRanges": [
+          {
+            "startSeconds": 0.0,
+            "endSeconds": 0.08
+          },
+          {
+            "startSeconds": 0.44,
+            "endSeconds": 0.48
+          },
+          {
+            "startSeconds": 1.32,
+            "endSeconds": 3.12
+          }
+        ]
+      },
+      {
+        "originalFile": "docs/evidence/live-confirmed-2026-10-12/verification-2.webm",
+        "originalSha256": "23d06df1ff2dcfc0ebf5b08ea0cfe4a031b7d10a7badd8fae33b3f1526f90c26",
+        "derivativeFile": "verification-2-stabilized.mp4",
+        "derivativeSha256": "7f67bc23fe1a994decf90778d82aaeab4624e2e49197b20d6ed7bcb946465e37",
+        "durationSeconds": 4.52,
+        "sourceFrames": 113,
+        "heldRanges": [
+          {
+            "startSeconds": 0.0,
+            "endSeconds": 0.08
+          },
+          {
+            "startSeconds": 0.44,
+            "endSeconds": 0.48
+          },
+          {
+            "startSeconds": 1.32,
+            "endSeconds": 3.16
+          }
+        ]
+      },
+      {
+        "originalFile": "docs/evidence/live-confirmed-2026-10-12/control.webm",
+        "originalSha256": "18c0ab74c95372888b44d5ba649eca7d051b1df72e0929a02cd28e1ec11fcd37",
+        "derivativeFile": "control-stabilized.mp4",
+        "derivativeSha256": "e7f79578ef61704a449d30ba0eec22fb43e5501f07a941758120464a73987673",
+        "durationSeconds": 4.44,
+        "sourceFrames": 111,
+        "heldRanges": [
+          {
+            "startSeconds": 0.0,
+            "endSeconds": 0.08
+          },
+          {
+            "startSeconds": 0.44,
+            "endSeconds": 0.48
+          },
+          {
+            "startSeconds": 1.32,
+            "endSeconds": 3.08
+          }
+        ]
+      }
+    ],
+    "independentPixelMappingReview": {
+      "originalFramesDecoded": 336,
+      "genuineCrops": 192,
+      "declaredHolds": 144,
+      "allMappingsExact": true,
+      "boundaryFramesReviewed": 42
     }
   },
-  "soundEffects": {
+  "audio": {
+    "narrated": false,
+    "speechElements": 0,
+    "speechAssets": 0,
     "whooshCount": 4,
     "confirmationChimeCount": 1,
-    "license": "Pixabay Content License; bundled licensed skill assets",
     "editorialOnly": true,
-    "noSynthesizedBrowserClicks": true
+    "sourceBrowserClipsMuted": true,
+    "license": "Pixabay Content License; bundled licensed SFX, unchanged credits in owner bundle",
+    "humanListeningClaim": false,
+    "numericalReview": {
+      "speechAndVoiceElements": 0,
+      "allowlistedSfxElements": 5,
+      "sfxOnlyMixCorrelation": 0.9970137091073132,
+      "sfxOnlyResidualRmsDbfs": -77.90533389950208,
+      "secondsExactlySilentOutsideSfxUnionWith100msGuard": 58.20125,
+      "maxAmplitudeOutsideSfxUnion": 0.0,
+      "peakDbfs": -24.57338523864746,
+      "rmsDbfs": -55.77559304703734,
+      "fullscaleOrOverSamples": 0,
+      "humanListeningClaim": false,
+      "method": "Final AAC decoded and compared numerically to only the five staged source SFX at their declared offsets/volumes, alongside source audio-element allowlist."
+    },
+    "historicalVoiceAccounting": "audio-production-accounting.json describes the prior narrated revision. Its six generated voices are unused in revision 3; no new generation was performed."
   },
   "evidence": {
     "selectedRunId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
@@ -90,29 +168,64 @@
       "contrast": 0
     },
     "hyperframesLintWarnings": {
-      "timelineTrackDensity": 3,
-      "flatSceneStructure": 25,
-      "note": "Editor organization warnings; runtime, layout and contrast have no errors or warnings."
+      "timeline_track_too_dense": 3,
+      "nested_structure_needs_subcomposition": 24
     },
-    "fullFfmpegDecodeExitCode": 0,
-    "decodedFrameSamples": 44,
-    "visualReview": "Root reviewed all 44 decoded samples. Independent reviewer separately extracted and reviewed 30 actual MP4 samples and confirmed claims, privacy, full decode, audio metrics, unchanged earlier movies, and the public byte-copy hash.",
-    "privacyReview": "Reviewed actual crops exclude account avatars, owner URLs, credentials, raw model prose and Entire session IDs. No public claim of human listening review.",
+    "editorOrganizationWarningNote": "27 nonblocking timeline organization warnings; no runtime, layout or contrast warnings.",
     "motionInspectionEnabled": false,
-    "motionInspectionNote": "No motion assertion sidecar was supplied; the motion error count is not a claim that motion assertions ran. Animated source and decoded output were visually reviewed."
+    "motionInspectionNote": "No motion assertion sidecar supplied. Dedicated source pixel comparisons and decoded consecutive boundary strips were reviewed instead.",
+    "fullFfmpegDecodeExitCode": 0,
+    "independentFullFfmpegDecodeExitCode": 0,
+    "decodedFrameSamples": 49,
+    "visualReview": "Independent reviewer extracted and viewed 49 actual MP4 samples across six contact sheets, including investigation cart loss, all three normalized replay boundaries and screenshot entrance. Composition author and root viewed these same six sheets. Root separately reviewed 27 preview samples.",
+    "privacyReview": "Reviewed crops exclude credentials, private account URLs, avatars, raw exploratory model prose and Entire session identifiers.",
+    "boundaryReview": true,
+    "cartLossVisibleAtSeconds": [
+      14.5,
+      14.9
+    ],
+    "screenshotEncodedStationarityComparisons": [
+      {
+        "againstSeconds": 3.55,
+        "atSeconds": 3.6,
+        "sameFixedScreenshotRectangle": [
+          100,
+          180,
+          1070,
+          420
+        ],
+        "meanAbsoluteEncodedRgbDifference": 0.00028556593977154725,
+        "maxEncodedRgbDifference": 3
+      },
+      {
+        "againstSeconds": 3.55,
+        "atSeconds": 3.7,
+        "sameFixedScreenshotRectangle": [
+          100,
+          180,
+          1070,
+          420
+        ],
+        "meanAbsoluteEncodedRgbDifference": 0.0005488799881323246,
+        "maxEncodedRgbDifference": 3
+      }
+    ],
+    "sourceScreenshotCorePixelDifferencesAt355360370": 0,
+    "reviewLimits": "Sampled visual review plus full decode and numerical SFX-only comparison; no continuous human playback/listening or motion/seek gate claim."
   },
   "captions": {
-    "file": "demo/saas-cut/captions.srt",
-    "delivery": "Optional separate SRT; not burned over actual UI",
-    "timing": "Sentence boundaries from automated transcription of final edited files, positioned at the actual audio offsets",
-    "textMatchesRetainedScript": true
+    "currentRevisionSpeechCaptionTrack": null,
+    "onscreenTextCarriesMeaning": true,
+    "historicalFile": "captions.srt belongs only to prior narrated revision 2 and is not a revision 3 caption track."
   },
   "preservation": {
-    "earlierMoviesUntouched": [
-      "demo/bugreplay-final-demo.mp4",
-      "demo/bugreplay-final-demo-x.mp4"
-    ],
+    "priorMovieSha256": {
+      "demo/bugreplay-saas-demo.mp4": "6a5ab41ddd0e4c823cd650af74c85b193538be550b6778320ea1cf2207a6f3c9",
+      "demo/bugreplay-final-demo.mp4": "b10877646b2faf01d2ae8384c5de1f3bef5c13b202a6d7c74316251b77237e30",
+      "demo/bugreplay-final-demo-x.mp4": "a698307af37ff7a8790570e893591507a422fd09cb5872e80461b0cceeb81818"
+    },
     "originalBrowserRecordingsUntouched": true,
-    "originalProviderNarrationRetainedSeparately": true
+    "originalAndEditedProviderNarrationPreservedOutsideThisSilentComposition": true,
+    "priorMediaAudit": "demo/saas-cut/media-audit-v2.json"
   }
 }

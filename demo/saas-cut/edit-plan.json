@@ -1,0 +1,36 @@
+{
+  "version": 3,
+  "mode": "silent",
+  "targetSeconds": 64,
+  "rangeSeconds": [
+    60,
+    65
+  ],
+  "audio": "No speech. Existing quiet licensed editorial SFX only.",
+  "blocks": [
+    {
+      "id": "hook",
+      "intendedDurationSeconds": 5.5
+    },
+    {
+      "id": "investigate",
+      "intendedDurationSeconds": 9.5
+    },
+    {
+      "id": "verify",
+      "intendedDurationSeconds": 12
+    },
+    {
+      "id": "control",
+      "intendedDurationSeconds": 9
+    },
+    {
+      "id": "improve",
+      "intendedDurationSeconds": 18.5
+    },
+    {
+      "id": "limits",
+      "intendedDurationSeconds": 9.5
+    }
+  ]
+}

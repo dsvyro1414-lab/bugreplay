@@ -1,4 +1,7 @@
 {
+  "revision": 2,
+  "status": "Historical narrated revision; unused in final silent revision 3",
+  "usedInRevision3": false,
   "method": "Sentence boundaries from automated transcription of the final edited WAVs; typography corrected to the approved script. Captions are a separate optional track.",
   "cues": [
     {

@@ -1,4 +1,7 @@
 {
+  "revision": 2,
+  "status": "Historical narrated revision; unused in final silent revision 3",
+  "usedInRevision3": false,
   "provider": "Higgsfield",
   "model": "Seed Audio 1.0",
   "presetVoice": "Ainsley",

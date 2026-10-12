@@ -1,0 +1,4292 @@
+{
+  "version": 1,
+  "kind": "Presentation derivatives of genuine verification recordings",
+  "originalRecordingsUntouched": true,
+  "outcomesNotModified": true,
+  "clips": [
+    {
+      "originalFile": "docs/evidence/live-confirmed-2026-10-12/verification-1.webm",
+      "originalSha256": "9df104e8472d6f186f147d7ac022c87f75f960b062f776642664d26ba6a89bcc",
+      "derivativeFile": "verification-1-stabilized.mp4",
+      "derivativeSha256": "6a2331dc6a8212310156c117a190371df5b22989046e9dec470377b9cc27a831",
+      "sourceFrames": 112,
+      "sourceFramesPerSecond": 25,
+      "durationSeconds": 4.48,
+      "derivativeWidth": 840,
+      "derivativeHeight": 800,
+      "method": "Actual viewport-scale normalization and observed cart-header alignment, with exact authentic-neighbor hold mappings. Source duration retained; no synthesized UI or AI interpolation. Original run outcomes and verification evidence remain the source of truth.",
+      "heldRanges": [
+        {
+          "startSeconds": 0.0,
+          "endSeconds": 0.08,
+          "sourceFrameIndices": [
+            0,
+            1
+          ]
+        },
+        {
+          "startSeconds": 0.44,
+          "endSeconds": 0.48,
+          "sourceFrameIndices": [
+            11
+          ]
+        },
+        {
+          "startSeconds": 1.32,
+          "endSeconds": 3.12,
+          "sourceFrameIndices": [
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77
+          ]
+        }
+      ],
+      "heldFrameMeaning": "An authentic neighboring cart crop is held for leading navigation or when the source scrolls its header out of view. Per-frame source mappings identify forward leading holds and backward scroll holds. The derivative is not the original verification recording.",
+      "frames": [
+        {
+          "sourceFrameIndex": 0,
+          "sourceTimeSeconds": 0.0,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            820,
+            0
+          ],
+          "matchConfidence": 0.0,
+          "heldFromSourceFrameIndex": 2,
+          "holdReason": "Leading navigation has no cart; first genuine visible cart crop held until source catches up."
+        },
+        {
+          "sourceFrameIndex": 1,
+          "sourceTimeSeconds": 0.04,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            820,
+            0
+          ],
+          "matchConfidence": 0.0,
+          "heldFromSourceFrameIndex": 2,
+          "holdReason": "Leading navigation has no cart; first genuine visible cart crop held until source catches up."
+        },
+        {
+          "sourceFrameIndex": 2,
+          "sourceTimeSeconds": 0.08,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9911,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 3,
+          "sourceTimeSeconds": 0.12,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9911,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 4,
+          "sourceTimeSeconds": 0.16,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.996,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 5,
+          "sourceTimeSeconds": 0.2,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.996,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 6,
+          "sourceTimeSeconds": 0.24,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9974,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 7,
+          "sourceTimeSeconds": 0.28,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9973,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 8,
+          "sourceTimeSeconds": 0.32,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9984,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 9,
+          "sourceTimeSeconds": 0.36,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9989,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 10,
+          "sourceTimeSeconds": 0.4,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 1.0,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 11,
+          "sourceTimeSeconds": 0.44,
+          "viewportContentWidth": 880,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9262,
+          "heldFromSourceFrameIndex": 10,
+          "holdReason": "Isolated one-frame viewport scale flash; adjacent authentic frames show the same two-item cart."
+        },
+        {
+          "sourceFrameIndex": 12,
+          "sourceTimeSeconds": 0.48,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 1.0,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 13,
+          "sourceTimeSeconds": 0.52,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 1.0,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 14,
+          "sourceTimeSeconds": 0.56,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9978,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 15,
+          "sourceTimeSeconds": 0.6,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9978,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 16,
+          "sourceTimeSeconds": 0.64,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9972,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 17,
+          "sourceTimeSeconds": 0.68,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9967,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 18,
+          "sourceTimeSeconds": 0.72,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9961,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 19,
+          "sourceTimeSeconds": 0.76,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9965,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 20,
+          "sourceTimeSeconds": 0.8,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9961,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 21,
+          "sourceTimeSeconds": 0.84,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9961,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 22,
+          "sourceTimeSeconds": 0.88,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9961,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 23,
+          "sourceTimeSeconds": 0.92,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9961,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 24,
+          "sourceTimeSeconds": 0.96,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9961,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 25,
+          "sourceTimeSeconds": 1.0,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9961,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 26,
+          "sourceTimeSeconds": 1.04,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9961,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 27,
+          "sourceTimeSeconds": 1.08,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9961,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 28,
+          "sourceTimeSeconds": 1.12,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9961,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 29,
+          "sourceTimeSeconds": 1.16,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9961,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 30,
+          "sourceTimeSeconds": 1.2,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9958,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 31,
+          "sourceTimeSeconds": 1.24,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9958,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 32,
+          "sourceTimeSeconds": 1.28,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9958,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 33,
+          "sourceTimeSeconds": 1.32,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            855,
+            259
+          ],
+          "matchConfidence": 0.149,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 34,
+          "sourceTimeSeconds": 1.36,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            870,
+            237
+          ],
+          "matchConfidence": 0.1415,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 35,
+          "sourceTimeSeconds": 1.4,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            870,
+            237
+          ],
+          "matchConfidence": 0.14,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 36,
+          "sourceTimeSeconds": 1.44,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            870,
+            237
+          ],
+          "matchConfidence": 0.1381,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 37,
+          "sourceTimeSeconds": 1.48,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            870,
+            237
+          ],
+          "matchConfidence": 0.1385,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 38,
+          "sourceTimeSeconds": 1.52,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            870,
+            237
+          ],
+          "matchConfidence": 0.1374,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 39,
+          "sourceTimeSeconds": 1.56,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            870,
+            237
+          ],
+          "matchConfidence": 0.1382,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 40,
+          "sourceTimeSeconds": 1.6,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            870,
+            237
+          ],
+          "matchConfidence": 0.1364,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 41,
+          "sourceTimeSeconds": 1.64,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            870,
+            237
+          ],
+          "matchConfidence": 0.1364,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 42,
+          "sourceTimeSeconds": 1.68,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            859,
+            52
+          ],
+          "matchConfidence": 0.1095,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 43,
+          "sourceTimeSeconds": 1.72,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            859,
+            52
+          ],
+          "matchConfidence": 0.1095,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 44,
+          "sourceTimeSeconds": 1.76,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            859,
+            52
+          ],
+          "matchConfidence": 0.1096,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 45,
+          "sourceTimeSeconds": 1.8,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            859,
+            52
+          ],
+          "matchConfidence": 0.1096,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 46,
+          "sourceTimeSeconds": 1.84,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            859,
+            52
+          ],
+          "matchConfidence": 0.1095,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 47,
+          "sourceTimeSeconds": 1.88,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            859,
+            52
+          ],
+          "matchConfidence": 0.1095,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 48,
+          "sourceTimeSeconds": 1.92,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            859,
+            52
+          ],
+          "matchConfidence": 0.1094,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 49,
+          "sourceTimeSeconds": 1.96,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            859,
+            52
+          ],
+          "matchConfidence": 0.1095,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 50,
+          "sourceTimeSeconds": 2.0,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            859,
+            52
+          ],
+          "matchConfidence": 0.1098,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 51,
+          "sourceTimeSeconds": 2.04,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            859,
+            52
+          ],
+          "matchConfidence": 0.1098,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 52,
+          "sourceTimeSeconds": 2.08,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            859,
+            52
+          ],
+          "matchConfidence": 0.1098,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 53,
+          "sourceTimeSeconds": 2.12,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            859,
+            52
+          ],
+          "matchConfidence": 0.1098,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 54,
+          "sourceTimeSeconds": 2.16,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            855,
+            279
+          ],
+          "matchConfidence": 0.1489,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 55,
+          "sourceTimeSeconds": 2.2,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            855,
+            279
+          ],
+          "matchConfidence": 0.1489,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 56,
+          "sourceTimeSeconds": 2.24,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            855,
+            279
+          ],
+          "matchConfidence": 0.1485,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 57,
+          "sourceTimeSeconds": 2.28,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            855,
+            279
+          ],
+          "matchConfidence": 0.1485,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 58,
+          "sourceTimeSeconds": 2.32,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            855,
+            279
+          ],
+          "matchConfidence": 0.1485,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 59,
+          "sourceTimeSeconds": 2.36,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            855,
+            279
+          ],
+          "matchConfidence": 0.1485,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 60,
+          "sourceTimeSeconds": 2.4,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            855,
+            279
+          ],
+          "matchConfidence": 0.1493,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 61,
+          "sourceTimeSeconds": 2.44,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            850,
+            16
+          ],
+          "matchConfidence": 0.1218,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 62,
+          "sourceTimeSeconds": 2.48,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            850,
+            16
+          ],
+          "matchConfidence": 0.1218,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 63,
+          "sourceTimeSeconds": 2.52,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            850,
+            16
+          ],
+          "matchConfidence": 0.1218,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 64,
+          "sourceTimeSeconds": 2.56,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            850,
+            16
+          ],
+          "matchConfidence": 0.1218,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 65,
+          "sourceTimeSeconds": 2.6,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            850,
+            16
+          ],
+          "matchConfidence": 0.1218,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 66,
+          "sourceTimeSeconds": 2.64,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            850,
+            16
+          ],
+          "matchConfidence": 0.1218,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 67,
+          "sourceTimeSeconds": 2.68,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            850,
+            16
+          ],
+          "matchConfidence": 0.1218,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 68,
+          "sourceTimeSeconds": 2.72,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            850,
+            16
+          ],
+          "matchConfidence": 0.1218,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 69,
+          "sourceTimeSeconds": 2.76,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            871,
+            237
+          ],
+          "matchConfidence": 0.116,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 70,
+          "sourceTimeSeconds": 2.8,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            871,
+            237
+          ],
+          "matchConfidence": 0.117,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 71,
+          "sourceTimeSeconds": 2.84,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            871,
+            237
+          ],
+          "matchConfidence": 0.117,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 72,
+          "sourceTimeSeconds": 2.88,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            871,
+            237
+          ],
+          "matchConfidence": 0.1171,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 73,
+          "sourceTimeSeconds": 2.92,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            871,
+            237
+          ],
+          "matchConfidence": 0.1169,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 74,
+          "sourceTimeSeconds": 2.96,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            871,
+            237
+          ],
+          "matchConfidence": 0.1168,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 75,
+          "sourceTimeSeconds": 3.0,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            871,
+            237
+          ],
+          "matchConfidence": 0.1167,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 76,
+          "sourceTimeSeconds": 3.04,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            871,
+            237
+          ],
+          "matchConfidence": 0.1167,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 77,
+          "sourceTimeSeconds": 3.08,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            871,
+            237
+          ],
+          "matchConfidence": 0.1168,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 78,
+          "sourceTimeSeconds": 3.12,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9522,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 79,
+          "sourceTimeSeconds": 3.16,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9524,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 80,
+          "sourceTimeSeconds": 3.2,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9527,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 81,
+          "sourceTimeSeconds": 3.24,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9527,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 82,
+          "sourceTimeSeconds": 3.28,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9523,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 83,
+          "sourceTimeSeconds": 3.32,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9523,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 84,
+          "sourceTimeSeconds": 3.36,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9524,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 85,
+          "sourceTimeSeconds": 3.4,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9524,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 86,
+          "sourceTimeSeconds": 3.44,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9524,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 87,
+          "sourceTimeSeconds": 3.48,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9524,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 88,
+          "sourceTimeSeconds": 3.52,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9524,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 89,
+          "sourceTimeSeconds": 3.56,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9524,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 90,
+          "sourceTimeSeconds": 3.6,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9527,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 91,
+          "sourceTimeSeconds": 3.64,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9526,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 92,
+          "sourceTimeSeconds": 3.68,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9526,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 93,
+          "sourceTimeSeconds": 3.72,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9529,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 94,
+          "sourceTimeSeconds": 3.76,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.953,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 95,
+          "sourceTimeSeconds": 3.8,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9529,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 96,
+          "sourceTimeSeconds": 3.84,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9529,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 97,
+          "sourceTimeSeconds": 3.88,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.953,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 98,
+          "sourceTimeSeconds": 3.92,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9529,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 99,
+          "sourceTimeSeconds": 3.96,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9529,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 100,
+          "sourceTimeSeconds": 4.0,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.953,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 101,
+          "sourceTimeSeconds": 4.04,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.953,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 102,
+          "sourceTimeSeconds": 4.08,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9533,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 103,
+          "sourceTimeSeconds": 4.12,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.953,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 104,
+          "sourceTimeSeconds": 4.16,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9533,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 105,
+          "sourceTimeSeconds": 4.2,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9533,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 106,
+          "sourceTimeSeconds": 4.24,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9533,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 107,
+          "sourceTimeSeconds": 4.28,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.953,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 108,
+          "sourceTimeSeconds": 4.32,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.953,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 109,
+          "sourceTimeSeconds": 4.36,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.953,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 110,
+          "sourceTimeSeconds": 4.4,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.953,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 111,
+          "sourceTimeSeconds": 4.44,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.953,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        }
+      ]
+    },
+    {
+      "originalFile": "docs/evidence/live-confirmed-2026-10-12/verification-2.webm",
+      "originalSha256": "23d06df1ff2dcfc0ebf5b08ea0cfe4a031b7d10a7badd8fae33b3f1526f90c26",
+      "derivativeFile": "verification-2-stabilized.mp4",
+      "derivativeSha256": "7f67bc23fe1a994decf90778d82aaeab4624e2e49197b20d6ed7bcb946465e37",
+      "sourceFrames": 113,
+      "sourceFramesPerSecond": 25,
+      "durationSeconds": 4.52,
+      "derivativeWidth": 840,
+      "derivativeHeight": 800,
+      "method": "Actual viewport-scale normalization and observed cart-header alignment, with exact authentic-neighbor hold mappings. Source duration retained; no synthesized UI or AI interpolation. Original run outcomes and verification evidence remain the source of truth.",
+      "heldRanges": [
+        {
+          "startSeconds": 0.0,
+          "endSeconds": 0.08,
+          "sourceFrameIndices": [
+            0,
+            1
+          ]
+        },
+        {
+          "startSeconds": 0.44,
+          "endSeconds": 0.48,
+          "sourceFrameIndices": [
+            11
+          ]
+        },
+        {
+          "startSeconds": 1.32,
+          "endSeconds": 3.16,
+          "sourceFrameIndices": [
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78
+          ]
+        }
+      ],
+      "heldFrameMeaning": "An authentic neighboring cart crop is held for leading navigation or when the source scrolls its header out of view. Per-frame source mappings identify forward leading holds and backward scroll holds. The derivative is not the original verification recording.",
+      "frames": [
+        {
+          "sourceFrameIndex": 0,
+          "sourceTimeSeconds": 0.0,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            820,
+            0
+          ],
+          "matchConfidence": 0.0,
+          "heldFromSourceFrameIndex": 2,
+          "holdReason": "Leading navigation has no cart; first genuine visible cart crop held until source catches up."
+        },
+        {
+          "sourceFrameIndex": 1,
+          "sourceTimeSeconds": 0.04,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            820,
+            0
+          ],
+          "matchConfidence": 0.0,
+          "heldFromSourceFrameIndex": 2,
+          "holdReason": "Leading navigation has no cart; first genuine visible cart crop held until source catches up."
+        },
+        {
+          "sourceFrameIndex": 2,
+          "sourceTimeSeconds": 0.08,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9911,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 3,
+          "sourceTimeSeconds": 0.12,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9911,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 4,
+          "sourceTimeSeconds": 0.16,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.996,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 5,
+          "sourceTimeSeconds": 0.2,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.996,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 6,
+          "sourceTimeSeconds": 0.24,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9974,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 7,
+          "sourceTimeSeconds": 0.28,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9973,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 8,
+          "sourceTimeSeconds": 0.32,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9984,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 9,
+          "sourceTimeSeconds": 0.36,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9989,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 10,
+          "sourceTimeSeconds": 0.4,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 1.0,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 11,
+          "sourceTimeSeconds": 0.44,
+          "viewportContentWidth": 880,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9262,
+          "heldFromSourceFrameIndex": 10,
+          "holdReason": "Isolated one-frame viewport scale flash; adjacent authentic frames show the same two-item cart."
+        },
+        {
+          "sourceFrameIndex": 12,
+          "sourceTimeSeconds": 0.48,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 1.0,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 13,
+          "sourceTimeSeconds": 0.52,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 1.0,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 14,
+          "sourceTimeSeconds": 0.56,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9978,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 15,
+          "sourceTimeSeconds": 0.6,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9978,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 16,
+          "sourceTimeSeconds": 0.64,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9972,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 17,
+          "sourceTimeSeconds": 0.68,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9967,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 18,
+          "sourceTimeSeconds": 0.72,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9961,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 19,
+          "sourceTimeSeconds": 0.76,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9965,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 20,
+          "sourceTimeSeconds": 0.8,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9961,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 21,
+          "sourceTimeSeconds": 0.84,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9961,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 22,
+          "sourceTimeSeconds": 0.88,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9961,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 23,
+          "sourceTimeSeconds": 0.92,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9961,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 24,
+          "sourceTimeSeconds": 0.96,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9961,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 25,
+          "sourceTimeSeconds": 1.0,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9961,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 26,
+          "sourceTimeSeconds": 1.04,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9961,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 27,
+          "sourceTimeSeconds": 1.08,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9961,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 28,
+          "sourceTimeSeconds": 1.12,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9961,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 29,
+          "sourceTimeSeconds": 1.16,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9961,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 30,
+          "sourceTimeSeconds": 1.2,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9958,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 31,
+          "sourceTimeSeconds": 1.24,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9958,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 32,
+          "sourceTimeSeconds": 1.28,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9958,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 33,
+          "sourceTimeSeconds": 1.32,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            855,
+            259
+          ],
+          "matchConfidence": 0.149,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 34,
+          "sourceTimeSeconds": 1.36,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            870,
+            237
+          ],
+          "matchConfidence": 0.1416,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 35,
+          "sourceTimeSeconds": 1.4,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            870,
+            237
+          ],
+          "matchConfidence": 0.1405,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 36,
+          "sourceTimeSeconds": 1.44,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            870,
+            237
+          ],
+          "matchConfidence": 0.138,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 37,
+          "sourceTimeSeconds": 1.48,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            870,
+            237
+          ],
+          "matchConfidence": 0.1382,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 38,
+          "sourceTimeSeconds": 1.52,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            870,
+            237
+          ],
+          "matchConfidence": 0.1384,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 39,
+          "sourceTimeSeconds": 1.56,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            870,
+            237
+          ],
+          "matchConfidence": 0.1383,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 40,
+          "sourceTimeSeconds": 1.6,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            870,
+            237
+          ],
+          "matchConfidence": 0.1363,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 41,
+          "sourceTimeSeconds": 1.64,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            870,
+            237
+          ],
+          "matchConfidence": 0.1363,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 42,
+          "sourceTimeSeconds": 1.68,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            870,
+            237
+          ],
+          "matchConfidence": 0.1363,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 43,
+          "sourceTimeSeconds": 1.72,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            859,
+            52
+          ],
+          "matchConfidence": 0.1095,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 44,
+          "sourceTimeSeconds": 1.76,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            859,
+            52
+          ],
+          "matchConfidence": 0.1096,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 45,
+          "sourceTimeSeconds": 1.8,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            859,
+            52
+          ],
+          "matchConfidence": 0.1094,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 46,
+          "sourceTimeSeconds": 1.84,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            859,
+            52
+          ],
+          "matchConfidence": 0.1095,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 47,
+          "sourceTimeSeconds": 1.88,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            859,
+            52
+          ],
+          "matchConfidence": 0.1095,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 48,
+          "sourceTimeSeconds": 1.92,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            859,
+            52
+          ],
+          "matchConfidence": 0.1095,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 49,
+          "sourceTimeSeconds": 1.96,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            859,
+            52
+          ],
+          "matchConfidence": 0.1095,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 50,
+          "sourceTimeSeconds": 2.0,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            859,
+            52
+          ],
+          "matchConfidence": 0.1098,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 51,
+          "sourceTimeSeconds": 2.04,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            859,
+            52
+          ],
+          "matchConfidence": 0.1098,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 52,
+          "sourceTimeSeconds": 2.08,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            859,
+            52
+          ],
+          "matchConfidence": 0.1098,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 53,
+          "sourceTimeSeconds": 2.12,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            859,
+            52
+          ],
+          "matchConfidence": 0.1098,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 54,
+          "sourceTimeSeconds": 2.16,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            855,
+            279
+          ],
+          "matchConfidence": 0.1489,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 55,
+          "sourceTimeSeconds": 2.2,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            855,
+            279
+          ],
+          "matchConfidence": 0.1489,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 56,
+          "sourceTimeSeconds": 2.24,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            855,
+            279
+          ],
+          "matchConfidence": 0.1483,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 57,
+          "sourceTimeSeconds": 2.28,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            855,
+            279
+          ],
+          "matchConfidence": 0.1486,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 58,
+          "sourceTimeSeconds": 2.32,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            855,
+            279
+          ],
+          "matchConfidence": 0.1482,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 59,
+          "sourceTimeSeconds": 2.36,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            855,
+            279
+          ],
+          "matchConfidence": 0.1487,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 60,
+          "sourceTimeSeconds": 2.4,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            855,
+            279
+          ],
+          "matchConfidence": 0.1494,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 61,
+          "sourceTimeSeconds": 2.44,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            850,
+            16
+          ],
+          "matchConfidence": 0.122,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 62,
+          "sourceTimeSeconds": 2.48,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            850,
+            16
+          ],
+          "matchConfidence": 0.122,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 63,
+          "sourceTimeSeconds": 2.52,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            850,
+            16
+          ],
+          "matchConfidence": 0.122,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 64,
+          "sourceTimeSeconds": 2.56,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            850,
+            16
+          ],
+          "matchConfidence": 0.1219,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 65,
+          "sourceTimeSeconds": 2.6,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            850,
+            16
+          ],
+          "matchConfidence": 0.122,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 66,
+          "sourceTimeSeconds": 2.64,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            850,
+            16
+          ],
+          "matchConfidence": 0.122,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 67,
+          "sourceTimeSeconds": 2.68,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            850,
+            16
+          ],
+          "matchConfidence": 0.122,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 68,
+          "sourceTimeSeconds": 2.72,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            850,
+            16
+          ],
+          "matchConfidence": 0.122,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 69,
+          "sourceTimeSeconds": 2.76,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            850,
+            16
+          ],
+          "matchConfidence": 0.122,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 70,
+          "sourceTimeSeconds": 2.8,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            871,
+            237
+          ],
+          "matchConfidence": 0.117,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 71,
+          "sourceTimeSeconds": 2.84,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            871,
+            237
+          ],
+          "matchConfidence": 0.117,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 72,
+          "sourceTimeSeconds": 2.88,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            871,
+            237
+          ],
+          "matchConfidence": 0.117,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 73,
+          "sourceTimeSeconds": 2.92,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            871,
+            237
+          ],
+          "matchConfidence": 0.1169,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 74,
+          "sourceTimeSeconds": 2.96,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            871,
+            237
+          ],
+          "matchConfidence": 0.117,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 75,
+          "sourceTimeSeconds": 3.0,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            871,
+            237
+          ],
+          "matchConfidence": 0.117,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 76,
+          "sourceTimeSeconds": 3.04,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            871,
+            237
+          ],
+          "matchConfidence": 0.117,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 77,
+          "sourceTimeSeconds": 3.08,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            871,
+            237
+          ],
+          "matchConfidence": 0.117,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 78,
+          "sourceTimeSeconds": 3.12,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            871,
+            237
+          ],
+          "matchConfidence": 0.117,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 79,
+          "sourceTimeSeconds": 3.16,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9522,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 80,
+          "sourceTimeSeconds": 3.2,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9524,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 81,
+          "sourceTimeSeconds": 3.24,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9524,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 82,
+          "sourceTimeSeconds": 3.28,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9524,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 83,
+          "sourceTimeSeconds": 3.32,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9524,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 84,
+          "sourceTimeSeconds": 3.36,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9525,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 85,
+          "sourceTimeSeconds": 3.4,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9525,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 86,
+          "sourceTimeSeconds": 3.44,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9524,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 87,
+          "sourceTimeSeconds": 3.48,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9524,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 88,
+          "sourceTimeSeconds": 3.52,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9523,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 89,
+          "sourceTimeSeconds": 3.56,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9523,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 90,
+          "sourceTimeSeconds": 3.6,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9527,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 91,
+          "sourceTimeSeconds": 3.64,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9527,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 92,
+          "sourceTimeSeconds": 3.68,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9527,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 93,
+          "sourceTimeSeconds": 3.72,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.953,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 94,
+          "sourceTimeSeconds": 3.76,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9526,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 95,
+          "sourceTimeSeconds": 3.8,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9527,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 96,
+          "sourceTimeSeconds": 3.84,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9526,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 97,
+          "sourceTimeSeconds": 3.88,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9527,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 98,
+          "sourceTimeSeconds": 3.92,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9526,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 99,
+          "sourceTimeSeconds": 3.96,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9527,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 100,
+          "sourceTimeSeconds": 4.0,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9527,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 101,
+          "sourceTimeSeconds": 4.04,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9527,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 102,
+          "sourceTimeSeconds": 4.08,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9527,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 103,
+          "sourceTimeSeconds": 4.12,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9527,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 104,
+          "sourceTimeSeconds": 4.16,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9526,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 105,
+          "sourceTimeSeconds": 4.2,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9527,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 106,
+          "sourceTimeSeconds": 4.24,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9526,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 107,
+          "sourceTimeSeconds": 4.28,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9527,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 108,
+          "sourceTimeSeconds": 4.32,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9527,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 109,
+          "sourceTimeSeconds": 4.36,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9527,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 110,
+          "sourceTimeSeconds": 4.4,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9526,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 111,
+          "sourceTimeSeconds": 4.44,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9527,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 112,
+          "sourceTimeSeconds": 4.48,
+          "viewportContentWidth": 908,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9527,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        }
+      ]
+    },
+    {
+      "originalFile": "docs/evidence/live-confirmed-2026-10-12/control.webm",
+      "originalSha256": "18c0ab74c95372888b44d5ba649eca7d051b1df72e0929a02cd28e1ec11fcd37",
+      "derivativeFile": "control-stabilized.mp4",
+      "derivativeSha256": "e7f79578ef61704a449d30ba0eec22fb43e5501f07a941758120464a73987673",
+      "sourceFrames": 111,
+      "sourceFramesPerSecond": 25,
+      "durationSeconds": 4.44,
+      "derivativeWidth": 840,
+      "derivativeHeight": 800,
+      "method": "Actual viewport-scale normalization and observed cart-header alignment, with exact authentic-neighbor hold mappings. Source duration retained; no synthesized UI or AI interpolation. Original run outcomes and verification evidence remain the source of truth.",
+      "heldRanges": [
+        {
+          "startSeconds": 0.0,
+          "endSeconds": 0.08,
+          "sourceFrameIndices": [
+            0,
+            1
+          ]
+        },
+        {
+          "startSeconds": 0.44,
+          "endSeconds": 0.48,
+          "sourceFrameIndices": [
+            11
+          ]
+        },
+        {
+          "startSeconds": 1.32,
+          "endSeconds": 3.08,
+          "sourceFrameIndices": [
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76
+          ]
+        }
+      ],
+      "heldFrameMeaning": "An authentic neighboring cart crop is held for leading navigation or when the source scrolls its header out of view. Per-frame source mappings identify forward leading holds and backward scroll holds. The derivative is not the original verification recording.",
+      "frames": [
+        {
+          "sourceFrameIndex": 0,
+          "sourceTimeSeconds": 0.0,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            820,
+            0
+          ],
+          "matchConfidence": 0.0,
+          "heldFromSourceFrameIndex": 2,
+          "holdReason": "Leading navigation has no cart; first genuine visible cart crop held until source catches up."
+        },
+        {
+          "sourceFrameIndex": 1,
+          "sourceTimeSeconds": 0.04,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            820,
+            0
+          ],
+          "matchConfidence": 0.0,
+          "heldFromSourceFrameIndex": 2,
+          "holdReason": "Leading navigation has no cart; first genuine visible cart crop held until source catches up."
+        },
+        {
+          "sourceFrameIndex": 2,
+          "sourceTimeSeconds": 0.08,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9911,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 3,
+          "sourceTimeSeconds": 0.12,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9911,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 4,
+          "sourceTimeSeconds": 0.16,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.996,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 5,
+          "sourceTimeSeconds": 0.2,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.996,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 6,
+          "sourceTimeSeconds": 0.24,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9974,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 7,
+          "sourceTimeSeconds": 0.28,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9973,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 8,
+          "sourceTimeSeconds": 0.32,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9984,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 9,
+          "sourceTimeSeconds": 0.36,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9989,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 10,
+          "sourceTimeSeconds": 0.4,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 1.0,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 11,
+          "sourceTimeSeconds": 0.44,
+          "viewportContentWidth": 880,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9262,
+          "heldFromSourceFrameIndex": 10,
+          "holdReason": "Isolated one-frame viewport scale flash; adjacent authentic frames show the same two-item cart."
+        },
+        {
+          "sourceFrameIndex": 12,
+          "sourceTimeSeconds": 0.48,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 1.0,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 13,
+          "sourceTimeSeconds": 0.52,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 1.0,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 14,
+          "sourceTimeSeconds": 0.56,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9978,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 15,
+          "sourceTimeSeconds": 0.6,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9978,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 16,
+          "sourceTimeSeconds": 0.64,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9972,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 17,
+          "sourceTimeSeconds": 0.68,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9967,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 18,
+          "sourceTimeSeconds": 0.72,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9961,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 19,
+          "sourceTimeSeconds": 0.76,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9965,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 20,
+          "sourceTimeSeconds": 0.8,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9961,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 21,
+          "sourceTimeSeconds": 0.84,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9961,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 22,
+          "sourceTimeSeconds": 0.88,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9961,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 23,
+          "sourceTimeSeconds": 0.92,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9961,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 24,
+          "sourceTimeSeconds": 0.96,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9961,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 25,
+          "sourceTimeSeconds": 1.0,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9961,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 26,
+          "sourceTimeSeconds": 1.04,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9961,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 27,
+          "sourceTimeSeconds": 1.08,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9961,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 28,
+          "sourceTimeSeconds": 1.12,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9961,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 29,
+          "sourceTimeSeconds": 1.16,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9961,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 30,
+          "sourceTimeSeconds": 1.2,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9958,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 31,
+          "sourceTimeSeconds": 1.24,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9958,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 32,
+          "sourceTimeSeconds": 1.28,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            862,
+            143
+          ],
+          "matchConfidence": 0.9958,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 33,
+          "sourceTimeSeconds": 1.32,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            855,
+            259
+          ],
+          "matchConfidence": 0.149,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 34,
+          "sourceTimeSeconds": 1.36,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            870,
+            237
+          ],
+          "matchConfidence": 0.1416,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 35,
+          "sourceTimeSeconds": 1.4,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            870,
+            237
+          ],
+          "matchConfidence": 0.1405,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 36,
+          "sourceTimeSeconds": 1.44,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            870,
+            237
+          ],
+          "matchConfidence": 0.138,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 37,
+          "sourceTimeSeconds": 1.48,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            870,
+            237
+          ],
+          "matchConfidence": 0.1382,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 38,
+          "sourceTimeSeconds": 1.52,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            870,
+            237
+          ],
+          "matchConfidence": 0.1384,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 39,
+          "sourceTimeSeconds": 1.56,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            870,
+            237
+          ],
+          "matchConfidence": 0.1383,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 40,
+          "sourceTimeSeconds": 1.6,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            870,
+            237
+          ],
+          "matchConfidence": 0.1363,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 41,
+          "sourceTimeSeconds": 1.64,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            870,
+            237
+          ],
+          "matchConfidence": 0.1363,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 42,
+          "sourceTimeSeconds": 1.68,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            870,
+            237
+          ],
+          "matchConfidence": 0.1363,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 43,
+          "sourceTimeSeconds": 1.72,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            859,
+            52
+          ],
+          "matchConfidence": 0.1095,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 44,
+          "sourceTimeSeconds": 1.76,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            859,
+            52
+          ],
+          "matchConfidence": 0.1096,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 45,
+          "sourceTimeSeconds": 1.8,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            859,
+            52
+          ],
+          "matchConfidence": 0.1094,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 46,
+          "sourceTimeSeconds": 1.84,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            859,
+            52
+          ],
+          "matchConfidence": 0.1095,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 47,
+          "sourceTimeSeconds": 1.88,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            859,
+            52
+          ],
+          "matchConfidence": 0.1095,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 48,
+          "sourceTimeSeconds": 1.92,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            859,
+            52
+          ],
+          "matchConfidence": 0.1095,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 49,
+          "sourceTimeSeconds": 1.96,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            859,
+            52
+          ],
+          "matchConfidence": 0.1095,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 50,
+          "sourceTimeSeconds": 2.0,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            859,
+            52
+          ],
+          "matchConfidence": 0.1098,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 51,
+          "sourceTimeSeconds": 2.04,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            859,
+            52
+          ],
+          "matchConfidence": 0.1098,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 52,
+          "sourceTimeSeconds": 2.08,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            859,
+            52
+          ],
+          "matchConfidence": 0.1098,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 53,
+          "sourceTimeSeconds": 2.12,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            859,
+            52
+          ],
+          "matchConfidence": 0.1098,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 54,
+          "sourceTimeSeconds": 2.16,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            855,
+            279
+          ],
+          "matchConfidence": 0.1489,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 55,
+          "sourceTimeSeconds": 2.2,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            855,
+            279
+          ],
+          "matchConfidence": 0.1489,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 56,
+          "sourceTimeSeconds": 2.24,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            855,
+            279
+          ],
+          "matchConfidence": 0.1483,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 57,
+          "sourceTimeSeconds": 2.28,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            855,
+            279
+          ],
+          "matchConfidence": 0.1486,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 58,
+          "sourceTimeSeconds": 2.32,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            855,
+            279
+          ],
+          "matchConfidence": 0.1482,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 59,
+          "sourceTimeSeconds": 2.36,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            855,
+            279
+          ],
+          "matchConfidence": 0.1487,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 60,
+          "sourceTimeSeconds": 2.4,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            855,
+            279
+          ],
+          "matchConfidence": 0.1494,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 61,
+          "sourceTimeSeconds": 2.44,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            850,
+            16
+          ],
+          "matchConfidence": 0.122,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 62,
+          "sourceTimeSeconds": 2.48,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            850,
+            16
+          ],
+          "matchConfidence": 0.122,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 63,
+          "sourceTimeSeconds": 2.52,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            850,
+            16
+          ],
+          "matchConfidence": 0.122,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 64,
+          "sourceTimeSeconds": 2.56,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            850,
+            16
+          ],
+          "matchConfidence": 0.1219,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 65,
+          "sourceTimeSeconds": 2.6,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            850,
+            16
+          ],
+          "matchConfidence": 0.122,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 66,
+          "sourceTimeSeconds": 2.64,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            850,
+            16
+          ],
+          "matchConfidence": 0.122,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 67,
+          "sourceTimeSeconds": 2.68,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            850,
+            16
+          ],
+          "matchConfidence": 0.122,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 68,
+          "sourceTimeSeconds": 2.72,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            850,
+            16
+          ],
+          "matchConfidence": 0.122,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 69,
+          "sourceTimeSeconds": 2.76,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            850,
+            16
+          ],
+          "matchConfidence": 0.122,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 70,
+          "sourceTimeSeconds": 2.8,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            850,
+            16
+          ],
+          "matchConfidence": 0.1216,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 71,
+          "sourceTimeSeconds": 2.84,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            850,
+            16
+          ],
+          "matchConfidence": 0.1216,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 72,
+          "sourceTimeSeconds": 2.88,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            850,
+            16
+          ],
+          "matchConfidence": 0.1217,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 73,
+          "sourceTimeSeconds": 2.92,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            850,
+            16
+          ],
+          "matchConfidence": 0.1217,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 74,
+          "sourceTimeSeconds": 2.96,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            850,
+            16
+          ],
+          "matchConfidence": 0.1217,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 75,
+          "sourceTimeSeconds": 3.0,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            850,
+            16
+          ],
+          "matchConfidence": 0.1217,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 76,
+          "sourceTimeSeconds": 3.04,
+          "viewportContentWidth": 1280,
+          "headerAnchor": [
+            850,
+            16
+          ],
+          "matchConfidence": 0.1217,
+          "heldFromSourceFrameIndex": 32,
+          "holdReason": "Full cart header/ROI is unavailable during navigation or source scroll."
+        },
+        {
+          "sourceFrameIndex": 77,
+          "sourceTimeSeconds": 3.08,
+          "viewportContentWidth": 864,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9285,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 78,
+          "sourceTimeSeconds": 3.12,
+          "viewportContentWidth": 864,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9285,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 79,
+          "sourceTimeSeconds": 3.16,
+          "viewportContentWidth": 864,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9285,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 80,
+          "sourceTimeSeconds": 3.2,
+          "viewportContentWidth": 864,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9303,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 81,
+          "sourceTimeSeconds": 3.24,
+          "viewportContentWidth": 864,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9303,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 82,
+          "sourceTimeSeconds": 3.28,
+          "viewportContentWidth": 864,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9303,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 83,
+          "sourceTimeSeconds": 3.32,
+          "viewportContentWidth": 864,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9303,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 84,
+          "sourceTimeSeconds": 3.36,
+          "viewportContentWidth": 864,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9306,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 85,
+          "sourceTimeSeconds": 3.4,
+          "viewportContentWidth": 864,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9306,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 86,
+          "sourceTimeSeconds": 3.44,
+          "viewportContentWidth": 864,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9306,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 87,
+          "sourceTimeSeconds": 3.48,
+          "viewportContentWidth": 864,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9306,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 88,
+          "sourceTimeSeconds": 3.52,
+          "viewportContentWidth": 864,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9306,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 89,
+          "sourceTimeSeconds": 3.56,
+          "viewportContentWidth": 864,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9306,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 90,
+          "sourceTimeSeconds": 3.6,
+          "viewportContentWidth": 864,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9308,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 91,
+          "sourceTimeSeconds": 3.64,
+          "viewportContentWidth": 864,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9308,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 92,
+          "sourceTimeSeconds": 3.68,
+          "viewportContentWidth": 864,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9308,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 93,
+          "sourceTimeSeconds": 3.72,
+          "viewportContentWidth": 864,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9308,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 94,
+          "sourceTimeSeconds": 3.76,
+          "viewportContentWidth": 864,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9308,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 95,
+          "sourceTimeSeconds": 3.8,
+          "viewportContentWidth": 864,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9308,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 96,
+          "sourceTimeSeconds": 3.84,
+          "viewportContentWidth": 864,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9308,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 97,
+          "sourceTimeSeconds": 3.88,
+          "viewportContentWidth": 864,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9308,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 98,
+          "sourceTimeSeconds": 3.92,
+          "viewportContentWidth": 864,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9308,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 99,
+          "sourceTimeSeconds": 3.96,
+          "viewportContentWidth": 864,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9308,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 100,
+          "sourceTimeSeconds": 4.0,
+          "viewportContentWidth": 864,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9305,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 101,
+          "sourceTimeSeconds": 4.04,
+          "viewportContentWidth": 864,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9305,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 102,
+          "sourceTimeSeconds": 4.08,
+          "viewportContentWidth": 864,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9305,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 103,
+          "sourceTimeSeconds": 4.12,
+          "viewportContentWidth": 864,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9305,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 104,
+          "sourceTimeSeconds": 4.16,
+          "viewportContentWidth": 864,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9305,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 105,
+          "sourceTimeSeconds": 4.2,
+          "viewportContentWidth": 864,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9305,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 106,
+          "sourceTimeSeconds": 4.24,
+          "viewportContentWidth": 864,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9305,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 107,
+          "sourceTimeSeconds": 4.28,
+          "viewportContentWidth": 864,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9305,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 108,
+          "sourceTimeSeconds": 4.32,
+          "viewportContentWidth": 864,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9305,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 109,
+          "sourceTimeSeconds": 4.36,
+          "viewportContentWidth": 864,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9305,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        },
+        {
+          "sourceFrameIndex": 110,
+          "sourceTimeSeconds": 4.4,
+          "viewportContentWidth": 864,
+          "headerAnchor": [
+            862,
+            150
+          ],
+          "matchConfidence": 0.9312,
+          "heldFromSourceFrameIndex": null,
+          "holdReason": null
+        }
+      ]
+    }
+  ],
+  "notAnUnmodifiedRecording": true,
+  "sourceDurationRetained": true,
+  "holdsMayOmitIntermediateOffscreenActivity": true
+}

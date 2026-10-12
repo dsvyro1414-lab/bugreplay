@@ -1,13 +1,9 @@
----
-workflow: general-video
-flow: automation
-storyboard: no
----
+# Silent SaaS revision brief
 
-# BugReplay — faster SaaS demonstration
+Owner revision 3: remove speech completely, remove all technical bottom labels, increase left-side headings and explanatory text, and stabilize actual captures. Target 64 seconds, 1280 × 720, 30 fps. Existing quiet licensed whoosh/chime effects remain; there are no new voice or investigation calls.
 
-The owner requested a faster, more dynamic and modern SaaS video through HyperFrames, with a natural neural voice replacing the earlier robotic narration. Build a new 90-second 1280×720, 30-fps composition; preserve all earlier media and archives. The parent agent supplies the neural audio and new official hosted Neatlogs after screenshots, reviews the source, and controls final rendering/publication.
+Workflow: general-video, automation. Preserve all prior movies, the v2 archive, original provider voice, and original browser recordings. Fixed image geometry and simple cuts replace screenshot transforms. Three documented presentation derivatives normalize genuine cart anchors and hold neighboring authentic crops only when navigation, isolated viewport scaling or scrolling prevents a stable view. Source durations remain 4.480, 4.520 and 4.440 seconds. Application outcomes and original verification evidence remain unchanged; the derivatives are not unmodified originals.
 
-Use big kinetic typography, a concise hook, prominent actual product UI, faster jump cuts, both complete independent replays and the unchanged corrected control. Retain the authentic Entire CLI export label and native CFO evidence. State the controlled-MVP scope, final 1/3 buggy-cohort outcome and unknown complete cash billing. Use restrained blue/green accents and little dense copy. No new paid investigations, invented UI, fake cursor, hidden trigger recipe, voice time stretching or unsupported claims.
+Large on-screen text carries the story without narration: 2/2 intended failures, same saved test with only the URL changed, actual hosted Neatlogs, Entire explicitly labeled local CLI export, native CFO Planning assumptions and measured gateway cost, 1/3 final buggy cohort, unknown complete cash billing and promotional credits. Provenance stays in JSON and documentation rather than in bottom footer labels.
 
-`SCRIPT.md` locks the six voice blocks; `SCENE-PLAN.md` records exact target windows. The silent prototype is a source-review state, not a completed narrated delivery. Script timing may be adjusted within the 80–95-second brief after measuring actual neural audio.
+Root reviews consecutive boundary strips and scene previews before the authorized high-quality render.

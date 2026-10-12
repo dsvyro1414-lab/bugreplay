@@ -1,4 +1,6 @@
-# BugReplay — SaaS revision voice script
+# BugReplay — historical narrated revision 2 script
+
+Historical reference only. Revision 3 is silent; none of this narration is used in the current film.
 
 Target: 92.5 seconds, six independently generated English voice blocks. Natural, confident delivery with short pauses; approximately 145–155 words per minute, without a presenter voice. Timings below are scene windows, not instructions to stretch speech. Measure the supplied audio before assembly.
 

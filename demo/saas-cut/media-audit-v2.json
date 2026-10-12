@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "status": "Verified: full MP4 decode, numerical audio checks, and independent decoded-frame review passed",
+  "video": {
+    "file": "demo/bugreplay-saas-demo.mp4",
+    "sha256": "6a5ab41ddd0e4c823cd650af74c85b193538be550b6778320ea1cf2207a6f3c9",
+    "bytes": 9908253,
+    "durationSeconds": 92.5,
+    "width": 1280,
+    "height": 720,
+    "framesPerSecond": 30,
+    "frameCount": 2775,
+    "videoCodec": "H.264",
+    "audioCodec": "AAC",
+    "sampleRateHz": 48000,
+    "channels": 2
+  },
+  "composition": {
+    "framework": "HyperFrames",
+    "version": "0.8.147",
+    "quality": "high",
+    "shots": 25,
+    "actualMediaEntries": 26,
+    "narrationBlocks": 6,
+    "retainedScriptWords": 172,
+    "renderedHtmlSha256": "625415779612dd3b3de29b612e667bfb1188bbd396dcbeea1858a2ecfb13a3a3",
+    "fullIndependentReplaySeconds": [
+      4.48,
+      4.52
+    ],
+    "fullCorrectedControlSeconds": 4.44,
+    "originalPlaybackSpeedFactor": 1,
+    "originalRecordingsIntact": true,
+    "reframing": "Crops follow actual recorded viewport changes; investigation uses labeled chronological excerpts. All three verification/control source time ranges are complete."
+  },
+  "narration": {
+    "provider": "Higgsfield",
+    "model": "Seed Audio 1.0",
+    "presetVoice": "Ainsley",
+    "editedVoiceSeconds": 89.502875,
+    "pictureSeconds": 92.5,
+    "timeStretchApplied": false,
+    "wordEdits": "One complete redundant hook sentence removed; all other authored words retained. Leading pads and anomalous silence trimmed. Original provider files preserved.",
+    "automatedTranscriptCheck": "All retained authored sentences verified in final six edited files; transcription is not a human listening review.",
+    "sourcePcmCutMatch": "Independent exact PCM comparisons passed for all six edited files.",
+    "productionAccountingFile": "demo/saas-cut/audio-production-accounting.json",
+    "totalQuotedCredits": 8,
+    "actualDebitedCredits": null,
+    "usdCashCost": null,
+    "promotionalCreditAllocation": null,
+    "accountingScope": "Narration production is separate from investigation gateway accounting.",
+    "mixMetrics": {
+      "method": "Numerical scan of the complete decoded AAC mix; no human auditory review claimed",
+      "sampleRateHz": 48000,
+      "channels": 2,
+      "sampleCountAcrossChannels": 8880000,
+      "peakDbFS": -1.569,
+      "rmsDbFS": -20.605,
+      "samplesAtOrAboveDigitalFullScale": 0
+    }
+  },
+  "soundEffects": {
+    "whooshCount": 4,
+    "confirmationChimeCount": 1,
+    "license": "Pixabay Content License; bundled licensed skill assets",
+    "editorialOnly": true,
+    "noSynthesizedBrowserClicks": true
+  },
+  "evidence": {
+    "selectedRunId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+    "engineGitSha": "2b541b20a97ef3df4261529bd48089792e01f2af",
+    "testSha256": "bd9c42ba5744e7ed47cec25dcc47dd0341f9c7da88d034a700014b4a169c208a",
+    "twoIndependentIntendedFailures": true,
+    "sameTestBytesPassedCorrectedControl": true,
+    "neatlogsAfterSource": "Genuine official hosted Neatlogs UI, not a local export viewer",
+    "neatlogsBeforeSource": "First-baseline hosted trace, explicitly labeled separately from selected after run",
+    "entireSource": "Authentic CLI checkpoint metadata and associated Git diff shown in an explicitly labeled local export viewer",
+    "entireSessionIdentifiersExcluded": true,
+    "cfoSource": "Actual native CFO.ai Planning and Observed evidence pages",
+    "discoveryLimit": "One of three final buggy investigations confirmed; other two did not reproduce. This differs from 2/2 verification replays.",
+    "costLimit": "Selected confirmed-run gateway accounting $0.1563342 exceeds the hypothesized $0.1293 variable-cost ceiling. Complete cash billing and promotional credits remain unknown."
+  },
+  "validation": {
+    "hyperframesCheckPassed": true,
+    "hyperframesErrorCounts": {
+      "lint": 0,
+      "runtime": 0,
+      "layout": 0,
+      "motion": 0,
+      "contrast": 0
+    },
+    "hyperframesLintWarnings": {
+      "timelineTrackDensity": 3,
+      "flatSceneStructure": 25,
+      "note": "Editor organization warnings; runtime, layout and contrast have no errors or warnings."
+    },
+    "fullFfmpegDecodeExitCode": 0,
+    "decodedFrameSamples": 44,
+    "visualReview": "Root reviewed all 44 decoded samples. Independent reviewer separately extracted and reviewed 30 actual MP4 samples and confirmed claims, privacy, full decode, audio metrics, unchanged earlier movies, and the public byte-copy hash.",
+    "privacyReview": "Reviewed actual crops exclude account avatars, owner URLs, credentials, raw model prose and Entire session IDs. No public claim of human listening review.",
+    "motionInspectionEnabled": false,
+    "motionInspectionNote": "No motion assertion sidecar was supplied; the motion error count is not a claim that motion assertions ran. Animated source and decoded output were visually reviewed."
+  },
+  "captions": {
+    "file": "demo/saas-cut/captions.srt",
+    "delivery": "Optional separate SRT; not burned over actual UI",
+    "timing": "Sentence boundaries from automated transcription of final edited files, positioned at the actual audio offsets",
+    "textMatchesRetainedScript": true
+  },
+  "preservation": {
+    "earlierMoviesUntouched": [
+      "demo/bugreplay-final-demo.mp4",
+      "demo/bugreplay-final-demo-x.mp4"
+    ],
+    "originalBrowserRecordingsUntouched": true,
+    "originalProviderNarrationRetainedSeparately": true
+  }
+}

@@ -8,10 +8,11 @@ import {fileURLToPath} from 'node:url';
 const execute=promisify(execFile), here=path.dirname(fileURLToPath(import.meta.url));
 const root=path.resolve(here,'../..'), args=process.argv.slice(2);
 const option=(flag,fallback)=>args.includes(flag)?args[args.indexOf(flag)+1]:fallback;
-const out=path.resolve(option('--out',path.join(root,'artifacts/submission-2026-10-12/saas-cut/project')));
+const out=path.resolve(option('--out',path.join(root,'artifacts/submission-2026-10-12/saas-cut-v3/project')));
 if(!out.startsWith(path.join(root,'artifacts')+path.sep)) throw new Error('Keep the generated project and staged media in ignored artifacts.');
-const narration=JSON.parse(await fs.readFile(path.join(here,'narration-plan.json'),'utf8'));
+const narration=JSON.parse(await fs.readFile(path.join(here,'edit-plan.json'),'utf8'));
 const inputAudio=option('--audio-manifest',null);
+if(inputAudio)throw new Error('Revision 3 is silent. Do not include a narration manifest.');
 const supplied=inputAudio?JSON.parse(await fs.readFile(path.resolve(inputAudio),'utf8')):null;
 const audioBase=inputAudio?path.dirname(path.resolve(inputAudio)):root;
 const audioRows=Array.isArray(supplied)?supplied:(supplied?.blocks??[]);
@@ -68,8 +69,8 @@ let serial=0;
 function scene(id,start,end,content,{tone='',note='',tag=''}={}){
  const duration=num(end-start);
  if(duration<=0)throw new Error(`Invalid shot ${id}`);
- scenes.push(`<section id="${id}" class="clip scene ${tone}" data-start="${num(start)}" data-duration="${duration}" data-track-index="20">${content}${tag?`<div class="frame-tag">${escape(tag)}</div>`:''}${note?`<div class="source-note">${escape(note)}</div>`:''}</section>`);
- shots.push({id,startSeconds:num(start),durationSeconds:duration});
+ scenes.push(`<section id="${id}" class="clip scene ${tone}" data-start="${num(start)}" data-duration="${duration}" data-track-index="20">${content}${tag?`<div class="frame-tag">${escape(tag)}</div>`:''}</section>`);
+ shots.push({id,startSeconds:num(start),durationSeconds:duration,sourceNote:note});
 }
 const title=(text,extra='')=>`<h1 class="hero ${extra} hit">${text}</h1>`;
 const top=text=>`<h2 class="top-title hit">${text}</h2>`;
@@ -85,12 +86,12 @@ async function visual(file,start,end,rect,box,label,{offset=0,kind='image',motio
  const style=`left:${num(left)}px;top:${num(top)}px;width:${num(p.width*scale)}px;height:${num(p.height*scale)}px;clip-path:inset(${num(rect.y*scale)}px ${num((p.width-rect.x-rect.w)*scale)}px ${num((p.height-rect.y-rect.h)*scale)}px ${num(rect.x*scale)}px);transform-origin:${num((rect.x+rect.w/2)/p.width*100)}% ${num((rect.y+rect.h/2)/p.height*100)}%`;
  const timing=`class="clip media-original" data-start="${num(start)}" data-duration="${num(end-start)}" data-track-index="8"`;
  media.push(kind==='video'?`<video id="${id}" ${timing} src="${src}" data-media-start="${num(offset)}" muted playsinline style="${style}"></video>`:`<img id="${id}" ${timing} src="${src}" alt="${escape(label)}" style="${style}">`);
- if(motion&&kind==='image')motions.push(`tl.fromTo('#${id}',{scale:.96,y:28,rotation:1.2},{scale:1,y:0,rotation:0,duration:.55,ease:'power3.out'},${num(start)});`);
+ // Evidence pixels and clip geometry remain fixed; only editorial text animates.
  return {id,sourceFile:path.relative(root,file),startSeconds:num(start),durationSeconds:num(end-start),sourceStartSeconds:offset,sourceRect:rect,displayBox:box,label,kind,speedFactor:1};
 }
 const sources=[];
 async function show(...params){sources.push(await visual(...params));}
-const wide={x:64,y:162,w:1152,h:452},right={x:455,y:116,w:745,h:520};
+const wide={x:64,y:162,w:1152,h:452},right={x:510,y:100,w:706,h:560};
 const product=path.join(selected,'product-confirmed-workspace.jpg'),result=path.join(selected,'product-confirmed-evidence.jpg');
 
 // Three differently choreographed graphic beats earn the actual product reveal.
@@ -110,35 +111,32 @@ const findingShots=[
 ];
 for(const [id,a,z,offset,rect,heading]of findingShots){
  const s=time('investigate',a),e=time('investigate',z);
- scene(id,s,e,`<div class="proof-copy"><div class="eyebrow hit">Actual investigation</div><p class="hit">${heading}</p><div class="stat blue hit">${id==='cart-loss'?'2 → 0':'13'}</div><div class="mini hit">${id==='cart-loss'?'Observed cart loss':'browser actions · full log retained'}</div></div>`,{note:'Original investigation · edited excerpt · 1× speed · actual interface crop'});
+ scene(id,s,e,`<div class="proof-copy"><div class="eyebrow hit">Browser exploration</div><p class="hit">${heading}</p><div class="stat blue hit">${id==='cart-loss'?'2 → 0':'13'}</div><div class="mini hit">${id==='cart-loss'?'Observed cart loss':'browser actions'}</div></div>`,{note:'Original investigation · edited excerpt · 1× speed · actual interface crop'});
  frame(right,s,e);await show(investigation,s,e,rect,right,heading,{offset,kind:'video'});
 }
 
+// Reframe actual cart-header anchors in separate, documented presentation derivatives.
+const normalizedDir=path.resolve(option('--normalized-dir',path.join(here,'normalized')));
+const normalization=JSON.parse(await fs.readFile(path.join(normalizedDir,'manifest.json'),'utf8'));
 // Source viewport changes come from genuine full-page captures in the recording.
 // Reframe the actual cart at those boundaries; do not retime or fabricate frames.
-const viewportRanges={
- 'verification-1.webm':[[0,.44,1280],[.44,.04,880],[.48,2.64,1280],[3.12,1.36,912]],
- 'verification-2.webm':[[0,.44,1280],[.44,.04,880],[.48,2.68,1280],[3.16,1.36,912]],
- 'control.webm':[[0,.44,1280],[.44,.04,880],[.48,2.60,1280],[3.08,1.36,864]]
-};
 async function replay(fileName,start,label,passed=false){
- const file=path.join(selected,fileName),p=await probe(file),end=start+p.duration;
- scene(`replay-${fileName.replaceAll('.','-')}`,start,end,`<div class="proof-copy"><div class="eyebrow hit">${label}</div><div class="stat ${passed?'green':'blue'} hit">${passed?'2 → 2':'2 → 0'}</div><p class="hit">${passed?'Cart preserved.':'Intended assertion failure.'}</p><div class="mini hit"><div>Clean browser context.</div><div>Original recording.</div></div></div>`,{note:`${label} · complete ${p.duration.toFixed(3)}s original · 1× speed · actual cart crop`});
+ const original=normalization.clips.find(c=>path.basename(c.originalFile)===fileName);
+ if(!original)throw new Error(`Missing original-to-derivative mapping: ${fileName}`);
+ const file=path.join(normalizedDir,path.basename(original.derivativeFile)),p=await probe(file),end=start+original.durationSeconds;
+ if(sha(await fs.readFile(file))!==original.derivativeSha256)throw new Error(`Normalized proof hash differs: ${fileName}`);
+ scene(`replay-${fileName.replaceAll('.','-')}`,start,end,`<div class="proof-copy"><div class="eyebrow hit">${passed?'Same test':label.replace('Independent replay','Replay')}</div><div class="stat ${passed?'green':'blue'} hit">${passed?'2 → 2':'2 → 0'}</div><p class="hit">${passed?'Only the URL changes.':'Target assertion fails.'}</p><div class="mini hit"><div>${passed?'Same steps. Same assertion.':'Independent, clean browser.'}</div></div></div>`,{note:`${label} · normalized presentation derivative · ${original.durationSeconds.toFixed(3)}s source duration retained · original recording preserved`});
  frame(right,start,end);
- for(const[offset,duration,contentWidth]of viewportRanges[fileName]){
-  const ratio=contentWidth/1280;
-  const rect={x:num(825*ratio),y:num(105*ratio),w:num(420*ratio),h:num(400*ratio)};
-  await show(file,start+offset,start+offset+duration,rect,right,label,{offset,kind:'video'});
- }
+ await show(file,start,end,{x:0,y:0,w:p.width,h:p.height},right,label,{kind:'video'});
  return end;
 }
 const V=B.verify.start;
 let replayEnd=await replay('verification-1.webm',V,'Independent replay 01');
 replayEnd=await replay('verification-2.webm',replayEnd,'Independent replay 02');
-scene('verified',replayEnd,time('verify',1),`<div class="eyebrow hit">Separate verification · no LLM</div><div class="result-row"><div class="stat green hit">2 / 2</div><div class="result-details"><h2 class="hit">The intended failure.</h2><p class="hit">Two clean runs reach the cart-preservation assertion.</p></div></div><div class="rule"></div><div class="bottom-note hit">BUGREPLAY_CART_PRESERVATION</div>`,{note:'Actual verification.json · selected run b8ffd757 · assertion and setup independently reviewed'});
+scene('verified',replayEnd,time('verify',1),`<div class="eyebrow hit">Independent verification</div><div class="result-row"><div class="stat green hit">2 / 2</div><div class="result-details"><h2 class="hit">The intended failure.</h2><p class="hit">Two clean runs. Same cart-preservation assertion.</p></div></div><div class="rule"></div>`,{note:'Actual verification.json · selected run b8ffd757 · assertion and setup independently reviewed'});
 const C=B.control.start,controlEnd=await replay('control.webm',C,'Same test · corrected control',true);
-const controlStillEnd=controlEnd+4.2,artifactEnd=Math.min(controlStillEnd+4.5,time('control',1));
-scene('fixed-pass',controlEnd,controlStillEnd,`<div class="proof-copy"><div class="eyebrow hit">Change only the URL</div><div class="stat green hit">PASS</div><p class="hit">Same test. Same assertion.</p><div class="mini hit"><div>SHA-256 bd9c42ba5744…</div><div>byte-identical saved test</div></div></div>`,{note:'Actual corrected-control result · base URL changed · both items retained'});
+const controlStillEnd=controlEnd+2.5,artifactEnd=time('control',1);
+scene('fixed-pass',controlEnd,controlStillEnd,`<div class="proof-copy"><div class="eyebrow hit">Change only the URL</div><div class="stat green hit">PASS</div><p class="hit">Same test. Same assertion.</p><div class="mini hit">Identical test bytes.</div></div>`,{note:'Actual corrected-control result · base URL changed · both items retained'});
 frame(right,controlEnd,controlStillEnd);await show(path.join(selected,'control-after.png'),controlEnd,controlStillEnd,{x:840,y:120,w:390,h:360},right,'Actual corrected cart');
 scene('artifacts',controlStillEnd,artifactEnd,top('Keep the <span class="accent">proof.</span>')+`<div class="artifact-stack"><div class="artifact hit">repro.spec.ts</div><div class="artifact hit">report.md</div><div class="artifact hit">reproduction.json</div></div>`,{note:'Actual saved outputs · original screenshots, videos and failed investigations retained'});
 if(artifactEnd<time('control',1)){
@@ -147,25 +145,25 @@ if(artifactEnd<time('control',1)){
 }
 
 const sponsor=(id,a,z,titleText,body,note)=>scene(id,time('improve',a),time('improve',z),`<div class="sponsor-copy"><div class="eyebrow hit">${id.startsWith('neat')?'Neatlogs':id.startsWith('entire')?'Entire':'CFO.ai'}</div><h2 class="hit">${titleText}</h2><p class="hit">${body}</p></div>`,{note});
-const sponsorBox={x:505,y:125,w:705,h:500};
-sponsor('neat-before',0,.19,'Find the failure.','Provider returned a decision. The wrapper rejected its format.','Actual hosted UI · first baseline trace17af… · safe screenshot crop');
+const sponsorBox={x:540,y:125,w:675,h:520};
+sponsor('neat-before',0,.19,'Find the failure.','Baseline: provider succeeds. Format rejected.','Actual hosted UI · first baseline trace17af… · safe screenshot crop');
 frame(sponsorBox,time('improve',0),time('improve',.19));await show(path.join(improvement,'neatlogs-before-parser-crop.png'),time('improve',0),time('improve',.19),{x:120,y:1135,w:1380,h:190},sponsorBox,'Actual baseline terminal wrapper error');
 sponsor('neat-after',.19,.32,'Trace the rerun.','Two intended failures, captured in the real hosted trace.','Actual official Neatlogs UI · selected trace9096… · screenshot crop');
 frame(sponsorBox,time('improve',.19),time('improve',.32));await show(path.join(improvement,'neatlogs-after-official-replay.jpg'),time('improve',.19),time('improve',.32),{x:150,y:270,w:600,h:200},sponsorBox,'Official hosted verifier.replay output');
 sponsor('neat-control',.32,.43,'And the control.','The identical test passes on the corrected shop.','Actual official Neatlogs UI · verifier.control passed · screenshot crop');
 frame(sponsorBox,time('improve',.32),time('improve',.43));await show(path.join(improvement,'neatlogs-after-official-control.jpg'),time('improve',.32),time('improve',.43),{x:180,y:360,w:560,h:215},sponsorBox,'Official hosted verifier.control output');
-sponsor('entire-checkpoint',.43,.54,'Keep the context.','The actual engine fix, linked to its checkpoint.','Authentic Entire CLI metadata export · local viewer · no official-app claim');
+sponsor('entire-checkpoint',.43,.54,'Keep the context.','Actual fix checkpoint. Local CLI export.','Authentic Entire CLI metadata export · local viewer · no official-app claim');
 frame(sponsorBox,time('improve',.43),time('improve',.54));await show(path.join(improvement,'latest-entire-local-viewer.jpg'),time('improve',.43),time('improve',.54),{x:28,y:98,w:625,h:235},sponsorBox,'Genuine Entire checkpoint metadata');
-sponsor('entire-diff',.54,.64,'Bounded recovery.','Preserve the investigation. Keep the same budgets.','Actual Git diff linked to Entire checkpoint · CLI export viewer');
+sponsor('entire-diff',.54,.64,'Bounded recovery.','Actual Git diff. Local CLI export.','Actual Git diff linked to Entire checkpoint · CLI export viewer');
 frame(sponsorBox,time('improve',.54),time('improve',.64));await show(path.join(improvement,'latest-entire-local-viewer.jpg'),time('improve',.54),time('improve',.64),{x:28,y:440,w:426,h:184},sponsorBox,'Actual bounded-recovery diff');
-sponsor('cfo-model',.64,.81,'Model the tradeoff.','Editable planning assumptions. Separate measured usage.','Actual native CFO.ai model · planning assumptions, not measured traction');
+sponsor('cfo-model',.64,.81,'Model the tradeoff.','Editable Base / Downside. Planning assumptions.','Actual native CFO.ai model · planning assumptions, not measured traction');
 frame(sponsorBox,time('improve',.64),time('improve',.81));await show(path.join(finance,'screens/cfo-base-summary.jpg'),time('improve',.64),time('improve',.81),{x:90,y:175,w:470,h:405},sponsorBox,'Native CFO Planning summary');
-scene('cfo-cost',time('improve',.81),time('improve',1),`<div class="price-main"><div class="eyebrow hit">Measured gateway accounting</div><div class="stat hit">$0.1563</div><p class="hit">Selected confirmed run alone.</p><div class="price-compare hit"><strong>&gt; $0.1293</strong> variable budget</div></div>`,{note:'CFO.ai observed evidence · $49/100 and 70% are hypotheses · invoices and credits unknown'});
-const cfoBox={x:635,y:150,w:565,h:420};frame(cfoBox,time('improve',.81),time('improve',1));await show(path.join(finance,'screens/cfo-observed-costs.jpg'),time('improve',.81),time('improve',1),{x:90,y:175,w:470,h:335},cfoBox,'Native CFO observed-cost page');
+scene('cfo-cost',time('improve',.81),time('improve',1),`<div class="price-main"><div class="eyebrow hit">Gateway accounting</div><div class="stat hit">$0.1563</div><p class="hit">Selected confirmed run.</p><div class="price-compare hit"><strong>&gt; $0.1293</strong> budget</div><p class="cost-hypothesis hit">$49 / 100 · 70% target</p></div>`,{note:'CFO.ai observed evidence · $49/100 and 70% are hypotheses · invoices and credits unknown'});
+const cfoBox={x:650,y:145,w:565,h:440};frame(cfoBox,time('improve',.81),time('improve',1));await show(path.join(finance,'screens/cfo-observed-costs.jpg'),time('improve',.81),time('improve',1),{x:90,y:175,w:470,h:335},cfoBox,'Native CFO observed-cost page');
 
 scene('scope',time('limits',0),time('limits',.21),`<div class="eyebrow hit">Controlled MVP</div>${title('<span class="line">One shop.</span><span class="line accent">One defect class.</span>','small')}`,{note:'Cart preservation after checkout changes · no general website-support claim'});
 scene('cohort',time('limits',.21),time('limits',.46),`<div class="eyebrow hit">Final buggy cohort</div><div class="result-row"><div class="stat blue hit">1 / 3</div><div class="result-details"><h2 class="hit">Confirmed.</h2><p class="hit">Two investigations did not reproduce it.</p></div></div>`,{note:'Discovery outcome differs from 2/2 independent replay verification · not a general success rate'});
-scene('billing',time('limits',.46),time('limits',.68),`<div class="eyebrow hit">Measured ≠ complete billing</div>${title('<span class="line">Unknown stays</span><span class="line accent">unknown.</span>','small')}<p class="deck hit">Invoices and promotional credits.</p>`,{note:'All attempts retained · missing historical costs are not treated as zero'});
+scene('billing',time('limits',.46),time('limits',.68),`<div class="eyebrow hit">Complete cash billing</div>${title('<span class="line">Still</span><span class="line accent">unknown.</span>','small')}<p class="deck hit">Invoices and promotional credits.</p>`,{note:'All attempts retained · missing historical costs are not treated as zero'});
 scene('close',time('limits',.68),total,`<div class="eyebrow hit">BugReplay</div>${title('<span class="line">From report</span><span class="line accent">to reproduction.</span>','small')}<div class="closing-url hit">github.com/dsvyro1414-lab/bugreplay</div>`,{note:'Engine SHA 2b541b20a97e · selected run b8ffd757 · actual evidence in repository'});
 
 for(const b of blocks)if(b.audioFile){const src=await stage(b.audioFile,'neural-narration');audio.push(`<audio id="voice-${b.id}" src="${src}" data-start="${num(b.start+b.audioOffset)}" data-duration="${num(b.audioDuration)}" data-track-index="50" data-volume="1"></audio>`);}
@@ -178,16 +176,10 @@ for(const [i,start]of [time('hook',.31),B.investigate.start,B.verify.start,B.imp
 }
 {const src=await stage(chime,'licensed-bundled-sfx'),duration=(await probe(chime)).duration;audio.push(`<audio id="confirmed-chime" src="${src}" data-start="${num(controlEnd)}" data-duration="${duration}" data-track-index="61" data-volume="0.09"></audio>`);sfx.push({kind:'chime',startSeconds:num(controlEnd),volume:.09,purpose:'Editorial fixed-control PASS reveal; not a browser sound'});}
 let html=await fs.readFile(path.join(here,'index.template.html'),'utf8');
-for(const [key,value]of Object.entries({DURATION:total,PROTOTYPE:supplied?'':'<div class="prototype">Picture prototype · neural voice pending</div>',SHELLS:shells.join('\n'),SCENES:scenes.join('\n'),MEDIA:media.join('\n'),AUDIO:audio.join('\n'),CAPTIONS:'',BEATS:JSON.stringify(shots.map(s=>({id:s.id,start:s.startSeconds}))),MEDIA_MOTION:motions.join('\n')}))html=html.replaceAll(`{{${key}}}`,String(value));
+for(const [key,value]of Object.entries({DURATION:total,PROTOTYPE:'',SHELLS:shells.join('\n'),SCENES:scenes.join('\n'),MEDIA:media.join('\n'),AUDIO:audio.join('\n'),CAPTIONS:'',BEATS:JSON.stringify(shots.map(s=>({id:s.id,start:s.startSeconds}))),MEDIA_MOTION:motions.join('\n')}))html=html.replaceAll(`{{${key}}}`,String(value));
 await fs.writeFile(path.join(out,'index.html'),html);
 await fs.copyFile(path.join(here,'styles.css'),path.join(out,'styles.css'));
 await fs.copyFile(path.join(root,'demo/assets/gsap.min.js'),path.join(out,'assets/gsap.min.js'));
 for(const font of ['Montserrat.ttf','IBMPlexMono-Regular.ttf'])await fs.copyFile(path.join(here,'assets',font),path.join(out,'assets',font));
-const captionInput=JSON.parse(await fs.readFile(path.join(here,'narration-cues.json'),'utf8'));
-const stamp=seconds=>{const ms=Math.round(seconds*1000);return `${String(Math.floor(ms/3600000)).padStart(2,'0')}:${String(Math.floor(ms/60000)%60).padStart(2,'0')}:${String(Math.floor(ms/1000)%60).padStart(2,'0')},${String(ms%1000).padStart(3,'0')}`;};
-const wrap=text=>{const lines=[];let line='';for(const word of text.split(' ')){if(line.length+word.length+1>48&&line){lines.push(line);line='';}line+=(line?' ':'')+word;}if(line)lines.push(line);return lines.join('\n');};
-for(const b of blocks)if(captionInput.cues.filter(c=>c.blockId===b.id).map(c=>c.text).join(' ')!==b.text)throw new Error(`Caption text differs from the retained script: ${b.id}`);
-const captions=captionInput.cues.map((c,i)=>{const b=B[c.blockId];return `${i+1}\n${stamp(b.start+b.audioOffset+c.startSeconds)} --> ${stamp(b.start+b.audioOffset+c.endSeconds)}\n${wrap(c.text)}\n`;}).join('\n');
-await fs.writeFile(path.join(out,'captions.srt'),captions);
-await fs.writeFile(path.join(out,'provenance.json'),JSON.stringify({kind:'dynamic-saas-evidence-cut',durationSeconds:total,narrated:!!supplied,selectedRunId:evidence.runId,engineGitSha:evidence.gitSha,testSha256:evidence.testSha256,blocks:blocks.map(({audioFile,...b})=>({...b,audioFile:audioFile?path.relative(root,audioFile):null})),shots,media:sources,assets:[...assets.values()],soundEffects:sfx,limits:['Original footage plays at1×; crops follow genuine recorded viewport changes.','Hosted after screenshots are genuine official Neatlogs UI. Entire remains a labeled CLI export viewer.','Gateway accounting differs from complete cash billing and credits; earlier missing costs remain unknown.',supplied?'Narration uses the measured parent-supplied neural edit without time stretching.':'Silent picture prototype is not a completed narrated deliverable.']},null,2)+'\n');
+await fs.writeFile(path.join(out,'provenance.json'),JSON.stringify({kind:'silent-stable-saas-cut',revision:3,mode:'silent',normalization,durationSeconds:total,narrated:!!supplied,selectedRunId:evidence.runId,engineGitSha:evidence.gitSha,testSha256:evidence.testSha256,blocks:blocks.map(({audioFile,...b})=>({...b,audioFile:audioFile?path.relative(root,audioFile):null})),shots,media:sources,assets:[...assets.values()],soundEffects:sfx,limits:['Proof presentation derivatives preserve source durations and outcomes, align observed cart anchors, and document neighboring authentic-frame holds. Original verification recordings remain untouched.','Hosted after screenshots are genuine official Neatlogs UI. Entire remains a labeled CLI export viewer.','Gateway accounting differs from complete cash billing and credits; earlier missing costs remain unknown.','Final silent revision requested by the owner; no speech assets or narration clips are included.']},null,2)+'\n');
 console.log(JSON.stringify({sourceProject:out,durationSeconds:total,narrated:!!supplied,shots:shots.length,mediaEntries:sources.length,voiceBlocks:blocks.filter(b=>b.audioFile).length,sfx:sfx.length,rendered:false},null,2));
