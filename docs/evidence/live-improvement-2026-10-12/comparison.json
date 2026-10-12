@@ -564,27 +564,76 @@
     "transcriptOrPrivateConversationIncluded": false,
     "rawRecordingsIncluded": false,
     "traceLinksMayRequireAccountAccess": true,
-    "afterHostedScreenshotStatus": "Awaiting integrating-agent capture/review",
+    "afterHostedScreenshotStatus": "Authenticated hosted readback/export capture and three supplementary official Neatlogs after UI captures reviewed; official UI supplement collected after final movie render.",
     "latestEntireLocalExport": [
       {
         "publicCopy": "latest-entire-local-viewer.html",
-        "sha256": "a5795300acf4d73e5f5ba1417dbac5192f77eaf3443e9f8ca392f30bfd56b1ec",
-        "bytes": 8007,
+        "sha256": "7169ff02e346820a258e9a8977674b4680345baec50aadf809cdc93159c58168",
+        "bytes": 8014,
         "sourceKind": "Reviewed local CLI-export data/viewer; not official Entire app UI"
       },
       {
         "publicCopy": "latest-entire-export.safe.json",
-        "sha256": "70527138fd66e3751d6acfab75c72bec66620de0f0f26fe0b7304b1eca5639e4",
-        "bytes": 3165,
+        "sha256": "808bd710f4c106c208ef6e7162b0cb67975d2566fc3c3f8deeefef2c9fa3bbf7",
+        "bytes": 3130,
         "sourceKind": "Reviewed local CLI-export data/viewer; not official Entire app UI"
       },
       {
         "publicCopy": "latest-entire-local-viewer.jpg",
-        "sha256": "123985053490352f65fe8396a5decbfc2a00ca8796564b637532f9577daf017a",
-        "bytes": 145567,
+        "sha256": "6fc229dfae765e232659fd0e342b82a75e45ec3a40b7650704a8fef93ba25058",
+        "bytes": 145390,
         "sourceKind": "Reviewed actual local CLI export viewer screenshot"
       }
-    ]
+    ],
+    "latestEntireSessionIdentifiersOmitted": true,
+    "latestEntirePrivacyCorrection": "Public local export and viewer recaptured after removing session identifiers; no transcript or private conversation included.",
+    "hostedAfterEvidence": [
+      {
+        "publicCopy": "neatlogs-after-safe.json",
+        "sha256": "712b0a979d99e230b9939f3753bc2463da31449f5a8cbf660702ab65c2a2801e",
+        "bytes": 4405,
+        "sourceKind": "Authenticated hosted Neatlogs API data or actual captured local viewer; not official after UI"
+      },
+      {
+        "publicCopy": "neatlogs-after-evidence.html",
+        "sha256": "06d379dcdc248d5b81f185a54d8c5472ae0c4d17d8348ad4e3e10f8edc6a3884",
+        "bytes": 4363,
+        "sourceKind": "Authenticated hosted Neatlogs API data or actual captured local viewer; not official after UI"
+      },
+      {
+        "publicCopy": "neatlogs-after-hosted-export.jpg",
+        "sha256": "e0a5e6f5916af5c2f94f3c1922a2d5588827e5eb011b094898d180a34352171c",
+        "bytes": 124592,
+        "sourceKind": "Authenticated hosted Neatlogs API data or actual captured local viewer; not official after UI"
+      }
+    ],
+    "officialAfterUiSupplement": {
+      "auditFile": "neatlogs-after-official-ui-audit.json",
+      "auditSha256": "43a7eb837128d83d5afdd6431ec08c0ce5a6e1869e97d7a2626e19144070676e",
+      "checkedAtUtc": "2026-10-12T16:08:56.322440+00:00",
+      "traceId": "9096d7e75454f94d4c9cd11011604e13",
+      "runId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+      "files": [
+        {
+          "path": "neatlogs-after-official-overview.jpg",
+          "bytes": 57348,
+          "sha256": "a1c1e373cb2e52d5a850a5ea9e30b9b1a39e1db1463090552b1e059b5ed346c1"
+        },
+        {
+          "path": "neatlogs-after-official-replay.jpg",
+          "bytes": 26849,
+          "sha256": "7901ced5be0f1cc08cb11ab2427751301181f36c12b314533c08a4e448131509"
+        },
+        {
+          "path": "neatlogs-after-official-control.jpg",
+          "bytes": 42641,
+          "sha256": "c5e4a2109193858e8f59c17e05dc34770066121d1e21de1fec7917754810b891"
+        }
+      ],
+      "independentlyVisuallyReviewed": true,
+      "accountSidebarExcluded": true,
+      "movieFilesUnchanged": true
+    }
   },
   "selectedLatestCase": {
     "before": {

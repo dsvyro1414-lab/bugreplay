@@ -115,5 +115,20 @@
     "completeProjectCashBillKnown": false,
     "forecastAssumptionsOverwritten": false,
     "note": "Separately dated native observed-evidence page. Reviewed screenshot shows the exact latest-four header accounting and explicit incompleteness; it does not assert that CFO.ai independently fetched repository source files."
+  },
+  "postObservedAppendNativeReview": {
+    "sourceScreenshot": "docs/evidence/finance/screens/cfo-final-preserved-summary.jpg",
+    "sha256": "a962b1ccd8b44b3f441b6d59c4d3202b41d5dc18ee1883020486521c1ca2e2d8",
+    "byteIdenticalToReviewedOriginal": true,
+    "reviewMethod": "Independent visual inspection of the native CFO.ai summary image supplied by the browser operator after its reported live post-append verification.",
+    "selectedCase": "Base",
+    "costBasis": "Planning",
+    "baseAnnualRevenueUsd": 42966.42,
+    "baseEndingCashUsd": 30405.41,
+    "downsideAnnualRevenueUsd": 10901.9,
+    "downsideEndingCashUsd": -17032.81,
+    "planningForecastPreserved": true,
+    "privacyReview": "Model-only screenshot; no chat, account details, credentials or owner-specific URLs visible.",
+    "captureTimingProvenance": "The browser operator reported a post-append native UI verification. This image is byte-identical to the earlier Base summary; its capture timing cannot be independently established from the pixels or hash."
   }
 }

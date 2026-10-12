@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1280, height=720">
+  <title>BugReplay — recorded final demonstration</title>
+  <script src="assets/gsap.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="final-demo" data-composition-id="final-demo" data-start="0" data-duration="170" data-width="1280" data-height="720">
+    <div class="background"></div>
+    <header class="masthead"><span class="brand">BugReplay</span><span class="qualification">Recorded demonstration · one controlled shop</span></header>
+    {{SCENES}}
+    {{MEDIA}}
+    {{AUDIO}}
+    {{CAPTIONS}}
+    <footer class="frame-footer"><span>One cart-preservation defect class</span><span>{{RELEASE_SHA}}</span></footer>
+  </div>
+  <script>
+    window.__timelines = window.__timelines || {};
+    window.__timelines['final-demo'] = gsap.timeline({ paused: true });
+  </script>
+</body>
+</html>

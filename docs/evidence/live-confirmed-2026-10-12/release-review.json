@@ -1,7 +1,7 @@
 {
-  "checkedAtUtc": "2026-10-12T15:43:29.492633+00:00",
-  "phase": "preliminary_release_review_before_final_media_ready",
-  "finalReleaseAuditComplete": false,
+  "checkedAtUtc": "2026-10-12T16:11:43.550032+00:00",
+  "phase": "completed_independent_local_release_audit_with_post_movie_official_ui_supplement",
+  "finalReleaseAuditComplete": true,
   "cohortsVerifiedAgainstOriginalRunJson": [
     {
       "name": "first",
@@ -48,18 +48,327 @@
   "selectedOriginal70FilesAndArchiveHashUnchanged": true,
   "all34PublicCopyHashesMatchAudit": true,
   "unchangedPublicAndManualTestSha256": "bd9c42ba5744e7ed47cec25dcc47dd0341f9c7da88d034a700014b4a169c208a",
-  "ownedTextFilesChecked": 63,
+  "ownedTextFilesChecked": 78,
   "credentialOrHomePathFindings": [],
   "missingLocalMarkdownLinks": [],
   "pending": [
-    "Final media ready signal, final MP4 full decode/narration/scene review and public access check.",
-    "Hosted Neatlogs after UI capture remains pending; after trace identity/local proof exists.",
-    "Native CFO export public copy/link is handled by finance.",
-    "Correct team/member registration/check-in, leader email, Discord cutoff/official launch post, public posts/form/confirmation are not verified."
+    "Publish final media and corrected metadata commit, then verify unauthenticated media HTTP access and the pushed Git blob against the reviewed local file.",
+    "Confirm registered team/roster, every member registration/check-in, leader email, Discord final cutoff and official submission post.",
+    "Required public build/launch quote/demo/tag links, verified-email form submission and actual confirmation remain unverified.",
+    "Unauthenticated access to the owner CFO.ai workspace is not established; both reviewed native XLSX downloads are already public.",
+    "Human auditory playback review is not claimed; technical audio and narrated cue text are checked."
   ],
-  "unownedStaleClaimReportedToIntegrator": {
-    "file": "README.md",
-    "claim": "No completed cfo.ai model, live benchmark, trace-driven improvement ... claimed here.",
-    "resolution": "Integrator owns root README; requested update while retaining pending submission/cutoff."
+  "scope": "Independent review of technical evidence and the final local public-ready movie; actual external hackathon submission and final media publication remain separate gates.",
+  "sourceShaDistinction": {
+    "verifiedEngineSha": "2b541b20a97ef3df4261529bd48089792e01f2af",
+    "publicProofPublicationSha": "76d3f0b50e4f4b4fdb8269debf09f091f76028c4",
+    "finalMediaPublicationSha": null
+  },
+  "manualPublicCopiesStillMatchAudit": true,
+  "finalMovie": {
+    "path": "demo/bugreplay-final-demo.mp4",
+    "sha256": "b10877646b2faf01d2ae8384c5de1f3bef5c13b202a6d7c74316251b77237e30",
+    "bytes": 8237995,
+    "durationSeconds": 170,
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "frames": 5100,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "audioSampleRate": 48000,
+    "audioChannels": 2,
+    "fullIndependentFfmpegDecodeExitCode": 0,
+    "decodeErrors": "",
+    "independentlyExtractedPictureSamples": 28,
+    "all28MatchFinanceDecodedSnapshotBytes": true,
+    "all28PictureSamplesVisuallyReviewed": true,
+    "correctedEntireSceneNoRawSessionIdVisible": true,
+    "actualPublicCopyMatchesReviewedRenderBytes": true,
+    "publicMediaAudit": "demo/final-cut/media-audit.json",
+    "publicMediaAuditSha256": "1e9ac8dfd2d5b2da4cb5a1af2f2a74448deca60072ebbd6c8400fa6984541fea",
+    "cueTextReviewed": true,
+    "independentAudioTechnicalCheck": {
+      "meanDbfs": -17.0,
+      "peakDbfs": -1.7,
+      "nonSilent": true,
+      "clippingDetected": false
+    },
+    "auditoryPlaybackReviewed": false,
+    "publishedPublicMovieAccessVerified": false,
+    "publicationVerificationPlannedMethod": "Unauthenticated HTTP HEAD plus exact reviewed local file / pushed Git blob comparison; no remote-media download required."
+  },
+  "hostedNeatlogsIndependentReconciliation": {
+    "rawSourceSha256Matches": true,
+    "spans": 50,
+    "providers": 16,
+    "wrappers": 15,
+    "inputTokens": 41069,
+    "outputTokens": 1261,
+    "singleCompleteTreeNoDuplicates": true,
+    "verificationSummariesMatch": {
+      "verifier.replay": {
+        "verdict": "confirmed",
+        "matchedFailures": 2,
+        "classifications": [
+          "matched_failure",
+          "matched_failure"
+        ]
+      },
+      "verifier.control": {
+        "verdict": "not_matched",
+        "matchedFailures": 0,
+        "classifications": [
+          "passed"
+        ]
+      }
+    },
+    "rawNotPrintedOrCopied": true
+  },
+  "financeIndependentReconciliation": {
+    "seventeenOriginalRunViewsReconcile": true,
+    "fourBaselineTerminalTokenRecoveriesIncluded": true,
+    "allInvestigationInputTokens": 556919,
+    "allInvestigationOutputTokens": 16881,
+    "completeHeaderAccountingRuns": 4,
+    "knownHeaderAccountingUsd": 0.9546999,
+    "twoSmokesRetained": true,
+    "fiveRejectedProbesRetained": true,
+    "cashInvoiceAndCreditValuesRemainUnknown": true,
+    "conditionalRatesRecomputed": true,
+    "twoSourcePatchArtifactsMatchExactGitDiff": true,
+    "unifiedPatchEmptyContextWhitespaceIsArtifactSyntax": true
+  },
+  "nativeCfoExports": [
+    {
+      "path": "docs/evidence/finance/BugReplay-CFO-Planning.xlsx",
+      "sha256": "7ad47495c36d9fe7ba51fbfff74d6799a35a931d0aea72ae7340dbbc9f689590",
+      "bytes": 53391,
+      "sheets": 9,
+      "formulas": 1518,
+      "cachedExcelErrors": 0,
+      "externalRelationships": 0,
+      "nativeSourceUnchanged": true
+    },
+    {
+      "path": "docs/evidence/finance/BugReplay-CFO-Observed-Engineering.xlsx",
+      "sha256": "6046de225b141496272281dbb5258149c917eb8d6e1024d4de6f114b31a8fb7b",
+      "bytes": 14266,
+      "sheets": 6,
+      "formulas": 399,
+      "cachedExcelErrors": 0,
+      "externalRelationships": 0,
+      "nativeSourceUnchanged": true
+    }
+  ],
+  "cfoFinalSummary": {
+    "visibleValuesIndependentlyReviewed": true,
+    "planningBaseRevenueUsd": 42966.42,
+    "planningBaseEndingCashUsd": 30405.41,
+    "planningDownsideRevenueUsd": 10901.9,
+    "planningDownsideEndingCashUsd": -17032.81,
+    "captureTimingIndependentlyEstablished": false,
+    "limitation": "Screenshot values are independently reviewed; identical bytes to the earlier base-summary screenshot do not independently date a later capture.",
+    "browserOperatorCaptureTimingReport": "Integrator reports a new native screenshot after observed-evidence append and live accessibility-state inspection; matching pixels/hash independently establish values only."
+  },
+  "beforeScreenshotReview": {
+    "path": "docs/evidence/live-improvement-2026-10-12/neatlogs-before-parser-crop.png",
+    "sha256": "b1f8acd6abf7c64ab5c997db225a5dd3564c80b474e63342ebf12686aed3f428",
+    "traceId": "17af3d753892ebeeff61afa08ee24492",
+    "actualHostedUiVisuallyReviewed": true,
+    "reviewedCropExcludesAccountSidebar": true,
+    "notTheLaterImmediateBeforeTrace": "f997c43d7542b0c7baefb66cd610fe33",
+    "reportedOriginalSource": "artifacts/submission-2026-10-12/screens/neatlogs-before-parser.jpg",
+    "reportedCrop": {
+      "x": 160,
+      "y": 190,
+      "width": 1600,
+      "height": 1330,
+      "originalWidth": 1796,
+      "originalHeight": 1898,
+      "method": "Native sips JPEG decode and PNG crop; reviewed derivative, not byte/pixel-exact comparison."
+    }
+  },
+  "latestEntireLocalExport": {
+    "safeMetadata": "docs/evidence/live-improvement-2026-10-12/latest-entire-export.safe.json",
+    "safeMetadataSha256": "808bd710f4c106c208ef6e7162b0cb67975d2566fc3c3f8deeefef2c9fa3bbf7",
+    "viewerScreenshotSha256": "6fc229dfae765e232659fd0e342b82a75e45ec3a40b7650704a8fef93ba25058",
+    "publicMetadataAndHtmlScannedForOmittedSessionIdentifiers": true,
+    "viewerAndNewMovieFramesVisuallyReviewed": true,
+    "officialEntireAppUiClaimed": false
+  },
+  "unauthenticatedPublicProofChecks": {
+    "checkedAtUtc": "2026-10-12T15:54:20.759582+00:00",
+    "proofPublicationSha": "76d3f0b50e4f4b4fdb8269debf09f091f76028c4",
+    "checks": [
+      {
+        "path": "docs/evidence/live-confirmed-2026-10-12/README.md",
+        "url": "https://raw.githubusercontent.com/dsvyro1414-lab/bugreplay/76d3f0b50e4f4b4fdb8269debf09f091f76028c4/docs/evidence/live-confirmed-2026-10-12/README.md",
+        "httpStatus": 200,
+        "bytes": 8315,
+        "sha256": "0c7956432c91ce686bff22428bab2a16057b76e7fbc270385b9b2500d8f93a6c",
+        "matchesLocal": true,
+        "unauthenticated": true
+      },
+      {
+        "path": "docs/evidence/live-confirmed-2026-10-12/repro.spec.ts",
+        "url": "https://raw.githubusercontent.com/dsvyro1414-lab/bugreplay/76d3f0b50e4f4b4fdb8269debf09f091f76028c4/docs/evidence/live-confirmed-2026-10-12/repro.spec.ts",
+        "httpStatus": 200,
+        "bytes": 13341,
+        "sha256": "bd9c42ba5744e7ed47cec25dcc47dd0341f9c7da88d034a700014b4a169c208a",
+        "matchesLocal": true,
+        "unauthenticated": true
+      },
+      {
+        "path": "docs/evidence/live-confirmed-2026-10-12/verification.json",
+        "url": "https://raw.githubusercontent.com/dsvyro1414-lab/bugreplay/76d3f0b50e4f4b4fdb8269debf09f091f76028c4/docs/evidence/live-confirmed-2026-10-12/verification.json",
+        "httpStatus": 200,
+        "bytes": 9038,
+        "sha256": "894cf39a877a77134340b3a234679f566220cfc8e2247f98fdf1538ecfa467dc",
+        "matchesLocal": true,
+        "unauthenticated": true
+      },
+      {
+        "path": "docs/evidence/live-confirmed-2026-10-12/control-verification.json",
+        "url": "https://raw.githubusercontent.com/dsvyro1414-lab/bugreplay/76d3f0b50e4f4b4fdb8269debf09f091f76028c4/docs/evidence/live-confirmed-2026-10-12/control-verification.json",
+        "httpStatus": 200,
+        "bytes": 3135,
+        "sha256": "07f6e087ad969e3b447ecacd3670843eb1e922fc5f1dbf6f99c057f1f37ec439",
+        "matchesLocal": true,
+        "unauthenticated": true
+      },
+      {
+        "path": "docs/evidence/finance/BugReplay-CFO-Planning.xlsx",
+        "url": "https://raw.githubusercontent.com/dsvyro1414-lab/bugreplay/76d3f0b50e4f4b4fdb8269debf09f091f76028c4/docs/evidence/finance/BugReplay-CFO-Planning.xlsx",
+        "httpStatus": 200,
+        "bytes": 53391,
+        "sha256": "7ad47495c36d9fe7ba51fbfff74d6799a35a931d0aea72ae7340dbbc9f689590",
+        "matchesLocal": true,
+        "unauthenticated": true
+      },
+      {
+        "path": "docs/evidence/finance/BugReplay-CFO-Observed-Engineering.xlsx",
+        "url": "https://raw.githubusercontent.com/dsvyro1414-lab/bugreplay/76d3f0b50e4f4b4fdb8269debf09f091f76028c4/docs/evidence/finance/BugReplay-CFO-Observed-Engineering.xlsx",
+        "httpStatus": 200,
+        "bytes": 14266,
+        "sha256": "6046de225b141496272281dbb5258149c917eb8d6e1024d4de6f114b31a8fb7b",
+        "matchesLocal": true,
+        "unauthenticated": true
+      },
+      {
+        "path": "docs/evidence/live-improvement-2026-10-12/neatlogs-after-safe.json",
+        "url": "https://raw.githubusercontent.com/dsvyro1414-lab/bugreplay/76d3f0b50e4f4b4fdb8269debf09f091f76028c4/docs/evidence/live-improvement-2026-10-12/neatlogs-after-safe.json",
+        "httpStatus": 200,
+        "bytes": 4405,
+        "sha256": "712b0a979d99e230b9939f3753bc2463da31449f5a8cbf660702ab65c2a2801e",
+        "matchesLocal": true,
+        "unauthenticated": true
+      },
+      {
+        "path": "docs/evidence/live-improvement-2026-10-12/neatlogs-before-parser-crop.png",
+        "url": "https://raw.githubusercontent.com/dsvyro1414-lab/bugreplay/76d3f0b50e4f4b4fdb8269debf09f091f76028c4/docs/evidence/live-improvement-2026-10-12/neatlogs-before-parser-crop.png",
+        "httpStatus": 200,
+        "bytes": 399044,
+        "sha256": "b1f8acd6abf7c64ab5c997db225a5dd3564c80b474e63342ebf12686aed3f428",
+        "matchesLocal": true,
+        "unauthenticated": true
+      }
+    ]
+  },
+  "unifiedPatchWhitespaceNote": "Actual source diff artifacts match Git bytes. Empty unified-diff context lines are patch syntax and are not source-code whitespace failures.",
+  "knownLimits": [
+    "The whole fourth evaluation exited 1: one of three buggy discoveries confirmed, two did not reproduce; fixed autonomous investigation did not reproduce.",
+    "One selected synthetic controlled-shop defect class; no broad autonomous benchmark claim.",
+    "Selected gateway-header cost exceeds the hypothetical unit-variable ceiling; complete invoices and promotional credits remain unknown.",
+    "Final movie after/Entire scenes are labeled local exports of genuine source data. Actual official Neatlogs after UI was separately captured and reviewed after movie render."
+  ],
+  "shortMovie": {
+    "path": "demo/bugreplay-final-demo-x.mp4",
+    "sha256": "a698307af37ff7a8790570e893591507a422fd09cb5872e80461b0cceeb81818",
+    "bytes": 4987262,
+    "durationSeconds": 138.208,
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "videoFrames": 4146,
+    "fullIndependentFfmpegDecodeExitCode": 0,
+    "decodeErrors": "",
+    "sourceSha256": "b10877646b2faf01d2ae8384c5de1f3bef5c13b202a6d7c74316251b77237e30",
+    "sourceMatchesReviewed170SecondMovie": true,
+    "publicMediaAudit": "demo/final-cut/x-media-audit.json",
+    "publicMediaAuditSha256": "31869f0ac4865125656fb627d0dfe3cb5ea8c45c6c5c5abec27044ef06c3e6d5",
+    "editManifest": "demo/final-cut/x-cut-manifest.json",
+    "captionCues": 25,
+    "visualReviewReportedByFinance": {
+      "decodedSamples": 38,
+      "cutBoundaries": 6
+    },
+    "independentRootVisualReview": {
+      "reportedBy": "Integrator",
+      "decodedSamples": 38,
+      "contactSheets": 5,
+      "result": "Passed: no privacy or claim issue. Independent of finance review; this reviewer independently checked metadata/hash/full decode."
+    },
+    "speedFactor": 1,
+    "bothFullCleanReplaysAndWholeControlPreservedPerEditIntervals": true,
+    "auditoryPlaybackReviewed": false,
+    "uploadOrExternalSubmissionVerified": false,
+    "publicationVerificationPlannedMethod": "Unauthenticated HTTP HEAD plus exact reviewed local file / pushed Git blob comparison; no remote-media download required."
+  },
+  "officialNeatlogsAfterUiSupplement": {
+    "auditPath": "docs/evidence/live-improvement-2026-10-12/neatlogs-after-official-ui-audit.json",
+    "auditSha256": "43a7eb837128d83d5afdd6431ec08c0ce5a6e1869e97d7a2626e19144070676e",
+    "traceId": "9096d7e75454f94d4c9cd11011604e13",
+    "selectedRunId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+    "sourceEngineSha": "2b541b20a97ef3df4261529bd48089792e01f2af",
+    "observed": {
+      "spans": 50,
+      "displayedDurationSeconds": 51.6,
+      "verifierReplay": {
+        "matchedFailures": 2,
+        "verdict": "confirmed"
+      },
+      "verifierControl": {
+        "attempt": 1,
+        "classification": "passed",
+        "stage": "passed",
+        "exitCode": 0,
+        "initialCartItems": 2,
+        "actualCartItems": 2
+      }
+    },
+    "fileHashesAndJpegFormatsChecked": true,
+    "threeActualSavedCapturesIndependentlyVisuallyReviewed": true,
+    "credentialsOrPersonalAccountDetailsVisible": false,
+    "rawModelExplorationVisible": false,
+    "moviesRehashedAndUnchanged": true,
+    "collectedAfterFinalMovieRender": true,
+    "captureFiles": [
+      {
+        "path": "docs/evidence/live-improvement-2026-10-12/neatlogs-after-official-overview.jpg",
+        "sha256": "a1c1e373cb2e52d5a850a5ea9e30b9b1a39e1db1463090552b1e059b5ed346c1",
+        "bytes": 57348
+      },
+      {
+        "path": "docs/evidence/live-improvement-2026-10-12/neatlogs-after-official-replay.jpg",
+        "sha256": "7901ced5be0f1cc08cb11ab2427751301181f36c12b314533c08a4e448131509",
+        "bytes": 26849
+      },
+      {
+        "path": "docs/evidence/live-improvement-2026-10-12/neatlogs-after-official-control.jpg",
+        "sha256": "c5e4a2109193858e8f59c17e05dc34770066121d1e21de1fec7917754810b891",
+        "bytes": 42641
+      }
+    ]
+  },
+  "latestDiscordReview": {
+    "checkedAtUtc": "2026-10-12T16:11:10.600810+00:00",
+    "reviewSource": "Integrator live authenticated Discord inspection; this reviewer did not control Discord.",
+    "announcementsChannel": "Visible but empty",
+    "globalDeadlineSearchResults": 2,
+    "globalSubmissionSearchResults": 17,
+    "officialFinalCutoffFound": false,
+    "findings": "A participant mentioned 23:55; this is not authoritative cutoff evidence. An organizer/sponsor opening-time post says 7pm IST, not a final submission cutoff.",
+    "remaining": "Confirm final cutoff and official submission post with the organizer/Discord before submitting."
   }
 }

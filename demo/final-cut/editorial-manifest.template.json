@@ -1,0 +1,44 @@
+{
+  "status": "awaiting_real_evidence",
+  "evidenceManifest": null,
+  "runViewFile": null,
+  "approvedForEditing": false,
+  "privacyReviewed": false,
+  "claimsReviewed": false,
+  "sceneMedia": {
+    "intake": [],
+    "investigation": [],
+    "verification": [],
+    "neatlogs-before": [],
+    "neatlogs-after": [],
+    "entire": [],
+    "cfo": [],
+    "control": [],
+    "close": []
+  },
+  "mediaEntrySchema": {
+    "file": null,
+    "kind": "video",
+    "startSecondsInScene": 0,
+    "durationSeconds": null,
+    "sourceStartSeconds": 0,
+    "speedFactor": 1,
+    "preprocessed": false,
+    "originalFile": null,
+    "reviewed": false,
+    "label": null,
+    "sourceRect": null,
+    "sourceOrigin": "application_capture",
+    "sourceEvidenceFile": null
+  },
+  "narration": {
+    "fullFile": null,
+    "fullFileReviewed": false,
+    "segments": [],
+    "segmentSchema": {"scene": null, "file": null, "sourceStartSeconds": 0, "reviewed": false},
+    "captions": [],
+    "captionSchema": {"startSeconds": null, "durationSeconds": null, "text": null},
+    "synchronizedCaptionsReviewed": false
+  },
+  "notes": "Schema examples are documentation, not media entries. Supply authentic local files and reviewed captions. No placeholder filenames are accepted as evidence."
+}

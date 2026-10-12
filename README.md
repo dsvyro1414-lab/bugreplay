@@ -6,9 +6,9 @@ The runner investigates one defect class in a controlled Chromium shop: cart ite
 
 ## Current status
 
-Agent A's engine is implemented and tested on explicit synthetic fixtures with real Chromium and standalone replay processes. This product branch also includes Agent B's real UI, buggy/fixed shops, and independent scripted checks: **5/5 passed**, including two intended regression failures and an unchanged passing control. See [product handoff](docs/evidence/product-handoff.md). Autonomous live-model discovery has **not** passed on the product branch.
+The integrated application has one verified autonomous live-model discovery: selected run `b8ffd757-6aed-405d-b7ac-ed3b1c4d9236` produced two intended assertion failures in independent clean processes, and the byte-identical saved test passed the corrected control with only its URL changed. The latest evaluation confirmed **1/3** buggy investigations; two did not reproduce the defect. All outcomes and original recordings are retained. See the [selected proof](docs/evidence/live-confirmed-2026-10-12/README.md) and [complete latest cohort](docs/evidence/live-fourth-series-2026-10-12/README.md). This is one controlled shop and one defect class.
 
-The approved LiteLLM gateway has answered a real request to `claude-sonnet-4.6` in A's environment; Bedrock is prohibited by the event rules. Neatlogs hosted Doctor verified finalized trace readback through a trusted hotspot in that environment. Private credentials are not in Git, and current access must pass again before real investigations. Access checks and scripted tests are not investigation results.
+The approved LiteLLM gateway ran `claude-sonnet-4.6`; Neatlogs Doctor, model smoke and finalized selected-trace hosted readback passed. The current engine suite passed **46/46** and root/web/shop typechecks passed. Genuine Entire checkpoints cover the actual engine changes. CFO.ai contains the editable 12-month planning model and a separate observed engineering-cost appendix. Private credentials are not in Git. Access checks and synthetic tests are distinct from the live discovery evidence.
 
 See [engine handoff](scripts/ENGINE-STATUS.md), [access recovery and administrator requests](scripts/ACCESS-RECOVERY.md), [shared DOM contract](packages/contracts/DOM.md), [plan](plan.md), and B's [development log](hackathon.md). Synthetic tests are engineering checks, not live discovery evidence.
 
@@ -89,7 +89,7 @@ Original investigation recordings are saved per clean browser episode as `invest
 
 ## Development and hackathon
 
-Watch the [52-second product preview](demo/bugreplay-product-preview.mp4), built with [reproducible HyperFrames source](demo/README.md). It shows real UI/shop evidence and a scripted replay, clearly labeled as an engineering preview. It is not the final live-model/sponsor demo.
+Watch the reviewed [170-second final demo](demo/bugreplay-final-demo.mp4) or the [138-second X version](demo/bugreplay-final-demo-x.mp4). Both show actual live-investigation and replay footage, the unchanged passing control, and authentic Neatlogs, Entire and CFO.ai evidence. Export viewers and edited excerpts are explicitly labeled. [Montage source, captions and media audits](demo/final-cut/README.md) document provenance and limits. The older [52-second product preview](demo/bugreplay-product-preview.mp4) remains a scripted engineering preview.
 
 Product-only checks and builds do not require private model or telemetry keys:
 
@@ -100,8 +100,8 @@ npm run build --workspace @bugreplay/web
 npm run build --workspace @bugreplay/demo-shop
 ```
 
-The scripted product suite starts both shops itself. Its known fixture setup must not be supplied to the runtime model. The web tests use a separate explicit fixture API and real Chromium; they verify UI behavior, not discovery. See the [evidence index](docs/evidence/index.md) for actual results and the remaining live-model, cfo.ai, and final-demo gates. Completed replay before/after PNGs are registered for API downloads alongside investigation screenshots and replay videos. Real investigations also save `trace.json` with the Neatlogs trace ID, run ID, model and source commit.
+The scripted product suite starts both shops itself. Its known fixture setup must not be supplied to the runtime model. The web tests use a separate explicit fixture API and real Chromium; they verify UI behavior, not discovery. See the [evidence index](docs/evidence/index.md) for actual results and outstanding external submission steps. Completed replay before/after PNGs are registered for API downloads alongside investigation screenshots and replay videos. Real investigations also save `trace.json` with the Neatlogs trace ID, run ID, model and source commit.
 
 Agent A owns runner/contracts/root/scripts. Agent B owns web/shop/evals/evidence/demo/cfo.ai. Keep credentials and unreviewed recordings out of Git. Entire project hooks are configured; each coding environment must approve/verify its hooks and a real checkpoint. Imported transcript checkpoints do not prove automatic hooks worked.
 
-The [plan](plan.md) defines neatHack sponsor/demo/submission gates. The [selected real proof](docs/evidence/live-confirmed-2026-10-12/README.md) contains two intended assertion failures and a passing unchanged fixed control; the complete latest cohort discovered 1/3 buggy cases. [Trace-guided changes and genuine Entire checkpoints](docs/evidence/live-improvement-2026-10-12/README.md) and the [editable CFO.ai model with measured-cost limits](docs/evidence/finance/README.md) are reviewed. Final demo publication, the public quote-post, submission confirmation and the latest Discord cutoff remain pending; the evidence index records their current status.
+The [plan](plan.md) defines neatHack sponsor/demo/submission gates. [Trace-guided changes and genuine Entire checkpoints](docs/evidence/live-improvement-2026-10-12/README.md) and the [editable CFO.ai model with measured-cost limits](docs/evidence/finance/README.md) are reviewed. The public quote-post, team/check-in verification, final submission confirmation and latest Discord cutoff remain pending. Prepared evidence and videos do not establish an accepted hackathon entry.

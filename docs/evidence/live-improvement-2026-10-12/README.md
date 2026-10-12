@@ -39,7 +39,7 @@ This separate selected-case comparison uses **Stage B** (`b8e9f7c`, second serie
 | Elapsed | 17.465 s | 60.974 s |
 | Input / output tokens | 11,250 / 323 | 65,169 / 2,195 |
 
-The hosted before trace's Raw screenshot shows prose followed by an unfenced JSON `readCart` suffix; the provider succeeds while the wrapper rejects its format. The after ledger records 13 accepted normalized responses and continuation to a bounded `not_reproduced` outcome. Trace IDs above were checked against the original `trace.json` files. This is not deterministic replay of the same provider response. Hosted trace links may require account access. The latest confirmed after trace is now independently verified by authenticated hosted readback, as documented below; the official after UI was not opened. Raw recordings and private conversations are not copied here.
+The hosted before trace's Raw screenshot shows prose followed by an unfenced JSON `readCart` suffix; the provider succeeds while the wrapper rejects its format. The after ledger records 13 accepted normalized responses and continuation to a bounded `not_reproduced` outcome. Trace IDs above were checked against the original `trace.json` files. This is not deterministic replay of the same provider response. Hosted trace links may require account access. The latest confirmed after trace is now independently verified by authenticated hosted readback, as documented below; the official after UI was subsequently opened and independently reviewed in the supplementary captures below. Raw recordings and private conversations are not copied here.
 
 ## Actual fix and authentic Entire checkpoint
 
@@ -67,7 +67,7 @@ The fourth series at [`2b541b20a97ef3df4261529bd48089792e01f2af`](https://github
 
 Latest ledgers contain four invalid responses among 92 calls; they are included in tokens/costs. One fixed-run event records an invalid decision remaining after its bounded repair, then continuation. None of the four terminal completed events reports a format failure. Three runs terminate `not_reproduced`; the selected case terminates `bug_confirmed`. Increased actions, elapsed time and tokens measure longer exploration; they do not demonstrate speed or cost improvement. Latest whole-cohort gateway accounting is $0.9546999, with cash billing/credits unknown. Earlier missing costs remain unknown.
 
-The selected real before/after example is **70582bba / [trace f997c43d7542b0c7baefb66cd610fe33](https://app.neatlogs.com/traces/f997c43d7542b0c7baefb66cd610fe33)** at `b8e9f7c` → **b8ffd757 / [trace 9096d7e75454f94d4c9cd11011604e13](https://app.neatlogs.com/traces/9096d7e75454f94d4c9cd11011604e13)** at `2b541b2`. Before: format-terminated inconclusive, five actions, six calls, 17.465s. Latest: confirmed through independent test/control, 13 actions, 16 calls, 51.651s, four normalized decisions and one invalid response, all accounted. The CreateRun input is byte-identical. Hosted links may require access. Authenticated readback of the latest after trace is verified below; its hosted verification outputs agree with the original local proof. The official after UI was not opened.
+The selected real before/after example is **70582bba / [trace f997c43d7542b0c7baefb66cd610fe33](https://app.neatlogs.com/traces/f997c43d7542b0c7baefb66cd610fe33)** at `b8e9f7c` → **b8ffd757 / [trace 9096d7e75454f94d4c9cd11011604e13](https://app.neatlogs.com/traces/9096d7e75454f94d4c9cd11011604e13)** at `2b541b2`. Before: format-terminated inconclusive, five actions, six calls, 17.465s. Latest: confirmed through independent test/control, 13 actions, 16 calls, 51.651s, four normalized decisions and one invalid response, all accounted. The CreateRun input is byte-identical. Hosted links may require access. Authenticated readback of the latest after trace is verified below; its hosted verification outputs agree with the original local proof. The official after UI was subsequently opened and independently reviewed in the supplementary captures below.
 
 This is **multiple trace-guided engine changes with real checkpoints**, not an isolated single-change experiment. Stochastic outcomes, changed generic instructions/observations and tiny cohorts prevent attributing all discovery improvement to normalization alone. The latest source did not add the hidden target recipe to the runtime prompt; discovered checkout values appear in browser observations/actions and the saved result.
 
@@ -81,7 +81,7 @@ Authentic latest Entire checkpoint **`01M4RBGMN0JWSXDHD2TESXJ35A`** was independ
 
 ## Genuine hosted before screen and after trace readback
 
-[Reviewed before screenshot](neatlogs-before-parser-crop.png) is an exact-pixel crop of the actual Neatlogs UI (x=160, y=190, width=1600, height=1330; browser chrome and account sidebar excluded) for the **first baseline** trace [`17af3d753892ebeeff61afa08ee24492`](https://app.neatlogs.com/traces/17af3d753892ebeeff61afa08ee24492), run `e07bdfa3-c839-4e68-b784-640244403b2c`, SHA `60d22946616664235546ed81817f60ded57957db`. It shows the workflow/model wrapper error after successful provider spans. It is a different before example from the immediate Stage B comparison above. The original Raw-response screenshots remain private because they include exploratory model prose.
+[Reviewed before screenshot](neatlogs-before-parser-crop.png) is a reviewed crop of the actual Neatlogs UI (x=160, y=190, width=1600, height=1330; browser chrome and account sidebar excluded) for the **first baseline** trace [`17af3d753892ebeeff61afa08ee24492`](https://app.neatlogs.com/traces/17af3d753892ebeeff61afa08ee24492), run `e07bdfa3-c839-4e68-b784-640244403b2c`, SHA `60d22946616664235546ed81817f60ded57957db`. It shows the workflow/model wrapper error after successful provider spans. It is a different before example from the immediate Stage B comparison above. The original Raw-response screenshots remain private because they include exploratory model prose.
 
 [Open hosted-data export viewer](neatlogs-after-evidence.html) · [Whitelisted hosted readback and local reconciliation](neatlogs-after-safe.json) · [Actual captured export viewer](neatlogs-after-hosted-export.jpg). These after materials come from an authenticated **HTTP 200 hosted Neatlogs readback**, retrieved `2026-10-12T15:40:37.068Z` using the exact GET path implemented by the installed `neatlogs@1.1.28` CLI doctor: `/api/traces/v3/9096d7e75454f94d4c9cd11011604e13`. No guessed endpoint or new access grant was used. Raw source is retained privately; the public export contains only reviewed counts, identities and verification classifications.
 
@@ -94,3 +94,20 @@ The after image is a real capture of a **local viewer of hosted Neatlogs data**,
 ![Actual hosted Neatlogs before screen, first baseline](neatlogs-before-parser-crop.png)
 
 ![Actual capture of Neatlogs hosted-data local export](neatlogs-after-hosted-export.jpg)
+
+
+## Supplement: actual official Neatlogs after UI
+
+After the final movies were rendered, the integrator opened the selected trace in authenticated Chrome and captured the **actual official Neatlogs UI**. All three saved JPEG crops were independently visually reviewed; the account sidebar is excluded and raw model exploration is not expanded. [Safe capture audit](neatlogs-after-official-ui-audit.json) retains selected run/trace/source identity, crop bounds and hashes.
+
+- [Official overview](neatlogs-after-official-overview.jpg): 50 spans and a displayed 51.6-second workflow.
+- [Official replay output](neatlogs-after-official-replay.jpg): `matchedFailures: 2`, `verdict: confirmed`.
+- [Official fixed-control output](neatlogs-after-official-control.jpg): attempt 1, `classification: passed`, `stage: passed`, exit 0, two initial and two actual cart items.
+
+These screenshots supplement the authenticated API reconciliation and original local assertion evidence. The trace/run association comes from the browser operator's selected live trace, the safe audit and matching hosted/local identities; the crop intentionally excludes the address bar. **Both final movie files remain unchanged:** their Neatlogs after scene truthfully shows the earlier authenticated hosted-data export viewer. The new official UI captures were collected after montage and are separate evidence.
+
+![Actual official Neatlogs selected after trace overview](neatlogs-after-official-overview.jpg)
+
+![Actual official Neatlogs replay verifier output](neatlogs-after-official-replay.jpg)
+
+![Actual official Neatlogs fixed-control verifier output](neatlogs-after-official-control.jpg)

@@ -1,0 +1,95 @@
+{
+  "file": "demo/bugreplay-final-demo.mp4",
+  "bytes": 8237995,
+  "sha256": "b10877646b2faf01d2ae8384c5de1f3bef5c13b202a6d7c74316251b77237e30",
+  "durationSeconds": 170.0,
+  "width": 1280,
+  "height": 720,
+  "fps": "30/1",
+  "frames": 5100,
+  "videoCodec": "h264",
+  "audioCodec": "aac",
+  "audioSampleRate": "48000",
+  "fullDecodePassed": true,
+  "decodedSnapshots": 28,
+  "auditoryPlaybackReviewed": false,
+  "externalMediaGenerationCalls": 0,
+  "mainRunId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+  "entireCaptureSha256": "6fc229dfae765e232659fd0e342b82a75e45ec3a40b7650704a8fef93ba25058",
+  "kind": "reviewed-authentic-evidence-demo",
+  "engineGitSha": "2b541b20a97ef3df4261529bd48089792e01f2af",
+  "render": {
+    "tool": "HyperFrames",
+    "version": "0.8.147",
+    "frames": 5100,
+    "quality": "high",
+    "telemetryDisabled": true,
+    "captureMode": "screenshot",
+    "paidMediaGeneration": false
+  },
+  "sourceAssembly": {
+    "chapters": 9,
+    "realMediaEntries": 23,
+    "narrationTracks": 9,
+    "captionCues": 30,
+    "originalInvestigationRecordingSeconds": 49.64,
+    "completeInvestigationWorkflowSeconds": 51.651,
+    "originalInvestigationFps": 25,
+    "deliveryFps": 30,
+    "retainedFootageSpeedFactor": 1,
+    "fabricatedCursor": false,
+    "loopedReplays": false,
+    "originalsPreserved": true
+  },
+  "checks": {
+    "hyperframesLintErrors": 0,
+    "hyperframesLintAdvisoryWarnings": 42,
+    "runtimePassed": true,
+    "layoutPassed": true,
+    "contrastPassed": true,
+    "sourceMidpointCapturesReviewed": 24,
+    "finalDecodedPictureSamplesReviewed": 28,
+    "fullFfmpegDecodePassed": true,
+    "narrationCueTextReviewed": true,
+    "narrationNonSilent": true,
+    "narrationPeaksBelow0Dbfs": true,
+    "auditoryPlaybackReviewed": false,
+    "humanReviewClaimed": false
+  },
+  "sourceDisclosure": {
+    "bugReplay": "Actual selected-run UI and original controlled-shop footage. Edited excerpts and crops are labeled. Both clean replays and unchanged-test corrected control are retained.",
+    "neatlogsBefore": "Actual hosted UI, first-baseline trace 17af3d753892ebeeff61afa08ee24492. The later f997 trace is distinct. Crops exclude account avatars and exploratory raw model prose.",
+    "neatlogsAfter": "Authenticated hosted API readback displayed in a local export viewer, labeled Authentic data export. The view is not the official hosted UI.",
+    "entire": "Genuine CLI checkpoint metadata and actual Git diff displayed in a local export viewer. Caller association independently verified; raw session ID omitted. No official-app or cryptographic-signature claim.",
+    "cfo": "Actual native Planning model, saved-driver stress/recovery tables and separate observed-accounting page. Forecast assumptions and cash billing/credit unknowns remain explicit."
+  },
+  "privacyReview": {
+    "renderedPictureReviewed": true,
+    "accountAvatarsVisible": false,
+    "ownerWorkspaceUrlsVisible": false,
+    "rawSessionIdsVisible": false,
+    "credentialsVisible": false,
+    "rawModelExplorationVisible": false,
+    "publicCopyByteIdenticalToReviewedRender": true,
+    "generatedSourceAssetsPublished": false
+  },
+  "voice": {
+    "source": "Local macOS say",
+    "voice": "Samantha (English (US))",
+    "wordsPerMinute": 140,
+    "externalProviderCalls": 0
+  },
+  "limitations": [
+    "Agent visual and technical audio review does not establish human auditory playback review.",
+    "The selected success is one of three buggy investigations in the final cohort; two did not reproduce the defect.",
+    "Selected gateway header accounting exceeds the hypothesized $0.1293 full variable-cost ceiling; complete project cash billing and credits remain unknown.",
+    "Local generated source assets and original recordings are not published; full-source privacy review is required before sharing any such bundle.",
+    "This media audit does not establish an accepted external hackathon submission."
+  ],
+  "shortVersion": {
+    "file": "demo/bugreplay-final-demo-x.mp4",
+    "durationSeconds": 138.208,
+    "sha256": "a698307af37ff7a8790570e893591507a422fd09cb5872e80461b0cceeb81818",
+    "audit": "demo/final-cut/x-media-audit.json"
+  }
+}

@@ -1,0 +1,21 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 1280px; height: 720px; color: #10283e; font-family: Inter, sans-serif; }
+#final-demo { position: relative; width: 1280px; height: 720px; overflow: hidden; }
+.background { position: absolute; inset: 0; background: #edf2f7; }
+.masthead { position: absolute; left: 48px; right: 48px; top: 28px; height: 48px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #cbd8e4; z-index: 20; padding-bottom: 14px; }
+.brand { font-size: 28px; font-weight: 700; letter-spacing: -1px; }
+.qualification { font-size: 18px; color: #405a70; }
+.scene { position: absolute; inset: 0; z-index: 2; }
+.scene-head { position: absolute; top: 102px; left: 48px; right: 48px; display: flex; gap: 32px; align-items: center; justify-content: space-between; height: 54px; }
+.scene-head h1 { margin: 0; max-width: 860px; font-size: 38px; line-height: 1.1; font-weight: 700; letter-spacing: -1.2px; }
+.chapter { width: 230px; color: #2453c9; font-size: 19px; font-weight: 700; text-align: right; }
+.media-shell { position: absolute; left: 48px; top: 173px; width: 1184px; height: 402px; border: 2px solid #ccd9e5; border-radius: 12px; background: #fff; }
+.evidence-media { position: absolute; left: 50px; top: 175px; width: 1180px; height: 398px; object-fit: contain; background: #fff; z-index: 4; border-radius: 9px; }
+.media-label { position: absolute; left: 52px; top: 582px; right: 52px; height: 22px; color: #405a70; font-size: 16px; line-height: 1.2; z-index: 8; white-space: nowrap; overflow: hidden; }
+.caption { position: absolute; left: 48px; top: 614px; width: 1184px; height: 58px; display: flex; align-items: center; justify-content: center; padding: 4px 18px; background: #10283e; color: #fff; border-radius: 8px; z-index: 30; }
+.caption p { margin: 0; font-size: 24px; line-height: 1.2; text-align: center; max-width: 1140px; }
+.frame-footer { position: absolute; left: 48px; right: 48px; bottom: 14px; height: 19px; color: #405a70; display: flex; justify-content: space-between; font-size: 15px; z-index: 20; }
+.close-card { position: absolute; top: 173px; left: 48px; width: 1184px; height: 402px; padding: 43px 50px; display: flex; flex-direction: column; gap: 25px; justify-content: center; background: #fff; border: 2px solid #ccd9e5; border-radius: 12px; }
+.close-card h2 { margin: 0; max-width: 1040px; font-size: 48px; line-height: 1.05; letter-spacing: -1.5px; }
+.close-card p { margin: 0; max-width: 1040px; color: #405a70; font-size: 25px; line-height: 1.3; }
+.close-card .repo { color: #2453c9; font-size: 27px; font-weight: 700; }

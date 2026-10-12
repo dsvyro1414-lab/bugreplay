@@ -1,0 +1,99 @@
+1
+00:00:00,000 --> 00:00:02,927
+BugReplay starts with a symptom and a URL.
+
+2
+00:00:02,927 --> 00:00:06,442
+The cart sometimes disappears after an address change.
+
+3
+00:00:06,442 --> 00:00:10,653
+The model gets browser observations, without a trigger recipe.
+
+4
+00:00:12,000 --> 00:00:14,887
+This is the actual recorded investigation.
+
+5
+00:00:14,887 --> 00:00:22,394
+Claude explores the controlled shop, adds items, changes checkout options, and checks the cart after saves.
+
+6
+00:00:22,394 --> 00:00:28,452
+The runner records the full setup prefix, then compiles a Playwright test from trusted actions.
+
+7
+00:00:36,503 --> 00:00:41,631
+Confirmation comes from two fresh browser replays, without another model call.
+
+8
+00:00:41,631 --> 00:00:47,263
+Both reach the intended cart preservation assertion: two items become an empty cart.
+
+9
+00:00:47,263 --> 00:00:54,969
+The saved test, report, reproduction JSON, screenshots and original videos identify the same run.
+
+10
+00:00:56,503 --> 00:01:03,996
+Neatlogs exposed a real failure: the provider returned prose with a JSON suffix, while the wrapper rejected it.
+
+11
+00:01:05,857 --> 00:01:11,024
+We added bounded format recovery and explicit disabled control observations.
+
+12
+00:01:11,024 --> 00:01:16,011
+After the changes, one of three buggy investigations confirmed the defect.
+
+13
+00:01:16,011 --> 00:01:18,120
+Two others did not reproduce it.
+
+14
+00:01:19,857 --> 00:01:22,442
+Entire preserves the fix context.
+
+15
+00:01:22,442 --> 00:01:29,172
+This is an authentic checkpoint metadata export for the actual engine change, linked to its commit and diff.
+
+16
+00:01:29,172 --> 00:01:33,498
+It records bounded continuation and disabled control visibility.
+
+17
+00:01:33,498 --> 00:01:37,156
+CFO dot A I makes the pricing tradeoff visible.
+
+18
+00:01:37,156 --> 00:01:46,043
+Our assumed forty nine dollar plan leaves twelve point nine three cents per run, after fees, at a seventy percent contribution target.
+
+19
+00:01:46,043 --> 00:01:50,486
+This selected run alone has fifteen point six cents of gateway accounting.
+
+20
+00:01:50,486 --> 00:01:54,989
+Failed attempts also count. Cash billing and credits remain unknown.
+
+21
+00:01:54,989 --> 00:01:58,558
+Now the same saved test runs against the corrected shop.
+
+22
+00:01:58,558 --> 00:02:04,552
+Only the base URL changes. Its hash stays identical in a fresh browser context.
+
+23
+00:02:04,552 --> 00:02:08,837
+Both cart items remain, and the preservation assertion passes.
+
+24
+00:02:11,989 --> 00:02:16,096
+This M V P covers one controlled shop and one defect class.
+
+25
+00:02:16,096 --> 00:02:18,193
+Inspect the proof and its limits.

@@ -1,0 +1,73 @@
+{
+  "checkedAtUtc": "2026-10-12T16:08:56.322440+00:00",
+  "kind": "actual-hosted-neatlogs-ui-supplement-after-final-movie",
+  "traceId": "9096d7e75454f94d4c9cd11011604e13",
+  "traceUrl": "https://app.neatlogs.com/traces/9096d7e75454f94d4c9cd11011604e13",
+  "selectedRunId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+  "sourceEngineSha": "2b541b20a97ef3df4261529bd48089792e01f2af",
+  "observed": {
+    "spans": 50,
+    "displayedDurationSeconds": 51.6,
+    "verifierReplay": {
+      "matchedFailures": 2,
+      "verdict": "confirmed"
+    },
+    "verifierControl": {
+      "attempt": 1,
+      "classification": "passed",
+      "stage": "passed",
+      "exitCode": 0,
+      "initialCartItems": 2,
+      "actualCartItems": 2
+    }
+  },
+  "capture": {
+    "source": "Authenticated official Chrome application UI via browser automation",
+    "overviewCrop": {
+      "x": 70,
+      "y": 0,
+      "width": 828,
+      "height": 862
+    },
+    "verifierCrops": {
+      "replay": {
+        "x": 70,
+        "y": 0,
+        "width": 828,
+        "height": 500
+      },
+      "control": {
+        "x": 70,
+        "y": 0,
+        "width": 828,
+        "height": 862
+      }
+    },
+    "accountSidebarExcluded": true,
+    "rawModelResponsesExpanded": false,
+    "croppedPixelsUnmodified": true,
+    "format": "JPEG"
+  },
+  "movieUnchanged": {
+    "reason": "Final movie already truthfully labels the hosted API export; these official UI captures are additional evidence.",
+    "fullSha256": "b10877646b2faf01d2ae8384c5de1f3bef5c13b202a6d7c74316251b77237e30",
+    "xSha256": "a698307af37ff7a8790570e893591507a422fd09cb5872e80461b0cceeb81818"
+  },
+  "files": [
+    {
+      "path": "neatlogs-after-official-overview.jpg",
+      "bytes": 57348,
+      "sha256": "a1c1e373cb2e52d5a850a5ea9e30b9b1a39e1db1463090552b1e059b5ed346c1"
+    },
+    {
+      "path": "neatlogs-after-official-replay.jpg",
+      "bytes": 26849,
+      "sha256": "7901ced5be0f1cc08cb11ab2427751301181f36c12b314533c08a4e448131509"
+    },
+    {
+      "path": "neatlogs-after-official-control.jpg",
+      "bytes": 42641,
+      "sha256": "c5e4a2109193858e8f59c17e05dc34770066121d1e21de1fec7917754810b891"
+    }
+  ]
+}

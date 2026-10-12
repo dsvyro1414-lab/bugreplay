@@ -1,0 +1,80 @@
+{
+  "kind": "whole-cue-short-edit",
+  "sourceFile": "demo/bugreplay-final-demo.mp4",
+  "sourceSha256": "b10877646b2faf01d2ae8384c5de1f3bef5c13b202a6d7c74316251b77237e30",
+  "outputFile": "demo/bugreplay-final-demo-x.mp4",
+  "outputSha256": "a698307af37ff7a8790570e893591507a422fd09cb5872e80461b0cceeb81818",
+  "plannedDurationSeconds": 138.193,
+  "speedFactor": 1,
+  "retainedSourceIntervalsSeconds": [
+    {
+      "start": 0.0,
+      "end": 22.394
+    },
+    {
+      "start": 25.007,
+      "end": 31.065
+    },
+    {
+      "start": 35.949,
+      "end": 71.493
+    },
+    {
+      "start": 75.139,
+      "end": 104.64099999999999
+    },
+    {
+      "start": 111.0,
+      "end": 132.49099999999999
+    },
+    {
+      "start": 137.0,
+      "end": 154.0
+    },
+    {
+      "start": 161.485,
+      "end": 167.689
+    }
+  ],
+  "removedSourceIntervalsSeconds": [
+    {
+      "start": 22.394,
+      "end": 25.007,
+      "reason": "Remove the redundant browser-guidance sentence."
+    },
+    {
+      "start": 31.065,
+      "end": 35.949,
+      "reason": "Remove the original-recording retention sentence; the complete source remains preserved."
+    },
+    {
+      "start": 71.493,
+      "end": 75.139,
+      "reason": "Remove the secondary inference-stoppage sentence."
+    },
+    {
+      "start": 104.64099999999999,
+      "end": 111.0,
+      "reason": "Remove the redundant export-label sentence and following silence; the on-screen label remains."
+    },
+    {
+      "start": 132.49099999999999,
+      "end": 137.0,
+      "reason": "Remove silence after the complete cost and unknown-billing disclosure."
+    },
+    {
+      "start": 154.0,
+      "end": 161.485,
+      "reason": "Remove the repeated repository inventory; preserve the MVP limitation and closing invitation."
+    },
+    {
+      "start": 167.689,
+      "end": 170.0,
+      "reason": "Remove closing silence."
+    }
+  ],
+  "retainedCaptionCues": 25,
+  "bothCompleteIndependentReplaysRetained": true,
+  "completeCorrectedControlSceneRetained": true,
+  "note": "Hard cuts only; all retained footage and narration remain at 1x. Exact audio cue cuts use SRT millisecond boundaries; picture cuts quantize to 30 fps."
+}

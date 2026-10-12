@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "language": "en-US",
+  "targetCompositionSeconds": 170,
+  "selectedRunId": "b8ffd757-6aed-405d-b7ac-ed3b1c4d9236",
+  "sourceGitSha": "2b541b20a97ef3df4261529bd48089792e01f2af",
+  "voice": {"provider": "macOS say", "name": "Samantha (English (US))", "wordsPerMinute": 140},
+  "reviewStatus": "Script grounded in saved run evidence; audio and final picture require review before delivery.",
+  "chapters": [
+    {"scene":"intake","startSeconds":0,"durationSeconds":12,"cues":[
+      "BugReplay starts with a symptom and a URL.",
+      "The cart sometimes disappears after an address change.",
+      "The model gets browser observations, without a trigger recipe."
+    ]},
+    {"scene":"investigation","startSeconds":12,"durationSeconds":32,"cues":[
+      "This is the actual recorded investigation.",
+      "Claude explores the controlled shop, adds items, changes checkout options, and checks the cart after saves.",
+      "Browser evidence guides the next action.",
+      "The runner records the full setup prefix, then compiles a Playwright test from trusted actions.",
+      "The original recording and complete run log are retained beside this edited excerpt."
+    ]},
+    {"scene":"verification","startSeconds":44,"durationSeconds":20,"cues":[
+      "Confirmation comes from two fresh browser replays, without another model call.",
+      "Both reach the intended cart preservation assertion: two items become an empty cart.",
+      "The saved test, report, reproduction JSON, screenshots and original videos identify the same run."
+    ]},
+    {"scene":"neatlogs-before","startSeconds":64,"durationSeconds":13,"cues":[
+      "Neatlogs exposed a real failure: the provider returned prose with a JSON suffix, while the wrapper rejected it.",
+      "Successful inference had stopped useful exploration."
+    ]},
+    {"scene":"neatlogs-after","startSeconds":77,"durationSeconds":14,"cues":[
+      "We added bounded format recovery and explicit disabled control observations.",
+      "After the changes, one of three buggy investigations confirmed the defect.",
+      "Two others did not reproduce it."
+    ]},
+    {"scene":"entire","startSeconds":91,"durationSeconds":20,"cues":[
+      "Entire preserves the fix context.",
+      "This is an authentic checkpoint metadata export for the actual engine change, linked to its commit and diff.",
+      "It records bounded continuation and disabled control visibility.",
+      "The export is labeled directly."
+    ]},
+    {"scene":"cfo","startSeconds":111,"durationSeconds":26,"cues":[
+      "CFO dot A I makes the pricing tradeoff visible.",
+      "Our assumed forty nine dollar plan leaves twelve point nine three cents per run, after fees, at a seventy percent contribution target.",
+      "This selected run alone has fifteen point six cents of gateway accounting.",
+      "Failed attempts also count. Cash billing and credits remain unknown."
+    ]},
+    {"scene":"control","startSeconds":137,"durationSeconds":17,"cues":[
+      "Now the same saved test runs against the corrected shop.",
+      "Only the base URL changes. Its hash stays identical in a fresh browser context.",
+      "Both cart items remain, and the preservation assertion passes."
+    ]},
+    {"scene":"close","startSeconds":154,"durationSeconds":16,"cues":[
+      "The repository includes the selected run, original evidence, unsuccessful attempts, and the cost ledger.",
+      "This M V P covers one controlled shop and one defect class.",
+      "Inspect the proof and its limits."
+    ]}
+  ],
+  "claimSources": {
+    "investigationAndReplay":"artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/run.json, action-log.json, verification.json, control-verification.json",
+    "gatewayAccounting":"artifacts/b8ffd757-6aed-405d-b7ac-ed3b1c4d9236/model-usage.json",
+    "beforeFailure":"docs/evidence/live-improvement-2026-10-12/README.md and reviewed Neatlogs before captures",
+    "afterCohort":"Fourth real cohort: three buggy investigations; selected confirmed run and two not_reproduced outcomes. Fixed autonomous investigation is separate from unchanged-test control.",
+    "entire":"Commit 2b541b20a97ef3df4261529bd48089792e01f2af footer: Entire-Checkpoint 01M4RBGMN0JWSXDHD2TESXJ35A. Use genuine reviewed metadata export, not recreated application UI.",
+    "finance":"docs/evidence/finance/cfo-workspace-review.md, cfo-workbook-audit.json and actual-attempt-cost-ledger.json"
+  },
+  "limits":[
+    "The before/after runs are stochastic observations, not an isolated ablation or general success-rate estimate.",
+    "Gateway response-header accounting is separate from cash billing and promotional credits.",
+    "The independent CFO Canvas preview is separate from saved forecast values.",
+    "Sponsor stills must be labeled actual screenshots. Entire metadata must be labeled an export.",
+    "Final release SHA and sponsor trace URLs are inserted by the reviewed evidence manifest."
+  ]
+}
