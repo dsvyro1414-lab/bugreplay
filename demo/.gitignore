@@ -1,0 +1,8 @@
+assets/gsap.min.js
+assets/inter.woff2
+.hyperframes/
+.hf-*/
+.thumbnails/
+.transcode-cache/
+renders/
+snapshots/

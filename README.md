@@ -83,6 +83,8 @@ Defaults: 40 real browser actions, 40 model transport attempts (including retry)
 
 ## Development and hackathon
 
+Watch the [52-second product preview](demo/bugreplay-product-preview.mp4), built with [reproducible HyperFrames source](demo/README.md). It shows real UI/shop evidence and a scripted replay, clearly labeled as an engineering preview. It is not the final live-model/sponsor demo.
+
 Product-only checks and builds do not require private model or telemetry keys:
 
 ```sh

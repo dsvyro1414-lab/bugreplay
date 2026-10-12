@@ -37,10 +37,11 @@ Agent B's product branch now includes the investigation UI, real demo shop, corr
 - Local interactive UI/API check created run `44dc0497-9015-4c17-a294-d7acac5ec60b` and recovered it after reload. It honestly stopped before browser/model activity because this checkout has no `NEATLOGS_API_KEY`: zero browser actions and unavailable model cost. This proves error/recovery behavior, not an investigation.
 - Entire captured a genuine documentation checkpoint before product coding: `01M4QMYYBN005FN5PFMRB1XD5T`, commit `c1eba1ec4e99a33608942774f0fe6bc38659b3f5`, scoped to the correct new BugReplay session. See [reviewed metadata](docs/evidence/entire-readiness-checkpoint.json). It is not evidence of the later trace-driven improvement, which remains pending.
 - [cfo-model-input.md](docs/evidence/cfo-model-input.md) separates pricing assumptions from unmeasured usage costs. It is input preparation, not a completed cfo.ai model.
+- [HyperFrames product preview](demo/bugreplay-product-preview.mp4) rendered and reviewed: 52 seconds, 1280 × 720, 30 fps, 1.22 MB, no audio. It uses actual UI/shop screenshots and the original three-second saved-test replay at 1×. The persistent scripted/no-live-model label and final remaining-gates scene prevent it being mistaken for final acceptance. HyperFrames checks, full video decode, and scene/replay frame inspection passed; [reproducible source](demo/README.md) is included.
 
 ## Submission status
 
-Not submitted. A final live-model demo and cfo.ai business-model evidence remain pending. The product preview, when rendered, must be visibly labeled as scripted engineering evidence. Confirm the final submission cutoff and official submission post before publishing the entry.
+Not submitted. A final live-model demo and cfo.ai business-model evidence remain pending. The included product preview is visibly labeled as scripted engineering evidence. Confirm the final submission cutoff and official submission post before publishing the entry.
 
 ## Development entries
 

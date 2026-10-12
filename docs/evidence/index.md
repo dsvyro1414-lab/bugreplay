@@ -12,6 +12,7 @@ This index distinguishes engineering verification from live-model acceptance. Al
 | [Clean installation](clean-install-check.json) | Fresh `npm ci`, TypeScript, and both production builds passed in a separate source copy | Local controlled prototype; existing upstream dependency advisories remain |
 | [Entire readiness checkpoint](entire-readiness-checkpoint.json) | Genuine capture from the correctly scoped new Codex session before product coding | Readiness documentation only; not a trace-driven fix checkpoint |
 | [CFO model input](cfo-model-input.md) | Prepared pricing/cost/revenue/runway inputs with assumptions identified | Not a cfo.ai output or sponsor-completion claim |
+| [HyperFrames product preview](../../demo/bugreplay-product-preview.mp4) | Reviewed 52-second 720p video using actual screenshots and the saved-test replay; [source and checks](../../demo/README.md) | Persistent scripted/no-live-model label; not the final sponsor demo |
 
 The real UI/API access-gate check on October 12, 2026 created run `44dc0497-9015-4c17-a294-d7acac5ec60b`. It returned `inconclusive` with `NEATLOGS_API_KEY is required before starting a real investigation.`, zero browser actions, and unavailable cost. Its saved result survived page reload. This is honest missing-access handling, not an investigation result.
 
