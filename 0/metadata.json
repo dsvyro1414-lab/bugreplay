@@ -1,0 +1,98 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4RE5V41P6160YFCJ64B48X5",
+  "session_id": "01a13092-b55e-7cd2-88cc-6665d59d79dc",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-12T16:13:03.205349Z",
+  "branch": "agent-a-engine",
+  "checkpoints_count": 3,
+  "save_step_count": 1,
+  "files_touched": [
+    "README.md",
+    "demo/final-cut/BRIEF.md",
+    "demo/final-cut/README.md",
+    "demo/final-cut/build.mjs",
+    "demo/final-cut/editorial-manifest.template.json",
+    "demo/final-cut/index.template.html",
+    "demo/final-cut/narration-plan.json",
+    "demo/final-cut/prepare-local-narration.mjs",
+    "demo/final-cut/prepare-x-cut.py",
+    "demo/final-cut/styles.css",
+    "docs/evidence/finance/cfo-workspace-review.md",
+    "docs/evidence/index.md",
+    "docs/evidence/live-improvement-2026-10-12/README.md",
+    "hackathon.md"
+  ],
+  "agent": "Codex",
+  "model": "gpt-6.1-sol",
+  "turn_id": "71cd42f38f0b",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 1120042,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 60756864,
+    "output_tokens": 105679,
+    "api_call_count": 544,
+    "subagent_tokens_complete": false
+  },
+  "session_metrics": {
+    "turn_count": 3
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-12T16:13:01.00667Z",
+    "agent_lines": 0,
+    "agent_removed": 0,
+    "human_added": 2107,
+    "human_modified": 60,
+    "human_removed": 0,
+    "total_committed": 2107,
+    "total_lines_changed": 2193,
+    "agent_percentage": 0,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 1351,
+      "user_lines_removed": 41,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "README.md": 5,
+        "demo/final-cut/BRIEF.md": 17,
+        "demo/final-cut/README.md": 51,
+        "demo/final-cut/build.mjs": 204,
+        "demo/final-cut/captions-x.srt": 99,
+        "demo/final-cut/captions.srt": 119,
+        "demo/final-cut/editorial-manifest.template.json": 44,
+        "demo/final-cut/index.template.html": 25,
+        "demo/final-cut/media-audit.json": 95,
+        "demo/final-cut/narration-plan.json": 74,
+        "demo/final-cut/prepare-local-narration.mjs": 50,
+        "demo/final-cut/prepare-x-cut.py": 100,
+        "demo/final-cut/styles.css": 21,
+        "demo/final-cut/x-cut-manifest.json": 80,
+        "demo/final-cut/x-media-audit.json": 35,
+        "docs/evidence/finance/cfo-workbook-audit.json": 15,
+        "docs/evidence/finance/cfo-workspace-review.md": 3,
+        "docs/evidence/index.md": 11,
+        "docs/evidence/live-confirmed-2026-10-12/release-review.json": 255,
+        "docs/evidence/live-improvement-2026-10-12/README.md": 1,
+        "docs/evidence/live-improvement-2026-10-12/comparison.json": 29,
+        "docs/evidence/live-improvement-2026-10-12/latest-entire-export.safe.json": 3,
+        "docs/evidence/live-improvement-2026-10-12/latest-entire-local-viewer.html": 1,
+        "hackathon.md": 14
+      },
+      "user_removed_per_file": {
+        "README.md": 5,
+        "docs/evidence/finance/cfo-workspace-review.md": 1,
+        "docs/evidence/index.md": 9,
+        "docs/evidence/live-confirmed-2026-10-12/release-review.json": 12,
+        "docs/evidence/live-improvement-2026-10-12/README.md": 1,
+        "docs/evidence/live-improvement-2026-10-12/comparison.json": 7,
+        "docs/evidence/live-improvement-2026-10-12/latest-entire-export.safe.json": 5,
+        "docs/evidence/live-improvement-2026-10-12/latest-entire-local-viewer.html": 1
+      }
+    }
+  ]
+}
