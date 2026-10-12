@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "revision": 5,
+  "status": "Verified: smooth screen entrances, repaired capture flashes, independent decoded-frame review, full decode and identical decoded audio passed",
+  "video": {
+    "file": "demo/bugreplay-saas-demo-v5.mp4",
+    "sha256": "4566662425bc31f94e9f6570481b293b6c3430766a57603f37071741e15e4c71",
+    "bytes": 6407561,
+    "durationSeconds": 64,
+    "width": 1280,
+    "height": 720,
+    "framesPerSecond": 30,
+    "frameCount": 1920,
+    "videoCodec": "H.264",
+    "audioCodec": "AAC",
+    "fullDecodePassed": true,
+    "downloadsCopyByteIdentical": true
+  },
+  "changes": {
+    "screenEntrance": "All 16 screen media and 16 panel shells fade in over 0.28s with sine.out easing; no position/scale animation.",
+    "recordingRepair": "Only original source frames 104, 649, 837 held from 103, 648, 836 respectively for 40ms each.",
+    "originalV3TextRestored": true,
+    "sceneTimingAndWordingPreserved": true,
+    "proofDerivativesByteIdentical": true,
+    "originalRecordingUntouched": true,
+    "investigationManifest": "demo/saas-cut/stabilized-investigation/manifest.json"
+  },
+  "sourceMotionCheck": {
+    "preservation": {
+      "sceneHtmlByteIdentical": true,
+      "textAnimationByteIdentical": true
+    },
+    "mediaMotion": {
+      "targets": 32,
+      "samples": 224,
+      "failures": [],
+      "passed": true
+    },
+    "passed": true
+  },
+  "independentInvestigationDerivativeCheck": {
+    "kind": "Independent decoded investigation presentation audit",
+    "source": "docs/evidence/live-confirmed-2026-10-12/investigation-episode-1.webm",
+    "sourceFramesInspected": 181,
+    "derivativeFramesCompared": 361,
+    "method": "Independently FFmpeg-decode all three original source windows to RGB before cropping and all derivative frames. Construct expected source mapping directly:25fps source duplicated at50fps, only source104/649/837 replaced by103/648/836. RGB before cropping preserves exact odd575px crop. Verify each RGB crop hash against manifest, then compare each lossy decoded derivative to that authentic expected crop.",
+    "clips": [
+      {
+        "id": "observe",
+        "file": "demo/saas-cut/stabilized-investigation/observe-stabilized.mp4",
+        "durationSeconds": 2.28,
+        "decodedFrames": 114,
+        "sourceCropRgbHashesVerified": 114,
+        "expectedMappingCount": 114,
+        "onlyReplacedSourceFrame": 104,
+        "heldFromSourceFrame": 103,
+        "replacedDurationSeconds": 0.04,
+        "maxMeanAbsoluteChannelDifference": 1.886,
+        "minPsnrDb": 41.828,
+        "maxFractionGrayPaddingPixels": 0.00004938,
+        "sourceHashMatchesManifest": true,
+        "derivativeHashMatchesManifest": true
+      },
+      {
+        "id": "conditions",
+        "file": "demo/saas-cut/stabilized-investigation/conditions-stabilized.mp4",
+        "durationSeconds": 2.28,
+        "decodedFrames": 114,
+        "sourceCropRgbHashesVerified": 114,
+        "expectedMappingCount": 114,
+        "onlyReplacedSourceFrame": 649,
+        "heldFromSourceFrame": 648,
+        "replacedDurationSeconds": 0.04,
+        "maxMeanAbsoluteChannelDifference": 2.1799,
+        "minPsnrDb": 36.299,
+        "maxFractionGrayPaddingPixels": 0.0000625,
+        "sourceHashMatchesManifest": true,
+        "derivativeHashMatchesManifest": true
+      },
+      {
+        "id": "cart-loss",
+        "file": "demo/saas-cut/stabilized-investigation/cart-loss-stabilized.mp4",
+        "durationSeconds": 2.66,
+        "decodedFrames": 133,
+        "sourceCropRgbHashesVerified": 133,
+        "expectedMappingCount": 133,
+        "onlyReplacedSourceFrame": 837,
+        "heldFromSourceFrame": 836,
+        "replacedDurationSeconds": 0.04,
+        "maxMeanAbsoluteChannelDifference": 1.8583,
+        "minPsnrDb": 41.975,
+        "maxFractionGrayPaddingPixels": 0.00006984,
+        "sourceHashMatchesManifest": true,
+        "derivativeHashMatchesManifest": true
+      }
+    ],
+    "limitations": [
+      "Three40ms neighboring authentic-frame holds are edited presentation, not untouched evidence.",
+      "Lossy H264 differences are expected.",
+      "No continuous human playback or audio listening review."
+    ]
+  },
+  "compositionChecks": {
+    "ok": true,
+    "lintErrors": 0,
+    "lintWarnings": 27,
+    "runtimeErrors": 0,
+    "layoutErrors": 0,
+    "contrastErrors": 0,
+    "sampleCount": 45,
+    "motionSidecarEnabled": false,
+    "warningScope": "Existing timeline density and monolithic structure advice."
+  },
+  "audioPreservation": {
+    "originalPcmSha256": "73f5fd8fec2367e8b462bfbed66169bc0804f9c3037179a40ac541cc9503494d",
+    "revisedPcmSha256": "73f5fd8fec2367e8b462bfbed66169bc0804f9c3037179a40ac541cc9503494d",
+    "decodedAudioByteIdentical": true
+  },
+  "commands": {
+    "build": "node demo/saas-cut/build.mjs",
+    "render": "HYPERFRAMES_NO_TELEMETRY=1 HYPERFRAMES_RUN_ID=bugreplay-saas-v5-20261012 npx --yes hyperframes@0.8.147 render artifacts/submission-2026-10-12/saas-cut-v5/project --quality high --fps 30 --workers 4 --output artifacts/submission-2026-10-12/saas-cut-v5/BugReplay-saas-demo-v5.mp4",
+    "decode": "ffmpeg -hide_banner -loglevel error -i artifacts/submission-2026-10-12/saas-cut-v5/BugReplay-saas-demo-v5.mp4 -f null -"
+  },
+  "limits": [
+    "Edited presentation excerpts; three40ms neighboring-frame holds replace source capture artifacts. Exact unmodified investigation footage remains preserved.",
+    "Original25fps frames are duplicated to50fps to represent exacttrim windows without interpolation; final movie is30fps.",
+    "Verification uses source/crop mappings, fixed geometry, actual decoded-frame samples, full decode and decoded-audio equality; no continuous human playback/listening review claimed.",
+    "This changes presentation only, with no new investigation or submission claims."
+  ],
+  "independentFinalMovieReview": {
+    "result": "Passed targeted independent actual v5 screen review",
+    "video": "artifacts/submission-2026-10-12/saas-cut-v5/BugReplay-saas-demo-v5.mp4",
+    "sha256": "4566662425bc31f94e9f6570481b293b6c3430766a57603f37071741e15e4c71",
+    "format": {
+      "durationSeconds": 64,
+      "width": 1280,
+      "height": 720,
+      "frameRate": "30/1",
+      "frames": 1920
+    },
+    "fadeEntrancesChecked": 4,
+    "fadeFramesChecked": 20,
+    "allSampledFadesMonotonic": true,
+    "positionSamplesAboveContrastThreshold": 16,
+    "maxAbsoluteEstimatedPixelOffset": 0,
+    "repairedBoundariesChecked": 3,
+    "repairFramePairsChecked": 9,
+    "originalV3PeakGrayPaddingFractions": [
+      0.28239073,
+      0.25669516,
+      0.20646499
+    ],
+    "v5MaxGrayPaddingFraction": 0.00007335,
+    "contactSheetsActuallyInspected": [
+      "fades-actual-v5.jpg",
+      "repaired-boundaries-v3-v5.jpg"
+    ],
+    "visualFindings": "The four sampled screenshot/video entrances fade at their fixed locations. All three former internal rescale flashes are absent in the selected actual-output frames. Original cart/promo states remain visible.",
+    "detailsFile": "qa.json",
+    "limits": [
+      "Targeted actual-output frames only; no continuous human playback or listening review.",
+      "Opacity is an RGB estimate affected by shell compositing, changing source contents and H264 quantization; integer-pixel position estimates do not exclude subpixel sampling differences.",
+      "Position estimates are reported only once capture contrast reaches estimated opacity0.2; nearly invisible first frames are excluded from position estimates."
+    ]
+  },
+  "rootVisualReview": {
+    "sheets": [
+      "independent-v5/fades-actual-v5.jpg",
+      "independent-v5/repaired-boundaries-v3-v5.jpg"
+    ],
+    "location": "artifacts/video-jitter-review",
+    "findings": "Screens fade without spatial movement; three gray-padding scale flashes are absent in decoded final frames. Original cart and promo states remain visible."
+  },
+  "repositoryCleanup": {
+    "oldFinishedExportsRemoved": 6,
+    "currentFinishedExport": "demo/bugreplay-saas-demo-v5.mp4",
+    "historicalSnapshot": "07a29fd",
+    "rebuildAfterCleanupPassed": true,
+    "originalEvidenceAndRequiredCompositionAssetsRetained": true
+  }
+}

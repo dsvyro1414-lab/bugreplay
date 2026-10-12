@@ -8,7 +8,7 @@ import {fileURLToPath} from 'node:url';
 const execute=promisify(execFile), here=path.dirname(fileURLToPath(import.meta.url));
 const root=path.resolve(here,'../..'), args=process.argv.slice(2);
 const option=(flag,fallback)=>args.includes(flag)?args[args.indexOf(flag)+1]:fallback;
-const out=path.resolve(option('--out',path.join(root,'artifacts/submission-2026-10-12/saas-cut-v4/project')));
+const out=path.resolve(option('--out',path.join(root,'artifacts/submission-2026-10-12/saas-cut-v5/project')));
 if(!out.startsWith(path.join(root,'artifacts')+path.sep)) throw new Error('Keep the generated project and staged media in ignored artifacts.');
 const narration=JSON.parse(await fs.readFile(path.join(here,'edit-plan.json'),'utf8'));
 const inputAudio=option('--audio-manifest',null);
@@ -75,7 +75,8 @@ function scene(id,start,end,content,{tone='',note='',tag=''}={}){
 const title=(text,extra='')=>`<h1 class="hero ${extra} hit">${text}</h1>`;
 const top=text=>`<h2 class="top-title hit">${text}</h2>`;
 const pill=(text,style='')=>`<span class="pill ${style} hit">${text}</span>`;
-function frame(box,start,end){shells.push(`<div id="frame-${shells.length}" class="clip media-shell" data-start="${num(start)}" data-duration="${num(end-start)}" data-track-index="3" style="left:${box.x}px;top:${box.y}px;width:${box.w}px;height:${box.h}px"></div>`);}
+function fadeMedia(id,start){motions.push(`tl.fromTo('#${id}',{opacity:0},{opacity:1,duration:.28,ease:'sine.out'},${num(start)});`);}
+function frame(box,start,end){const id=`frame-${shells.length}`;shells.push(`<div id="${id}" class="clip media-shell" data-start="${num(start)}" data-duration="${num(end-start)}" data-track-index="3" style="left:${box.x}px;top:${box.y}px;width:${box.w}px;height:${box.h}px"></div>`);fadeMedia(id,start);}
 async function visual(file,start,end,rect,box,label,{offset=0,kind='image',motion=false}={}){
  const p=await probe(file),id=`actual-${serial++}`,src=await stage(file,kind);
  if(rect.x<0||rect.y<0||rect.x+rect.w>p.width+.01||rect.y+rect.h>p.height+.01)throw new Error(`Crop outside ${path.basename(file)}: ${JSON.stringify(rect)}`);
@@ -86,7 +87,8 @@ async function visual(file,start,end,rect,box,label,{offset=0,kind='image',motio
  const style=`left:${num(left)}px;top:${num(top)}px;width:${num(p.width*scale)}px;height:${num(p.height*scale)}px;clip-path:inset(${num(rect.y*scale)}px ${num((p.width-rect.x-rect.w)*scale)}px ${num((p.height-rect.y-rect.h)*scale)}px ${num(rect.x*scale)}px);transform-origin:${num((rect.x+rect.w/2)/p.width*100)}% ${num((rect.y+rect.h/2)/p.height*100)}%`;
  const timing=`class="clip media-original" data-start="${num(start)}" data-duration="${num(end-start)}" data-track-index="8"`;
  media.push(kind==='video'?`<video id="${id}" ${timing} src="${src}" data-media-start="${num(offset)}" muted playsinline style="${style}"></video>`:`<img id="${id}" ${timing} src="${src}" alt="${escape(label)}" style="${style}">`);
- // Evidence pixels and clip geometry remain fixed; only editorial text animates.
+ // Fade the panel at fixed coordinates; never translate or scale its pixels.
+ fadeMedia(id,start);
  return {id,sourceFile:path.relative(root,file),startSeconds:num(start),durationSeconds:num(end-start),sourceStartSeconds:offset,sourceRect:rect,displayBox:box,label,kind,speedFactor:1};
 }
 const sources=[];
@@ -104,6 +106,9 @@ const I=B.investigate.start,IE=time('investigate',1);
 scene('intake',I,time('investigate',.24),top('A URL. A symptom. <span class="accent">Go.</span>'),{note:'Actual model input · no source code or prepared trigger recipe'});
 frame(wide,I,time('investigate',.24));await show(product,I,time('investigate',.24),{x:13,y:150,w:450,h:365},wide,'Actual symptom and URL input',{motion:true});
 const investigation=path.join(selected,'investigation-episode-1.webm');
+const investigationDir=path.resolve(option('--investigation-dir',path.join(here,'stabilized-investigation')));
+const investigationStabilization=JSON.parse(await fs.readFile(path.join(investigationDir,'manifest.json'),'utf8'));
+const investigationSha256=sha(await fs.readFile(investigation));
 const findingShots=[
  ['observe',.24,.48,3,{x:780,y:120,w:450,h:360},'Observe the browser.'],
  ['conditions',.48,.72,25,{x:780,y:575,w:450,h:320},'Follow the evidence.'],
@@ -111,8 +116,14 @@ const findingShots=[
 ];
 for(const [id,a,z,offset,rect,heading]of findingShots){
  const s=time('investigate',a),e=time('investigate',z);
- scene(id,s,e,`<div class="proof-copy"><div class="eyebrow hit">Browser exploration</div><p class="hit">${heading}</p><div class="stat blue hit">${id==='cart-loss'?'2 → 0':'13'}</div><div class="mini hit">${id==='cart-loss'?'Observed cart loss':'browser actions'}</div></div>`,{note:'Original investigation · edited excerpt · 1× speed · actual interface crop'});
- frame(right,s,e);await show(investigation,s,e,rect,right,heading,{offset,kind:'video'});
+ const stabilized=investigationStabilization.clips.find(clip=>clip.id===id);
+ if(!stabilized)throw new Error(`Missing stabilized investigation excerpt: ${id}`);
+ if(stabilized.originalFile!==path.relative(root,investigation)||stabilized.originalSha256!==investigationSha256||JSON.stringify(stabilized.sourceRect)!==JSON.stringify(rect))throw new Error(`Stabilized investigation source/crop differs: ${id}`);
+ const file=path.join(investigationDir,path.basename(stabilized.derivativeFile)),p=await probe(file);
+ if(sha(await fs.readFile(file))!==stabilized.derivativeSha256)throw new Error(`Stabilized investigation hash differs: ${id}`);
+ if(Math.abs(stabilized.sourceStartSeconds-offset)>.00001||Math.abs(stabilized.sourceDurationSeconds-(e-s))>.00001)throw new Error(`Stabilized investigation timing differs: ${id}`);
+ scene(id,s,e,`<div class="proof-copy"><div class="eyebrow hit">Browser exploration</div><p class="hit">${heading}</p><div class="stat blue hit">${id==='cart-loss'?'2 → 0':'13'}</div><div class="mini hit">${id==='cart-loss'?'Observed cart loss':'browser actions'}</div></div>`,{note:'Genuine investigation excerpt · original crop/timing · isolated viewport flashes replaced by documented adjacent authentic crops'});
+ frame(right,s,e);await show(file,s,e,{x:0,y:0,w:p.width,h:p.height},right,heading,{kind:'video'});
 }
 
 // Reframe actual cart-header anchors in separate, documented presentation derivatives.
@@ -181,5 +192,5 @@ await fs.writeFile(path.join(out,'index.html'),html);
 await fs.copyFile(path.join(here,'styles.css'),path.join(out,'styles.css'));
 await fs.copyFile(path.join(root,'demo/assets/gsap.min.js'),path.join(out,'assets/gsap.min.js'));
 for(const font of ['Montserrat.ttf','IBMPlexMono-Regular.ttf'])await fs.copyFile(path.join(here,'assets',font),path.join(out,'assets',font));
-await fs.writeFile(path.join(out,'provenance.json'),JSON.stringify({kind:'silent-stable-saas-cut',revision:narration.version,textReveal:'Opacity only; fixed glyph coordinates. Timing and stagger preserved from revision 3.',mode:'silent',normalization,durationSeconds:total,narrated:!!supplied,selectedRunId:evidence.runId,engineGitSha:evidence.gitSha,testSha256:evidence.testSha256,blocks:blocks.map(({audioFile,...b})=>({...b,audioFile:audioFile?path.relative(root,audioFile):null})),shots,media:sources,assets:[...assets.values()],soundEffects:sfx,limits:['Proof presentation derivatives preserve source durations and outcomes, align observed cart anchors, and document neighboring authentic-frame holds. Original verification recordings remain untouched.','Hosted after screenshots are genuine official Neatlogs UI. Entire remains a labeled CLI export viewer.','Gateway accounting differs from complete cash billing and credits; earlier missing costs remain unknown.','Final silent revision requested by the owner; no speech assets or narration clips are included.']},null,2)+'\n');
+await fs.writeFile(path.join(out,'provenance.json'),JSON.stringify({kind:'silent-stable-saas-cut',revision:narration.version,textReveal:'Original revision 3 text entrance preserved.',mediaReveal:'Opacity only, 0.28 seconds; fixed panel coordinates, no zoom or translation.',investigationStabilization,mode:'silent',normalization,durationSeconds:total,narrated:!!supplied,selectedRunId:evidence.runId,engineGitSha:evidence.gitSha,testSha256:evidence.testSha256,blocks:blocks.map(({audioFile,...b})=>({...b,audioFile:audioFile?path.relative(root,audioFile):null})),shots,media:sources,assets:[...assets.values()],soundEffects:sfx,limits:['Proof presentation derivatives preserve source durations and outcomes, align observed cart anchors, and document neighboring authentic-frame holds. Original verification recordings remain untouched.','Hosted after screenshots are genuine official Neatlogs UI. Entire remains a labeled CLI export viewer.','Gateway accounting differs from complete cash billing and credits; earlier missing costs remain unknown.','Final silent revision requested by the owner; no speech assets or narration clips are included.']},null,2)+'\n');
 console.log(JSON.stringify({sourceProject:out,durationSeconds:total,narrated:!!supplied,shots:shots.length,mediaEntries:sources.length,voiceBlocks:blocks.filter(b=>b.audioFile).length,sfx:sfx.length,rendered:false},null,2));

@@ -1,5 +1,7 @@
 # Scripted engineering product preview
 
+Historical composition documentation. The current finished movie is [revision 5](bugreplay-saas-demo-v5.mp4). Older finished exports have been removed from the current tree; links below use the previous Git snapshot. Historical commands requiring an older movie as input require checking out commit `07a29fd` or using a local archived copy.
+
 This 52-second HyperFrames composition shows real UI/shop screenshots and a real deterministic Playwright replay. A persistent badge identifies it as **Scripted engineering preview · no live model run**. It is not the final hackathon demo or evidence of autonomous discovery, real sponsor usage, or a live benchmark.
 
 The source uses local assets, six seekable sub-compositions, deliberate silence, and hard cuts. The original replay is 3.00 seconds at 1×. No cursor or browser interaction is fabricated.
@@ -37,6 +39,6 @@ Verify the rendered duration/dimensions with `ffprobe` and inspect scene midpoin
 
 ## Included preview verification
 
-[`bugreplay-product-preview.mp4`](bugreplay-product-preview.mp4) is the rendered preview: 52.000 seconds, 1280 × 720, H.264/yuv420p, 30 fps, 1,560 frames, 1,218,018 bytes, and no audio track. HyperFrames check passed with zero lint, runtime, motion, or layout issues; all 63 contrast samples passed. The final MP4's six scene midpoints and four replay frames were visually inspected. The original replay includes the browser's brief initial loading frame and its final viewport change; the footage is unaltered and plays at 1×.
+[`bugreplay-product-preview.mp4`](https://github.com/dsvyro1414-lab/bugreplay/blob/07a29fd/demo/bugreplay-product-preview.mp4) is the rendered preview: 52.000 seconds, 1280 × 720, H.264/yuv420p, 30 fps, 1,560 frames, 1,218,018 bytes, and no audio track. HyperFrames check passed with zero lint, runtime, motion, or layout issues; all 63 contrast samples passed. The final MP4's six scene midpoints and four replay frames were visually inspected. The original replay includes the browser's brief initial loading frame and its final viewport change; the footage is unaltered and plays at 1×.
 
 The local render used one worker, screenshot capture and software GPU, and completed in 63.6 seconds. This validates the video artifact, not the outstanding live-model or sponsor gates shown in its final scene.
