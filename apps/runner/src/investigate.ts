@@ -110,7 +110,7 @@ export async function investigate(store: RunStore, id: string, config: RunnerCon
         if (response.outputTokens !== undefined) run.metrics.outputTokens = (run.metrics.outputTokens ?? 0) + response.outputTokens;
         saveModelUsage();
         store.save(id);
-        if (response.normalized) emit('observation', 'Recovered one fenced JSON decision; strict tool-schema validation still applies.');
+        if (response.normalized) emit('observation', 'Recovered one JSON decision from its response envelope; strict tool-schema validation still applies.');
         const parsed = decisionSchema.safeParse(response.decision);
         if (!parsed.success) { history.push({ error: 'Invalid decision JSON; use the documented schema.' }); emit('tool_error', 'Model returned an invalid tool decision.'); continue; }
         const decision = parsed.data;

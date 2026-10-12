@@ -7,6 +7,7 @@ import { ModelClient, ModelConfigurationError, readModelConfig } from '../src/ll
 let server: Server;
 let baseUrl: string;
 const counts = new Map<string, number>();
+const receivedMessages = new Map<string, { role: string; content: string }[][]>();
 const messages = [{ role: 'user' as const, content: 'Choose one browser action.' }];
 
 function reply(response: ServerResponse, content: string, usage: unknown = { prompt_tokens: 19, completion_tokens: 11, total_tokens: 30 }): void {
@@ -22,22 +23,27 @@ before(async () => {
   server = createServer(async (request, response) => {
     let body = '';
     for await (const chunk of request) body += chunk;
-    const input = JSON.parse(body) as { model: string; response_format: { type: string } };
+    const input = JSON.parse(body) as { model: string; response_format: { type: string }; messages: { role: string; content: string }[] };
     assert.equal(input.response_format.type, 'json_object');
     const count = (counts.get(input.model) || 0) + 1;
     counts.set(input.model, count);
-    if ((input.model === 'retry' && count === 1) || input.model === 'one-call-budget') {
+    receivedMessages.set(input.model, [...(receivedMessages.get(input.model) || []), input.messages]);
+    if ((['retry', 'retry-then-malformed'].includes(input.model) && count === 1) || input.model === 'one-call-budget' || (input.model === 'malformed-then-rate-limit' && count === 2)) {
       response.writeHead(429, { 'Content-Type': 'application/json' });
       response.end(JSON.stringify({ error: { message: 'Synthetic temporary rate limit.', type: 'rate_limit_error', code: 'rate_limit_exceeded' } }));
     } else if (input.model === 'private-error') {
       response.writeHead(401, { 'Content-Type': 'application/json' });
       response.end(JSON.stringify({ error: { message: 'Synthetic secret must never escape: TEST-PRIVATE-CREDENTIAL', type: 'authentication_error', code: 'invalid_api_key' } }));
-    } else if (input.model === 'cancel') {
+    } else if (input.model === 'cancel' || (input.model === 'repair-cancel' && count === 2)) {
       setTimeout(() => reply(response, '{"tool":"observe","args":{},"summary":"Inspect the page."}'), 500);
-    } else if (input.model === 'malformed') {
+    } else if (input.model === 'malformed' || input.model === 'retry-then-malformed') {
       reply(response, '```json\n{"tool":"observe"\n```');
+    } else if ((['format-repair', 'repair-cancel', 'malformed-then-rate-limit'].includes(input.model) && count === 1) || input.model === 'repair-one-call') {
+      reply(response, 'SYNTHETIC-REJECTED-PROSE with no JSON decision.');
     } else if (input.model === 'observed-fence') {
       reply(response, 'The cart was preserved after saving a new address. Let me read the cart.\n\n```json\n{"summary":"Cart preserved after the changed address saved.","tool":"readCart","args":{}}\n```');
+    } else if (input.model === 'observed-suffix') {
+      reply(response, 'The cart was preserved after saving a new address. Let me read the cart.\n\n{"summary":"Cart preserved after the changed address saved.","tool":"readCart","args":{}}');
     } else if (input.model === 'multiple-fences') {
       reply(response, '```json\n{"tool":"observe","args":{},"summary":"First."}\n```\n```json\n{"tool":"restart","args":{},"summary":"Second."}\n```');
     } else if (input.model === 'competing-object') {
@@ -46,6 +52,12 @@ before(async () => {
       reply(response, '```json\n{"tool":"observe","args":{},"summary":"Inspect."}');
     } else if (input.model === 'fenced-array') {
       reply(response, '```json\n[{"tool":"observe"}]\n```');
+    } else if (input.model === 'competing-suffix-objects') {
+      reply(response, 'Here are decisions.\n{"tool":"observe"}\n{"tool":"restart"}');
+    } else if (input.model === 'suffix-trailing-text') {
+      reply(response, 'Inspect first.\n{"tool":"observe","args":{},"summary":"Inspect."}\nExtra text.');
+    } else if (input.model === 'suffix-prefix-array') {
+      reply(response, 'Options [one].\n{"tool":"observe","args":{},"summary":"Inspect."}');
     } else if (input.model === 'malformed-usage') {
       reply(response, '{"tool":"observe","args":{},"summary":"Inspect."}', { prompt_tokens: '19', completion_tokens: -11 });
     } else if (input.model === 'zero-and-fractional-usage') {
@@ -97,33 +109,81 @@ test('remaining-call budget prevents a transient retry', async () => {
   assert.equal(model.calls, 1);
 });
 
-test('malformed JSON is not retried or returned as an executable decision', async () => {
+test('two malformed replies exhaust the shared attempt budget and retain all reported usage', async () => {
   const model = client('malformed');
   await assert.rejects(model.next(messages, AbortSignal.timeout(5_000), 2), /not a JSON object/);
-  assert.equal(model.calls, 1);
+  assert.equal(model.calls, 2);
   assert.deepEqual(model.attemptLedger.map(({ status, inputTokens, outputTokens }) => ({ status, inputTokens, outputTokens })), [
+    { status: 'invalid_response', inputTokens: 19, outputTokens: 11 },
     { status: 'invalid_response', inputTokens: 19, outputTokens: 11 },
   ]);
 });
 
-test('the observed prose plus one JSON fence normalizes without another model call', async () => {
-  const model = client('observed-fence');
-  const result = await model.next(messages, AbortSignal.timeout(5_000), 2);
-  assert.deepEqual(result.decision, { summary: 'Cart preserved after the changed address saved.', tool: 'readCart', args: {} });
-  assert.equal(result.normalized, true);
-  assert.equal(model.calls, 1);
-  assert.equal(model.attemptLedger[0].normalized, true);
-  assert.equal(model.attemptLedger[0].status, 'completed');
+test('prose plus one complete JSON suffix or fence normalizes without another model call', async () => {
+  for (const name of ['observed-suffix', 'observed-fence']) {
+    const model = client(name);
+    const result = await model.next(messages, AbortSignal.timeout(5_000), 2);
+    assert.deepEqual(result.decision, { summary: 'Cart preserved after the changed address saved.', tool: 'readCart', args: {} });
+    assert.equal(result.normalized, true);
+    assert.equal(model.calls, 1);
+    assert.equal(model.attemptLedger[0].normalized, true);
+    assert.equal(model.attemptLedger[0].status, 'completed');
+  }
 });
 
-test('ambiguous or truncated fenced output cannot become an executable decision', async () => {
-  for (const name of ['multiple-fences', 'competing-object', 'truncated-fence', 'fenced-array']) {
+test('ambiguous, truncated or trailing output cannot become an executable decision', async () => {
+  for (const name of ['multiple-fences', 'competing-object', 'truncated-fence', 'fenced-array', 'competing-suffix-objects', 'suffix-trailing-text', 'suffix-prefix-array']) {
     const model = client(name);
-    await assert.rejects(model.next(messages, AbortSignal.timeout(5_000), 2), /JSON object/);
+    await assert.rejects(model.next(messages, AbortSignal.timeout(5_000), 1), /JSON object/);
     assert.equal(model.calls, 1);
     assert.equal(model.attemptLedger[0].status, 'invalid_response');
     assert.equal(model.attemptLedger[0].inputTokens, 19);
   }
+});
+
+test('one format repair shares the transport budget and never echoes rejected prose', async () => {
+  const model = client('format-repair');
+  const originalMessages = structuredClone(messages);
+  const result = await model.next(messages, AbortSignal.timeout(5_000), 2);
+  assert.deepEqual(result.decision, { tool: 'observe', args: {}, summary: 'Inspect the page.' });
+  assert.equal(result.callsUsed, 2);
+  assert.equal(model.calls, 2);
+  assert.deepEqual(model.attemptLedger.map(entry => entry.status), ['invalid_response', 'completed']);
+  assert.equal(model.attemptLedger.reduce((sum, entry) => sum + (entry.inputTokens ?? 0), 0), 38);
+  assert.deepEqual(messages, originalMessages);
+  const requests = receivedMessages.get('format-repair')!;
+  assert.equal(requests[1].length, requests[0].length + 1);
+  assert.match(requests[1].at(-1)!.content, /No browser action was executed/);
+  assert.doesNotMatch(JSON.stringify(requests[1]), /SYNTHETIC-REJECTED-PROSE/);
+});
+
+test('one remaining call prevents format repair', async () => {
+  const model = client('repair-one-call');
+  await assert.rejects(model.next(messages, AbortSignal.timeout(5_000), 1), /JSON object/);
+  assert.equal(model.calls, 1);
+  assert.equal(counts.get('repair-one-call'), 1);
+});
+
+test('mixed format and transient failures never create a third transport attempt', async () => {
+  for (const name of ['retry-then-malformed', 'malformed-then-rate-limit']) {
+    const model = client(name);
+    await assert.rejects(model.next(messages, AbortSignal.timeout(5_000), 3), /JSON object|status=429/);
+    assert.equal(model.calls, 2);
+    assert.equal(counts.get(name), 2);
+    assert.deepEqual(model.attemptLedger.map(entry => entry.status), name === 'retry-then-malformed'
+      ? ['failed', 'invalid_response'] : ['invalid_response', 'failed']);
+  }
+});
+
+test('caller cancellation during format repair preserves both attempts and unknown cancelled usage', async () => {
+  const model = client('repair-cancel');
+  const started = Date.now();
+  await assert.rejects(model.next(messages, AbortSignal.timeout(100), 2), /cancelled/);
+  assert.ok(Date.now() - started < 1_000);
+  assert.equal(model.calls, 2);
+  assert.deepEqual(model.attemptLedger.map(entry => entry.status), ['invalid_response', 'failed']);
+  assert.equal(model.attemptLedger[1].errorCode, 'CANCELLED');
+  assert.equal(model.attemptLedger[1].inputTokens, undefined);
 });
 
 test('malformed provider usage stays unknown and valid zero usage is retained', async () => {
