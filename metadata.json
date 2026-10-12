@@ -1,0 +1,33 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4RBGMN0JWSXDHD2TESXJ35A",
+  "strategy": "manual-commit",
+  "branch": "agent-a-engine",
+  "checkpoints_count": 3,
+  "files_touched": [
+    "README.md",
+    "apps/runner/src/browser.ts",
+    "apps/runner/src/investigate.ts",
+    "apps/runner/src/llm.ts",
+    "apps/runner/test/browser.test.ts",
+    "apps/runner/test/investigation.test.ts",
+    "apps/runner/test/llm.test.ts"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 560654,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 31005184,
+    "output_tokens": 48069,
+    "api_call_count": 281,
+    "subagent_tokens_complete": false
+  }
+}
