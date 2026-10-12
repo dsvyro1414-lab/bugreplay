@@ -171,6 +171,10 @@ test('synthetic model drives the real loop to 2 intended failures and an unchang
       assert.ok(run.artifacts.some(artifact => artifact.kind === kind), `Missing ${kind} artifact`);
     }
     for (const artifact of run.artifacts) assert.ok((await stat(path.join(dir, artifact.name))).size > 0);
+    for (const attempt of [1, 2]) for (const suffix of ['before', 'after']) {
+      const name = `verification-${attempt}-${suffix}.png`;
+      assert.ok(run.artifacts.some(artifact => artifact.kind === 'screenshot' && artifact.name === name), `Missing downloadable replay evidence: ${name}`);
+    }
     const primary = JSON.parse(await readFile(path.join(dir, 'verification.json'), 'utf8')) as VerificationResult;
     const control = JSON.parse(await readFile(path.join(dir, 'control-verification.json'), 'utf8')) as VerificationResult;
     assert.equal(primary.matchedFailures, 2);

@@ -179,13 +179,13 @@ export function isTelemetryReady(): boolean { return ready; }
 export async function withTrace<T>(
   name: string,
   attributes: Record<string, unknown>,
-  fn: () => Promise<T>,
+  fn: (traceId?: string) => Promise<T>,
   finalAttributes?: () => Record<string, unknown>,
 ): Promise<T> {
   if (!ready) throw new Error('Neatlogs is not initialized; the investigation cannot start.');
   return trace({ name, kind: 'WORKFLOW', attributes }, async activeSpan => {
     try {
-      const result = await fn();
+      const result = await fn(activeSpan.spanContext().traceId);
       if (result && typeof result === 'object' && 'status' in result && typeof result.status === 'string') {
         activeSpan.setAttribute('bugreplay.verdict', result.status);
       }

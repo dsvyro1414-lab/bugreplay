@@ -55,7 +55,12 @@ export async function investigate(store: RunStore, id: string, config: RunnerCon
   };
   try {
     await services.initTelemetry(signal);
-    await withTrace('bugreplay.investigation', { 'bugreplay.run_id': id, 'bugreplay.git_sha': gitSha, 'bugreplay.agent_version': '0.1.0' }, async () => {
+    await withTrace('bugreplay.investigation', { 'bugreplay.run_id': id, 'bugreplay.git_sha': gitSha, 'bugreplay.agent_version': '0.1.0' }, async traceId => {
+      if (traceId) {
+        writeFileSync(join(dir, 'trace.json'), JSON.stringify({ runId: id, traceId, gitSha, model: process.env.LLM_MODEL || process.env.MODEL || 'unknown' }, null, 2));
+        store.artifact(id, 'report', 'trace.json', 'application/json');
+        emit('observation', 'Neatlogs investigation trace started.', { traceId, gitSha });
+      }
       client = services.makeModel();
       browser = new BrowserSession({ targetUrl: run.input.targetUrl, allowedOrigins: config.allowedOrigins, artifactDir: dir, deadlineAt: Math.min(totalDeadline, started + config.investigationMs), maxActions: config.maxActions,
         onEvent: event => {
@@ -120,7 +125,13 @@ export async function investigate(store: RunStore, id: string, config: RunnerCon
             copyFileSync(join(dir, 'verification.json'), join(candidateDir, 'verification.json'));
             run.verification = { attempts: result.attempts.length, matchedFailures: result.matchedFailures, verdict: result.verdict };
             store.artifact(id, 'verification', 'verification.json', 'application/json');
-            for (const attempt of result.attempts) if (attempt.videoName && existsSync(join(dir, attempt.videoName))) store.artifact(id, 'video', attempt.videoName, 'video/webm');
+            for (const attempt of result.attempts) {
+              if (attempt.videoName && existsSync(join(dir, attempt.videoName))) store.artifact(id, 'video', attempt.videoName, 'video/webm');
+              for (const suffix of ['before', 'after']) {
+                const name = `verification-${attempt.attempt}-${suffix}.png`;
+                if (existsSync(join(dir, name))) store.artifact(id, 'screenshot', name, 'image/png');
+              }
+            }
             emit('verification', `Saved test: ${result.matchedFailures}/${result.attempts.length} intended assertion failures.`, { result });
             history.push({ tool: 'submitCandidate', result });
             if (result.verdict === 'confirmed') {

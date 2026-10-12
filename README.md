@@ -94,7 +94,7 @@ npm run build --workspace @bugreplay/web
 npm run build --workspace @bugreplay/demo-shop
 ```
 
-The scripted product suite starts both shops itself. Its known fixture setup must not be supplied to the runtime model. The web tests use a separate explicit fixture API and real Chromium; they verify UI behavior, not discovery. See the [evidence index](docs/evidence/index.md) for actual results and the remaining live-model, cfo.ai, and final-demo gates. The current engine saves dedicated replay before/after PNGs but does not yet register them for API downloads; ordinary investigation screenshots and registered replay videos are supported.
+The scripted product suite starts both shops itself. Its known fixture setup must not be supplied to the runtime model. The web tests use a separate explicit fixture API and real Chromium; they verify UI behavior, not discovery. See the [evidence index](docs/evidence/index.md) for actual results and the remaining live-model, cfo.ai, and final-demo gates. Completed replay before/after PNGs are registered for API downloads alongside investigation screenshots and replay videos. Real investigations also save `trace.json` with the Neatlogs trace ID, run ID, model and source commit.
 
 Agent A owns runner/contracts/root/scripts. Agent B owns web/shop/evals/evidence/demo/cfo.ai. Keep credentials and unreviewed recordings out of Git. Entire project hooks are configured; each coding environment must approve/verify its hooks and a real checkpoint. Imported transcript checkpoints do not prove automatic hooks worked.
 
