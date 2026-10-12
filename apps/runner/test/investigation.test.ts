@@ -6,7 +6,7 @@ import { test } from 'node:test';
 import type { BrowserObservation, CartCheckpoint, ReproStep, VerificationResult } from '@bugreplay/contracts';
 import { investigate, type InvestigationServices } from '../src/investigate.js';
 import type { RunnerConfig } from '../src/config.js';
-import type { ModelMessage, ModelResult } from '../src/llm.js';
+import { ModelOutputFormatError, type ModelAttempt, type ModelMessage, type ModelResult } from '../src/llm.js';
 import { RunStore } from '../src/store.js';
 
 // Explicit synthetic orchestration tests: model and telemetry are fixtures.
@@ -74,6 +74,28 @@ class SyntheticModel {
     return { decision: this.decide(input, this.calls), inputTokens: 10, outputTokens: 5, callsUsed: 1 };
   }
   close(): void { this.closed = true; }
+}
+
+class FormatFixtureModel extends SyntheticModel {
+  private readonly ledger: ModelAttempt[] = [];
+  get attemptLedger(): readonly ModelAttempt[] { return this.ledger.map(entry => ({ ...entry })); }
+  async next(messages: ModelMessage[], signal: AbortSignal, remainingCalls = Infinity): Promise<ModelResult> {
+    const before = this.calls;
+    let failure: unknown;
+    try { return await super.next(messages, signal, remainingCalls); }
+    catch (error) {
+      failure = error;
+      // This explicit model fixture simulates one exhausted two-transport format block.
+      if (error instanceof ModelOutputFormatError && remainingCalls >= 2) this.calls++;
+      throw error;
+    } finally {
+      for (let attempt = before + 1; attempt <= this.calls; attempt++) this.ledger.push({
+        attempt, startedAt: new Date().toISOString(), durationMs: 0,
+        status: failure instanceof ModelOutputFormatError ? 'invalid_response' : failure ? 'failed' : 'completed',
+        inputTokens: 10, outputTokens: 5, costUsd: 0.001, costSource: 'x-litellm-response-cost',
+      });
+    }
+  }
 }
 
 function controlRef(observation: BrowserObservation, name: string): string {
@@ -262,4 +284,79 @@ test('synthetic investigation respects small model-call and real-action budgets 
       } finally { await environment.close(); }
     }
   } finally { await fixed.close(); }
+});
+
+test('exhausted format blocks preserve browser state, reset after valid decisions, and retain all accounting', { timeout: 15_000 }, async () => {
+  const fixed = await fixture(false);
+  const environment = await runEnvironment(fixed.origin, fixed.origin);
+  let block = 0;
+  const rejectedSentinel = 'SYNTHETIC_REJECTED_RESPONSE_MUST_NOT_REACH_HISTORY';
+  const model = new FormatFixtureModel((input) => {
+    block++;
+    if ([1, 3, 4].includes(block)) throw new ModelOutputFormatError(rejectedSentinel);
+    if (block === 2) return decision('click', { ref: controlRef(input.observation, 'Add sample') });
+    if (block === 5) return decision('fill', { ref: controlRef(input.observation, 'Delivery address'), value: '36 Recovery Road' });
+    return decision('finishWithoutRepro', { reason: 'Synthetic format recovery completed without an observed violation.', testedConditions: ['Visible address edit'] });
+  });
+  const injected = injectedServices(model);
+  try {
+    await investigate(environment.store, environment.run.id, environment.config, new AbortController().signal, injected.services);
+    assert.equal(environment.run.status, 'not_reproduced');
+    assert.equal(model.calls, 9);
+    assert.equal(environment.run.metrics.actions, 3);
+    assert.deepEqual(model.inputs[1].observation, model.inputs[0].observation);
+    assert.deepEqual(model.inputs[3].observation, model.inputs[2].observation);
+    assert.deepEqual(model.inputs[4].observation, model.inputs[2].observation);
+    assert.ok(model.inputs[4].recentResults.some(result => result.error?.includes('no browser action')));
+    assert.ok(!JSON.stringify(model.inputs).includes(rejectedSentinel));
+    const errors = environment.run.events.filter(event => event.type === 'tool_error' && event.data?.consecutiveFormatFailures);
+    assert.deepEqual(errors.map(event => event.data?.consecutiveFormatFailures), [1, 1, 2]);
+    assert.ok(errors.every(event => event.data?.callsUsed === 2));
+    const usage = JSON.parse(await readFile(path.join(environment.dir, 'model-usage.json'), 'utf8'));
+    assert.equal(usage.attempts.length, 9);
+    assert.equal(usage.attempts.filter((attempt: ModelAttempt) => attempt.status === 'invalid_response').length, 6);
+    assert.equal(usage.costComplete, true);
+    assert.equal(usage.gatewayCostUsd, model.attemptLedger.reduce((sum, attempt) => sum + attempt.costUsd!, 0));
+    assert.equal(environment.run.metrics.costUsd, usage.gatewayCostUsd);
+    assert.equal(environment.run.metrics.inputTokens, 90);
+    assert.equal(environment.run.metrics.outputTokens, 45);
+    assert.equal(usage.billingCostUsd, null);
+    assert.ok(!(await readFile(path.join(environment.dir, 'report.md'), 'utf8')).includes(rejectedSentinel));
+    assert.equal(injected.traces[0].final?.['bugreplay.model_calls'], 9);
+  } finally { await environment.close(); await fixed.close(); }
+});
+
+test('format recovery stops after three consecutive exhausted blocks or the unchanged global call budget', { timeout: 15_000 }, async () => {
+  const fixed = await fixture(false);
+  try {
+    for (const maxCalls of [12, 3]) {
+      const environment = await runEnvironment(fixed.origin, fixed.origin, { maxCalls });
+      const model = new FormatFixtureModel(() => { throw new ModelOutputFormatError('Synthetic exhausted output format.'); });
+      try {
+        await investigate(environment.store, environment.run.id, environment.config, new AbortController().signal, injectedServices(model).services);
+        assert.equal(environment.run.status, 'inconclusive');
+        assert.equal(model.calls, maxCalls === 12 ? 6 : 3);
+        assert.equal(environment.run.metrics.actions, 1);
+        assert.equal(environment.run.verification, undefined);
+        const usage = JSON.parse(await readFile(path.join(environment.dir, 'model-usage.json'), 'utf8'));
+        assert.equal(usage.attempts.length, model.calls);
+        assert.ok(usage.attempts.every((attempt: ModelAttempt) => attempt.status === 'invalid_response'));
+        assert.equal(environment.run.metrics.inputTokens, model.calls * 10);
+        if (maxCalls === 12) assert.ok(environment.run.events.some(event => event.message.includes('Three consecutive model decisions')));
+      } finally { await environment.close(); }
+    }
+  } finally { await fixed.close(); }
+});
+
+test('format recovery never swallows a transport or configuration error', { timeout: 15_000 }, async () => {
+  const fixed = await fixture(false);
+  const environment = await runEnvironment(fixed.origin, fixed.origin);
+  const model = new FormatFixtureModel(() => { throw new Error('Synthetic transport blocker.'); });
+  try {
+    await investigate(environment.store, environment.run.id, environment.config, new AbortController().signal, injectedServices(model).services);
+    assert.equal(model.calls, 1);
+    assert.equal(environment.run.status, 'inconclusive');
+    assert.ok(environment.run.events.some(event => event.message === 'Synthetic transport blocker.'));
+    assert.ok(!environment.run.events.some(event => event.data?.consecutiveFormatFailures));
+  } finally { await environment.close(); await fixed.close(); }
 });

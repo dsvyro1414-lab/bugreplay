@@ -361,8 +361,12 @@ export class BrowserSession {
     const tree = await page.ariaSnapshotJSON({ timeout: this.timeout() }) as AriaNode[];
     const elements: BrowserObservation['elements'] = [];
     const candidates: LocatorSpec[] = [];
+    const disabledControls = new Set<string>();
     const visit = (nodes: AriaNode[], ancestors: NonNullable<LocatorSpec['scope']>[]) => {
       for (const node of nodes) {
+        if (node.role && roles.has(node.role as LocatorSpec['role']) && node.name && node.disabled) {
+          disabledControls.add(`${node.role} ${JSON.stringify(node.name)} [disabled]`);
+        }
         if (node.role && roles.has(node.role as LocatorSpec['role']) && node.name && !node.disabled) {
           const base: LocatorSpec = { role: node.role as LocatorSpec['role'], name: node.name, exact: true };
           candidates.push(base, ...ancestors.toReversed().map(scope => ({ ...base, scope })));
@@ -380,7 +384,13 @@ export class BrowserSession {
       seen.add(key);
       if (spec.scope && await page.getByRole(spec.scope.role, { name: spec.scope.name, exact: true }).count() !== 1) continue;
       const locator = this.locator(spec);
-      if (await locator.count() !== 1 || !await locator.isVisible() || !await locator.isEnabled()) continue;
+      if (await locator.count() !== 1 || !await locator.isVisible()) continue;
+      if (!await locator.isEnabled()) {
+        // Include effective disabled state (for example, a disabled fieldset), not just
+        // controls explicitly marked disabled in the accessibility snapshot.
+        disabledControls.add(`${spec.role} ${JSON.stringify(spec.name)} [disabled]`);
+        continue;
+      }
       // Once a globally unique control is exposed, its redundant scoped form adds no information.
       if (spec.scope && elements.some(element => !element.locator.scope && element.locator.role === spec.role && element.locator.name === spec.name)) continue;
       const ref = `s${snapshotId}-e${elements.length + 1}`;
@@ -399,8 +409,9 @@ export class BrowserSession {
     }
     const screenshotName = `observation-${snapshotId}-${this.episodeId}.png`;
     await page.screenshot({ path: join(this.options.artifactDir, screenshotName), fullPage: true, timeout: this.timeout() });
+    const disabledText = disabledControls.size ? `Disabled controls (observed; no action refs):\n${[...disabledControls].join('\n')}\n\n` : '';
     const observation: BrowserObservation = {
-      snapshotId, episodeId: this.episodeId, url: page.url(), text: (await page.locator('body').innerText({ timeout: this.timeout() })).slice(0, 12_000),
+      snapshotId, episodeId: this.episodeId, url: page.url(), text: `${disabledText}${await page.locator('body').innerText({ timeout: this.timeout() })}`.slice(0, 12_000),
       elements, state: structuredClone(state), screenshotName,
     };
     this.observation = observation;

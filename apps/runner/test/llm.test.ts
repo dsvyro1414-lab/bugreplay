@@ -10,8 +10,8 @@ const counts = new Map<string, number>();
 const receivedMessages = new Map<string, { role: string; content: string }[][]>();
 const messages = [{ role: 'user' as const, content: 'Choose one browser action.' }];
 
-function reply(response: ServerResponse, content: string, usage: unknown = { prompt_tokens: 19, completion_tokens: 11, total_tokens: 30 }): void {
-  response.writeHead(200, { 'Content-Type': 'application/json' });
+function reply(response: ServerResponse, content: string, usage: unknown = { prompt_tokens: 19, completion_tokens: 11, total_tokens: 30 }, cost?: string): void {
+  response.writeHead(200, { 'Content-Type': 'application/json', ...(cost !== undefined ? { 'x-litellm-response-cost': cost } : {}) });
   response.end(JSON.stringify({
     id: 'synthetic-completion', object: 'chat.completion', created: 0, model: 'synthetic',
     choices: [{ index: 0, message: { role: 'assistant', content }, finish_reason: 'stop' }],
@@ -28,14 +28,20 @@ before(async () => {
     const count = (counts.get(input.model) || 0) + 1;
     counts.set(input.model, count);
     receivedMessages.set(input.model, [...(receivedMessages.get(input.model) || []), input.messages]);
-    if ((['retry', 'retry-then-malformed'].includes(input.model) && count === 1) || input.model === 'one-call-budget' || (input.model === 'malformed-then-rate-limit' && count === 2)) {
-      response.writeHead(429, { 'Content-Type': 'application/json' });
+    if ((['retry', 'retry-then-malformed', 'gateway-cost-retry'].includes(input.model) && count === 1) || input.model === 'one-call-budget' || (input.model === 'malformed-then-rate-limit' && count === 2)) {
+      response.writeHead(429, { 'Content-Type': 'application/json', ...(input.model === 'gateway-cost-retry' ? { 'x-litellm-response-cost': '0.000004' } : {}) });
       response.end(JSON.stringify({ error: { message: 'Synthetic temporary rate limit.', type: 'rate_limit_error', code: 'rate_limit_exceeded' } }));
     } else if (input.model === 'private-error') {
       response.writeHead(401, { 'Content-Type': 'application/json' });
       response.end(JSON.stringify({ error: { message: 'Synthetic secret must never escape: TEST-PRIVATE-CREDENTIAL', type: 'authentication_error', code: 'invalid_api_key' } }));
     } else if (input.model === 'cancel' || (input.model === 'repair-cancel' && count === 2)) {
       setTimeout(() => reply(response, '{"tool":"observe","args":{},"summary":"Inspect the page."}'), 500);
+    } else if (input.model.startsWith('gateway-cost-')) {
+      const cost = input.model === 'gateway-cost-zero' ? '0' : input.model === 'gateway-cost-retry' ? '2.3e-5'
+        : input.model === 'gateway-cost-negative' ? '-0.1' : input.model === 'gateway-cost-nan' ? 'NaN'
+        : input.model === 'gateway-cost-empty' ? '' : input.model === 'gateway-cost-hex' ? '0x2'
+        : input.model === 'gateway-cost-infinity' ? 'Infinity' : '0.000123';
+      reply(response, input.model === 'gateway-cost-invalid-json' ? 'Synthetic reply without JSON.' : '{"tool":"observe","args":{},"summary":"Inspect the page."}', undefined, cost);
     } else if (input.model === 'malformed' || input.model === 'retry-then-malformed') {
       reply(response, '```json\n{"tool":"observe"\n```');
     } else if ((['format-repair', 'repair-cancel', 'malformed-then-rate-limit'].includes(input.model) && count === 1) || input.model === 'repair-one-call') {
@@ -77,6 +83,31 @@ after(async () => { server.closeAllConnections(); await new Promise<void>(resolv
 function client(model: string): ModelClient {
   return new ModelClient({ provider: 'openai', apiKey: 'synthetic-fixture-key', baseUrl, model });
 }
+
+test('gateway accounting cost is captured per attempt before format parsing and across transport retries', async () => {
+  const malformed = client('gateway-cost-invalid-json');
+  await assert.rejects(malformed.next(messages, AbortSignal.timeout(5_000), 1), /JSON object/);
+  assert.equal(malformed.attemptLedger[0].status, 'invalid_response');
+  assert.equal(malformed.attemptLedger[0].costUsd, 0.000123);
+  assert.equal(malformed.attemptLedger[0].costSource, 'x-litellm-response-cost');
+  const retry = client('gateway-cost-retry');
+  await retry.next(messages, AbortSignal.timeout(5_000), 2);
+  assert.deepEqual(retry.attemptLedger.map(entry => entry.costUsd), [0.000004, 0.000023]);
+  assert.deepEqual(retry.attemptLedger.map(entry => entry.status), ['failed', 'completed']);
+});
+
+test('missing and malformed gateway cost stays unknown while explicit zero is retained', async () => {
+  for (const name of ['gateway-cost-negative', 'gateway-cost-nan', 'gateway-cost-empty', 'gateway-cost-hex', 'gateway-cost-infinity', 'gateway-no-cost']) {
+    const model = client(name);
+    await model.next(messages, AbortSignal.timeout(5_000), 1);
+    assert.equal(model.attemptLedger[0].costUsd, undefined, name);
+    assert.equal(model.attemptLedger[0].costSource, undefined, name);
+  }
+  const zero = client('gateway-cost-zero');
+  await zero.next(messages, AbortSignal.timeout(5_000), 1);
+  assert.equal(zero.attemptLedger[0].costUsd, 0);
+  assert.equal(zero.attemptLedger[0].costSource, 'x-litellm-response-cost');
+});
 
 test('one transient retry counts both HTTP attempts and preserves reported usage', async () => {
   const model = client('retry');

@@ -6,6 +6,7 @@ import {
 } from '@aws-sdk/client-bedrock-runtime';
 import { wrapBedrock, wrapOpenAI } from 'neatlogs';
 import { setTimeout as delay } from 'node:timers/promises';
+import { AsyncLocalStorage } from 'node:async_hooks';
 
 export type ModelMessage = { role: 'system' | 'user'; content: string };
 
@@ -34,6 +35,8 @@ export interface ModelAttempt {
   outputTokens?: number;
   errorCode?: string;
   normalized?: boolean;
+  costUsd?: number;
+  costSource?: 'x-litellm-response-cost';
 }
 
 export class ModelConfigurationError extends Error {
@@ -105,7 +108,7 @@ function transient(error: unknown): boolean {
   ]).has(errorCode(error));
 }
 
-class ModelOutputFormatError extends Error {
+export class ModelOutputFormatError extends Error {
   constructor(message: string) {
     super(message);
     this.name = 'ModelOutputFormatError';
@@ -114,6 +117,13 @@ class ModelOutputFormatError extends Error {
 
 function tokenCount(value: unknown): number | undefined {
   return typeof value === 'number' && Number.isSafeInteger(value) && value >= 0 ? value : undefined;
+}
+
+function responseCost(value: string | null): number | undefined {
+  // Missing, empty, negative and malformed metadata remain unknown; an explicit zero is valid.
+  if (value === null || !/^\d+(?:\.\d+)?(?:e[+-]?\d+)?$/i.test(value.trim())) return undefined;
+  const cost = Number(value);
+  return Number.isFinite(cost) && cost >= 0 ? cost : undefined;
 }
 
 function parseDecision(text: string): Pick<ModelResult, 'decision' | 'normalized'> {
@@ -152,6 +162,7 @@ export class ModelClient {
   private readonly bedrock?: BedrockRuntimeClient;
   private attempts = 0;
   private readonly ledger: ModelAttempt[] = [];
+  private readonly currentAttempt = new AsyncLocalStorage<ModelAttempt>();
 
   constructor(config: ModelConfig = readModelConfig()) {
     this.config = config;
@@ -163,6 +174,18 @@ export class ModelClient {
         baseURL: config.baseUrl,
         maxRetries: 0,
         timeout: 30_000,
+        // Neatlogs preserves tracing but its Promise wrapper has no SDK withResponse() helper.
+        // Capture only accounting metadata at the transport boundary, before response parsing.
+        fetch: async (input, init) => {
+          const response = await fetch(input, init);
+          const attempt = this.currentAttempt.getStore();
+          const cost = responseCost(response.headers.get('x-litellm-response-cost'));
+          if (attempt && cost !== undefined) {
+            attempt.costUsd = cost;
+            attempt.costSource = 'x-litellm-response-cost';
+          }
+          return response;
+        },
       }));
     } else {
       // The SDK signs Converse requests using the normal AWS credential chain.
@@ -190,7 +213,7 @@ export class ModelClient {
       };
       this.ledger.push(entry);
       try {
-        const result = await this.request(requestMessages, combinedSignal, entry);
+        const result = await this.currentAttempt.run(entry, () => this.request(requestMessages, combinedSignal, entry));
         entry.durationMs = Math.max(0, Date.now() - started);
         entry.status = 'completed';
         if (result.normalized) entry.normalized = true;

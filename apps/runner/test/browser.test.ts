@@ -8,7 +8,7 @@ import type { BrowserObservation } from '@bugreplay/contracts';
 import { BrowserSession, type BrowserEvent } from '../src/browser.js';
 
 // This is an explicit synthetic adapter fixture, not acceptance evidence for Agent B's demo shop.
-const fixture = (outsideOrigin: string) => `<!doctype html><html><body>
+const fixture = (outsideOrigin: string, disabledControls = false) => `<!doctype html><html><body>
 <main><h1>Synthetic browser-adapter fixture</h1>
 <section role="region" aria-label="Products"><button data-action="cart-add" id="add">Add item</button></section>
 <section role="region" aria-label="Cart" aria-busy="false" id="cart"></section>
@@ -17,7 +17,8 @@ const fixture = (outsideOrigin: string) => `<!doctype html><html><body>
 <span id="address-name">Delivery <b>address</b></span><input aria-labelledby="address-name" data-action="checkout-edit" id="address" value="12 Initial Way">
 <label>Delivery method<select data-action="checkout-edit" id="method"><option value="standard">Standard</option><option value="express">Express</option></select></label>
 <label><input type="checkbox" data-action="checkout-edit" id="gift">Gift wrapping</label>
-<span id="save-name" hidden>Save delivery address</span><button aria-labelledby="save-name" data-action="checkout-save" id="save">Commit</button>
+<span id="save-name" hidden>Save delivery address</span><button aria-labelledby="save-name" data-action="checkout-save" id="save" ${disabledControls ? 'disabled' : ''}>Commit</button>
+${disabledControls ? '<fieldset disabled><button>Disabled fieldset action</button></fieldset><button aria-disabled="true">Unavailable option</button><button disabled hidden>Hidden disabled control</button>' : ''}
 </section>
 <section role="region" aria-label="Courier"><label>Note<input data-action="checkout-edit"></label></section>
 <section role="region" aria-label="Billing"><label>Note<input data-action="checkout-edit"></label></section>
@@ -38,7 +39,7 @@ function draw() {
 draw();
 document.querySelector('#add').onclick = () => { quantity++; draw(); };
 document.querySelector('#remove').onclick = () => { quantity = 0; draw(); };
-document.querySelector('#address').oninput = () => { document.querySelector('#status').textContent = ''; };
+document.querySelector('#address').oninput = () => { document.querySelector('#status').textContent = ''; ${disabledControls ? "document.querySelector('#save').disabled = false;" : ''} };
 document.querySelector('#save').onclick = () => {
   cart.setAttribute('aria-busy', 'true'); cart.innerHTML = '';
   setTimeout(() => {
@@ -72,7 +73,7 @@ before(async () => {
     if (request.url === '/redirect-outside') {
       response.writeHead(302, { location: `${outsideOrigin}/redirect-target` }); response.end();
     } else {
-      response.writeHead(200, { 'content-type': 'text/html' }); response.end(fixture(outsideOrigin));
+      response.writeHead(200, { 'content-type': 'text/html' }); response.end(fixture(outsideOrigin, new URL(request.url || '/', 'http://fixture.local').searchParams.has('disabled')));
     }
   });
   origin = await listen(server);
@@ -82,10 +83,10 @@ after(async () => {
   await Promise.all([server, outside].map(instance => new Promise<void>((resolve, reject) => instance.close(error => error ? reject(error) : resolve()))));
 });
 
-async function session(options: { timeoutMs?: number; events?: BrowserEvent[]; maxActions?: number } = {}) {
+async function session(options: { timeoutMs?: number; events?: BrowserEvent[]; maxActions?: number; disabledControls?: boolean } = {}) {
   const artifactDir = await mkdtemp(join(tmpdir(), 'bugreplay-browser-synthetic-'));
   const browser = new BrowserSession({
-    targetUrl: `${origin}/shop?synthetic=1`, allowedOrigins: [origin], artifactDir,
+    targetUrl: `${origin}/shop?synthetic=1${options.disabledControls ? '&disabled=1' : ''}`, allowedOrigins: [origin], artifactDir,
     timeoutMs: options.timeoutMs ?? 3_000, maxActions: options.maxActions, onEvent: event => { options.events?.push(event); },
   });
   return { browser, artifactDir, close: async () => { await browser.close(); await rm(artifactDir, { recursive: true, force: true }); } };
@@ -96,6 +97,24 @@ function ref(observation: BrowserObservation, name: string): string {
   assert.ok(element, `Expected an available control named ${name}`);
   return element.ref;
 }
+
+test('synthetic observations expose actual disabled accessible controls without actionable refs', async () => {
+  const fixtureSession = await session({ disabledControls: true });
+  const { browser } = fixtureSession;
+  try {
+    let observation = await browser.start();
+    for (const name of ['Save delivery address', 'Disabled fieldset action', 'Unavailable option']) {
+      assert.ok(observation.text.includes(`button ${JSON.stringify(name)} [disabled]`));
+      assert.ok(!observation.elements.some(element => element.locator.name === name));
+    }
+    assert.ok(!observation.text.includes('Hidden disabled control'));
+    observation = await browser.act({ kind: 'fill', ref: ref(observation, 'Delivery address'), value: '24 Changed Street' });
+    assert.ok(observation.elements.some(element => element.locator.name === 'Save delivery address'));
+    assert.ok(!observation.text.includes('button "Save delivery address" [disabled]'));
+    assert.ok(observation.text.includes('button "Unavailable option" [disabled]'));
+    assert.equal(browser.actionCount, 2, 'Observing disabled state must not create additional browser actions.');
+  } finally { await fixtureSession.close(); }
+});
 
 test('synthetic adapter records the complete setup, exact accessible names, stable save, and screenshots', async () => {
   const events: BrowserEvent[] = [];
