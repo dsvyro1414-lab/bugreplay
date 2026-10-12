@@ -1,0 +1,37 @@
+{
+  "checkedAt": "2026-10-12T09:13:35.287086+00:00",
+  "command": "node node_modules/tsx/dist/cli.mjs --test apps/web/test/browser.test.ts",
+  "node": "24.19.0",
+  "tests": 9,
+  "passed": 9,
+  "failed": 0,
+  "skipped": 0,
+  "durationMs": 8128.783584,
+  "browser": "Real headless Playwright Chromium",
+  "api": "Explicit synthetic HTTP test fixture on ephemeral loopback port; never available from production app",
+  "modelUsed": false,
+  "neatlogsUsed": false,
+  "coverage": [
+    "original download bytes and recorded evidence",
+    "reload without duplicate create",
+    "409 resume",
+    "asynchronous cancellation",
+    "same-id retry after 404",
+    "Back to empty workspace",
+    "Back across duplicate completed run IDs",
+    "reconnect preserves previous evidence",
+    "HTTP and MIME download errors",
+    "invalid reproduction schema and explicit retry"
+  ],
+  "regressionFixed": "Back across identical terminal run IDs could clear evidence without restarting polling; reproduced with a failing test, fixed by refreshing on popstate.",
+  "sourceSha256": {
+    "apps/web/src/App.tsx": "586fb1e4ef8d12bd01e292335cbc5b2901c80dfdeab39bdcce46c2b854289680",
+    "apps/web/src/api.ts": "1a7cc74dcb75898e65bf58901bd84020a14baad251ce398e94f905096ad39d6a",
+    "apps/web/src/useInvestigation.ts": "72fc842e9fbf9d0059bbab7f1374335ffafd3c6c5759dc0dbb580d46d2fffe6d",
+    "apps/web/test/browser.test.ts": "2e7affb3501ce13cdbc68bd1db7a3835cd561c421094b48e3fd4a19a4f3e56f9",
+    "apps/web/test/fixture-api.ts": "6fbadb0165b183f6f6318a9e63c7bddfb9a321f5c7c14f552d2588a1e42db61c"
+  },
+  "limitations": [
+    "UI contract verification only; not autonomous model discovery, runner verification, or hosted sponsor evidence."
+  ]
+}

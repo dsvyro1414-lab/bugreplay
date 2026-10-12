@@ -1,0 +1,22 @@
+{
+  "kind": "saved-playwright-file-and-output-audit",
+  "attempts": [
+    {
+      "attempt": 1,
+      "exitCode": 0,
+      "reporterStatus": "passed",
+      "classification": "passed",
+      "stage": "passed",
+      "reportFile": "combined-conditions/control-replay/verification-attempt-1-a7584041/results.json",
+      "stdout": {
+        "bytes": 52,
+        "sha256": "2822bd24b9dd9197827be386f2fa31939b1de769b1edb24a60a047ee3ab280c4"
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "video": "verification-1.webm"
+    }
+  ]
+}

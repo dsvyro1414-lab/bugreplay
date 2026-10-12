@@ -1,0 +1,45 @@
+{
+  "verifiedAt": "2026-10-12T09:09:31.473162+00:00",
+  "nodeVersion": "v24.19.0",
+  "ordinaryInstall": true,
+  "installCommand": "npm ci",
+  "installExitCode": 0,
+  "installedPackages": 186,
+  "auditedPackages": 191,
+  "npmAuditSummary": {
+    "moderate": 10,
+    "high": 4,
+    "total": 14
+  },
+  "commands": [
+    {
+      "command": "npm run typecheck",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run build --workspace @bugreplay/web",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run build --workspace @bugreplay/demo-shop",
+      "exitCode": 0
+    }
+  ],
+  "lockAudit": {
+    "addedPackageEntries": [
+      "apps/demo-shop",
+      "apps/web",
+      "node_modules/@bugreplay/demo-shop",
+      "node_modules/@bugreplay/web"
+    ],
+    "changedExistingPackageEntries": [],
+    "removedPackageEntries": [],
+    "otherTopLevelFieldsChanged": false,
+    "mainAndSnapshotLockIdenticalAfterInstall": true,
+    "sha256": "67ad033ae6e0c85d8847128c23e40927ef4caae6eb4d984065d54fa9b37bb2f1"
+  },
+  "mainCheckoutModifiedByVerification": false,
+  "testSuitesRerun": false,
+  "snapshotDescription": "Separate temporary source copy excluding credentials, artifacts, .git, and node_modules; includes new product workspaces.",
+  "scope": "Clean dependency install, typecheck and production builds; UI test fixtures added afterward are verified separately."
+}

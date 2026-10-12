@@ -6,7 +6,9 @@ The runner investigates one defect class in a controlled Chromium shop: cart ite
 
 ## Current status
 
-Agent A's engine is implemented and tested on explicit synthetic fixtures with real Chromium and standalone replay processes. The approved LiteLLM gateway has answered a real request to `claude-sonnet-4.6`; Bedrock is prohibited by the event rules and is no longer the access-recovery route. Neatlogs hosted Doctor previously verified finalized trace readback through a trusted hotspot; the current connection must pass again before real investigations. Live discovery and acceptance of Agent B's shop have **not** passed, and B's application branch is not integrated in this checkout. Access checks are not investigation results.
+Agent A's engine is implemented and tested on explicit synthetic fixtures with real Chromium and standalone replay processes. This product branch also includes Agent B's real UI, buggy/fixed shops, and independent scripted checks: **5/5 passed**, including two intended regression failures and an unchanged passing control. See [product handoff](docs/evidence/product-handoff.md). Autonomous live-model discovery has **not** passed on the product branch.
+
+The approved LiteLLM gateway has answered a real request to `claude-sonnet-4.6` in A's environment; Bedrock is prohibited by the event rules. Neatlogs hosted Doctor verified finalized trace readback through a trusted hotspot in that environment. Private credentials are not in Git, and current access must pass again before real investigations. Access checks and scripted tests are not investigation results.
 
 See [engine handoff](scripts/ENGINE-STATUS.md), [access recovery and administrator requests](scripts/ACCESS-RECOVERY.md), [shared DOM contract](packages/contracts/DOM.md), [plan](plan.md), and B's [development log](hackathon.md). Synthetic tests are engineering checks, not live discovery evidence.
 
@@ -40,14 +42,14 @@ Doctor must verify a finalized hosted readback. If it fails, real investigations
 
 ## Start
 
-After integrating Agent B's packages, named `@bugreplay/web` and `@bugreplay/demo-shop`:
+The product workspaces are named `@bugreplay/web` and `@bugreplay/demo-shop`:
 
 ```sh
 npm run dev                 # runner :3001, web :5173, buggy shop :4173
 npm run dev:control         # corrected shop :4174, separate terminal
 ```
 
-Before B is integrated, `npm run dev` starts the available runner and reports the missing workspaces. To start only the runner use `npm run dev:runner`. It binds to loopback. Configure the web's Vite `/api` proxy to `http://localhost:3001`.
+To start only the runner use `npm run dev:runner`. It binds to loopback. The web's Vite `/api` proxy forwards to `http://localhost:3001`. Open `http://127.0.0.1:5173` for the investigation workspace. Missing access is shown explicitly; production has no mock mode.
 
 Allowlisted origins default to `http://localhost:4173,http://localhost:4174`. `CONTROL_BASE_URL` defaults to 4174. Arbitrary websites, HTTP redirects, popups, external resources, authentication and payments are unsupported. Empty save-status and cart nodes must retain visible layout per the DOM contract.
 
@@ -80,6 +82,17 @@ The saved test asserts correct behavior. Replay exits **1** for the intended reg
 Defaults: 40 real browser actions, 40 model transport attempts (including retry), 4 declared hypotheses, 6 minutes investigation, 2 minutes verification, 8 minutes total. Configure `MAX_ACTIONS`, `MAX_MODEL_CALLS`, `MAX_HYPOTHESES`, `INVESTIGATION_MS`, `VERIFICATION_MS`, `TOTAL_MS`. Missing token/cost information remains absent; unknown cost is not zero.
 
 ## Development and hackathon
+
+Product-only checks and builds do not require private model or telemetry keys:
+
+```sh
+npm exec -- tsx --test evals/product.test.ts
+node node_modules/tsx/dist/cli.mjs --test apps/web/test/browser.test.ts
+npm run build --workspace @bugreplay/web
+npm run build --workspace @bugreplay/demo-shop
+```
+
+The scripted product suite starts both shops itself. Its known fixture setup must not be supplied to the runtime model. The web tests use a separate explicit fixture API and real Chromium; they verify UI behavior, not discovery. See the [evidence index](docs/evidence/index.md) for actual results and the remaining live-model, cfo.ai, and final-demo gates. The current engine saves dedicated replay before/after PNGs but does not yet register them for API downloads; ordinary investigation screenshots and registered replay videos are supported.
 
 Agent A owns runner/contracts/root/scripts. Agent B owns web/shop/evals/evidence/demo/cfo.ai. Keep credentials and unreviewed recordings out of Git. Entire project hooks are configured; each coding environment must approve/verify its hooks and a real checkpoint. Imported transcript checkpoints do not prove automatic hooks worked.
 

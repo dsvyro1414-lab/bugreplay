@@ -1,0 +1,176 @@
+{
+  "kind": "curated-scripted-product-evaluation-evidence",
+  "modelUsed": false,
+  "neatlogsUsed": false,
+  "sourceArtifactRoot": "artifacts/product-eval/2026-10-12T08-58-03.943Z-ef3e0210",
+  "command": "npm exec -- tsx --test evals/product.test.ts",
+  "exportedAt": "2026-10-12",
+  "assertionMarker": "BUGREPLAY_CART_PRESERVATION",
+  "files": [
+    {
+      "source": "combined-conditions/repro.spec.ts",
+      "published": "combined-conditions/repro.spec.ts",
+      "rawBytes": 12286,
+      "rawSha256": "06f2d8aafbbd4f3c5f83c458fe89788b3fd4f14937540e04014089be85fdb3fa",
+      "publishedBytes": 12286,
+      "publishedSha256": "06f2d8aafbbd4f3c5f83c458fe89788b3fd4f14937540e04014089be85fdb3fa",
+      "modifications": []
+    },
+    {
+      "source": "combined-conditions/summary.json",
+      "published": "combined-conditions/summary.json",
+      "rawBytes": 477,
+      "rawSha256": "1679b4e0406b27ccf4d1bd1cfebfa6045ba412eed0addefeac49b6ad1238ef5d",
+      "publishedBytes": 477,
+      "publishedSha256": "1679b4e0406b27ccf4d1bd1cfebfa6045ba412eed0addefeac49b6ad1238ef5d",
+      "modifications": []
+    },
+    {
+      "source": "combined-conditions/buggy-replay/independent-file-audit.json",
+      "published": "combined-conditions/buggy-replay/independent-file-audit.json",
+      "rawBytes": 1227,
+      "rawSha256": "526f963304cf499ea116ee7b8b0d6a1c3e65a2afd540893c2dcdad4061e14bfd",
+      "publishedBytes": 1227,
+      "publishedSha256": "526f963304cf499ea116ee7b8b0d6a1c3e65a2afd540893c2dcdad4061e14bfd",
+      "modifications": []
+    },
+    {
+      "source": "combined-conditions/buggy-replay/verification-1-stdout.txt",
+      "published": "combined-conditions/buggy-replay/verification-1-stdout.sanitized.txt",
+      "rawBytes": 1298,
+      "rawSha256": "811ad577bbadf694469328c3ca36d2fa58732c0088d007ceda16308e869eb538",
+      "publishedBytes": 1267,
+      "publishedSha256": "f7c7c5a634444990ccfb9bf4ed37d98f7b6ae78d9581b3376a398101f11cea5d",
+      "modifications": [
+        {
+          "operation": "literal-path-prefix-replacement",
+          "sourcePrefixDescription": "Absolute local checkout directory through its trailing slash",
+          "replacement": "<repository>/",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "source": "combined-conditions/buggy-replay/verification-1-stderr.txt",
+      "published": "combined-conditions/buggy-replay/verification-1-stderr.txt",
+      "rawBytes": 0,
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "publishedBytes": 0,
+      "publishedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "modifications": []
+    },
+    {
+      "source": "combined-conditions/buggy-replay/verification-1-before.png",
+      "published": "combined-conditions/buggy-replay/verification-1-before.png",
+      "rawBytes": 122579,
+      "rawSha256": "1917b2630d4e3c812efd6ea8cc93881e8b55ce5e3e3011c12818b3e2f2691494",
+      "publishedBytes": 122579,
+      "publishedSha256": "1917b2630d4e3c812efd6ea8cc93881e8b55ce5e3e3011c12818b3e2f2691494",
+      "modifications": []
+    },
+    {
+      "source": "combined-conditions/buggy-replay/verification-1-after.png",
+      "published": "combined-conditions/buggy-replay/verification-1-after.png",
+      "rawBytes": 124880,
+      "rawSha256": "0b8d35e65345327f8739f7905887b60955d5548b0f48effa5174e4ca7f87dd5a",
+      "publishedBytes": 124880,
+      "publishedSha256": "0b8d35e65345327f8739f7905887b60955d5548b0f48effa5174e4ca7f87dd5a",
+      "modifications": []
+    },
+    {
+      "source": "combined-conditions/buggy-replay/verification-2-stdout.txt",
+      "published": "combined-conditions/buggy-replay/verification-2-stdout.sanitized.txt",
+      "rawBytes": 1298,
+      "rawSha256": "811ad577bbadf694469328c3ca36d2fa58732c0088d007ceda16308e869eb538",
+      "publishedBytes": 1267,
+      "publishedSha256": "f7c7c5a634444990ccfb9bf4ed37d98f7b6ae78d9581b3376a398101f11cea5d",
+      "modifications": [
+        {
+          "operation": "literal-path-prefix-replacement",
+          "sourcePrefixDescription": "Absolute local checkout directory through its trailing slash",
+          "replacement": "<repository>/",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "source": "combined-conditions/buggy-replay/verification-2-stderr.txt",
+      "published": "combined-conditions/buggy-replay/verification-2-stderr.txt",
+      "rawBytes": 0,
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "publishedBytes": 0,
+      "publishedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "modifications": []
+    },
+    {
+      "source": "combined-conditions/buggy-replay/verification-2-before.png",
+      "published": "combined-conditions/buggy-replay/verification-2-before.png",
+      "rawBytes": 122579,
+      "rawSha256": "1917b2630d4e3c812efd6ea8cc93881e8b55ce5e3e3011c12818b3e2f2691494",
+      "publishedBytes": 122579,
+      "publishedSha256": "1917b2630d4e3c812efd6ea8cc93881e8b55ce5e3e3011c12818b3e2f2691494",
+      "modifications": []
+    },
+    {
+      "source": "combined-conditions/buggy-replay/verification-2-after.png",
+      "published": "combined-conditions/buggy-replay/verification-2-after.png",
+      "rawBytes": 124880,
+      "rawSha256": "0b8d35e65345327f8739f7905887b60955d5548b0f48effa5174e4ca7f87dd5a",
+      "publishedBytes": 124880,
+      "publishedSha256": "0b8d35e65345327f8739f7905887b60955d5548b0f48effa5174e4ca7f87dd5a",
+      "modifications": []
+    },
+    {
+      "source": "combined-conditions/control-replay/independent-file-audit.json",
+      "published": "combined-conditions/control-replay/independent-file-audit.json",
+      "rawBytes": 627,
+      "rawSha256": "04688d4efa6d6891e29e0e7ab9d6771c25e8b96bec5c9b6049ae496afd704029",
+      "publishedBytes": 627,
+      "publishedSha256": "04688d4efa6d6891e29e0e7ab9d6771c25e8b96bec5c9b6049ae496afd704029",
+      "modifications": []
+    },
+    {
+      "source": "combined-conditions/control-replay/verification-1-stdout.txt",
+      "published": "combined-conditions/control-replay/verification-1-stdout.txt",
+      "rawBytes": 52,
+      "rawSha256": "2822bd24b9dd9197827be386f2fa31939b1de769b1edb24a60a047ee3ab280c4",
+      "publishedBytes": 52,
+      "publishedSha256": "2822bd24b9dd9197827be386f2fa31939b1de769b1edb24a60a047ee3ab280c4",
+      "modifications": []
+    },
+    {
+      "source": "combined-conditions/control-replay/verification-1-stderr.txt",
+      "published": "combined-conditions/control-replay/verification-1-stderr.txt",
+      "rawBytes": 0,
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "publishedBytes": 0,
+      "publishedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "modifications": []
+    },
+    {
+      "source": "combined-conditions/control-replay/verification-1-before.png",
+      "published": "combined-conditions/control-replay/verification-1-before.png",
+      "rawBytes": 122579,
+      "rawSha256": "1917b2630d4e3c812efd6ea8cc93881e8b55ce5e3e3011c12818b3e2f2691494",
+      "publishedBytes": 122579,
+      "publishedSha256": "1917b2630d4e3c812efd6ea8cc93881e8b55ce5e3e3011c12818b3e2f2691494",
+      "modifications": []
+    },
+    {
+      "source": "combined-conditions/control-replay/verification-1-after.png",
+      "published": "combined-conditions/control-replay/verification-1-after.png",
+      "rawBytes": 126942,
+      "rawSha256": "cdfca254b616482232eefb402a6adf40ef6904b8d65ef163a9119137255ce128",
+      "publishedBytes": 126942,
+      "publishedSha256": "cdfca254b616482232eefb402a6adf40ef6904b8d65ef163a9119137255ce128",
+      "modifications": []
+    }
+  ],
+  "omitted": [
+    "Replay videos",
+    "Full Playwright JSON reports and temporary runner configs",
+    "Full trusted browser action logs",
+    "Ordinary-address and single-factor case logs",
+    "Selector-fault and unavailable-target diagnostics"
+  ]
+}
