@@ -43,6 +43,14 @@ Agent B's product branch now includes the investigation UI, real demo shop, corr
 
 Not submitted. A final live-model demo and cfo.ai business-model evidence remain pending. The included product preview is visibly labeled as scripted engineering evidence. Confirm the final submission cutoff and official submission post before publishing the entry.
 
+### October 12 follow-up: financial model and final recording materials
+
+- Added a complete assumption-based [12-month financial workbook](docs/evidence/finance/README.md), with Base/Downside inputs, all-run measured-cost intake, contribution sensitivity, revenue, gross profit and monthly cash. The initial scenarios reconcile to independent calculations. Missing costs and duplicate run IDs remain visible; temporary QA rows were removed.
+- At the assumed $49/100 offer, 70% contribution target and 3% + $0.30 payment fee, variable run cost must be at most $0.1293 before fixed hosting. The assumed Downside cost of $0.285 exceeds that threshold. This informs a pricing/allowance decision, not a measured profitability claim.
+- The browser reached CFO.ai plan selection, not an active modeling workspace. No paid plan was activated. The workbook, scenario CSV and [Ari prompt](docs/evidence/finance/cfo-transfer-prompt.md) are ready for transfer; sponsor completion is still open.
+- Added the [2:50 final-demo recording kit](demo/final/README.md): scene timing, English voiceover/captions, exact evidence request to Agent A, manifest validator and unpublished submission copy. It explicitly requires genuine run/trace/checkpoint/CFO.ai captures before final assembly.
+- Rechecked the public event page on October 12: its planned submission window converts to 16:30–21:25 Moscow that day. The final Discord cutoff and official submission post still require confirmation.
+
 ## Development entries
 
 Append entries with a timestamp, owner, change, actual verification, and evidence links. Do not mark planned work as completed.

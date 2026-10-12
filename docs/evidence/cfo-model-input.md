@@ -1,6 +1,6 @@
 # BugReplay model brief for cfo.ai
 
-Status: prepared input, **not a cfo.ai output or evidence of sponsor use**.
+Status: a [complete assumption-based workbook and transfer package](finance/README.md) now implement this brief. They are **not a cfo.ai output or evidence of sponsor use**. Use the [ready-to-paste Ari prompt](finance/cfo-transfer-prompt.md) to create the actual model after workspace activation.
 
 Create a business model for BugReplay, a tool that converts a browser bug report into an independently verified Playwright reproduction. The MVP supports one controlled shop and one class of cart-preservation defect. It has no paying customers or verified market demand recorded in this repository.
 
